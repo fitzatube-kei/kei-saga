@@ -1,0 +1,257 @@
+import { Era } from '@/types/game';
+
+export const samgukEarly: Era = {
+  id: 'samguk-early',
+  name: '삼국시대 (초기)',
+  nameEn: 'Three Kingdoms Early',
+  period: 'BC 57~AD 300',
+  description: '신라, 고구려, 백제 삼국이 차례로 건국되며 한반도의 역사가 본격적으로 펼쳐지는 시기입니다.',
+  imageColor: '#CD5C5C',
+  order: 2,
+  periods: [
+    {
+      id: 'samguk-founding',
+      eraId: 'samguk-early',
+      name: '삼국의 건국',
+      years: 'BC 57~BC 18',
+      description: '신라, 고구려, 백제가 차례로 건국되며 삼국시대의 서막이 열린 시기입니다.',
+      events: [
+        {
+          id: 'silla-founding',
+          periodId: 'samguk-founding',
+          eraId: 'samguk-early',
+          title: '신라 건국',
+          description: '알에서 태어난 박혁거세가 서라벌에 신라를 건국한 이야기를 체험합니다.',
+          character: {
+            id: 'hyeokgeose',
+            name: '박혁거세',
+            title: '신라 시조',
+            description: '알에서 태어나 신라를 건국한 시조로, 밝은 빛으로 세상을 다스렸다 하여 혁거세라 불렸습니다.',
+            primaryColor: '#CD5C5C',
+            secondaryColor: '#FFD700',
+          },
+          difficulty: 'easy',
+          pointReward: 300,
+          steps: [
+            {
+              id: 'silla-founding-step-1',
+              type: 'narration',
+              text: '기원전 57년, 한반도 동남쪽 서라벌 땅. 여섯 마을의 촌장들이 모여 새 나라를 세울 임금을 찾고 있었습니다.',
+            },
+            {
+              id: 'silla-founding-step-2',
+              type: 'narration',
+              text: '나정(蘿井)이라는 우물가에서 커다란 알이 발견되었습니다. 그 알에서 빛이 나며 한 아이가 태어났습니다.',
+            },
+            {
+              id: 'silla-founding-step-3',
+              type: 'dialog',
+              speaker: '촌장',
+              text: '이 아이는 하늘이 보내신 분이로다! 알에서 태어났으니 성을 박(朴)이라 하고, 세상을 밝게 다스리라는 뜻으로 혁거세라 하리라.',
+            },
+            {
+              id: 'silla-founding-step-4',
+              type: 'dialog',
+              speaker: '박혁거세',
+              text: '내 이 서라벌 땅에 나라를 세워 백성을 평안하게 다스리리라. 나라 이름을 서라벌, 곧 신라라 하겠노라.',
+            },
+            {
+              id: 'silla-founding-step-5',
+              type: 'quiz',
+              quiz: {
+                question: '신라가 건국된 해는 언제인가요?',
+                options: ['BC 37년', 'BC 57년', 'BC 18년', 'BC 108년'],
+                correctIndex: 1,
+                explanation: '신라는 기원전 57년에 박혁거세에 의해 건국되었습니다. 삼국 중 가장 먼저 건국되었습니다.',
+              },
+            },
+            {
+              id: 'silla-founding-step-6',
+              type: 'narration',
+              text: '같은 시기, 알영정(閼英井)에서 용이 나타나 옆구리에서 여자아이를 낳았으니, 이가 알영 부인입니다. 박혁거세와 알영은 부부가 되어 신라를 다스렸습니다.',
+            },
+            {
+              id: 'silla-founding-step-7',
+              type: 'dialog',
+              speaker: '박혁거세',
+              text: '백성을 사랑하고 농사를 권장하니, 나라가 태평하도다. 서라벌의 백성은 모두 나의 자식이니라.',
+            },
+            {
+              id: 'silla-founding-step-8',
+              type: 'quiz',
+              quiz: {
+                question: '박혁거세는 어디에서 태어났나요?',
+                options: ['강가', '나정(우물가)', '산꼭대기', '바닷가'],
+                correctIndex: 1,
+                explanation: '박혁거세는 나정(蘿井)이라는 우물가에서 발견된 알에서 태어났다고 전해집니다.',
+              },
+            },
+          ],
+        },
+        {
+          id: 'goguryeo-founding',
+          periodId: 'samguk-founding',
+          eraId: 'samguk-early',
+          title: '고구려 건국',
+          description: '뛰어난 활 솜씨를 가진 주몽이 졸본에 고구려를 건국한 이야기를 체험합니다.',
+          character: {
+            id: 'jumong',
+            name: '주몽 (동명성왕)',
+            title: '고구려 시조',
+            description: '부여에서 탈출하여 졸본에 고구려를 세운 시조로, 활을 잘 쏘아 주몽(활 잘 쏘는 사람)이라 불렸습니다.',
+            primaryColor: '#B22222',
+            secondaryColor: '#FF6347',
+          },
+          difficulty: 'easy',
+          pointReward: 300,
+          steps: [
+            {
+              id: 'goguryeo-founding-step-1',
+              type: 'narration',
+              text: '북쪽 부여 땅, 해모수와 유화 부인 사이에서 태어난 주몽은 어릴 때부터 활 솜씨가 뛰어났습니다. "주몽"이란 이름 자체가 "활을 잘 쏘는 사람"이라는 뜻입니다.',
+            },
+            {
+              id: 'goguryeo-founding-step-2',
+              type: 'dialog',
+              speaker: '주몽',
+              text: '나의 활 솜씨는 하늘이 내려준 것이니라. 백발백중, 이 활로 나라를 세우리라!',
+            },
+            {
+              id: 'goguryeo-founding-step-3',
+              type: 'narration',
+              text: '그러나 부여의 왕자들이 주몽의 재능을 시기하여 목숨을 위협했습니다. 주몽은 오이, 마리, 협보와 함께 남쪽으로 탈출을 결심합니다.',
+            },
+            {
+              id: 'goguryeo-founding-step-4',
+              type: 'dialog',
+              speaker: '주몽',
+              text: '더 이상 이곳에 머물 수 없노라. 나를 따르는 자들과 함께 남쪽으로 가서 새로운 나라를 세우겠노라!',
+            },
+            {
+              id: 'goguryeo-founding-step-5',
+              type: 'narration',
+              text: '추격병이 뒤따라왔으나, 엄사수(淹㴲水)에 이르렀을 때 물고기와 자라가 다리를 만들어 주몽 일행을 건너게 해주었습니다.',
+            },
+            {
+              id: 'goguryeo-founding-step-6',
+              type: 'quiz',
+              quiz: {
+                question: '"주몽"이라는 이름의 뜻은?',
+                options: ['용감한 왕', '활을 잘 쏘는 사람', '하늘의 아들', '빛나는 별'],
+                correctIndex: 1,
+                explanation: '주몽(朱蒙)은 부여 말로 "활을 잘 쏘는 사람"이라는 뜻입니다. 실제로 주몽은 뛰어난 궁술로 유명했습니다.',
+              },
+            },
+            {
+              id: 'goguryeo-founding-step-7',
+              type: 'narration',
+              text: '기원전 37년, 주몽은 졸본(卒本) 지역에 도착하여 마침내 고구려를 건국하였습니다.',
+            },
+            {
+              id: 'goguryeo-founding-step-8',
+              type: 'dialog',
+              speaker: '주몽',
+              text: '이 땅에 고구려를 세우노라! 고구려는 강한 나라가 되어 북방의 넓은 땅을 호령하리라!',
+            },
+            {
+              id: 'goguryeo-founding-step-9',
+              type: 'quiz',
+              quiz: {
+                question: '고구려가 건국된 해는?',
+                options: ['BC 57년', 'BC 37년', 'BC 18년', 'BC 108년'],
+                correctIndex: 1,
+                explanation: '고구려는 기원전 37년에 주몽(동명성왕)에 의해 졸본 지역에서 건국되었습니다.',
+              },
+            },
+            {
+              id: 'goguryeo-founding-step-10',
+              type: 'quiz',
+              quiz: {
+                question: '주몽이 부여를 떠난 이유는?',
+                options: [
+                  '새로운 땅을 탐험하기 위해',
+                  '부여 왕자들의 시기와 위협 때문에',
+                  '아버지의 명령 때문에',
+                  '전쟁에서 패했기 때문에',
+                ],
+                correctIndex: 1,
+                explanation: '주몽의 뛰어난 능력을 시기한 부여의 왕자들이 그를 죽이려 했기 때문에, 주몽은 부여를 탈출하여 남쪽으로 내려와 고구려를 건국했습니다.',
+              },
+            },
+          ],
+        },
+        {
+          id: 'baekje-founding',
+          periodId: 'samguk-founding',
+          eraId: 'samguk-early',
+          title: '백제 건국',
+          description: '온조가 남하하여 위례성에 백제를 건국한 이야기를 체험합니다.',
+          character: {
+            id: 'onjo',
+            name: '온조',
+            title: '백제 시조',
+            description: '주몽의 아들로, 형 비류와 함께 남하하여 위례성에 백제를 건국한 시조입니다.',
+            primaryColor: '#4169E1',
+            secondaryColor: '#87CEEB',
+          },
+          difficulty: 'easy',
+          pointReward: 300,
+          steps: [
+            {
+              id: 'baekje-founding-step-1',
+              type: 'narration',
+              text: '고구려를 세운 주몽에게는 부여에 두고 온 아들 유리가 있었습니다. 유리가 고구려로 찾아와 태자가 되자, 주몽의 다른 아들인 비류와 온조는 자리가 좁아졌습니다.',
+            },
+            {
+              id: 'baekje-founding-step-2',
+              type: 'dialog',
+              speaker: '온조',
+              text: '형님, 이곳에 머물러서는 우리의 앞날이 없소이다. 남쪽으로 내려가 새 터전을 잡는 것이 어떻겠소이까?',
+            },
+            {
+              id: 'baekje-founding-step-3',
+              type: 'narration',
+              text: '비류와 온조는 열 명의 신하와 많은 백성을 이끌고 남쪽으로 내려왔습니다. 비류는 미추홀(인천)에, 온조는 위례성(서울)에 자리를 잡았습니다.',
+            },
+            {
+              id: 'baekje-founding-step-4',
+              type: 'dialog',
+              speaker: '온조',
+              text: '이 위례성은 북으로 한강을 끼고, 땅이 기름지니 나라를 세우기에 으뜸이로다. 이곳에 도읍을 정하겠노라!',
+            },
+            {
+              id: 'baekje-founding-step-5',
+              type: 'narration',
+              text: '기원전 18년, 온조는 위례성에 나라를 세우고 "백제(百濟)"라 이름 지었습니다. 열 명의 신하가 도왔다 하여 처음에는 "십제(十濟)"라 하였다가, 백성이 즐겨 따르므로 "백제"로 고쳤습니다.',
+            },
+            {
+              id: 'baekje-founding-step-6',
+              type: 'quiz',
+              quiz: {
+                question: '백제가 건국된 해는?',
+                options: ['BC 57년', 'BC 37년', 'BC 18년', 'AD 1년'],
+                correctIndex: 2,
+                explanation: '백제는 기원전 18년에 온조에 의해 위례성(현재의 서울 부근)에서 건국되었습니다. 삼국 중 가장 마지막으로 건국되었습니다.',
+              },
+            },
+            {
+              id: 'baekje-founding-step-7',
+              type: 'narration',
+              text: '한편 미추홀에 자리 잡은 비류는 땅이 습하고 물이 짜서 백성들이 편안하지 못했습니다. 결국 비류의 백성들도 온조에게 합류하였습니다.',
+            },
+            {
+              id: 'baekje-founding-step-8',
+              type: 'quiz',
+              quiz: {
+                question: '온조가 백제의 도읍으로 삼은 곳은?',
+                options: ['미추홀', '졸본', '위례성', '서라벌'],
+                correctIndex: 2,
+                explanation: '온조는 위례성(현재 서울 부근)에 도읍을 정하고 백제를 건국했습니다. 형 비류는 미추홀(현재 인천)에 자리를 잡았으나 실패했습니다.',
+              },
+            },
+          ],
+        },
+      ],
+    },
+  ],
+};

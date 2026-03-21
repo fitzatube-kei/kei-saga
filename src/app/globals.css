@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply bg-background text-gray-100 antialiased;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply min-h-screen bg-background;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-background;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply rounded-full bg-surface;
+    border: 2px solid transparent;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-gold/40;
+  }
+
+  /* Selection */
+  ::selection {
+    @apply bg-gold/30 text-white;
+  }
+}
+
+@layer components {
+  .rpg-card {
+    @apply rounded-lg border border-gold/20 bg-surface p-4 shadow-rpg-glow transition-all duration-200;
+  }
+
+  .rpg-card:hover {
+    @apply border-gold/40 shadow-rpg-glow-lg;
+  }
+
+  .rpg-button {
+    @apply inline-flex items-center justify-center rounded-lg bg-gold px-4 py-2 font-semibold text-background transition-all duration-200 hover:bg-goldLight hover:shadow-rpg-glow active:scale-95;
+  }
+
+  .rpg-button-outline {
+    @apply inline-flex items-center justify-center rounded-lg border border-gold/40 px-4 py-2 font-semibold text-gold transition-all duration-200 hover:border-gold hover:bg-gold/10 active:scale-95;
+  }
+
+  .rpg-divider {
+    @apply h-px w-full bg-gradient-to-r from-transparent via-gold/30 to-transparent;
+  }
+
+  .text-glow {
+    text-shadow: 0 0 10px rgba(212, 160, 23, 0.5);
+  }
+}
+
+@layer utilities {
+  .animate-delay-100 {
+    animation-delay: 100ms;
+  }
+
+  .animate-delay-200 {
+    animation-delay: 200ms;
+  }
+
+  .animate-delay-300 {
+    animation-delay: 300ms;
+  }
+}

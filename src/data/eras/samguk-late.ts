@@ -1,0 +1,327 @@
+import { Era } from '@/types/game';
+
+export const samgukLate: Era = {
+  id: 'samguk-late',
+  name: '삼국시대 (후기)',
+  nameEn: 'Three Kingdoms Late',
+  period: 'AD 300~668',
+  description: '고구려의 전성기와 삼국 간의 치열한 경쟁, 그리고 신라의 삼국통일까지 격동의 시기입니다.',
+  imageColor: '#B22222',
+  order: 3,
+  periods: [
+    {
+      id: 'goguryeo-golden-age',
+      eraId: 'samguk-late',
+      name: '고구려 전성기',
+      years: '391~612',
+      description: '광개토대왕의 영토 확장과 을지문덕의 살수대첩으로 빛나는 고구려의 전성기입니다.',
+      events: [
+        {
+          id: 'gwanggaeto-conquest',
+          periodId: 'goguryeo-golden-age',
+          eraId: 'samguk-late',
+          title: '광개토대왕의 정복',
+          description: '만주 벌판을 호령하며 고구려의 영토를 크게 넓힌 광개토대왕의 업적을 체험합니다.',
+          character: {
+            id: 'gwanggaeto',
+            name: '광개토대왕',
+            title: '고구려 제19대 왕',
+            description: '18세에 즉위하여 만주와 한반도 북부의 광대한 영토를 정복한 고구려 최전성기의 군주입니다.',
+            primaryColor: '#B22222',
+            secondaryColor: '#FFD700',
+          },
+          difficulty: 'medium',
+          pointReward: 500,
+          steps: [
+            {
+              id: 'gwanggaeto-step-1',
+              type: 'narration',
+              text: '391년, 고구려에 18세의 젊은 왕이 즉위하였습니다. 그의 이름은 담덕, 훗날 "광개토경평안호태왕"이라 불리게 될 위대한 정복 군주입니다.',
+            },
+            {
+              id: 'gwanggaeto-step-2',
+              type: 'dialog',
+              speaker: '광개토대왕',
+              text: '고구려의 기상은 하늘을 찌르노라! 내 이 만주 벌판을 호령하여 고구려의 영토를 크게 넓히겠노라!',
+            },
+            {
+              id: 'gwanggaeto-step-3',
+              type: 'narration',
+              text: '광개토대왕은 즉위 후 활발한 정복 활동을 펼쳤습니다. 북으로는 거란, 동부여를 정복하고, 남으로는 백제를 압박하였습니다.',
+            },
+            {
+              id: 'gwanggaeto-step-4',
+              type: 'dialog',
+              speaker: '광개토대왕',
+              text: '백제가 신라를 침공하였다 하니, 5만 대군을 보내 신라를 구하고 백제를 징벌하리라!',
+            },
+            {
+              id: 'gwanggaeto-step-5',
+              type: 'narration',
+              text: '400년, 광개토대왕은 5만 대군을 보내 신라에 침입한 왜구를 물리치고, 가야 지역까지 세력을 넓혔습니다.',
+            },
+            {
+              id: 'gwanggaeto-step-6',
+              type: 'quiz',
+              quiz: {
+                question: '광개토대왕이 즉위한 나이는?',
+                options: ['15세', '18세', '20세', '25세'],
+                correctIndex: 1,
+                explanation: '광개토대왕(담덕)은 391년 18세의 나이에 고구려 제19대 왕으로 즉위하였습니다.',
+              },
+            },
+            {
+              id: 'gwanggaeto-step-7',
+              type: 'narration',
+              text: '광개토대왕은 재위 22년간 64개 성과 1,400개의 마을을 정복하여 고구려 역사상 가장 넓은 영토를 이룩하였습니다.',
+            },
+            {
+              id: 'gwanggaeto-step-8',
+              type: 'dialog',
+              speaker: '광개토대왕',
+              text: '고구려의 땅은 요동에서 만주까지, 남으로는 한강 유역까지 이르노라. 이것이 고구려의 위엄이니라!',
+            },
+            {
+              id: 'gwanggaeto-step-9',
+              type: 'narration',
+              text: '광개토대왕이 세상을 떠난 후, 아들 장수왕은 아버지의 업적을 기리기 위해 거대한 비석을 세웠으니, 이것이 바로 광개토대왕비입니다.',
+            },
+            {
+              id: 'gwanggaeto-step-10',
+              type: 'quiz',
+              quiz: {
+                question: '광개토대왕비를 세운 사람은?',
+                options: ['광개토대왕 본인', '아들 장수왕', '을지문덕', '연개소문'],
+                correctIndex: 1,
+                explanation: '광개토대왕비는 아들 장수왕이 414년에 아버지의 업적을 기리기 위해 세운 것입니다. 현재 중국 지린성 지안시에 있습니다.',
+              },
+            },
+            {
+              id: 'gwanggaeto-step-11',
+              type: 'narration',
+              text: '높이 약 6.39m의 광개토대왕비에는 고구려 건국 신화와 광개토대왕의 정복 활동이 1,775자로 새겨져 있습니다.',
+            },
+            {
+              id: 'gwanggaeto-step-12',
+              type: 'quiz',
+              quiz: {
+                question: '광개토대왕의 본명은?',
+                options: ['담덕', '장수', '을지', '연개'],
+                correctIndex: 0,
+                explanation: '광개토대왕의 본명은 담덕(談德)이며, "광개토경평안호태왕"은 "영토를 크게 넓힌 평안한 호태왕"이라는 뜻의 시호입니다.',
+              },
+            },
+          ],
+        },
+        {
+          id: 'salsu-battle',
+          periodId: 'goguryeo-golden-age',
+          eraId: 'samguk-late',
+          title: '을지문덕과 살수대첩',
+          description: '수나라 대군의 침입에 맞서 살수에서 대승을 거둔 을지문덕의 전략을 체험합니다.',
+          character: {
+            id: 'eulji-mundeok',
+            name: '을지문덕',
+            title: '고구려 장군',
+            description: '612년 수나라 113만 대군의 침입에 맞서 살수대첩으로 대승을 거둔 고구려의 명장입니다.',
+            primaryColor: '#800000',
+            secondaryColor: '#DC143C',
+          },
+          difficulty: 'medium',
+          pointReward: 500,
+          steps: [
+            {
+              id: 'salsu-step-1',
+              type: 'narration',
+              text: '612년, 수나라 양제가 113만 대군을 이끌고 고구려를 침공하였습니다. 역사상 유례없는 대규모 침략이었습니다.',
+            },
+            {
+              id: 'salsu-step-2',
+              type: 'dialog',
+              speaker: '을지문덕',
+              text: '수나라 대군이 밀려오나 두려워할 것 없노라. 적의 수가 많으면 보급이 길어지고, 보급이 길어지면 반드시 약해지느니라.',
+            },
+            {
+              id: 'salsu-step-3',
+              type: 'narration',
+              text: '을지문덕은 거짓으로 후퇴하는 전략을 썼습니다. 수나라 별동대 30만을 깊이 유인하며, 하루에도 일곱 번 싸우고 일곱 번 물러났습니다.',
+            },
+            {
+              id: 'salsu-step-4',
+              type: 'dialog',
+              speaker: '을지문덕',
+              text: '수나라 장수에게 시를 보내리라. "신묘한 전략은 하늘의 이치를 꿰뚫었고, 오묘한 계책은 땅의 이치를 다하였도다. 전쟁에서 이미 공이 높으니, 만족함을 알고 그만 돌아가시라!"',
+            },
+            {
+              id: 'salsu-step-5',
+              type: 'quiz',
+              quiz: {
+                question: '수나라가 고구려를 침공한 해는?',
+                options: ['600년', '612년', '645년', '668년'],
+                correctIndex: 1,
+                explanation: '612년, 수나라 양제가 113만 대군을 이끌고 고구려를 침공했습니다. 이 전쟁에서 을지문덕이 살수대첩으로 대승을 거두었습니다.',
+              },
+            },
+            {
+              id: 'salsu-step-6',
+              type: 'narration',
+              text: '지치고 굶주린 수나라 군대가 살수(청천강)를 건너려 할 때, 을지문덕이 미리 막아두었던 물을 한꺼번에 터뜨렸습니다!',
+            },
+            {
+              id: 'salsu-step-7',
+              type: 'dialog',
+              speaker: '을지문덕',
+              text: '지금이다! 물을 터뜨려라! 전군 돌격하라! 고구려의 힘을 보여주겠노라!',
+            },
+            {
+              id: 'salsu-step-8',
+              type: 'narration',
+              text: '살수를 건너던 수나라 군사들은 갑자기 불어난 물에 휩쓸리고, 고구려군의 공격에 궤멸되었습니다.',
+            },
+            {
+              id: 'salsu-step-9',
+              type: 'quiz',
+              quiz: {
+                question: '을지문덕의 주요 전략은?',
+                options: [
+                  '정면 돌파',
+                  '거짓 후퇴로 적을 유인한 뒤 수공(물 공격)',
+                  '성을 쌓고 방어',
+                  '야간 기습',
+                ],
+                correctIndex: 1,
+                explanation: '을지문덕은 거짓 후퇴로 수나라 군을 깊이 유인한 뒤, 살수(청천강)에서 미리 막아둔 물을 터뜨려 대승을 거두었습니다.',
+              },
+            },
+            {
+              id: 'salsu-step-10',
+              type: 'quiz',
+              quiz: {
+                question: '살수대첩 후 살아 돌아간 수나라 군사는 약 몇 명이었나요?',
+                options: ['약 2,700명', '약 10,000명', '약 50,000명', '약 100,000명'],
+                correctIndex: 0,
+                explanation: '30만 5천 명의 수나라 별동대 중 살아 돌아간 자는 2,700명에 불과했다고 합니다. 이 참패로 수나라는 크게 약해졌습니다.',
+              },
+            },
+          ],
+        },
+      ],
+    },
+    {
+      id: 'silla-unification',
+      eraId: 'samguk-late',
+      name: '신라의 삼국통일',
+      years: '648~668',
+      description: '김유신과 김춘추의 활약으로 신라가 삼국을 통일한 역사적 시기입니다.',
+      events: [
+        {
+          id: 'kim-yushin-unification',
+          periodId: 'silla-unification',
+          eraId: 'samguk-late',
+          title: '김유신과 삼국통일',
+          description: '나당연합을 맺고 백제와 고구려를 차례로 멸망시켜 삼국을 통일한 과정을 체험합니다.',
+          character: {
+            id: 'kim-yushin',
+            name: '김유신',
+            title: '신라 장군',
+            description: '가야 왕족 출신으로 신라의 장군이 되어 삼국통일의 핵심 역할을 한 명장입니다.',
+            primaryColor: '#CD5C5C',
+            secondaryColor: '#FFD700',
+          },
+          difficulty: 'hard',
+          pointReward: 700,
+          steps: [
+            {
+              id: 'unification-step-1',
+              type: 'narration',
+              text: '7세기, 삼국 간의 전쟁이 격화되었습니다. 신라는 고구려와 백제의 압박 속에서 생존을 위한 선택을 해야 했습니다.',
+            },
+            {
+              id: 'unification-step-2',
+              type: 'dialog',
+              speaker: '김유신',
+              text: '신라가 살아남으려면 강력한 동맹이 필요하니라. 당나라와 손을 잡아 백제와 고구려를 물리쳐야 하리라!',
+            },
+            {
+              id: 'unification-step-3',
+              type: 'narration',
+              text: '648년, 김춘추(태종무열왕)는 당나라로 건너가 나당동맹을 체결하였습니다. 이로써 삼국통일의 큰 그림이 그려졌습니다.',
+            },
+            {
+              id: 'unification-step-4',
+              type: 'quiz',
+              quiz: {
+                question: '신라가 삼국통일을 위해 동맹을 맺은 나라는?',
+                options: ['일본', '당나라', '수나라', '거란'],
+                correctIndex: 1,
+                explanation: '신라는 648년 당나라와 나당동맹을 맺어 삼국통일의 발판을 마련했습니다. 김춘추(태종무열왕)가 직접 당나라에 가서 동맹을 성사시켰습니다.',
+              },
+            },
+            {
+              id: 'unification-step-5',
+              type: 'narration',
+              text: '660년, 나당연합군이 백제를 공격하였습니다. 신라군 5만은 김유신이, 당나라 수군 13만은 소정방이 이끌었습니다.',
+            },
+            {
+              id: 'unification-step-6',
+              type: 'dialog',
+              speaker: '김유신',
+              text: '백제 황산벌에서 계백 장군이 5천 결사대로 막아서고 있다. 목숨을 걸고 싸우겠노라! 신라의 운명이 이 전투에 달려있느니라!',
+            },
+            {
+              id: 'unification-step-7',
+              type: 'narration',
+              text: '치열한 황산벌 전투 끝에 백제의 계백 장군이 전사하고, 사비성이 함락되어 백제는 660년 멸망하였습니다.',
+            },
+            {
+              id: 'unification-step-8',
+              type: 'quiz',
+              quiz: {
+                question: '백제가 멸망한 해는?',
+                options: ['655년', '660년', '665년', '668년'],
+                correctIndex: 1,
+                explanation: '백제는 660년 나당연합군의 공격으로 멸망하였습니다. 마지막 왕인 의자왕이 항복하면서 678년의 역사가 막을 내렸습니다.',
+              },
+            },
+            {
+              id: 'unification-step-9',
+              type: 'narration',
+              text: '백제를 멸망시킨 나당연합군은 이어서 고구려를 공격하였습니다. 연개소문 사후 내분에 빠진 고구려는 크게 약해져 있었습니다.',
+            },
+            {
+              id: 'unification-step-10',
+              type: 'dialog',
+              speaker: '김유신',
+              text: '고구려도 내분으로 흔들리고 있노라. 지금이야말로 삼국통일의 대업을 이룰 때이니라!',
+            },
+            {
+              id: 'unification-step-11',
+              type: 'narration',
+              text: '668년, 고구려의 수도 평양성이 함락되었습니다. 보장왕이 항복하며 705년의 고구려 역사가 막을 내렸습니다.',
+            },
+            {
+              id: 'unification-step-12',
+              type: 'quiz',
+              quiz: {
+                question: '고구려가 멸망한 해는?',
+                options: ['660년', '664년', '668년', '676년'],
+                correctIndex: 2,
+                explanation: '고구려는 668년 나당연합군의 공격으로 멸망하였습니다. 연개소문 사후 내분이 일어나 약해진 틈을 타 공격당했습니다.',
+              },
+            },
+            {
+              id: 'unification-step-13',
+              type: 'quiz',
+              quiz: {
+                question: '삼국 중 먼저 멸망한 나라는?',
+                options: ['고구려', '백제', '신라', '가야'],
+                correctIndex: 1,
+                explanation: '백제가 660년에 먼저 멸망하고, 고구려가 668년에 멸망하였습니다. 신라는 삼국을 통일한 나라입니다.',
+              },
+            },
+          ],
+        },
+      ],
+    },
+  ],
+};
