@@ -133,7 +133,7 @@ export default function PostDetailPage() {
   const showResults = voted || !user;
 
   return (
-    <div className="mx-auto max-w-lg pb-24 pt-4">
+    <div className="mx-auto max-w-lg pb-24 pt-4 lg:max-w-2xl lg:pb-8">
       {/* 게시글 */}
       <Card className="space-y-4">
         {/* 작성자 */}
@@ -289,7 +289,7 @@ export default function PostDetailPage() {
       {/* 댓글 입력 (하단 고정) */}
       {user && (
         <div className="fixed bottom-0 left-0 right-0 border-t border-white/10 bg-dark-bg/95 px-4 py-3 backdrop-blur-sm">
-          <div className="mx-auto flex max-w-lg items-center gap-2">
+          <div className="mx-auto flex max-w-lg items-center gap-2 lg:max-w-2xl">
             <Input
               value={commentText}
               onChange={(e) => setCommentText(e.target.value)}

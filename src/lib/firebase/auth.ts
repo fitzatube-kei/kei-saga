@@ -1,5 +1,5 @@
 import { auth, db } from './config';
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut as firebaseSignOut, onAuthStateChanged, User } from 'firebase/auth';
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut as firebaseSignOut, onAuthStateChanged, User, browserLocalPersistence, browserSessionPersistence, setPersistence } from 'firebase/auth';
 import { doc, setDoc, getDoc, updateDoc, serverTimestamp } from 'firebase/firestore';
 import { UserProfile, AvatarConfig } from '@/types';
 
@@ -22,7 +22,8 @@ export async function signUp(email: string, password: string, nickname: string):
   return profile;
 }
 
-export async function signIn(email: string, password: string) {
+export async function signIn(email: string, password: string, stayLoggedIn: boolean = false) {
+  await setPersistence(auth, stayLoggedIn ? browserLocalPersistence : browserSessionPersistence);
   return signInWithEmailAndPassword(auth, email, password);
 }
 

@@ -1,0 +1,303 @@
+import { Era } from '@/types/game';
+
+export const balhae: Era = {
+  id: 'balhae',
+  name: '발해',
+  nameEn: 'Balhae',
+  period: '698~926',
+  description: '고구려 유민이 세운 해동성국 발해의 시대입니다.',
+  imageColor: '#4682B4',
+  order: 5,
+  periods: [
+    {
+      id: 'balhae-founding',
+      eraId: 'balhae',
+      name: '발해 건국과 발전',
+      years: '698~818',
+      description: '대조영의 건국부터 선왕의 전성기까지, 해동성국으로 불린 발해의 역사입니다.',
+      events: [
+        {
+          id: 'dae-joyeong-founding',
+          periodId: 'balhae-founding',
+          eraId: 'balhae',
+          title: '대조영의 발해 건국',
+          description: '고구려 멸망 후 유민을 이끌고 동모산에서 발해를 건국한 대조영의 이야기를 체험합니다.',
+          character: {
+            id: 'dae-joyeong',
+            name: '대조영',
+            title: '발해 고왕',
+            description: '고구려 유민과 말갈족을 이끌고 발해를 건국한 초대 왕입니다.',
+            primaryColor: '#4682B4',
+            secondaryColor: '#2E5D8A',
+          },
+          difficulty: 'medium',
+          pointReward: 500,
+          steps: [
+            {
+              id: 'balhae-found-1',
+              type: 'narration',
+              text: '668년 고구려가 멸망한 후, 당나라는 고구려 유민들을 영주(營州) 지역으로 강제 이주시켰습니다. 그러나 고구려의 후예들은 나라를 되찾겠다는 꿈을 포기하지 않았습니다.',
+            },
+            {
+              id: 'balhae-found-2',
+              type: 'dialog',
+              speaker: '대조영',
+              text: '고구려의 혼은 아직 살아있도다! 우리는 당나라의 속박에서 벗어나 다시 우리의 나라를 세워야 하느니라!',
+            },
+            {
+              id: 'balhae-found-3',
+              type: 'narration',
+              text: '696년, 거란족의 이진충이 당나라에 반란을 일으켰습니다. 이 혼란을 틈타 대조영의 아버지 걸걸중상과 말갈의 걸사비우가 고구려 유민을 이끌고 동쪽으로 이동하기 시작했습니다.',
+            },
+            {
+              id: 'balhae-found-4',
+              type: 'dialog',
+              speaker: '대조영',
+              text: '지금이 기회이다! 당나라가 혼란에 빠진 틈을 타 동쪽으로 나아가자. 우리 고구려의 옛 땅에 새 나라를 세우리라!',
+            },
+            {
+              id: 'balhae-found-5',
+              type: 'quiz',
+              quiz: {
+                question: '대조영이 발해를 건국할 수 있었던 직접적인 계기는?',
+                options: [
+                  '신라의 도움을 받아서',
+                  '거란족 이진충의 반란으로 당나라가 혼란에 빠져서',
+                  '일본과 동맹을 맺어서',
+                  '당나라 황제의 허락을 받아서',
+                ],
+                correctIndex: 1,
+                explanation: '696년 거란족 이진충의 반란으로 당나라가 혼란에 빠진 틈을 타 대조영이 고구려 유민을 이끌고 동쪽으로 이동하여 발해를 건국했습니다.',
+              },
+            },
+            {
+              id: 'balhae-found-6',
+              type: 'narration',
+              text: '당나라는 이해고가 이끄는 추격군을 보냈습니다. 698년, 대조영은 천문령 전투에서 당나라 군대를 크게 물리쳤습니다.',
+            },
+            {
+              id: 'balhae-found-7',
+              type: 'dialog',
+              speaker: '대조영',
+              text: '천문령에서 당나라 군사를 크게 무찔렀도다! 이제 동모산에 도읍을 정하고 나라를 세우리라. 국호는 진(振)이라 하리라!',
+            },
+            {
+              id: 'balhae-found-8',
+              type: 'narration',
+              text: '698년, 대조영은 동모산(지금의 중국 지린성)에 도읍을 정하고 나라를 세웠습니다. 처음 국호는 진(振)이었으나, 713년 당나라로부터 "발해군왕"으로 책봉받으며 국호를 발해로 바꾸었습니다.',
+            },
+            {
+              id: 'balhae-found-9',
+              type: 'quiz',
+              quiz: {
+                question: '대조영이 당나라 추격군을 크게 물리친 전투는?',
+                options: ['살수대첩', '천문령 전투', '황산벌 전투', '귀주대첩'],
+                correctIndex: 1,
+                explanation: '698년 천문령 전투에서 대조영은 당나라 이해고의 추격군을 크게 물리치고, 동모산에 발해를 건국할 수 있었습니다.',
+              },
+            },
+            {
+              id: 'balhae-found-10',
+              type: 'quiz',
+              quiz: {
+                question: '발해 건국 전 최초 국호는?',
+                options: ['고려', '진(振)', '후고구려', '발해'],
+                correctIndex: 1,
+                explanation: '대조영이 처음 세운 나라의 국호는 진(振)이었으며, 713년 당나라로부터 책봉을 받으며 국호를 발해로 바꾸었습니다.',
+              },
+            },
+          ],
+        },
+        {
+          id: 'balhae-muwang',
+          periodId: 'balhae-founding',
+          eraId: 'balhae',
+          title: '무왕의 대외 팽창',
+          description: '발해 2대 무왕이 영토를 넓히고 당나라 산둥 반도를 공격한 이야기를 체험합니다.',
+          character: {
+            id: 'mu-wang',
+            name: '대무예 (무왕)',
+            title: '발해 제2대 왕',
+            description: '활발한 대외 정복으로 발해의 영토를 크게 넓히고 당나라에 맞선 강력한 군주입니다.',
+            primaryColor: '#2F4F4F',
+            secondaryColor: '#1A3333',
+          },
+          difficulty: 'medium',
+          pointReward: 500,
+          steps: [
+            {
+              id: 'muwang-step-1',
+              type: 'narration',
+              text: '719년, 대조영이 세상을 떠나고 아들 대무예가 왕위에 올랐습니다. 무왕으로 불리는 그는 "인안"이라는 독자적인 연호를 사용하며 강한 나라를 꿈꾸었습니다.',
+            },
+            {
+              id: 'muwang-step-2',
+              type: 'dialog',
+              speaker: '대무예 (무왕)',
+              text: '아버님이 세우신 이 나라를 더욱 크고 강하게 만들어야 하느니라. 고구려의 옛 영토를 모두 되찾겠노라!',
+            },
+            {
+              id: 'muwang-step-3',
+              type: 'narration',
+              text: '무왕은 북쪽의 흑수말갈이 당나라와 내통하는 것을 알게 되었습니다. 이를 견제하기 위해 과감한 군사 작전을 계획했습니다.',
+            },
+            {
+              id: 'muwang-step-4',
+              type: 'dialog',
+              speaker: '대무예 (무왕)',
+              text: '흑수말갈이 당나라와 손잡고 우리를 위협하는도다! 장문휴 장군, 수군을 이끌고 당나라 산둥의 등주를 공격하라!',
+            },
+            {
+              id: 'muwang-step-5',
+              type: 'quiz',
+              quiz: {
+                question: '무왕이 당나라를 공격한 이유는?',
+                options: [
+                  '무역 분쟁 때문에',
+                  '흑수말갈이 당나라와 내통하여 발해를 위협해서',
+                  '당나라가 먼저 공격해서',
+                  '신라와 연합하기 위해서',
+                ],
+                correctIndex: 1,
+                explanation: '무왕은 흑수말갈이 당나라와 내통하여 발해를 위협하자, 장문휴를 보내 당나라 산둥의 등주를 공격했습니다.',
+              },
+            },
+            {
+              id: 'muwang-step-6',
+              type: 'narration',
+              text: '732년, 장문휴가 이끄는 발해 수군이 바다를 건너 당나라 산둥의 등주를 기습 공격했습니다. 등주자사 위준이 전사할 정도로 대담한 작전이었습니다.',
+            },
+            {
+              id: 'muwang-step-7',
+              type: 'dialog',
+              speaker: '대무예 (무왕)',
+              text: '또한 일본에 사신을 보내 동맹을 맺었으니, 발해는 동쪽의 강국이 되었도다. 당나라도 감히 우리를 업신여기지 못하리라!',
+            },
+            {
+              id: 'muwang-step-8',
+              type: 'narration',
+              text: '무왕은 일본과도 활발한 외교 관계를 맺었습니다. 727년 처음 일본에 사신을 보낸 이후, 발해와 일본은 긴밀한 우호 관계를 유지했습니다.',
+            },
+            {
+              id: 'muwang-step-9',
+              type: 'quiz',
+              quiz: {
+                question: '732년 발해의 장문휴가 공격한 당나라 지역은?',
+                options: ['장안', '낙양', '등주(산둥)', '광저우'],
+                correctIndex: 2,
+                explanation: '732년 장문휴가 이끄는 발해 수군이 당나라 산둥의 등주를 공격하여 등주자사 위준을 전사시켰습니다.',
+              },
+            },
+            {
+              id: 'muwang-step-10',
+              type: 'quiz',
+              quiz: {
+                question: '무왕이 사용한 발해의 독자적 연호는?',
+                options: ['천보', '인안', '대흥', '건흥'],
+                correctIndex: 1,
+                explanation: '무왕은 "인안(仁安)"이라는 독자적인 연호를 사용하며 당나라와 대등한 위상을 과시했습니다.',
+              },
+            },
+          ],
+        },
+        {
+          id: 'balhae-seonwang',
+          periodId: 'balhae-founding',
+          eraId: 'balhae',
+          title: '선왕과 해동성국',
+          description: '발해를 최대 영토로 확장하고 "해동성국"이라 불린 선왕 대인수의 이야기를 체험합니다.',
+          character: {
+            id: 'seon-wang',
+            name: '대인수 (선왕)',
+            title: '발해 제10대 왕',
+            description: '발해의 영토를 최대로 넓히고 5경 15부 62주 체제를 완성한 전성기의 군주입니다.',
+            primaryColor: '#DAA520',
+            secondaryColor: '#B8860B',
+          },
+          difficulty: 'hard',
+          pointReward: 600,
+          steps: [
+            {
+              id: 'seonwang-step-1',
+              type: 'narration',
+              text: '818년, 대인수가 왕위에 올라 선왕이 되었습니다. 그는 발해를 동아시아의 강대국으로 성장시킬 원대한 꿈을 품고 있었습니다.',
+            },
+            {
+              id: 'seonwang-step-2',
+              type: 'dialog',
+              speaker: '대인수 (선왕)',
+              text: '발해를 고구려의 영광을 뛰어넘는 대국으로 만들겠노라! 북으로는 흑수말갈을, 남으로는 옛 고구려 땅을 모두 아우르리라!',
+            },
+            {
+              id: 'seonwang-step-3',
+              type: 'narration',
+              text: '선왕은 사방으로 영토를 확장하여 발해 역사상 가장 넓은 영토를 이루었습니다. 동북쪽으로는 연해주, 서쪽으로는 요동, 남쪽으로는 대동강 이북까지 다스렸습니다.',
+            },
+            {
+              id: 'seonwang-step-4',
+              type: 'dialog',
+              speaker: '대인수 (선왕)',
+              text: '나라를 다스리려면 제도를 바로잡아야 하느니라. 5경 15부 62주를 두어 전국을 체계적으로 관리하라!',
+            },
+            {
+              id: 'seonwang-step-5',
+              type: 'quiz',
+              quiz: {
+                question: '선왕이 정비한 발해의 행정 체계는?',
+                options: [
+                  '3경 9주 5소경',
+                  '5경 15부 62주',
+                  '8도 제도',
+                  '9서당 10정',
+                ],
+                correctIndex: 1,
+                explanation: '선왕은 5경 15부 62주의 행정 체계를 완성하여 넓은 영토를 효율적으로 다스렸습니다.',
+              },
+            },
+            {
+              id: 'seonwang-step-6',
+              type: 'narration',
+              text: '발해의 수도 상경용천부는 당나라의 수도 장안을 본떠 만든 계획도시였습니다. 궁궐과 시가지가 정연하게 배치된 동아시아 최대 도시 중 하나였습니다.',
+            },
+            {
+              id: 'seonwang-step-7',
+              type: 'dialog',
+              speaker: '대인수 (선왕)',
+              text: '당나라 사신들도 우리 발해를 "해동성국(海東盛國)"이라 부르는도다. 바다 동쪽의 번성한 나라라! 이 영광을 길이 이어가리라!',
+            },
+            {
+              id: 'seonwang-step-8',
+              type: 'narration',
+              text: '선왕 시대 발해는 "해동성국"이라 불리며 동아시아의 강대국으로 인정받았습니다. 문화적으로도 당나라 문물을 수용하면서 고구려의 전통을 이어갔습니다.',
+            },
+            {
+              id: 'seonwang-step-9',
+              type: 'quiz',
+              quiz: {
+                question: '"해동성국"의 뜻은?',
+                options: [
+                  '동쪽 바다의 작은 나라',
+                  '바다 동쪽의 번성한 나라',
+                  '해적이 없는 나라',
+                  '동쪽의 성스러운 나라',
+                ],
+                correctIndex: 1,
+                explanation: '해동성국(海東盛國)은 "바다 동쪽의 번성한 나라"라는 뜻으로, 발해의 전성기를 나타내는 표현입니다.',
+              },
+            },
+            {
+              id: 'seonwang-step-10',
+              type: 'quiz',
+              quiz: {
+                question: '발해의 수도로 당나라 장안을 본떠 만든 도시는?',
+                options: ['중경현덕부', '동경용원부', '상경용천부', '남경남해부'],
+                correctIndex: 2,
+                explanation: '상경용천부는 당나라 장안을 모델로 건설된 발해의 수도로, 궁궐과 시가지가 정연하게 배치된 대도시였습니다.',
+              },
+            },
+          ],
+        },
+      ],
+    },
+  ],
+};

@@ -119,7 +119,7 @@ export default function MyPage() {
   }
 
   return (
-    <div className="mx-auto max-w-lg space-y-6 py-4">
+    <div className="mx-auto max-w-lg space-y-6 py-4 lg:max-w-2xl">
       {/* 설정 버튼 */}
       <div className="flex justify-end">
         <Link

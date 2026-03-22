@@ -8,6 +8,8 @@ import { goryeoEarly } from './goryeo-early';
 import { goryeoLate } from './goryeo-late';
 import { joseonEarly } from './joseon-early';
 import { joseonLate } from './joseon-late';
+import { balhae } from './balhae';
+import { daehanEmpire } from './daehan-empire';
 import { japaneseColonial } from './japanese-colonial';
 import { modern } from './modern';
 
@@ -17,10 +19,12 @@ const eraContentMap: Record<string, Era> = {
   'samguk-early': samgukEarly,
   'samguk-late': samgukLate,
   'unified-silla': unifiedSilla,
+  'balhae': balhae,
   'goryeo-early': goryeoEarly,
   'goryeo-late': goryeoLate,
   'joseon-early': joseonEarly,
   'joseon-late': joseonLate,
+  'daehan-empire': daehanEmpire,
   'japanese-colonial': japaneseColonial,
   'modern': modern,
 };

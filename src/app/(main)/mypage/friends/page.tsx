@@ -37,7 +37,7 @@ export default function FriendsPage() {
   const [activeTab, setActiveTab] = useState<Tab>('list');
 
   return (
-    <div className="mx-auto max-w-lg space-y-6">
+    <div className="mx-auto max-w-lg space-y-6 lg:max-w-2xl">
       {/* Title */}
       <h1 className="text-glow text-2xl font-bold tracking-wider text-gold">
         {t('friends.title')}

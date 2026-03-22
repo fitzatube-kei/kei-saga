@@ -13,7 +13,7 @@ export default function HomePage() {
   if (!user) return null;
 
   return (
-    <div className="mx-auto max-w-lg space-y-6 py-4">
+    <div className="mx-auto max-w-lg space-y-6 py-4 lg:max-w-2xl">
       {/* Welcome section */}
       <div className="flex items-center gap-4">
         <div className="overflow-hidden rounded-full border-2 border-gold/40 shadow-[0_0_12px_rgba(212,160,23,0.2)]">
@@ -28,7 +28,7 @@ export default function HomePage() {
       </div>
 
       {/* Quick stats */}
-      <div className="grid grid-cols-2 gap-3">
+      <div className="grid grid-cols-2 gap-3 md:grid-cols-4">
         <Card className="text-center">
           <p className="text-xs text-white/50">{t('home.level')}</p>
           <p className="text-glow text-3xl font-bold text-gold">

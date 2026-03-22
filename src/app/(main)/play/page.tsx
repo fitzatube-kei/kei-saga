@@ -11,10 +11,12 @@ const UNLOCKED_ERAS = new Set([
   'samguk-early',
   'samguk-late',
   'unified-silla',
+  'balhae',
   'goryeo-early',
   'goryeo-late',
   'joseon-early',
   'joseon-late',
+  'daehan-empire',
   'japanese-colonial',
   'modern',
 ]);

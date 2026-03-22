@@ -34,6 +34,7 @@ export default function LoginPage() {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
+  const [stayLoggedIn, setStayLoggedIn] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -41,7 +42,7 @@ export default function LoginPage() {
     setLoading(true);
 
     try {
-      await signIn(email, password);
+      await signIn(email, password, stayLoggedIn);
       router.push('/home');
     } catch (err: any) {
       const code = err?.code || '';
@@ -76,6 +77,19 @@ export default function LoginPage() {
           required
         />
 
+        {/* Checkboxes */}
+        <div className="space-y-2">
+          <label className="flex items-center gap-2 cursor-pointer">
+            <input
+              type="checkbox"
+              checked={stayLoggedIn}
+              onChange={(e) => setStayLoggedIn(e.target.checked)}
+              className="h-4 w-4 rounded border-white/30 bg-white/10 text-gold accent-amber-500"
+            />
+            <span className="text-sm text-white/70">{t('auth.stayLoggedIn')}</span>
+          </label>
+        </div>
+
         {error && (
           <p className="rounded-md bg-red-500/10 px-3 py-2 text-sm text-red-400">
             {error}
@@ -92,16 +106,20 @@ export default function LoginPage() {
         </Button>
       </form>
 
-      {/* Signup link */}
-      <p className="mt-6 text-sm text-white/50">
-        {t('auth.noAccount')}{' '}
-        <Link
-          href="/signup"
-          className="text-gold underline-offset-4 hover:underline"
-        >
+      {/* Links */}
+      <div className="mt-6 flex items-center gap-3 text-sm">
+        <Link href="/signup" className="text-white/50 hover:text-gold transition-colors">
           {t('auth.signup')}
         </Link>
-      </p>
+        <span className="text-white/20">|</span>
+        <Link href="/find-email" className="text-white/50 hover:text-gold transition-colors">
+          {t('auth.findEmail')}
+        </Link>
+        <span className="text-white/20">|</span>
+        <Link href="/find-password" className="text-white/50 hover:text-gold transition-colors">
+          {t('auth.findPassword')}
+        </Link>
+      </div>
     </div>
   );
 }

@@ -90,7 +90,7 @@ export default function CreatePostPage() {
   }
 
   return (
-    <div className="mx-auto max-w-lg space-y-6 py-4">
+    <div className="mx-auto max-w-lg space-y-6 py-4 lg:max-w-2xl">
       <h1 className="text-glow text-2xl font-bold text-gold">{t('community.write')}</h1>
 
       {/* 타입 토글 */}

@@ -24,7 +24,7 @@ export default function CashPage() {
   }
 
   return (
-    <div className="mx-auto max-w-lg space-y-6 py-4">
+    <div className="mx-auto max-w-lg space-y-6 py-4 lg:max-w-2xl">
       {/* Page Header */}
       <div className="flex items-center justify-between">
         <h1 className="text-xl font-bold text-gold">{t('cash.title')}</h1>

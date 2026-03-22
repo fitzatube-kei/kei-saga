@@ -69,7 +69,7 @@ export default function SettingsPage() {
   }
 
   return (
-    <div className="mx-auto max-w-lg space-y-6 py-4">
+    <div className="mx-auto max-w-lg space-y-6 py-4 lg:max-w-2xl">
       <div className="flex items-center gap-3">
         <button
           type="button"
