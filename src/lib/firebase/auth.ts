@@ -52,6 +52,10 @@ export async function updateUserAvatar(uid: string, avatar: AvatarConfig) {
   await setDoc(doc(db, 'users', uid), { avatar }, { merge: true });
 }
 
+export async function updateUserNickname(uid: string, nickname: string) {
+  await updateDoc(doc(db, 'users', uid), { nickname });
+}
+
 export function onAuthChange(callback: (user: User | null) => void) {
   return onAuthStateChanged(auth, callback);
 }

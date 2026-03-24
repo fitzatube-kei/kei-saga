@@ -1,9 +1,8 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { useAuthStore } from '@/stores/authStore';
-import { AvatarRenderer } from '@/components/avatar/AvatarRenderer';
-import { Button, Card } from '@/components/ui';
 import { useTranslation } from '@/hooks/useTranslation';
 
 export default function HomePage() {
@@ -13,86 +12,211 @@ export default function HomePage() {
   if (!user) return null;
 
   return (
-    <div className="mx-auto max-w-lg space-y-6 py-4 lg:max-w-2xl">
-      {/* Welcome section */}
-      <div className="flex items-center gap-4">
-        <div className="overflow-hidden rounded-full border-2 border-gold/40 shadow-[0_0_12px_rgba(212,160,23,0.2)]">
-          <AvatarRenderer avatar={user.avatar} size="lg" />
-        </div>
-        <div>
-          <p className="text-sm text-white/50">{t('home.welcome')}</p>
-          <h2 className="text-glow text-2xl font-bold text-gold">
-            {user.nickname}
-          </h2>
-        </div>
-      </div>
+    <div className="mx-auto max-w-lg space-y-5 py-2 md:max-w-2xl lg:max-w-4xl">
+      {/* ── Hero Welcome Banner ── */}
+      <section className="relative mt-10 md:mt-12">
+        {/* Banner area with overflow hidden for bottom crop */}
+        <div className="relative h-48 w-full overflow-hidden rounded-2xl md:h-60 lg:h-72">
+          {/* Background scene image */}
+          <Image
+            src="/images/home/josun_bg_001.png"
+            alt="조선"
+            fill
+            className="object-cover"
+            sizes="(max-width: 768px) 100vw, 80vw"
+          />
 
-      {/* Quick stats */}
-      <div className="grid grid-cols-2 gap-3 md:grid-cols-4">
-        <Card className="text-center">
-          <p className="text-xs text-white/50">{t('home.level')}</p>
-          <p className="text-glow text-3xl font-bold text-gold">
-            {user.level}
-          </p>
-        </Card>
-        <Card className="text-center">
-          <p className="text-xs text-white/50">{t('home.points')}</p>
-          <p className="text-glow text-3xl font-bold text-gold">
-            {(user.points ?? 0).toLocaleString()}
-          </p>
-        </Card>
-      </div>
-
-      {/* Start adventure button */}
-      <Link href="/play" className="block">
-        <Button size="lg" className="w-full text-lg">
-          {t('home.startAdventure')}
-        </Button>
-      </Link>
-
-      {/* Recent activity placeholder */}
-      <div>
-        <h3 className="mb-3 text-sm font-semibold text-gold/80">{t('home.recentActivity')}</h3>
-        <Card className="space-y-3">
-          <div className="flex items-center gap-3">
-            <div className="flex h-8 w-8 items-center justify-center rounded-full bg-gold/10 text-gold">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-              </svg>
-            </div>
-            <div className="flex-1">
-              <p className="text-sm text-white/70">{t('home.noActivity')}</p>
-              <p className="text-xs text-white/40">{t('home.noActivitySub')}</p>
+          {/* Text with semi-transparent black backdrop */}
+          <div className="absolute inset-y-0 left-0 flex w-1/2 items-center bg-black/50 px-4 py-4 md:px-6">
+            <div>
+              <h2 className="text-sm font-bold leading-snug text-white md:text-base lg:text-lg">
+                한국사 러닝 게임에{'\n'}오신 것을 환영합니다!
+              </h2>
+              <p className="mt-2 text-[10px] leading-relaxed text-white/80 md:text-xs">
+                퀘스트를 수행하고, 퀴즈에 도전하며{'\n'}
+                한국 역사의 흥미진진한 이야기를 체험하세요.{'\n'}
+                고대부터 현대까지, 당신만의 역사 모험이{'\n'}
+                지금 시작됩니다!
+              </p>
             </div>
           </div>
-        </Card>
-      </div>
-
-      {/* Quick links */}
-      <div>
-        <h3 className="mb-3 text-sm font-semibold text-gold/80">{t('home.quickLinks')}</h3>
-        <div className="grid grid-cols-2 gap-3">
-          <Card variant="interactive" onClick={() => {}}>
-            <div className="flex flex-col items-center gap-2 py-2">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-gold">
-                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
-                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
-              </svg>
-              <span className="text-sm text-white/70">{t('home.studyLog')}</span>
-            </div>
-          </Card>
-          <Card variant="interactive" onClick={() => {}}>
-            <div className="flex flex-col items-center gap-2 py-2">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-gold">
-                <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
-                <line x1="3" y1="6" x2="21" y2="6" />
-                <path d="M16 10a4 4 0 0 1-8 0" />
-              </svg>
-              <span className="text-sm text-white/70">{t('home.itemShop')}</span>
-            </div>
-          </Card>
         </div>
-      </div>
+
+        {/* Character - overflows top (hat) and cropped at bottom by banner */}
+        <div className="pointer-events-none absolute -top-10 right-4 bottom-0 w-44 overflow-hidden md:-top-12 md:right-8 md:w-52">
+          <div className="relative h-[130%] w-full">
+            <Image
+              src="/images/home/sejong001.png"
+              alt="세종대왕"
+              fill
+              className="object-contain object-top drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)]"
+              sizes="(max-width: 768px) 176px, 208px"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* ── MY AVATA + Recent Activity + Button ── */}
+      <section className="relative overflow-hidden space-y-4 px-1">
+        {/* joonjun character - 200% enlarged, spans from MY AVATAR to button area */}
+        <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-40 md:w-48 z-0">
+          <Image
+            src="/images/home/joonjun001.png"
+            alt="캐릭터"
+            width={400}
+            height={560}
+            className="w-40 max-w-none md:w-48"
+          />
+        </div>
+
+        {/* MY AVATAR */}
+        <div className="relative z-10">
+          <div>
+            <h3 className="text-base font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent md:text-lg">{t('home.myAvatar')}</h3>
+            <p className="mt-1 text-sm text-white/70 md:text-base">
+              <span className="text-white/50">{t('home.nickLabel')}: </span>
+              <span className="font-medium text-white">{user.nickname}</span>
+            </p>
+            <div className="mt-2 flex gap-2">
+              <span className="inline-flex items-center rounded-full border border-white/20 px-4 py-1.5 text-xs font-semibold text-white">
+                Level {user.level}
+              </span>
+              <span className="inline-flex items-center rounded-full border border-white/20 px-4 py-1.5 text-xs font-semibold text-white">
+                Point {(user.points ?? 0).toLocaleString()}
+              </span>
+            </div>
+          </div>
+        </div>
+
+        {/* 최근 활동기록 */}
+        <div>
+          <h4 className="text-sm font-bold text-gold">{t('home.recentActivity')}</h4>
+          <p className="mt-1 text-xs leading-relaxed text-white/50">
+            {t('home.noActivity')}<br />
+            {t('home.noActivitySub')}
+          </p>
+        </div>
+
+        {/* 모험 시작하기 Button */}
+        <Link href="/play" className="block">
+          <button
+            type="button"
+            className="flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-indigo-600 to-blue-500 py-3.5 text-base font-bold text-white shadow-lg shadow-indigo-500/25 transition-all hover:brightness-110 active:scale-[0.98] md:py-4 md:text-lg"
+          >
+            <span>&#9654;</span>
+            {t('home.startAdventure')}
+          </button>
+        </Link>
+      </section>
+
+      {/* ── Feature Cards (Continue / Review / Item Shop) ── */}
+      <section className="grid grid-cols-3 gap-2.5 md:gap-4">
+        {/* 이어서하기 */}
+        <Link href="/play" className="group">
+          <div className="overflow-hidden rounded-xl border border-gold/10 bg-surface transition-all hover:border-gold/30">
+            <div className="relative h-24 w-full md:h-32 lg:h-40">
+              <Image
+                src="/images/home/sejong_real_001.png"
+                alt="세종대왕"
+                fill
+                className="object-cover object-top transition-transform group-hover:scale-105"
+                sizes="(max-width: 768px) 33vw, 25vw"
+              />
+            </div>
+            <div className="px-1.5 py-2 text-center">
+              <p className="text-[11px] font-semibold text-white md:text-sm">{t('home.continuePlay')}</p>
+              <p className="text-[9px] text-white/40 md:text-xs">({t('home.nextLevel')})</p>
+            </div>
+          </div>
+        </Link>
+
+        {/* 복습하기 */}
+        <Link href="/play" className="group">
+          <div className="overflow-hidden rounded-xl border border-gold/10 bg-surface transition-all hover:border-gold/30">
+            <div className="relative h-24 w-full md:h-32 lg:h-40">
+              <Image
+                src="/images/home/soonsin_real_001.png"
+                alt="이순신"
+                fill
+                className="object-cover object-top transition-transform group-hover:scale-105"
+                sizes="(max-width: 768px) 33vw, 25vw"
+              />
+            </div>
+            <div className="px-1.5 py-2 text-center">
+              <p className="text-[11px] font-semibold text-white md:text-sm">{t('home.review')}</p>
+              <p className="text-[9px] text-white/40 md:text-xs">({t('home.recentLevel')})</p>
+            </div>
+          </div>
+        </Link>
+
+        {/* 아이템 샵 */}
+        <div className="group cursor-pointer">
+          <div className="overflow-hidden rounded-xl border border-gold/10 bg-surface transition-all hover:border-gold/30">
+            <div className="relative h-24 w-full md:h-32 lg:h-40">
+              <Image
+                src="/images/home/joonjun001.png"
+                alt="아이템 샵"
+                fill
+                className="object-contain object-center bg-gradient-to-b from-surface to-[#2e3150] transition-transform group-hover:scale-105"
+                sizes="(max-width: 768px) 33vw, 25vw"
+              />
+            </div>
+            <div className="px-1.5 py-2 text-center">
+              <p className="text-[11px] font-semibold text-white md:text-sm">{t('home.itemShop')}</p>
+              <p className="invisible text-[9px] md:text-xs">&nbsp;</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Community Recent Posts ── */}
+      <section className="grid grid-cols-2 gap-3 md:gap-4">
+        {/* Left column */}
+        <div>
+          <div className="mb-2 flex items-center justify-between">
+            <h3 className="text-xs font-bold text-white/60 md:text-sm">{t('home.recentPosts')}</h3>
+            <Link href="/community" className="text-[10px] text-white/30 hover:text-white/50 md:text-xs">
+              {t('home.seeAll')}
+            </Link>
+          </div>
+          <div className="space-y-1.5">
+            {[1, 2, 3].map((i) => (
+              <div key={`left-${i}`} className="rounded-lg border border-white/5 bg-surface/50 px-2.5 py-2">
+                <div className="flex items-center gap-2">
+                  <div className="h-5 w-5 shrink-0 rounded-full bg-white/10" />
+                  <div className="min-w-0 flex-1">
+                    <p className="truncate text-[10px] font-medium text-white/60 md:text-xs">Hola Spine</p>
+                    <p className="truncate text-[9px] text-white/25 md:text-[10px]">Coming soon...</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Right column */}
+        <div>
+          <div className="mb-2 flex items-center justify-between">
+            <h3 className="text-xs font-bold text-white/60 md:text-sm">{t('home.recentPosts')}</h3>
+            <Link href="/community" className="text-[10px] text-white/30 hover:text-white/50 md:text-xs">
+              {t('home.seeAll')}
+            </Link>
+          </div>
+          <div className="space-y-1.5">
+            {[1, 2, 3].map((i) => (
+              <div key={`right-${i}`} className="rounded-lg border border-white/5 bg-surface/50 px-2.5 py-2">
+                <div className="flex items-center gap-2">
+                  <div className="h-5 w-5 shrink-0 rounded-full bg-white/10" />
+                  <div className="min-w-0 flex-1">
+                    <p className="truncate text-[10px] font-medium text-white/60 md:text-xs">Hola Spine</p>
+                    <p className="truncate text-[9px] text-white/25 md:text-[10px]">Coming soon...</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
     </div>
   );
 }

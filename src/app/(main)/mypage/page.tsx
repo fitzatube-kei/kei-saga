@@ -9,6 +9,7 @@ import { StatsOverview } from '@/components/ui/StatsOverview';
 import { ProgressChart } from '@/components/ui/ProgressChart';
 import { Card, Loading } from '@/components/ui';
 import { getAllUserProgress } from '@/lib/firebase/progress';
+import { updateUserNickname } from '@/lib/firebase/auth';
 import { eras } from '@/data/eras';
 import { useTranslation } from '@/hooks/useTranslation';
 import { cn } from '@/lib/utils/cn';
@@ -56,11 +57,31 @@ const NAV_CARDS = [
 
 export default function MyPage() {
   const user = useAuthStore((s) => s.user);
+  const updateNicknameStore = useAuthStore((s) => s.updateNickname);
   const { t } = useTranslation();
   const [eraProgress, setEraProgress] = useState<EraProgress[]>([]);
   const [totalCompleted, setTotalCompleted] = useState(0);
   const [quizAccuracy, setQuizAccuracy] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
+  const [isEditingNickname, setIsEditingNickname] = useState(false);
+  const [editNickname, setEditNickname] = useState('');
+  const [nicknameSaving, setNicknameSaving] = useState(false);
+
+  const handleNicknameSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    const trimmed = editNickname.trim();
+    if (!user || trimmed.length < 2 || trimmed.length > 12) return;
+    setNicknameSaving(true);
+    try {
+      await updateUserNickname(user.uid, trimmed);
+      updateNicknameStore(trimmed);
+      setIsEditingNickname(false);
+    } catch (err) {
+      console.error('Failed to update nickname:', err);
+    } finally {
+      setNicknameSaving(false);
+    }
+  };
 
   useEffect(() => {
     if (!user) return;
@@ -140,9 +161,42 @@ export default function MyPage() {
           <AvatarRenderer avatar={user.avatar} size="xl" />
         </div>
         <div className="flex flex-col items-center gap-2">
-          <h1 className="text-glow text-2xl font-bold text-gold">
-            {user.nickname}
-          </h1>
+          {isEditingNickname ? (
+            <form onSubmit={handleNicknameSubmit} className="flex items-center gap-2">
+              <input
+                type="text"
+                value={editNickname}
+                onChange={(e) => setEditNickname(e.target.value)}
+                className="w-36 rounded-md border border-gold/30 bg-surface px-3 py-1.5 text-center text-lg font-bold text-gold outline-none focus:border-gold"
+                autoFocus
+                maxLength={12}
+                minLength={2}
+              />
+              <button type="submit" className="rounded-md bg-gold/20 p-1.5 text-gold hover:bg-gold/30" disabled={nicknameSaving}>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><polyline points="20 6 9 17 4 12" /></svg>
+              </button>
+              <button type="button" onClick={() => setIsEditingNickname(false)} className="rounded-md bg-white/10 p-1.5 text-white/60 hover:bg-white/20">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" /></svg>
+              </button>
+            </form>
+          ) : (
+            <div className="flex items-center gap-2">
+              <h1 className="text-glow text-2xl font-bold text-gold">
+                {user.nickname}
+              </h1>
+              <button
+                type="button"
+                onClick={() => { setEditNickname(user.nickname); setIsEditingNickname(true); }}
+                className="rounded-md p-1 text-white/30 transition-colors hover:bg-white/10 hover:text-white/60"
+                aria-label="별칭 수정"
+              >
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" />
+                  <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z" />
+                </svg>
+              </button>
+            </div>
+          )}
           <LevelBadge level={user.level} size="md" />
         </div>
       </div>

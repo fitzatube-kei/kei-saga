@@ -9,8 +9,8 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: "#0a0a0f",
-        surface: "#1a1a2e",
+        background: "#393D5E",
+        surface: "#2e3150",
         gold: "#d4a017",
         goldLight: "#f0c040",
         accent: "#8b5cf6",
@@ -26,7 +26,7 @@ const config: Config = {
         "rpg-accent": "0 0 15px rgba(139, 92, 246, 0.3)",
       },
       backgroundImage: {
-        "rpg-gradient": "linear-gradient(135deg, #1a1a2e 0%, #0a0a0f 100%)",
+        "rpg-gradient": "linear-gradient(135deg, #2e3150 0%, #393D5E 100%)",
         "gold-gradient": "linear-gradient(135deg, #d4a017 0%, #f0c040 100%)",
       },
       borderColor: {
