@@ -4,6 +4,7 @@ import { useEffect, useCallback, useMemo } from 'react';
 import { useRouter } from 'next/navigation';
 import { useGameStore } from '@/stores/gameStore';
 import { useTranslation } from '@/hooks/useTranslation';
+import { useLocalizedGame } from '@/hooks/useLocalizedGame';
 import { saveProgress, markEventComplete } from '@/lib/firebase/progress';
 import { calculateReward } from '@/lib/game/engine';
 import type { GameEvent, GameProgress } from '@/types/game';
@@ -28,6 +29,7 @@ export function NarrationEngine({
 }: NarrationEngineProps) {
   const router = useRouter();
   const { t } = useTranslation();
+  const lg = useLocalizedGame();
   const {
     currentStep,
     gameState,
@@ -127,7 +129,7 @@ export function NarrationEngine({
         currentStep={currentStep}
         totalSteps={event.steps.length}
         points={earnedPoints}
-        eventTitle={event.title}
+        eventTitle={lg.eventTitle(event)}
       />
 
       {/* Main content area */}
@@ -156,16 +158,22 @@ export function NarrationEngine({
       {/* Dialog box (narration and dialog) */}
       {gameState === 'DIALOG' && currentStepData && (
         <DialogBox
-          text={currentStepData.text ?? ''}
-          speaker={currentStepData.speaker}
+          text={lg.stepText(currentStepData) ?? ''}
+          speaker={lg.stepSpeaker(currentStepData)}
           onComplete={handleDialogComplete}
         />
       )}
 
       {/* Quiz modal */}
-      {gameState === 'QUIZ' && currentStepData?.quiz && (
-        <QuizModal quiz={currentStepData.quiz} onAnswer={handleQuizAnswer} />
-      )}
+      {gameState === 'QUIZ' && currentStepData?.quiz && (() => {
+        const localizedQuiz = {
+          ...currentStepData.quiz,
+          question: lg.quizQuestion(currentStepData.quiz),
+          options: lg.quizOptions(currentStepData.quiz),
+          explanation: lg.quizExplanation(currentStepData.quiz),
+        };
+        return <QuizModal quiz={localizedQuiz} onAnswer={handleQuizAnswer} />;
+      })()}
 
       {/* Reward screen */}
       {gameState === 'REWARD' && (

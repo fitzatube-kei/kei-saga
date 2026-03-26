@@ -1,58 +1,96 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { notFound, useParams } from 'next/navigation';
 import { cn } from '@/lib/utils/cn';
 import { getEra } from '@/data/eras/content';
 import { useTranslation } from '@/hooks/useTranslation';
+import { useLocalizedGame } from '@/hooks/useLocalizedGame';
+
+const ERA_BG: Record<string, { src: string; position?: string }> = {
+  'gojoseon': { src: '/images/play/gojosun_real_001.png' },
+  'samguk-early': { src: '/images/play/treekingdomsearly_real_001.png', position: 'top' },
+  'samguk-late': { src: '/images/play/treekingdomslate_real_001.png' },
+  'unified-silla': { src: '/images/play/Silla_real_001.png', position: 'top' },
+  'balhae': { src: '/images/play/Balhae_real_001.png', position: 'top' },
+  'goryeo-early': { src: '/images/play/goryeoearly_real_001.png', position: 'top' },
+  'goryeo-late': { src: '/images/play/goryeolate_real_001.png' },
+  'joseon-early': { src: '/images/play/joseonearly_real_001.png', position: 'top' },
+  'joseon-late': { src: '/images/play/joseonlate_real_001.png', position: 'top' },
+  'daehan-empire': { src: '/images/play/koreanempire_real_001.png' },
+  'japanese-colonial': { src: '/images/play/japanese Colonial_real_001.png', position: 'top' },
+  'modern': { src: '/images/play/seokguam_real_001.png', position: 'top' },
+};
 
 export default function EraPage() {
   const params = useParams();
   const eraId = params.eraId as string;
   const era = getEra(eraId);
   const { t } = useTranslation();
+  const lg = useLocalizedGame();
 
   if (!era) {
     notFound();
   }
 
-  return (
-    <div className="min-h-screen bg-background px-4 py-8">
-      <div className="mx-auto max-w-4xl">
-        {/* Breadcrumb */}
-        <nav className="mb-6 flex items-center gap-2 text-sm text-white/50">
-          <Link href="/play" className="transition-colors hover:text-gold">
-            {t('nav.play')}
-          </Link>
-          <span>/</span>
-          <span className="text-gold">{era.name}</span>
-        </nav>
+  const bg = ERA_BG[era.id];
 
-        {/* Header */}
-        <div className="mb-8">
+  return (
+    <div className="min-h-screen bg-background">
+      {/* ── Hero Banner ── */}
+      <section className="relative -mx-4 -mt-16 w-[calc(100%+2rem)] overflow-hidden lg:-mx-8 lg:w-[calc(100%+4rem)]">
+        {/* Background image */}
+        {bg && (
+          <Image
+            src={bg.src}
+            alt={era.name}
+            fill
+            className={cn('object-cover', bg.position === 'top' ? 'object-top' : 'object-center')}
+            sizes="100vw"
+            priority
+          />
+        )}
+
+        {/* Dark overlay */}
+        <div className="absolute inset-0 bg-black/55" />
+
+        {/* Content */}
+        <div className="relative z-10 mx-auto max-w-4xl px-4 pt-20 pb-6 sm:pb-8 md:px-8 lg:px-12">
+          {/* Breadcrumb */}
+          <nav className="mb-4 flex items-center gap-2 text-sm text-white/50">
+            <Link href="/play" className="transition-colors hover:text-gold">
+              {t('nav.play')}
+            </Link>
+            <span>/</span>
+            <span className="text-white/80">{lg.eraName(era)}</span>
+          </nav>
+
+          {/* Era icon + title */}
           <div className="flex items-center gap-3">
             <div
               className="flex h-10 w-10 items-center justify-center rounded-lg"
-              style={{ backgroundColor: `${era.imageColor}30` }}
+              style={{ backgroundColor: `${era.imageColor}50` }}
             >
-              <span
-                className="text-lg font-bold"
-                style={{ color: era.imageColor }}
-              >
+              <span className="text-lg font-bold text-white">
                 {era.name.charAt(0)}
               </span>
             </div>
             <div>
-              <h1 className="text-2xl font-bold text-gold md:text-3xl">
-                {era.name}
+              <h1 className="text-2xl font-bold text-white md:text-3xl">
+                {lg.eraName(era)}
               </h1>
-              <p className="text-sm text-gold/60">{era.period}</p>
+              <p className="text-sm text-gold/80">{era.period}</p>
             </div>
           </div>
-          <p className="mt-3 text-white/60">{era.description}</p>
+          <p className="mt-3 text-sm leading-relaxed text-white/80 md:text-base">
+            {lg.eraDesc(era)}
+          </p>
         </div>
+      </section>
 
-        {/* Periods list */}
+      {/* ── Periods list ── */}
+      <div className="mx-auto max-w-4xl px-4 py-6 md:px-8 lg:px-12">
         {era.periods.length === 0 ? (
           <div className="rounded-lg border border-gold/10 bg-surface p-8 text-center">
             <p className="text-white/50">
@@ -75,13 +113,13 @@ export default function EraPage() {
                 <div className="flex items-start justify-between gap-4">
                   <div className="flex-1">
                     <h2 className="text-lg font-bold text-gold group-hover:text-goldLight">
-                      {period.name}
+                      {lg.periodName(period)}
                     </h2>
                     <p className="mt-0.5 text-sm text-gold/50">
                       {period.years}
                     </p>
                     <p className="mt-2 text-sm leading-relaxed text-white/60">
-                      {period.description}
+                      {lg.periodDesc(period)}
                     </p>
                   </div>
 

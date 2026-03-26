@@ -1,4 +1,7 @@
+'use client';
+
 import { cn } from '@/lib/utils/cn';
+import { useLocalizedGame } from '@/hooks/useLocalizedGame';
 import type { Character } from '@/types/game';
 
 interface CharacterSpriteProps {
@@ -12,6 +15,8 @@ export function CharacterSprite({
   speaking,
   className,
 }: CharacterSpriteProps) {
+  const lg = useLocalizedGame();
+
   return (
     <div
       className={cn(
@@ -194,9 +199,9 @@ export function CharacterSprite({
       {/* Name and title */}
       <div className="mt-4 text-center">
         <p className="text-lg font-bold text-gold text-glow">
-          {character.name}
+          {lg.charName(character)}
         </p>
-        <p className="text-sm text-gold/60">{character.title}</p>
+        <p className="text-sm text-gold/60">{lg.charTitle(character)}</p>
       </div>
 
       {/* Speaking bounce animation (CSS-in-JS via style tag) */}

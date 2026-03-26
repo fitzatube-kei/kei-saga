@@ -84,7 +84,7 @@ export function Header() {
       {/* Left: Logo + Language */}
       <div className="flex items-center gap-2">
         <Link href="/home" className="transition-opacity hover:opacity-80">
-          <Image src="/images/home/KEI_BI_001.png" alt="KEI SAGA" width={120} height={32} priority />
+          <Image src="/images/home/KEISAGA001.png" alt="KEI SAGA" width={120} height={32} priority />
         </Link>
 
         {/* Language Selector */}
@@ -166,7 +166,7 @@ export function Header() {
         {/* Notification bell */}
         <button
           type="button"
-          className="relative rounded-full p-2 text-cyan-400 transition-colors hover:bg-cyan-400/10 hover:text-cyan-300"
+          className="relative rounded-full p-2 text-[#FFC100] transition-colors hover:bg-[#FFC100]/10 hover:brightness-110"
           aria-label="알림"
         >
           <svg
@@ -188,7 +188,7 @@ export function Header() {
         {/* Settings */}
         <Link
           href="/settings"
-          className="rounded-full p-2 text-cyan-400 transition-colors hover:bg-cyan-400/10 hover:text-cyan-300"
+          className="rounded-full p-2 text-[#FFC100] transition-colors hover:bg-[#FFC100]/10 hover:brightness-110"
           aria-label="설정"
         >
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">

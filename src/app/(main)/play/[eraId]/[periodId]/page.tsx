@@ -9,6 +9,7 @@ import { useAuth } from '@/hooks/useAuth';
 import { getAllUserProgress } from '@/lib/firebase/progress';
 import { Loading } from '@/components/ui';
 import { useTranslation } from '@/hooks/useTranslation';
+import { useLocalizedGame } from '@/hooks/useLocalizedGame';
 import type { GameProgress } from '@/types/game';
 
 export default function PeriodPage() {
@@ -19,6 +20,7 @@ export default function PeriodPage() {
   const period = getPeriod(eraId, periodId);
   const { user, initialized } = useAuth();
   const { t } = useTranslation();
+  const lg = useLocalizedGame();
   const [completedMap, setCompletedMap] = useState<Record<string, GameProgress>>({});
   const [loadingProgress, setLoadingProgress] = useState(true);
 
@@ -69,19 +71,19 @@ export default function PeriodPage() {
             href={`/play/${era.id}`}
             className="transition-colors hover:text-gold"
           >
-            {era.name}
+            {lg.eraName(era)}
           </Link>
           <span>/</span>
-          <span className="text-gold">{period.name}</span>
+          <span className="text-gold">{lg.periodName(period)}</span>
         </nav>
 
         {/* Header */}
         <div className="mb-8">
           <h1 className="text-2xl font-bold text-gold md:text-3xl">
-            {period.name}
+            {lg.periodName(period)}
           </h1>
           <p className="mt-1 text-sm text-gold/60">{period.years}</p>
-          <p className="mt-2 text-white/60">{period.description}</p>
+          <p className="mt-2 text-white/60">{lg.periodDesc(period)}</p>
         </div>
 
         {/* Events list */}
@@ -156,13 +158,13 @@ export default function PeriodPage() {
                             : 'text-gold group-hover:text-goldLight'
                         )}
                       >
-                        {event.title}
+                        {lg.eventTitle(event)}
                       </h2>
                       <p className="mt-0.5 text-sm text-white/50">
-                        {event.character.name} - {event.character.title}
+                        {lg.charName(event.character)} - {lg.charTitle(event.character)}
                       </p>
                       <p className="mt-2 line-clamp-2 text-sm text-white/40">
-                        {event.description}
+                        {lg.eventDesc(event)}
                       </p>
 
                       {/* Meta info */}

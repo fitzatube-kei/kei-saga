@@ -73,7 +73,7 @@ export default function SettingsPage() {
       <div className="flex items-center gap-3">
         <button
           type="button"
-          onClick={() => router.push('/mypage')}
+          onClick={() => router.back()}
           className="rounded-full p-1.5 text-white/50 transition-colors hover:bg-white/10 hover:text-white"
           aria-label="뒤로가기"
         >

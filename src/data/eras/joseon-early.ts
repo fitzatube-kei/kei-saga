@@ -3,9 +3,26 @@ import { Era } from '@/types/game';
 export const joseonEarly: Era = {
   id: 'joseon-early',
   name: '조선 (전기)',
-  nameEn: 'Joseon Early',
+  nameI18n: {
+    en: 'Joseon Early',
+    es: 'Joseon Temprano',
+    ja: '朝鮮（前期）',
+    th: 'โชซอน (ยุคต้น)',
+    vi: 'Joseon (Tiền kỳ)',
+    'zh-CN': '朝鲜（前期）',
+    'zh-TW': '朝鮮（前期）',
+  },
   period: '1392~1592',
   description: '조선 건국부터 임진왜란까지, 유교 문화가 꽃피운 시기입니다.',
+  descriptionI18n: {
+    en: 'From the founding of Joseon to the Japanese invasions, a period when Confucian culture flourished.',
+    es: 'Desde la fundación de Joseon hasta las invasiones japonesas, un período en el que la cultura confuciana floreció.',
+    ja: '朝鮮建国から壬辰倭乱まで、儒教文化が花開いた時代です。',
+    th: 'ตั้งแต่การก่อตั้งโชซอนจนถึงการรุกรานของญี่ปุ่น ช่วงเวลาที่วัฒนธรรมขงจื๊อเฟื่องฟู',
+    vi: 'Từ khi thành lập Joseon đến cuộc xâm lược của Nhật Bản, thời kỳ văn hóa Nho giáo nở rộ.',
+    'zh-CN': '从朝鲜建国到壬辰倭乱，儒教文化繁荣的时期。',
+    'zh-TW': '從朝鮮建國到壬辰倭亂，儒教文化繁榮的時期。',
+  },
   imageColor: '#4B0082',
   order: 8,
   periods: [
@@ -16,9 +33,18 @@ export const joseonEarly: Era = {
       id: 'joseon-founding',
       eraId: 'joseon-early',
       name: '조선 건국',
+      nameI18n: { en: 'Founding of Joseon', es: 'Fundación de Joseon', ja: '朝鮮建国', th: 'การก่อตั้งโชซอน', vi: 'Thành lập Joseon', 'zh-CN': '朝鲜建国', 'zh-TW': '朝鮮建國' },
       years: '1392~1398',
-      description:
-        '고려 말 혼란기를 거쳐 이성계가 새로운 왕조 조선을 건국하고 한양으로 천도한 시기입니다.',
+      description: '고려 말 혼란기를 거쳐 이성계가 새로운 왕조 조선을 건국하고 한양으로 천도한 시기입니다.',
+      descriptionI18n: {
+        en: 'The period when Yi Seong-gye founded the new Joseon dynasty and moved the capital to Hanyang after the turmoil of late Goryeo.',
+        es: 'El período en que Yi Seong-gye fundó la nueva dinastía Joseon y trasladó la capital a Hanyang después de la turbulencia del Goryeo tardío.',
+        ja: '高麗末の混乱期を経て李成桂が新王朝・朝鮮を建国し、漢陽に遷都した時代です。',
+        th: 'ช่วงเวลาที่อี ซองเก ก่อตั้งราชวงศ์โชซอนใหม่และย้ายเมืองหลวงไปฮันยังหลังจากความวุ่นวายของโครยอตอนปลาย',
+        vi: 'Thời kỳ Yi Seong-gye thành lập vương triều Joseon mới và dời đô đến Hanyang sau thời kỳ hỗn loạn cuối Goryeo.',
+        'zh-CN': '经历高丽末年的混乱后，李成桂建立朝鲜新王朝并迁都汉阳的时期。',
+        'zh-TW': '經歷高麗末年的混亂後，李成桂建立朝鮮新王朝並遷都漢陽的時期。',
+      },
       events: [
         // ── Event 1: 위화도 회군 ──
         {
@@ -26,878 +52,267 @@ export const joseonEarly: Era = {
           periodId: 'joseon-founding',
           eraId: 'joseon-early',
           title: '위화도 회군',
-          description:
-            '이성계가 요동 정벌을 위해 출병했다가 위화도에서 회군하여 고려를 멸하고 조선을 건국하는 이야기를 체험합니다.',
+          titleI18n: { en: 'The Wihwado Retreat', es: 'La Retirada de Wihwado', ja: '威化島回軍', th: 'การถอยทัพวีฮวาโด', vi: 'Cuộc rút quân Wihwado', 'zh-CN': '威化岛回军', 'zh-TW': '威化島回軍' },
+          description: '이성계가 요동 정벌을 위해 출병했다가 위화도에서 회군하여 고려를 멸하고 조선을 건국하는 이야기를 체험합니다.',
+          descriptionI18n: {
+            en: 'Experience the story of Yi Seong-gye, who was dispatched to conquer Liaodong but turned his army back at Wihwado Island, ultimately overthrowing Goryeo and founding Joseon.',
+            es: 'Experimenta la historia de Yi Seong-gye, enviado a conquistar Liaodong pero que regresó con su ejército desde la isla Wihwado, derrocando a Goryeo y fundando Joseon.',
+            ja: '李成桂が遼東征伐のために出兵したが威化島で回軍し、高麗を滅ぼして朝鮮を建国する物語を体験します。',
+            th: 'สัมผัสเรื่องราวของอี ซองเก ที่ถูกส่งไปพิชิตเหลียวตงแต่ถอยทัพกลับที่เกาะวีฮวาโด ล้มราชวงศ์โครยอและก่อตั้งโชซอน',
+            vi: 'Trải nghiệm câu chuyện Yi Seong-gye được phái đi chinh phục Liêu Đông nhưng rút quân tại đảo Wihwado, lật đổ Goryeo và lập nên Joseon.',
+            'zh-CN': '体验李成桂出兵征讨辽东却在威化岛回军，推翻高丽建立朝鲜的故事。',
+            'zh-TW': '體驗李成桂出兵征討遼東卻在威化島回軍，推翻高麗建立朝鮮的故事。',
+          },
           character: {
-            id: 'yi-seong-gye',
-            name: '이성계',
+            id: 'yi-seong-gye', name: '이성계',
+            nameI18n: { en: 'Yi Seong-gye', es: 'Yi Seong-gye', ja: '李成桂', th: 'อี ซองเก', vi: 'Yi Seong-gye (Lý Thành Quế)', 'zh-CN': '李成桂', 'zh-TW': '李成桂' },
             title: '조선 태조',
-            description:
-              '고려 말 뛰어난 무장으로 위화도 회군을 통해 권력을 장악하고, 1392년 조선을 건국한 태조입니다.',
-            primaryColor: '#4B0082',
-            secondaryColor: '#FFD700',
+            titleI18n: { en: 'Taejo of Joseon', es: 'Taejo de Joseon', ja: '朝鮮太祖', th: 'แทโจแห่งโชซอน', vi: 'Thái Tổ Joseon', 'zh-CN': '朝鲜太祖', 'zh-TW': '朝鮮太祖' },
+            description: '고려 말 뛰어난 무장으로 위화도 회군을 통해 권력을 장악하고, 1392년 조선을 건국한 태조입니다.',
+            descriptionI18n: {
+              en: 'A distinguished military commander of late Goryeo who seized power through the Wihwado Retreat and founded Joseon in 1392 as King Taejo.',
+              es: 'Un distinguido comandante militar del Goryeo tardío que tomó el poder a través de la Retirada de Wihwado y fundó Joseon en 1392 como el Rey Taejo.',
+              ja: '高麗末の優れた武将で、威化島回軍を通じて権力を掌握し、1392年に朝鮮を建国した太祖です。',
+              th: 'ผู้บัญชาการทหารผู้โดดเด่นแห่งโครยอตอนปลาย ผู้ยึดอำนาจผ่านการถอยทัพวีฮวาโดและก่อตั้งโชซอนในปี ค.ศ. 1392 ในฐานะกษัตริย์แทโจ',
+              vi: 'Danh tướng cuối Goryeo đã nắm quyền lực qua cuộc rút quân Wihwado và sáng lập Joseon năm 1392 với tư cách vua Thái Tổ.',
+              'zh-CN': '高丽末年杰出的武将，通过威化岛回军夺取政权，1392年建立朝鲜的太祖。',
+              'zh-TW': '高麗末年傑出的武將，通過威化島回軍奪取政權，1392年建立朝鮮的太祖。',
+            },
+            primaryColor: '#4B0082', secondaryColor: '#FFD700',
           },
           difficulty: 'medium',
           pointReward: 500,
           steps: [
-            {
-              id: 'wihwado-step-1',
-              type: 'narration',
-              text: '1388년, 고려 말. 명나라가 철령 이북의 영토를 요구하자 최영 장군은 요동 정벌을 주장하였고, 우왕은 이를 받아들였습니다.',
-            },
-            {
-              id: 'wihwado-step-2',
-              type: 'dialog',
-              speaker: '이성계',
-              text: '소장이 아뢰옵니다. 지금 요동을 치는 것은 네 가지 불가한 이유가 있사옵니다. 작은 나라로 큰 나라를 거스르는 것이 첫째요, 여름에 군사를 동원하는 것이 둘째요, 온 나라 군사를 동원하면 왜적이 틈을 노릴 것이 셋째요, 장마철이라 활의 아교가 풀어지고 군사들이 전염병에 걸릴 것이 넷째이옵니다.',
-            },
-            {
-              id: 'wihwado-step-3',
-              type: 'dialog',
-              speaker: '이성계',
-              text: '허나 최영 장군과 우왕 전하께서 뜻을 굽히지 않으시니, 부득이 출정하겠나이다.',
-            },
-            {
-              id: 'wihwado-step-4',
-              type: 'narration',
-              text: '이성계는 5만 대군을 이끌고 압록강 하류의 위화도에 도착했습니다. 그러나 장마로 강물이 불어 도강이 어려웠습니다.',
-            },
-            {
-              id: 'wihwado-step-5',
-              type: 'dialog',
-              speaker: '이성계',
-              text: '보아라, 장마비에 강물이 넘치고 군사들은 지쳐 쓰러지고 있다. 이대로 나아가면 전군이 위태로울 것이다. 나는 회군을 결심하였노라!',
-            },
-            {
-              id: 'wihwado-step-6',
-              type: 'quiz',
-              quiz: {
-                question: '위화도 회군이 일어난 해는 언제인가요?',
-                options: ['1385년', '1388년', '1390년', '1392년'],
-                correctIndex: 1,
-                explanation:
-                  '위화도 회군은 1388년에 일어났습니다. 이성계는 요동 정벌을 위해 출병했다가 압록강 위화도에서 군사를 돌렸습니다.',
-              },
-            },
-            {
-              id: 'wihwado-step-7',
-              type: 'narration',
-              text: '이성계는 군사를 돌려 개경으로 진군하였습니다. 최영 장군은 체포되고 우왕은 폐위되었습니다.',
-            },
-            {
-              id: 'wihwado-step-8',
-              type: 'dialog',
-              speaker: '이성계',
-              text: '최영 장군에게는 미안하나 이것이 나라와 백성을 위한 길이다. 무고한 백성의 피를 흘리게 할 수는 없었노라.',
-            },
-            {
-              id: 'wihwado-step-9',
-              type: 'quiz',
-              quiz: {
-                question:
-                  '이성계가 회군을 결심한 가장 직접적인 이유는 무엇인가요?',
-                options: [
-                  '명나라와 비밀 협약을 맺어서',
-                  '장마와 군사들의 피로 등 현실적 어려움',
-                  '최영 장군과의 개인적 갈등',
-                  '왜구의 침입 소식을 들어서',
-                ],
-                correctIndex: 1,
-                explanation:
-                  '이성계는 장마로 인한 도강 불가, 군사들의 피로와 질병 등 현실적인 이유로 회군을 결심하였습니다.',
-              },
-            },
-            {
-              id: 'wihwado-step-10',
-              type: 'narration',
-              text: '이후 이성계는 고려의 실권을 장악하고, 1392년 7월 마침내 새 왕조 조선을 건국하였습니다.',
-            },
-            {
-              id: 'wihwado-step-11',
-              type: 'dialog',
-              speaker: '이성계',
-              text: '새 나라의 이름은 조선이라 하겠노라. 아침의 고요한 나라, 조선! 백성이 편안하고 나라가 태평한 세상을 열겠노라!',
-            },
-            {
-              id: 'wihwado-step-12',
-              type: 'quiz',
-              quiz: {
-                question: '조선이 건국된 해는 언제인가요?',
-                options: ['1388년', '1390년', '1392년', '1394년'],
-                correctIndex: 2,
-                explanation:
-                  '조선은 1392년에 이성계에 의해 건국되었습니다. 위화도 회군(1388)으로부터 4년 뒤의 일입니다.',
-              },
-            },
+            { id: 'wihwado-step-1', type: 'narration', text: '1388년, 고려 말. 명나라가 철령 이북의 영토를 요구하자 최영 장군은 요동 정벌을 주장하였고, 우왕은 이를 받아들였습니다.', textI18n: { en: 'In 1388, late Goryeo. When the Ming dynasty demanded territory north of Cheollyeong Pass, General Choe Yeong advocated for a campaign against Liaodong, and King U accepted.', es: 'En 1388, Goryeo tardío. Cuando la dinastía Ming exigió el territorio al norte del paso Cheollyeong, el general Choe Yeong abogó por una campaña contra Liaodong y el rey U aceptó.', ja: '1388年、高麗末。明が鉄嶺以北の領土を要求すると、崔瑩将軍は遼東征伐を主張し、禑王はこれを受け入れました。', th: 'ปี ค.ศ. 1388 โครยอตอนปลาย เมื่อราชวงศ์หมิงเรียกร้องดินแดนทางเหนือของด่านชอลยอง นายพลเชยองสนับสนุนการรบกับเหลียวตง และกษัตริย์อูยอมรับ', vi: 'Năm 1388, cuối Goryeo. Khi nhà Minh đòi lãnh thổ phía bắc đèo Cheollyeong, tướng Choe Yeong chủ trương chinh phạt Liêu Đông và vua U chấp thuận.', 'zh-CN': '1388年，高丽末年。明朝要求铁岭以北的领土，崔莹将军主张征讨辽东，禑王接受了这一建议。', 'zh-TW': '1388年，高麗末年。明朝要求鐵嶺以北的領土，崔瑩將軍主張征討遼東，禑王接受了這一建議。' } },
+            { id: 'wihwado-step-2', type: 'dialog', speaker: '이성계', speakerI18n: { en: 'Yi Seong-gye', es: 'Yi Seong-gye', ja: '李成桂', th: 'อี ซองเก', vi: 'Yi Seong-gye', 'zh-CN': '李成桂', 'zh-TW': '李成桂' }, text: '소장이 아뢰옵니다. 지금 요동을 치는 것은 네 가지 불가한 이유가 있사옵니다. 작은 나라로 큰 나라를 거스르는 것이 첫째요, 여름에 군사를 동원하는 것이 둘째요, 온 나라 군사를 동원하면 왜적이 틈을 노릴 것이 셋째요, 장마철이라 활의 아교가 풀어지고 군사들이 전염병에 걸릴 것이 넷째이옵니다.', textI18n: { en: 'Your humble servant reports. There are four reasons why attacking Liaodong now is inadvisable: First, a small nation should not oppose a great one. Second, mobilizing troops in summer is unwise. Third, deploying the entire army leaves us vulnerable to Japanese raiders. Fourth, the rainy season will loosen bow glue and spread disease among the troops.', es: 'Su humilde sirviente informa. Hay cuatro razones por las que atacar Liaodong ahora es desaconsejable: Primero, una nación pequeña no debe oponerse a una grande. Segundo, movilizar tropas en verano es imprudente. Tercero, desplegar todo el ejército nos deja vulnerables a los piratas japoneses. Cuarto, la temporada de lluvias aflojará el pegamento de los arcos y propagará enfermedades entre las tropas.', ja: '小臣が申し上げます。今、遼東を攻めることには四つの不可な理由がございます。小国で大国に逆らうのが第一、夏に軍を動かすのが第二、全軍を動員すれば倭寇に付け入る隙を与えるのが第三、梅雨で弓の膠が緩み軍士が疫病にかかるのが第四でございます。', th: 'ข้ารับใช้ผู้ต่ำต้อยขอกราบทูล มีสี่เหตุผลที่ไม่ควรโจมตีเหลียวตงตอนนี้: หนึ่ง ประเทศเล็กไม่ควรต่อต้านประเทศใหญ่ สอง การระดมทหารในฤดูร้อนไม่ฉลาด สาม การส่งกองทัพทั้งหมดทำให้เราเสี่ยงต่อโจรสลัดญี่ปุ่น สี่ ฤดูฝนจะทำให้กาวธนูหลุดและแพร่โรคในกองทัพ', vi: 'Tiểu tướng xin tâu. Hiện tại đánh Liêu Đông có bốn điều bất khả: Một, nước nhỏ không nên chống nước lớn. Hai, huy động quân vào mùa hè là không khôn ngoan. Ba, huy động toàn quân sẽ tạo cơ hội cho giặc Nhật. Bốn, mùa mưa sẽ làm hỏng keo cung và binh sĩ sẽ mắc dịch bệnh.', 'zh-CN': '小将禀报。现在攻打辽东有四不可：以小国逆大国为一不可，夏季动兵为二不可，举国之兵出动则倭寇乘虚而入为三不可，梅雨季节弓胶溶解军士染疫为四不可。', 'zh-TW': '小將稟報。現在攻打遼東有四不可：以小國逆大國為一不可，夏季動兵為二不可，舉國之兵出動則倭寇乘虛而入為三不可，梅雨季節弓膠溶解軍士染疫為四不可。' } },
+            { id: 'wihwado-step-3', type: 'dialog', speaker: '이성계', speakerI18n: { en: 'Yi Seong-gye', es: 'Yi Seong-gye', ja: '李成桂', th: 'อี ซองเก', vi: 'Yi Seong-gye', 'zh-CN': '李成桂', 'zh-TW': '李成桂' }, text: '허나 최영 장군과 우왕 전하께서 뜻을 굽히지 않으시니, 부득이 출정하겠나이다.', textI18n: { en: 'However, since General Choe Yeong and His Majesty will not change their minds, I shall reluctantly set out on the campaign.', es: 'Sin embargo, dado que el general Choe Yeong y Su Majestad no cambiarán de opinión, partiré a regañadientes a la campaña.', ja: 'しかし崔瑩将軍と禑王殿下がお考えを変えられない以上、やむを得ず出征いたします。', th: 'อย่างไรก็ตาม เนื่องจากนายพลเชยองและพระองค์จะไม่เปลี่ยนพระทัย ข้าจะออกรบอย่างไม่เต็มใจ', vi: 'Tuy nhiên, vì tướng Choe Yeong và bệ hạ không thay đổi ý, bất đắc dĩ tiểu tướng phải xuất chinh.', 'zh-CN': '但崔莹将军和禑王殿下不肯改变心意，不得已只好出征。', 'zh-TW': '但崔瑩將軍和禑王殿下不肯改變心意，不得已只好出征。' } },
+            { id: 'wihwado-step-4', type: 'narration', text: '이성계는 5만 대군을 이끌고 압록강 하류의 위화도에 도착했습니다. 그러나 장마로 강물이 불어 도강이 어려웠습니다.', textI18n: { en: 'Yi Seong-gye led an army of 50,000 to Wihwado Island at the lower reaches of the Yalu River. However, the monsoon rains had swollen the river, making crossing impossible.', es: 'Yi Seong-gye condujo un ejército de 50.000 a la isla Wihwado en el curso bajo del río Yalu. Sin embargo, las lluvias monzónicas habían hinchado el río, haciendo imposible el cruce.', ja: '李成桂は5万の大軍を率いて鴨緑江下流の威化島に到着しました。しかし梅雨で河水が増し、渡河が困難でした。', th: 'อี ซองเก นำกองทัพ 50,000 นายไปเกาะวีฮวาโดที่ปลายน้ำของแม่น้ำยาลู แต่ฝนมรสุมทำให้น้ำในแม่น้ำเอ่อล้น ทำให้ข้ามไม่ได้', vi: 'Yi Seong-gye dẫn đại quân 5 vạn đến đảo Wihwado hạ lưu sông Áp Lục. Nhưng mưa lũ làm nước sông dâng cao, không thể vượt sông.', 'zh-CN': '李成桂率5万大军抵达鸭绿江下游的威化岛。但由于暴雨河水暴涨，无法渡江。', 'zh-TW': '李成桂率5萬大軍抵達鴨綠江下游的威化島。但由於暴雨河水暴漲，無法渡江。' } },
+            { id: 'wihwado-step-5', type: 'dialog', speaker: '이성계', speakerI18n: { en: 'Yi Seong-gye', es: 'Yi Seong-gye', ja: '李成桂', th: 'อี ซองเก', vi: 'Yi Seong-gye', 'zh-CN': '李成桂', 'zh-TW': '李成桂' }, text: '보아라, 장마비에 강물이 넘치고 군사들은 지쳐 쓰러지고 있다. 이대로 나아가면 전군이 위태로울 것이다. 나는 회군을 결심하였노라!', textI18n: { en: 'Look — the monsoon has flooded the river and our soldiers are collapsing from exhaustion. If we press forward, the entire army will be imperiled. I have resolved to turn back!', es: '¡Miren — el monzón ha inundado el río y nuestros soldados se desploman de agotamiento. Si seguimos adelante, todo el ejército estará en peligro. ¡He decidido retirarnos!', ja: '見よ、梅雨で河水が溢れ、軍士たちは疲れ果てて倒れている。このまま進めば全軍が危うい。余は回軍を決心した！', th: 'ดูเถิด มรสุมท่วมแม่น้ำและทหารของเราล้มลงจากความเหนื่อยล้า หากเราเดินหน้าต่อไป กองทัพทั้งหมดจะตกอยู่ในอันตราย ข้าตัดสินใจถอยทัพแล้ว!', vi: 'Nhìn xem, mưa lũ tràn ngập sông và binh sĩ kiệt sức gục ngã. Nếu cứ tiến, toàn quân sẽ lâm nguy. Ta quyết định rút quân!', 'zh-CN': '看吧，暴雨使河水泛滥，将士们疲惫倒下。若继续前进，全军将危在旦夕。本将决定回军！', 'zh-TW': '看吧，暴雨使河水氾濫，將士們疲憊倒下。若繼續前進，全軍將危在旦夕。本將決定回軍！' } },
+            { id: 'wihwado-step-6', type: 'quiz', quiz: { question: '위화도 회군이 일어난 해는 언제인가요?', questionI18n: { en: 'In what year did the Wihwado Retreat occur?', es: '¿En qué año ocurrió la Retirada de Wihwado?', ja: '威化島回軍が起きた年は？', th: 'การถอยทัพวีฮวาโดเกิดขึ้นในปีใด?', vi: 'Cuộc rút quân Wihwado xảy ra năm nào?', 'zh-CN': '威化岛回军发生在哪一年？', 'zh-TW': '威化島回軍發生在哪一年？' }, options: ['1385년', '1388년', '1390년', '1392년'], optionsI18n: { en: ['1385', '1388', '1390', '1392'], es: ['1385', '1388', '1390', '1392'], ja: ['1385年', '1388年', '1390年', '1392年'], th: ['ค.ศ. 1385', 'ค.ศ. 1388', 'ค.ศ. 1390', 'ค.ศ. 1392'], vi: ['1385', '1388', '1390', '1392'], 'zh-CN': ['1385年', '1388年', '1390年', '1392年'], 'zh-TW': ['1385年', '1388年', '1390年', '1392年'] }, correctIndex: 1, explanation: '위화도 회군은 1388년에 일어났습니다. 이성계는 요동 정벌을 위해 출병했다가 압록강 위화도에서 군사를 돌렸습니다.', explanationI18n: { en: 'The Wihwado Retreat occurred in 1388. Yi Seong-gye was dispatched to conquer Liaodong but turned his army back at Wihwado Island on the Yalu River.', es: 'La Retirada de Wihwado ocurrió en 1388. Yi Seong-gye fue enviado a conquistar Liaodong pero regresó con su ejército en la isla Wihwado del río Yalu.', ja: '威化島回軍は1388年に起きました。李成桂は遼東征伐のために出兵しましたが、鴨緑江の威化島で軍を返しました。', th: 'การถอยทัพวีฮวาโดเกิดขึ้นในปี ค.ศ. 1388 อี ซองเก ถูกส่งไปพิชิตเหลียวตงแต่ถอยทัพกลับที่เกาะวีฮวาโดบนแม่น้ำยาลู', vi: 'Cuộc rút quân Wihwado xảy ra năm 1388. Yi Seong-gye được phái đi chinh phạt Liêu Đông nhưng rút quân tại đảo Wihwado trên sông Áp Lục.', 'zh-CN': '威化岛回军发生在1388年。李成桂出兵征讨辽东，却在鸭绿江威化岛调转军队。', 'zh-TW': '威化島回軍發生在1388年。李成桂出兵征討遼東，卻在鴨綠江威化島調轉軍隊。' } } },
+            { id: 'wihwado-step-7', type: 'narration', text: '이성계는 군사를 돌려 개경으로 진군하였습니다. 최영 장군은 체포되고 우왕은 폐위되었습니다.', textI18n: { en: 'Yi Seong-gye turned his army around and marched on the capital Gaegyeong. General Choe Yeong was arrested and King U was deposed.', es: 'Yi Seong-gye giró su ejército y marchó sobre la capital Gaegyeong. El general Choe Yeong fue arrestado y el rey U fue depuesto.', ja: '李成桂は軍を返して開京に進軍しました。崔瑩将軍は逮捕され、禑王は廃位されました。', th: 'อี ซองเก หันกองทัพกลับและเดินทัพสู่เมืองหลวงแกกยอง นายพลเชยองถูกจับกุมและกษัตริย์อูถูกปลด', vi: 'Yi Seong-gye quay quân tiến về kinh đô Gaegyeong. Tướng Choe Yeong bị bắt và vua U bị phế truất.', 'zh-CN': '李成桂率军回师进军开京。崔莹将军被逮捕，禑王被废黜。', 'zh-TW': '李成桂率軍回師進軍開京。崔瑩將軍被逮捕，禑王被廢黜。' } },
+            { id: 'wihwado-step-8', type: 'dialog', speaker: '이성계', speakerI18n: { en: 'Yi Seong-gye', es: 'Yi Seong-gye', ja: '李成桂', th: 'อี ซองเก', vi: 'Yi Seong-gye', 'zh-CN': '李成桂', 'zh-TW': '李成桂' }, text: '최영 장군에게는 미안하나 이것이 나라와 백성을 위한 길이다. 무고한 백성의 피를 흘리게 할 수는 없었노라.', textI18n: { en: 'I regret what happened to General Choe Yeong, but this is the path for the nation and its people. I could not let innocent people\'s blood be shed.', es: 'Lamento lo que le pasó al general Choe Yeong, pero este es el camino para la nación y su pueblo. No podía permitir que se derramara sangre inocente.', ja: '崔瑩将軍には申し訳ないが、これが国と民のための道だ。罪なき民の血を流すわけにはいかなかった。', th: 'ข้าเสียใจกับสิ่งที่เกิดขึ้นกับนายพลเชยอง แต่นี่คือเส้นทางเพื่อชาติและประชาชน ข้าไม่อาจปล่อยให้เลือดของผู้บริสุทธิ์ต้องหลั่ง', vi: 'Ta rất tiếc về việc xảy ra với tướng Choe Yeong, nhưng đây là con đường vì quốc gia và bách tính. Ta không thể để máu người vô tội phải đổ.', 'zh-CN': '对崔莹将军深感抱歉，但这是为了国家和百姓。不能让无辜百姓的血白流。', 'zh-TW': '對崔瑩將軍深感抱歉，但這是為了國家和百姓。不能讓無辜百姓的血白流。' } },
+            { id: 'wihwado-step-9', type: 'quiz', quiz: { question: '이성계가 회군을 결심한 가장 직접적인 이유는 무엇인가요?', questionI18n: { en: 'What was the most direct reason Yi Seong-gye decided to retreat?', es: '¿Cuál fue la razón más directa por la que Yi Seong-gye decidió retirarse?', ja: '李成桂が回軍を決断した最も直接的な理由は？', th: 'เหตุผลโดยตรงที่สุดที่อี ซองเก ตัดสินใจถอยทัพคืออะไร?', vi: 'Lý do trực tiếp nhất khiến Yi Seong-gye quyết định rút quân là gì?', 'zh-CN': '李成桂决定回军最直接的原因是什么？', 'zh-TW': '李成桂決定回軍最直接的原因是什麼？' }, options: ['명나라와 비밀 협약을 맺어서', '장마와 군사들의 피로 등 현실적 어려움', '최영 장군과의 개인적 갈등', '왜구의 침입 소식을 들어서'], optionsI18n: { en: ['He made a secret deal with the Ming dynasty', 'Practical difficulties such as monsoon rains and troop exhaustion', 'Personal conflict with General Choe Yeong', 'He received news of a Japanese pirate attack'], es: ['Hizo un acuerdo secreto con la dinastía Ming', 'Dificultades prácticas como lluvias monzónicas y agotamiento de tropas', 'Conflicto personal con el general Choe Yeong', 'Recibió noticias de un ataque de piratas japoneses'], ja: ['明と密約を結んだから', '梅雨や将兵の疲労など現実的な困難', '崔瑩将軍との個人的な対立', '倭寇の侵入の知らせを聞いたから'], th: ['เขาทำข้อตกลงลับกับราชวงศ์หมิง', 'ความยากลำบากในทางปฏิบัติ เช่น ฝนมรสุมและความเหนื่อยล้าของกองทัพ', 'ความขัดแย้งส่วนตัวกับนายพลเชยอง', 'ได้รับข่าวการโจมตีของโจรสลัดญี่ปุ่น'], vi: ['Ông ký mật ước với nhà Minh', 'Khó khăn thực tế như mưa lũ và binh sĩ kiệt sức', 'Mâu thuẫn cá nhân với tướng Choe Yeong', 'Nhận tin giặc Nhật tấn công'], 'zh-CN': ['与明朝签订了密约', '暴雨和将士疲劳等现实困难', '与崔莹将军的个人矛盾', '收到倭寇入侵的消息'], 'zh-TW': ['與明朝簽訂了密約', '暴雨和將士疲勞等現實困難', '與崔瑩將軍的個人矛盾', '收到倭寇入侵的消息'] }, correctIndex: 1, explanation: '이성계는 장마로 인한 도강 불가, 군사들의 피로와 질병 등 현실적인 이유로 회군을 결심하였습니다.', explanationI18n: { en: 'Yi Seong-gye decided to retreat due to practical reasons including the impossibility of crossing the river during the monsoon, and troop fatigue and disease.', es: 'Yi Seong-gye decidió retirarse por razones prácticas incluyendo la imposibilidad de cruzar el río durante el monzón, y la fatiga y enfermedades de las tropas.', ja: '李成桂は梅雨による渡河不可能、将兵の疲労と病気など現実的な理由で回軍を決断しました。', th: 'อี ซองเก ตัดสินใจถอยทัพเนื่องจากเหตุผลทางปฏิบัติ รวมถึงไม่สามารถข้ามแม่น้ำในช่วงมรสุมได้ และความเหนื่อยล้าและโรคภัยของกองทัพ', vi: 'Yi Seong-gye quyết định rút quân vì lý do thực tế: không thể vượt sông trong mùa mưa, binh sĩ mệt mỏi và dịch bệnh.', 'zh-CN': '李成桂因暴雨无法渡江、将士疲劳和疾病等现实原因决定回军。', 'zh-TW': '李成桂因暴雨無法渡江、將士疲勞和疾病等現實原因決定回軍。' } } },
+            { id: 'wihwado-step-10', type: 'narration', text: '이후 이성계는 고려의 실권을 장악하고, 1392년 7월 마침내 새 왕조 조선을 건국하였습니다.', textI18n: { en: 'Afterwards, Yi Seong-gye seized power in Goryeo and finally founded the new Joseon dynasty in July 1392.', es: 'Después, Yi Seong-gye tomó el poder en Goryeo y finalmente fundó la nueva dinastía Joseon en julio de 1392.', ja: 'その後、李成桂は高麗の実権を掌握し、1392年7月についに新王朝・朝鮮を建国しました。', th: 'หลังจากนั้น อี ซองเก ยึดอำนาจในโครยอและก่อตั้งราชวงศ์โชซอนใหม่ในเดือนกรกฎาคม ค.ศ. 1392', vi: 'Sau đó, Yi Seong-gye nắm thực quyền ở Goryeo và cuối cùng sáng lập vương triều Joseon mới vào tháng 7 năm 1392.', 'zh-CN': '此后李成桂掌握了高丽的实权，1392年7月终于建立了新王朝——朝鲜。', 'zh-TW': '此後李成桂掌握了高麗的實權，1392年7月終於建立了新王朝——朝鮮。' } },
+            { id: 'wihwado-step-11', type: 'dialog', speaker: '이성계', speakerI18n: { en: 'Yi Seong-gye', es: 'Yi Seong-gye', ja: '李成桂', th: 'อี ซองเก', vi: 'Yi Seong-gye', 'zh-CN': '李成桂', 'zh-TW': '李成桂' }, text: '새 나라의 이름은 조선이라 하겠노라. 아침의 고요한 나라, 조선! 백성이 편안하고 나라가 태평한 세상을 열겠노라!', textI18n: { en: 'The name of the new nation shall be Joseon — the Land of the Morning Calm! I shall open an era where the people live in peace and the nation prospers!', es: '¡El nombre de la nueva nación será Joseon — la Tierra de la Calma Matutina! ¡Abriré una era donde el pueblo viva en paz y la nación prospere!', ja: '新しい国の名は朝鮮としよう。朝の静けさの国、朝鮮！民が安らかに暮らし国が太平な世を開こう！', th: 'ชื่อของประเทศใหม่จะเป็นโชซอน — ดินแดนแห่งความสงบยามเช้า! ข้าจะเปิดยุคที่ประชาชนอยู่อย่างสงบสุขและประเทศเจริญรุ่งเรือง!', vi: 'Tên nước mới sẽ là Joseon — Xứ sở bình yên buổi sáng! Ta sẽ mở ra kỷ nguyên dân an quốc thái!', 'zh-CN': '新国的名字就叫朝鲜。朝之宁静之国，朝鲜！要开创百姓安康、国泰民安的盛世！', 'zh-TW': '新國的名字就叫朝鮮。朝之寧靜之國，朝鮮！要開創百姓安康、國泰民安的盛世！' } },
+            { id: 'wihwado-step-12', type: 'quiz', quiz: { question: '조선이 건국된 해는 언제인가요?', questionI18n: { en: 'In what year was Joseon founded?', es: '¿En qué año se fundó Joseon?', ja: '朝鮮が建国された年は？', th: 'โชซอนก่อตั้งในปีใด?', vi: 'Joseon được thành lập năm nào?', 'zh-CN': '朝鲜建国是哪一年？', 'zh-TW': '朝鮮建國是哪一年？' }, options: ['1388년', '1390년', '1392년', '1394년'], optionsI18n: { en: ['1388', '1390', '1392', '1394'], es: ['1388', '1390', '1392', '1394'], ja: ['1388年', '1390年', '1392年', '1394年'], th: ['ค.ศ. 1388', 'ค.ศ. 1390', 'ค.ศ. 1392', 'ค.ศ. 1394'], vi: ['1388', '1390', '1392', '1394'], 'zh-CN': ['1388年', '1390年', '1392年', '1394年'], 'zh-TW': ['1388年', '1390年', '1392年', '1394年'] }, correctIndex: 2, explanation: '조선은 1392년에 이성계에 의해 건국되었습니다. 위화도 회군(1388)으로부터 4년 뒤의 일입니다.', explanationI18n: { en: 'Joseon was founded in 1392 by Yi Seong-gye, four years after the Wihwado Retreat (1388).', es: 'Joseon fue fundado en 1392 por Yi Seong-gye, cuatro años después de la Retirada de Wihwado (1388).', ja: '朝鮮は1392年に李成桂によって建国されました。威化島回軍（1388）から4年後のことです。', th: 'โชซอนก่อตั้งในปี ค.ศ. 1392 โดยอี ซองเก สี่ปีหลังการถอยทัพวีฮวาโด (ค.ศ. 1388)', vi: 'Joseon được thành lập năm 1392 bởi Yi Seong-gye, bốn năm sau cuộc rút quân Wihwado (1388).', 'zh-CN': '朝鲜于1392年由李成桂建国，距威化岛回军（1388年）四年后。', 'zh-TW': '朝鮮於1392年由李成桂建國，距威化島回軍（1388年）四年後。' } } },
           ],
         },
         // ── Event 2: 한양 천도 ──
         {
-          id: 'hanyang-capital',
-          periodId: 'joseon-founding',
-          eraId: 'joseon-early',
+          id: 'hanyang-capital', periodId: 'joseon-founding', eraId: 'joseon-early',
           title: '한양 천도',
-          description:
-            '조선 건국 후 수도를 개경에서 한양(서울)으로 옮기는 과정과 풍수지리에 기반한 입지 선정 이야기를 체험합니다.',
+          titleI18n: { en: 'Moving the Capital to Hanyang', es: 'Traslado de la Capital a Hanyang', ja: '漢陽遷都', th: 'การย้ายเมืองหลวงไปฮันยัง', vi: 'Dời đô đến Hanyang', 'zh-CN': '迁都汉阳', 'zh-TW': '遷都漢陽' },
+          description: '조선 건국 후 수도를 개경에서 한양(서울)으로 옮기는 과정과 풍수지리에 기반한 입지 선정 이야기를 체험합니다.',
+          descriptionI18n: { en: 'Experience the process of moving the capital from Gaegyeong to Hanyang (Seoul) and the site selection based on feng shui geomancy.', es: 'Experimenta el proceso de trasladar la capital de Gaegyeong a Hanyang (Seúl) y la selección del sitio basada en la geomancia feng shui.', ja: '朝鮮建国後、首都を開京から漢陽（ソウル）に移す過程と風水地理に基づく立地選定の物語を体験します。', th: 'สัมผัสกระบวนการย้ายเมืองหลวงจากแกกยองไปฮันยัง (โซล) และการเลือกสถานที่ตามหลักฮวงจุ้ย', vi: 'Trải nghiệm quá trình dời đô từ Gaegyeong đến Hanyang (Seoul) và việc chọn vị trí dựa trên phong thủy.', 'zh-CN': '体验朝鲜建国后将首都从开京迁至汉阳（首尔）的过程以及基于风水的选址故事。', 'zh-TW': '體驗朝鮮建國後將首都從開京遷至漢陽（首爾）的過程以及基於風水的選址故事。' },
           character: {
-            id: 'yi-seong-gye-taejo',
-            name: '이성계',
+            id: 'yi-seong-gye-taejo', name: '이성계',
+            nameI18n: { en: 'Yi Seong-gye', es: 'Yi Seong-gye', ja: '李成桂', th: 'อี ซองเก', vi: 'Yi Seong-gye', 'zh-CN': '李成桂', 'zh-TW': '李成桂' },
             title: '조선 태조',
-            description:
-              '조선을 건국한 태조로서, 새 왕조의 수도를 한양으로 정하고 경복궁을 건설하여 조선의 기틀을 다졌습니다.',
-            primaryColor: '#4B0082',
-            secondaryColor: '#FFD700',
+            titleI18n: { en: 'Taejo of Joseon', es: 'Taejo de Joseon', ja: '朝鮮太祖', th: 'แทโจแห่งโชซอน', vi: 'Thái Tổ Joseon', 'zh-CN': '朝鲜太祖', 'zh-TW': '朝鮮太祖' },
+            description: '조선을 건국한 태조로서, 새 왕조의 수도를 한양으로 정하고 경복궁을 건설하여 조선의 기틀을 다졌습니다.',
+            descriptionI18n: { en: 'As the founder of Joseon, he established Hanyang as the new dynasty\'s capital and built Gyeongbokgung Palace, laying the foundation for the Joseon dynasty.', es: 'Como fundador de Joseon, estableció Hanyang como capital de la nueva dinastía y construyó el Palacio Gyeongbokgung, sentando las bases de la dinastía Joseon.', ja: '朝鮮を建国した太祖として、新王朝の首都を漢陽に定め、景福宮を建設して朝鮮の基盤を築きました。', th: 'ในฐานะผู้ก่อตั้งโชซอน เขากำหนดให้ฮันยังเป็นเมืองหลวงของราชวงศ์ใหม่และสร้างพระราชวังคยองบกกุง วางรากฐานราชวงศ์โชซอน', vi: 'Với tư cách người sáng lập Joseon, ông đã chọn Hanyang làm kinh đô và xây dựng cung Gyeongbokgung, đặt nền móng cho vương triều Joseon.', 'zh-CN': '作为朝鲜的建国者，定汉阳为新王朝首都，建造景福宫，奠定了朝鲜的基业。', 'zh-TW': '作為朝鮮的建國者，定漢陽為新王朝首都，建造景福宮，奠定了朝鮮的基業。' },
+            primaryColor: '#4B0082', secondaryColor: '#FFD700',
           },
-          difficulty: 'easy',
-          pointReward: 300,
+          difficulty: 'easy', pointReward: 300,
           steps: [
-            {
-              id: 'hanyang-step-1',
-              type: 'narration',
-              text: '1394년, 조선을 건국한 태조 이성계는 새 나라에 걸맞은 새 수도를 정하고자 하였습니다. 개경은 고려의 도읍이었기에 새로운 시작이 필요했습니다.',
-            },
-            {
-              id: 'hanyang-step-2',
-              type: 'dialog',
-              speaker: '이성계',
-              text: '새 나라를 세웠으니 새 도읍이 있어야 하느니라. 풍수를 살펴 천하의 명당을 찾으라 명하노라.',
-            },
-            {
-              id: 'hanyang-step-3',
-              type: 'narration',
-              text: '풍수지리학자 무학대사와 정도전 등이 여러 후보지를 검토하였습니다. 계룡산, 무악(지금의 신촌 일대), 한양 등이 후보에 올랐습니다.',
-            },
-            {
-              id: 'hanyang-step-4',
-              type: 'dialog',
-              speaker: '이성계',
-              text: '정도전이 아뢰기를, 한양은 사방이 산으로 둘러싸이고 한강이 흐르니 천혜의 요새라 하였느니라. 북으로 북악산, 남으로 남산, 좌로 낙산, 우로 인왕산이 감싸고 있다 하니 이보다 좋은 곳이 어디 있겠는가!',
-            },
-            {
-              id: 'hanyang-step-5',
-              type: 'quiz',
-              quiz: {
-                question:
-                  '한양 천도가 이루어진 해는 언제인가요?',
-                options: ['1392년', '1393년', '1394년', '1396년'],
-                correctIndex: 2,
-                explanation:
-                  '한양 천도는 1394년에 이루어졌습니다. 조선 건국(1392) 2년 후의 일입니다.',
-              },
-            },
-            {
-              id: 'hanyang-step-6',
-              type: 'narration',
-              text: '태조는 한양을 새 수도로 정하고, 경복궁 건설을 시작하였습니다. 정도전은 궁궐과 도성의 이름을 짓는 중요한 역할을 맡았습니다.',
-            },
-            {
-              id: 'hanyang-step-7',
-              type: 'dialog',
-              speaker: '이성계',
-              text: '정도전이 지은 궁의 이름 \'경복궁\', 큰 복을 누리라는 뜻이라 하니 참으로 좋구나. 이 궁에서 만대의 태평성대를 이루리라!',
-            },
-            {
-              id: 'hanyang-step-8',
-              type: 'quiz',
-              quiz: {
-                question:
-                  '한양이 수도로 선정된 주요 이유 중 하나로 올바른 것은?',
-                options: [
-                  '바다와 가까워서',
-                  '사방이 산으로 둘러싸인 풍수지리적 명당',
-                  '이전 왕조의 궁궐을 재활용하기 위해',
-                  '중국과의 거리가 가장 가까워서',
-                ],
-                correctIndex: 1,
-                explanation:
-                  '한양은 북악산·남산·낙산·인왕산이 사방을 감싸고 한강이 흐르는 풍수지리적 명당이었기에 수도로 선정되었습니다.',
-              },
-            },
+            { id: 'hanyang-step-1', type: 'narration', text: '1394년, 조선을 건국한 태조 이성계는 새 나라에 걸맞은 새 수도를 정하고자 하였습니다. 개경은 고려의 도읍이었기에 새로운 시작이 필요했습니다.', textI18n: { en: 'In 1394, King Taejo Yi Seong-gye sought to establish a new capital befitting his new nation. Gaegyeong had been Goryeo\'s capital, so a fresh start was needed.', es: 'En 1394, el rey Taejo Yi Seong-gye buscó establecer una nueva capital adecuada para su nueva nación. Gaegyeong había sido la capital de Goryeo, por lo que se necesitaba un nuevo comienzo.', ja: '1394年、朝鮮を建国した太祖・李成桂は、新しい国にふさわしい新しい首都を定めようとしました。開京は高麗の都だったため、新たな出発が必要でした。', th: 'ในปี ค.ศ. 1394 กษัตริย์แทโจ อี ซองเก ต้องการสร้างเมืองหลวงใหม่ที่เหมาะกับประเทศใหม่ แกกยองเคยเป็นเมืองหลวงของโครยอ จึงต้องการจุดเริ่มต้นใหม่', vi: 'Năm 1394, vua Thái Tổ Yi Seong-gye muốn chọn kinh đô mới xứng với quốc gia mới. Gaegyeong từng là kinh đô Goryeo nên cần một khởi đầu mới.', 'zh-CN': '1394年，建立朝鲜的太祖李成桂欲为新国定新都。开京是高丽的都城，需要一个新的开始。', 'zh-TW': '1394年，建立朝鮮的太祖李成桂欲為新國定新都。開京是高麗的都城，需要一個新的開始。' } },
+            { id: 'hanyang-step-2', type: 'dialog', speaker: '이성계', speakerI18n: { en: 'Yi Seong-gye', es: 'Yi Seong-gye', ja: '李成桂', th: 'อี ซองเก', vi: 'Yi Seong-gye', 'zh-CN': '李成桂', 'zh-TW': '李成桂' }, text: '새 나라를 세웠으니 새 도읍이 있어야 하느니라. 풍수를 살펴 천하의 명당을 찾으라 명하노라.', textI18n: { en: 'Having established a new nation, we must have a new capital. I command you to examine the feng shui and find the finest auspicious site in the land.', es: 'Habiendo establecido una nueva nación, debemos tener una nueva capital. Les ordeno examinar el feng shui y encontrar el mejor sitio auspicioso del país.', ja: '新しい国を建てたからには新しい都が必要だ。風水を調べ天下の名地を探せと命ずる。', th: 'เมื่อก่อตั้งประเทศใหม่แล้ว เราต้องมีเมืองหลวงใหม่ ข้าสั่งให้ตรวจสอบฮวงจุ้ยและค้นหาสถานที่มงคลที่ดีที่สุดในแผ่นดิน', vi: 'Đã lập nước mới thì phải có kinh đô mới. Ta truyền lệnh xem phong thủy, tìm vùng đất tốt nhất thiên hạ.', 'zh-CN': '建立了新国就应有新都。命尔等察看风水，寻找天下名地。', 'zh-TW': '建立了新國就應有新都。命爾等察看風水，尋找天下名地。' } },
+            { id: 'hanyang-step-3', type: 'narration', text: '풍수지리학자 무학대사와 정도전 등이 여러 후보지를 검토하였습니다. 계룡산, 무악(지금의 신촌 일대), 한양 등이 후보에 올랐습니다.', textI18n: { en: 'Feng shui master Monk Muhak and Jeong Do-jeon reviewed several candidate sites including Mount Gyeryong, Muak (present-day Sinchon area), and Hanyang.', es: 'El maestro de feng shui Monje Muhak y Jeong Do-jeon revisaron varios sitios candidatos incluyendo el Monte Gyeryong, Muak (actual área de Sinchon) y Hanyang.', ja: '風水地理学者の無学大師と鄭道伝らが複数の候補地を検討しました。鶏龍山、毋岳（現在の新村一帯）、漢陽などが候補に挙がりました。', th: 'ผู้เชี่ยวชาญฮวงจุ้ย พระมูฮักและจอง โดจอน ตรวจสอบสถานที่ผู้สมัครหลายแห่งรวมถึงภูเขาเกรยอง มูอัก (พื้นที่ซินชอนปัจจุบัน) และฮันยัง', vi: 'Nhà phong thủy Đại sư Muhak và Jeong Do-jeon xem xét nhiều ứng cử: núi Gyeryong, Muak (khu vực Sinchon ngày nay) và Hanyang.', 'zh-CN': '风水地理学家无学大师和郑道传等考察了多处候选地。鸡龙山、毋岳（今新村一带）、汉阳等被列为候选。', 'zh-TW': '風水地理學家無學大師和鄭道傳等考察了多處候選地。雞龍山、毋岳（今新村一帶）、漢陽等被列為候選。' } },
+            { id: 'hanyang-step-4', type: 'dialog', speaker: '이성계', speakerI18n: { en: 'Yi Seong-gye', es: 'Yi Seong-gye', ja: '李成桂', th: 'อี ซองเก', vi: 'Yi Seong-gye', 'zh-CN': '李成桂', 'zh-TW': '李成桂' }, text: '정도전이 아뢰기를, 한양은 사방이 산으로 둘러싸이고 한강이 흐르니 천혜의 요새라 하였느니라. 북으로 북악산, 남으로 남산, 좌로 낙산, 우로 인왕산이 감싸고 있다 하니 이보다 좋은 곳이 어디 있겠는가!', textI18n: { en: 'Jeong Do-jeon reports that Hanyang is a natural fortress surrounded by mountains on all sides with the Han River flowing through. With Bugaksan to the north, Namsan to the south, Naksan to the east, and Inwangsan to the west — where could there be a finer site!', es: 'Jeong Do-jeon informa que Hanyang es una fortaleza natural rodeada de montañas por todos lados con el río Han fluyendo. Con Bugaksan al norte, Namsan al sur, Naksan al este e Inwangsan al oeste — ¡dónde podría haber un mejor sitio!', ja: '鄭道伝が申すには、漢陽は四方を山に囲まれ漢江が流れる天然の要塞だとのこと。北に北岳山、南に南山、東に駱山、西に仁王山が取り囲んでいるという。これ以上の場所がどこにあろうか！', th: 'จอง โดจอน รายงานว่าฮันยังเป็นป้อมปราการธรรมชาติที่ล้อมรอบด้วยภูเขาทุกด้านและมีแม่น้ำฮันไหลผ่าน มีบูกักซันทางเหนือ นัมซันทางใต้ นักซันทางตะวันออก และอินวังซันทางตะวันตก — จะมีสถานที่ใดดีกว่านี้!', vi: 'Jeong Do-jeon tâu rằng, Hanyang là pháo đài tự nhiên bốn bề núi bao bọc, sông Hàn chảy qua. Phía bắc núi Bugak, phía nam núi Nam, bên trái núi Nak, bên phải núi Inwang — còn nơi nào tốt hơn thế!', 'zh-CN': '郑道传奏称，汉阳四面环山、汉江穿流，乃天然要塞。北有北岳山，南有南山，左有骆山，右有仁王山环抱，还有何处能比此地更好！', 'zh-TW': '鄭道傳奏稱，漢陽四面環山、漢江穿流，乃天然要塞。北有北岳山，南有南山，左有駱山，右有仁王山環抱，還有何處能比此地更好！' } },
+            { id: 'hanyang-step-5', type: 'quiz', quiz: { question: '한양 천도가 이루어진 해는 언제인가요?', questionI18n: { en: 'In what year was the capital moved to Hanyang?', es: '¿En qué año se trasladó la capital a Hanyang?', ja: '漢陽遷都が行われた年は？', th: 'เมืองหลวงถูกย้ายไปฮันยังในปีใด?', vi: 'Kinh đô được dời đến Hanyang năm nào?', 'zh-CN': '迁都汉阳是哪一年？', 'zh-TW': '遷都漢陽是哪一年？' }, options: ['1392년', '1393년', '1394년', '1396년'], optionsI18n: { en: ['1392', '1393', '1394', '1396'], es: ['1392', '1393', '1394', '1396'], ja: ['1392年', '1393年', '1394年', '1396年'], th: ['ค.ศ. 1392', 'ค.ศ. 1393', 'ค.ศ. 1394', 'ค.ศ. 1396'], vi: ['1392', '1393', '1394', '1396'], 'zh-CN': ['1392年', '1393年', '1394年', '1396年'], 'zh-TW': ['1392年', '1393年', '1394年', '1396年'] }, correctIndex: 2, explanation: '한양 천도는 1394년에 이루어졌습니다. 조선 건국(1392) 2년 후의 일입니다.', explanationI18n: { en: 'The capital was moved to Hanyang in 1394, two years after the founding of Joseon (1392).', es: 'La capital se trasladó a Hanyang en 1394, dos años después de la fundación de Joseon (1392).', ja: '漢陽遷都は1394年に行われました。朝鮮建国（1392年）の2年後のことです。', th: 'เมืองหลวงถูกย้ายไปฮันยังในปี ค.ศ. 1394 สองปีหลังการก่อตั้งโชซอน (ค.ศ. 1392)', vi: 'Kinh đô được dời đến Hanyang năm 1394, hai năm sau khi Joseon được thành lập (1392).', 'zh-CN': '迁都汉阳是在1394年，朝鲜建国（1392年）两年后。', 'zh-TW': '遷都漢陽是在1394年，朝鮮建國（1392年）兩年後。' } } },
+            { id: 'hanyang-step-6', type: 'narration', text: '태조는 한양을 새 수도로 정하고, 경복궁 건설을 시작하였습니다. 정도전은 궁궐과 도성의 이름을 짓는 중요한 역할을 맡았습니다.', textI18n: { en: 'King Taejo designated Hanyang as the new capital and began construction of Gyeongbokgung Palace. Jeong Do-jeon played a key role in naming the palace and the city gates.', es: 'El rey Taejo designó Hanyang como la nueva capital y comenzó la construcción del Palacio Gyeongbokgung. Jeong Do-jeon desempeñó un papel clave nombrando el palacio y las puertas de la ciudad.', ja: '太祖は漢陽を新首都に定め、景福宮の建設を始めました。鄭道伝は宮殿や都城の名を付ける重要な役割を担いました。', th: 'กษัตริย์แทโจกำหนดให้ฮันยังเป็นเมืองหลวงใหม่และเริ่มก่อสร้างพระราชวังคยองบกกุง จอง โดจอน มีบทบาทสำคัญในการตั้งชื่อพระราชวังและประตูเมือง', vi: 'Vua Thái Tổ chọn Hanyang làm kinh đô mới và bắt đầu xây dựng cung Gyeongbokgung. Jeong Do-jeon đóng vai trò quan trọng trong việc đặt tên cho cung điện và cổng thành.', 'zh-CN': '太祖定汉阳为新都，开始建造景福宫。郑道传担任了为宫殿和都城命名的重要角色。', 'zh-TW': '太祖定漢陽為新都，開始建造景福宮。鄭道傳擔任了為宮殿和都城命名的重要角色。' } },
+            { id: 'hanyang-step-7', type: 'dialog', speaker: '이성계', speakerI18n: { en: 'Yi Seong-gye', es: 'Yi Seong-gye', ja: '李成桂', th: 'อี ซองเก', vi: 'Yi Seong-gye', 'zh-CN': '李成桂', 'zh-TW': '李成桂' }, text: '정도전이 지은 궁의 이름 \'경복궁\', 큰 복을 누리라는 뜻이라 하니 참으로 좋구나. 이 궁에서 만대의 태평성대를 이루리라!', textI18n: { en: 'The name "Gyeongbokgung" given by Jeong Do-jeon, meaning "Palace of Shining Fortune" — how fitting! From this palace, we shall achieve a peaceful and prosperous era for ten thousand generations!', es: '¡El nombre "Gyeongbokgung" dado por Jeong Do-jeon, que significa "Palacio de la Fortuna Brillante" — qué apropiado! ¡Desde este palacio lograremos una era pacífica y próspera por diez mil generaciones!', ja: '鄭道伝がつけた宮の名「景福宮」、大きな福を享けるという意味だとは実に良い。この宮殿から万代の太平盛世を築こう！', th: 'ชื่อ "คยองบกกุง" ที่ตั้งโดยจอง โดจอน หมายถึง "พระราชวังแห่งโชคลาภอันรุ่งเรือง" — ช่างเหมาะสม! จากพระราชวังนี้ เราจะสร้างยุคสันติสุขและความเจริญรุ่งเรืองชั่วนิรันดร์!', vi: 'Cái tên "Gyeongbokgung" do Jeong Do-jeon đặt, nghĩa là "Cung điện Phúc lớn" — thật hay! Từ cung điện này, sẽ mở ra thời thái bình thịnh trị vạn đời!', 'zh-CN': '郑道传所取宫名"景福宫"，意为享大福之意，甚好。在这座宫殿中要成就万代太平盛世！', 'zh-TW': '鄭道傳所取宮名「景福宮」，意為享大福之意，甚好。在這座宮殿中要成就萬代太平盛世！' } },
+            { id: 'hanyang-step-8', type: 'quiz', quiz: { question: '한양이 수도로 선정된 주요 이유 중 하나로 올바른 것은?', questionI18n: { en: 'What was one of the main reasons Hanyang was selected as the capital?', es: '¿Cuál fue una de las principales razones por las que Hanyang fue seleccionada como capital?', ja: '漢陽が首都に選ばれた主な理由の一つとして正しいものは？', th: 'อะไรเป็นหนึ่งในเหตุผลหลักที่ฮันยังถูกเลือกเป็นเมืองหลวง?', vi: 'Một trong những lý do chính Hanyang được chọn làm kinh đô là gì?', 'zh-CN': '汉阳被选为首都的主要原因之一是？', 'zh-TW': '漢陽被選為首都的主要原因之一是？' }, options: ['바다와 가까워서', '사방이 산으로 둘러싸인 풍수지리적 명당', '이전 왕조의 궁궐을 재활용하기 위해', '중국과의 거리가 가장 가까워서'], optionsI18n: { en: ['It was close to the sea', 'An auspicious feng shui site surrounded by mountains on all sides', 'To reuse the previous dynasty\'s palace', 'It was the closest to China'], es: ['Estaba cerca del mar', 'Un sitio de feng shui auspicioso rodeado de montañas por todos lados', 'Para reutilizar el palacio de la dinastía anterior', 'Era el más cercano a China'], ja: ['海に近かったから', '四方を山に囲まれた風水地理的な名地', '前王朝の宮殿を再利用するため', '中国との距離が最も近かったから'], th: ['ใกล้ทะเล', 'สถานที่มงคลตามหลักฮวงจุ้ยที่ล้อมรอบด้วยภูเขาทุกด้าน', 'เพื่อใช้พระราชวังของราชวงศ์ก่อนซ้ำ', 'ใกล้จีนมากที่สุด'], vi: ['Gần biển', 'Vùng đất phong thủy tốt được bao bọc bởi núi bốn phía', 'Để tái sử dụng cung điện triều đại trước', 'Gần Trung Quốc nhất'], 'zh-CN': ['靠近海洋', '四面环山的风水名地', '为了重新利用前朝宫殿', '距离中国最近'], 'zh-TW': ['靠近海洋', '四面環山的風水名地', '為了重新利用前朝宮殿', '距離中國最近'] }, correctIndex: 1, explanation: '한양은 북악산·남산·낙산·인왕산이 사방을 감싸고 한강이 흐르는 풍수지리적 명당이었기에 수도로 선정되었습니다.', explanationI18n: { en: 'Hanyang was selected as the capital because it was an auspicious feng shui site surrounded by Bugaksan, Namsan, Naksan, and Inwangsan mountains, with the Han River flowing through.', es: 'Hanyang fue seleccionada como capital porque era un sitio auspicioso de feng shui rodeado por las montañas Bugaksan, Namsan, Naksan e Inwangsan, con el río Han fluyendo.', ja: '漢陽は北岳山・南山・駱山・仁王山が四方を囲み漢江が流れる風水地理的名地であったため首都に選ばれました。', th: 'ฮันยังถูกเลือกเป็นเมืองหลวงเพราะเป็นสถานที่มงคลตามหลักฮวงจุ้ย ล้อมรอบด้วยภูเขาบูกักซัน นัมซัน นักซัน และอินวังซัน โดยมีแม่น้ำฮันไหลผ่าน', vi: 'Hanyang được chọn làm kinh đô vì là vùng đất phong thủy tốt, được bao bọc bởi núi Bugak, Namsan, Naksan và Inwangsan, với sông Hàn chảy qua.', 'zh-CN': '汉阳因北岳山、南山、骆山、仁王山四面环抱且有汉江流过，是风水名地，因此被选为首都。', 'zh-TW': '漢陽因北岳山、南山、駱山、仁王山四面環抱且有漢江流過，是風水名地，因此被選為首都。' } } },
           ],
         },
       ],
     },
-
     // ============================================================
     // Period 2: 세종대왕 시대 (1418~1450)
     // ============================================================
     {
-      id: 'sejong-era',
-      eraId: 'joseon-early',
+      id: 'sejong-era', eraId: 'joseon-early',
       name: '세종대왕 시대',
+      nameI18n: { en: 'The Era of King Sejong the Great', es: 'La Era del Rey Sejong el Grande', ja: '世宗大王時代', th: 'ยุคกษัตริย์เซจงมหาราช', vi: 'Thời đại Vua Sejong Đại Đế', 'zh-CN': '世宗大王时代', 'zh-TW': '世宗大王時代' },
       years: '1418~1450',
-      description:
-        '한글 창제, 과학 기술 발전 등 조선의 문화적 전성기를 이끈 세종대왕의 치세입니다.',
+      description: '한글 창제, 과학 기술 발전 등 조선의 문화적 전성기를 이끈 세종대왕의 치세입니다.',
+      descriptionI18n: { en: 'The reign of King Sejong the Great, who led Joseon\'s cultural golden age including the creation of Hangul and advances in science and technology.', es: 'El reinado del Rey Sejong el Grande, quien lideró la edad de oro cultural de Joseon incluyendo la creación del Hangul y avances en ciencia y tecnología.', ja: 'ハングル創製や科学技術の発展など、朝鮮の文化的全盛期を導いた世宗大王の治世です。', th: 'รัชสมัยของกษัตริย์เซจงมหาราช ผู้นำยุคทองทางวัฒนธรรมของโชซอน รวมถึงการสร้างฮันกึลและความก้าวหน้าทางวิทยาศาสตร์และเทคโนโลยี', vi: 'Triều đại của Vua Sejong Đại Đế, dẫn dắt thời kỳ hoàng kim văn hóa Joseon bao gồm sáng tạo Hangul và phát triển khoa học kỹ thuật.', 'zh-CN': '世宗大王的治世，引领了朝鲜文化的全盛时期，包括韩文创制和科学技术的发展。', 'zh-TW': '世宗大王的治世，引領了朝鮮文化的全盛時期，包括韓文創製和科學技術的發展。' },
       events: [
-        // ── Event 3: 한글 창제 (기존 유지) ──
+        // ── Event 3: 한글 창제 ──
         {
-          id: 'hangul-creation',
-          periodId: 'sejong-era',
-          eraId: 'joseon-early',
+          id: 'hangul-creation', periodId: 'sejong-era', eraId: 'joseon-early',
           title: '한글 창제',
+          titleI18n: { en: 'Creation of Hangul', es: 'Creación del Hangul', ja: 'ハングル創製', th: 'การสร้างฮันกึล', vi: 'Sáng tạo chữ Hangul', 'zh-CN': '韩文创制', 'zh-TW': '韓文創製' },
           description: '세종대왕이 백성을 위해 훈민정음을 창제한 역사적 사건을 체험합니다.',
+          descriptionI18n: { en: 'Experience the historic event of King Sejong the Great creating Hunminjeongeum (Hangul) for the common people.', es: 'Experimenta el evento histórico del Rey Sejong el Grande creando Hunminjeongeum (Hangul) para el pueblo común.', ja: '世宗大王が民のために訓民正音（ハングル）を創製した歴史的事件を体験します。', th: 'สัมผัสเหตุการณ์ประวัติศาสตร์ที่กษัตริย์เซจงมหาราชสร้างฮุนมินจองอึม (ฮันกึล) เพื่อสามัญชน', vi: 'Trải nghiệm sự kiện lịch sử Vua Sejong Đại Đế sáng tạo Hunminjeongeum (Hangul) cho bách tính.', 'zh-CN': '体验世宗大王为百姓创制训民正音（韩文）的历史事件。', 'zh-TW': '體驗世宗大王為百姓創製訓民正音（韓文）的歷史事件。' },
           character: {
-            id: 'king-sejong',
-            name: '세종대왕',
+            id: 'king-sejong', name: '세종대왕',
+            nameI18n: { en: 'King Sejong the Great', es: 'Rey Sejong el Grande', ja: '世宗大王', th: 'กษัตริย์เซจงมหาราช', vi: 'Vua Sejong Đại Đế', 'zh-CN': '世宗大王', 'zh-TW': '世宗大王' },
             title: '조선 제4대 왕',
+            titleI18n: { en: '4th King of Joseon', es: '4.º Rey de Joseon', ja: '朝鮮第4代王', th: 'กษัตริย์องค์ที่ 4 แห่งโชซอน', vi: 'Vua thứ 4 của Joseon', 'zh-CN': '朝鲜第4代王', 'zh-TW': '朝鮮第4代王' },
             description: '한글을 창제하고 과학, 문화, 예술 등 다방면에서 조선의 황금기를 이끈 위대한 군주입니다.',
-            primaryColor: '#4B0082',
-            secondaryColor: '#FFD700',
+            descriptionI18n: { en: 'The great monarch who created Hangul and led the golden age of Joseon in science, culture, and the arts.', es: 'El gran monarca que creó el Hangul y lideró la edad de oro de Joseon en ciencia, cultura y artes.', ja: 'ハングルを創製し、科学・文化・芸術など多方面で朝鮮の黄金期を導いた偉大な君主です。', th: 'กษัตริย์ผู้ยิ่งใหญ่ที่สร้างฮันกึลและนำยุคทองของโชซอนในด้านวิทยาศาสตร์ วัฒนธรรม และศิลปะ', vi: 'Vị quân chủ vĩ đại đã sáng tạo Hangul và dẫn dắt thời kỳ hoàng kim của Joseon trong khoa học, văn hóa và nghệ thuật.', 'zh-CN': '创制韩文并在科学、文化、艺术等多方面引领朝鲜黄金时代的伟大君主。', 'zh-TW': '創製韓文並在科學、文化、藝術等多方面引領朝鮮黃金時代的偉大君主。' },
+            primaryColor: '#4B0082', secondaryColor: '#FFD700',
           },
-          difficulty: 'medium',
-          pointReward: 500,
+          difficulty: 'medium', pointReward: 500,
           steps: [
-            {
-              id: 'sejong-hangul-step-1',
-              type: 'narration',
-              text: '1443년, 조선의 궁궐. 백성들의 문맹률이 높아 고민하던 세종대왕이 신하들을 불러 모았습니다.',
-            },
-            {
-              id: 'sejong-hangul-step-2',
-              type: 'dialog',
-              speaker: '세종대왕',
-              text: '백성들이 글을 몰라 자신의 뜻을 펴지 못하니, 내 이를 딱하게 여겨 새 글자를 만들고자 하노라.',
-            },
-            {
-              id: 'sejong-hangul-step-3',
-              type: 'dialog',
-              speaker: '세종대왕',
-              text: '한자는 우리말과 맞지 않아 백성들이 배우기 어렵다. 누구나 쉽게 배울 수 있는 글자가 필요하다.',
-            },
-            {
-              id: 'sejong-hangul-step-4',
-              type: 'quiz',
-              quiz: {
-                question: '세종대왕이 한글을 만든 가장 큰 이유는?',
-                options: [
-                  '중국과 다른 문자를 갖기 위해',
-                  '백성들이 쉽게 읽고 쓸 수 있도록',
-                  '학자들의 연구를 위해',
-                  '외국과의 외교를 위해',
-                ],
-                correctIndex: 1,
-                explanation: '세종대왕은 백성들이 한자를 몰라 자신의 뜻을 표현하지 못하는 것을 안타깝게 여겨 한글을 창제했습니다.',
-              },
-            },
-            {
-              id: 'sejong-hangul-step-5',
-              type: 'narration',
-              text: '세종대왕은 집현전 학자들과 함께 수년간 연구를 거듭했습니다.',
-            },
-            {
-              id: 'sejong-hangul-step-6',
-              type: 'dialog',
-              speaker: '세종대왕',
-              text: '하늘, 땅, 사람의 모양을 본떠 기본 글자를 만들었다. 천지인(天地人)의 원리로 모음을, 발음 기관의 모양으로 자음을 만들었노라.',
-            },
-            {
-              id: 'sejong-hangul-step-7',
-              type: 'quiz',
-              quiz: {
-                question: '훈민정음의 모음은 무엇을 본떠 만들었나요?',
-                options: [
-                  '동물의 모양',
-                  '천지인(하늘, 땅, 사람)',
-                  '산과 강의 모양',
-                  '별자리',
-                ],
-                correctIndex: 1,
-                explanation: 'ㅣ는 사람, ㅡ는 땅, ㆍ는 하늘을 본떠 만들었습니다.',
-              },
-            },
-            {
-              id: 'sejong-hangul-step-8',
-              type: 'dialog',
-              speaker: '세종대왕',
-              text: '이 글자의 이름은 \'훈민정음\'이라. 백성을 가르치는 바른 소리라는 뜻이니라.',
-            },
-            {
-              id: 'sejong-hangul-step-9',
-              type: 'narration',
-              text: '1446년, 드디어 훈민정음이 반포되었습니다. 그러나 많은 신하들이 반대했습니다.',
-            },
-            {
-              id: 'sejong-hangul-step-10',
-              type: 'dialog',
-              speaker: '세종대왕',
-              text: '최만리를 비롯한 신하들이 반대하지만, 이는 백성을 위한 것이다. 반드시 이루어내겠노라!',
-            },
-            {
-              id: 'sejong-hangul-step-11',
-              type: 'quiz',
-              quiz: {
-                question: '훈민정음이 반포된 해는?',
-                options: ['1443년', '1444년', '1445년', '1446년'],
-                correctIndex: 3,
-                explanation: '훈민정음은 1443년에 창제되고 1446년에 공식 반포되었습니다.',
-              },
-            },
-            {
-              id: 'sejong-hangul-step-12',
-              type: 'narration',
-              text: '훈민정음은 28자로 이루어져 있었으며, 과학적이고 체계적인 문자 체계로 세계적으로도 인정받고 있습니다.',
-            },
-            {
-              id: 'sejong-hangul-step-13',
-              type: 'quiz',
-              quiz: {
-                question: '원래 훈민정음은 몇 자로 이루어져 있었나요?',
-                options: ['24자', '26자', '28자', '30자'],
-                correctIndex: 2,
-                explanation: '훈민정음은 원래 28자(자음 17자, 모음 11자)로 만들어졌으며, 현재 한글은 24자를 사용합니다.',
-              },
-            },
-            {
-              id: 'sejong-hangul-step-14',
-              type: 'dialog',
-              speaker: '세종대왕',
-              text: '지혜로운 사람은 하루 아침에 깨칠 수 있고, 어리석은 사람도 열흘이면 배울 수 있느니라.',
-            },
-            {
-              id: 'sejong-hangul-step-15',
-              type: 'narration',
-              text: '한글은 오늘날 대한민국의 공식 문자로, 유네스코 세계기록유산에 등재되어 전 세계에서 가장 과학적인 문자 체계로 인정받고 있습니다.',
-            },
+            { id: 'sejong-hangul-step-1', type: 'narration', text: '1443년, 조선의 궁궐. 백성들의 문맹률이 높아 고민하던 세종대왕이 신하들을 불러 모았습니다.', textI18n: { en: 'In 1443, at the Joseon royal palace. King Sejong the Great, troubled by the high illiteracy rate among his people, summoned his ministers.', es: 'En 1443, en el palacio real de Joseon. El Rey Sejong el Grande, preocupado por la alta tasa de analfabetismo entre su pueblo, convocó a sus ministros.', ja: '1443年、朝鮮の宮殿。民の文盲率の高さに心を痛めていた世宗大王が臣下たちを集めました。', th: 'ในปี ค.ศ. 1443 ที่พระราชวังโชซอน กษัตริย์เซจงมหาราชที่กังวลเกี่ยวกับอัตราการไม่รู้หนังสือสูงในหมู่ประชาชน ได้เรียกประชุมเหล่าขุนนาง', vi: 'Năm 1443, tại cung điện Joseon. Vua Sejong Đại Đế trăn trở vì tỷ lệ mù chữ cao trong dân đã triệu tập các quan.', 'zh-CN': '1443年，朝鲜宫殿。为百姓高文盲率忧心的世宗大王召集了群臣。', 'zh-TW': '1443年，朝鮮宮殿。為百姓高文盲率憂心的世宗大王召集了群臣。' } },
+            { id: 'sejong-hangul-step-2', type: 'dialog', speaker: '세종대왕', speakerI18n: { en: 'King Sejong', es: 'Rey Sejong', ja: '世宗大王', th: 'กษัตริย์เซจง', vi: 'Vua Sejong', 'zh-CN': '世宗大王', 'zh-TW': '世宗大王' }, text: '백성들이 글을 몰라 자신의 뜻을 펴지 못하니, 내 이를 딱하게 여겨 새 글자를 만들고자 하노라.', textI18n: { en: 'The common people cannot read and thus cannot express their thoughts. I pity them and wish to create a new script.', es: 'El pueblo común no puede leer y por lo tanto no puede expresar sus pensamientos. Me apiado de ellos y deseo crear una nueva escritura.', ja: '民が字を知らず自らの意を述べることができない。余はこれを不憫に思い、新しい文字を作ろうと思う。', th: 'สามัญชนไม่สามารถอ่านหนังสือได้จึงไม่สามารถแสดงความคิดได้ ข้าสงสารพวกเขาและต้องการสร้างอักษรใหม่', vi: 'Bách tính không biết chữ nên không thể bày tỏ ý kiến. Ta thương xót mà muốn sáng tạo chữ viết mới.', 'zh-CN': '百姓不识字，无法表达自己的心意。朕深感悲悯，欲创制新文字。', 'zh-TW': '百姓不識字，無法表達自己的心意。朕深感悲憫，欲創製新文字。' } },
+            { id: 'sejong-hangul-step-3', type: 'dialog', speaker: '세종대왕', speakerI18n: { en: 'King Sejong', es: 'Rey Sejong', ja: '世宗大王', th: 'กษัตริย์เซจง', vi: 'Vua Sejong', 'zh-CN': '世宗大王', 'zh-TW': '世宗大王' }, text: '한자는 우리말과 맞지 않아 백성들이 배우기 어렵다. 누구나 쉽게 배울 수 있는 글자가 필요하다.', textI18n: { en: 'Chinese characters do not suit our language, making them difficult for the people to learn. We need a script that anyone can learn easily.', es: 'Los caracteres chinos no se adaptan a nuestro idioma, lo que los hace difíciles de aprender para el pueblo. Necesitamos una escritura que cualquiera pueda aprender fácilmente.', ja: '漢字は我々の言葉に合わず、民が学ぶのが難しい。誰でも簡単に学べる文字が必要だ。', th: 'ตัวอักษรจีนไม่เหมาะกับภาษาของเรา ทำให้ประชาชนเรียนรู้ยาก เราต้องการอักษรที่ทุกคนสามารถเรียนรู้ได้ง่าย', vi: 'Chữ Hán không phù hợp với tiếng nước ta nên dân khó học. Cần một loại chữ ai cũng có thể dễ dàng học được.', 'zh-CN': '汉字与我们的语言不合，百姓难以学习。需要一种人人都能轻松学会的文字。', 'zh-TW': '漢字與我們的語言不合，百姓難以學習。需要一種人人都能輕鬆學會的文字。' } },
+            { id: 'sejong-hangul-step-4', type: 'quiz', quiz: { question: '세종대왕이 한글을 만든 가장 큰 이유는?', questionI18n: { en: 'What was King Sejong\'s main reason for creating Hangul?', es: '¿Cuál fue la razón principal del Rey Sejong para crear el Hangul?', ja: '世宗大王がハングルを作った最大の理由は？', th: 'เหตุผลหลักของกษัตริย์เซจงในการสร้างฮันกึลคืออะไร?', vi: 'Lý do chính khiến Vua Sejong sáng tạo Hangul là gì?', 'zh-CN': '世宗大王创制韩文最大的原因是什么？', 'zh-TW': '世宗大王創製韓文最大的原因是什麼？' }, options: ['중국과 다른 문자를 갖기 위해', '백성들이 쉽게 읽고 쓸 수 있도록', '학자들의 연구를 위해', '외국과의 외교를 위해'], optionsI18n: { en: ['To have a different script from China', 'So the common people could read and write easily', 'For scholarly research', 'For foreign diplomacy'], es: ['Para tener una escritura diferente a China', 'Para que el pueblo común pudiera leer y escribir fácilmente', 'Para la investigación académica', 'Para la diplomacia exterior'], ja: ['中国と異なる文字を持つため', '民が容易に読み書きできるように', '学者の研究のため', '外国との外交のため'], th: ['เพื่อมีอักษรที่ต่างจากจีน', 'เพื่อให้สามัญชนอ่านเขียนได้ง่าย', 'เพื่อการวิจัยวิชาการ', 'เพื่อการทูตต่างประเทศ'], vi: ['Để có chữ viết khác Trung Quốc', 'Để bách tính dễ đọc viết', 'Cho nghiên cứu học thuật', 'Cho ngoại giao'], 'zh-CN': ['为了拥有与中国不同的文字', '为了让百姓能轻松读写', '为了学者的研究', '为了外交'], 'zh-TW': ['為了擁有與中國不同的文字', '為了讓百姓能輕鬆讀寫', '為了學者的研究', '為了外交'] }, correctIndex: 1, explanation: '세종대왕은 백성들이 한자를 몰라 자신의 뜻을 표현하지 못하는 것을 안타깝게 여겨 한글을 창제했습니다.', explanationI18n: { en: 'King Sejong created Hangul because he felt pity that the common people could not express themselves due to their inability to read Chinese characters.', es: 'El Rey Sejong creó el Hangul porque sentía pena de que el pueblo no pudiera expresarse debido a su incapacidad de leer caracteres chinos.', ja: '世宗大王は民が漢字を知らず自らの意を表現できないことを不憫に思い、ハングルを創製しました。', th: 'กษัตริย์เซจงสร้างฮันกึลเพราะรู้สึกสงสารที่สามัญชนไม่สามารถแสดงออกได้เนื่องจากอ่านตัวอักษรจีนไม่ได้', vi: 'Vua Sejong sáng tạo Hangul vì thương xót bách tính không biết chữ Hán nên không thể bày tỏ ý kiến.', 'zh-CN': '世宗大王因怜悯百姓不识汉字而无法表达心意，所以创制了韩文。', 'zh-TW': '世宗大王因憐憫百姓不識漢字而無法表達心意，所以創製了韓文。' } } },
+            { id: 'sejong-hangul-step-5', type: 'narration', text: '세종대왕은 집현전 학자들과 함께 수년간 연구를 거듭했습니다.', textI18n: { en: 'King Sejong conducted years of research together with scholars of the Jiphyeonjeon (Hall of Worthies).', es: 'El Rey Sejong realizó años de investigación junto con los eruditos del Jiphyeonjeon (Salón de los Dignos).', ja: '世宗大王は集賢殿の学者たちと共に数年間の研究を重ねました。', th: 'กษัตริย์เซจงทำการวิจัยหลายปีร่วมกับนักวิชาการของจิบฮยอนจอน (หอแห่งผู้ทรงคุณธรรม)', vi: 'Vua Sejong đã nghiên cứu nhiều năm cùng các học giả Tập Hiền Điện.', 'zh-CN': '世宗大王与集贤殿学者们共同进行了数年的研究。', 'zh-TW': '世宗大王與集賢殿學者們共同進行了數年的研究。' } },
+            { id: 'sejong-hangul-step-6', type: 'dialog', speaker: '세종대왕', speakerI18n: { en: 'King Sejong', es: 'Rey Sejong', ja: '世宗大王', th: 'กษัตริย์เซจง', vi: 'Vua Sejong', 'zh-CN': '世宗大王', 'zh-TW': '世宗大王' }, text: '하늘, 땅, 사람의 모양을 본떠 기본 글자를 만들었다. 천지인(天地人)의 원리로 모음을, 발음 기관의 모양으로 자음을 만들었노라.', textI18n: { en: 'I have created the basic letters by modeling them after heaven, earth, and humanity. Vowels are based on the principle of heaven-earth-human, and consonants on the shapes of speech organs.', es: 'He creado las letras básicas modelándolas según el cielo, la tierra y la humanidad. Las vocales se basan en el principio cielo-tierra-humano, y las consonantes en las formas de los órganos del habla.', ja: '天・地・人の形を模して基本の文字を作った。天地人（天地人）の原理で母音を、発音器官の形で子音を作ったのだ。', th: 'ข้าได้สร้างตัวอักษรพื้นฐานโดยจำลองจากสวรรค์ พื้นดิน และมนุษย์ สระอิงหลักการสวรรค์-ดิน-มนุษย์ และพยัญชนะจากรูปร่างของอวัยวะออกเสียง', vi: 'Ta đã tạo các chữ cái cơ bản dựa theo hình dạng trời, đất, người. Nguyên âm theo nguyên lý Thiên Địa Nhân, phụ âm theo hình dạng cơ quan phát âm.', 'zh-CN': '仿照天、地、人的形状创制了基本字母。以天地人（天地人）原理造元音，以发音器官的形状造辅音。', 'zh-TW': '仿照天、地、人的形狀創製了基本字母。以天地人（天地人）原理造元音，以發音器官的形狀造輔音。' } },
+            { id: 'sejong-hangul-step-7', type: 'quiz', quiz: { question: '훈민정음의 모음은 무엇을 본떠 만들었나요?', questionI18n: { en: 'What were the vowels of Hunminjeongeum modeled after?', es: '¿En qué se modelaron las vocales del Hunminjeongeum?', ja: '訓民正音の母音は何を模して作られましたか？', th: 'สระของฮุนมินจองอึมจำลองจากอะไร?', vi: 'Nguyên âm của Hunminjeongeum được tạo theo hình mẫu gì?', 'zh-CN': '训民正音的元音是仿照什么创制的？', 'zh-TW': '訓民正音的元音是仿照什麼創製的？' }, options: ['동물의 모양', '천지인(하늘, 땅, 사람)', '산과 강의 모양', '별자리'], optionsI18n: { en: ['Animal shapes', 'Heaven, Earth, and Humanity', 'Mountains and rivers', 'Constellations'], es: ['Formas de animales', 'Cielo, Tierra y Humanidad', 'Montañas y ríos', 'Constelaciones'], ja: ['動物の形', '天地人（天・地・人）', '山と川の形', '星座'], th: ['รูปร่างสัตว์', 'สวรรค์ พื้นดิน และมนุษย์', 'ภูเขาและแม่น้ำ', 'กลุ่มดาว'], vi: ['Hình dạng động vật', 'Trời, Đất và Con người', 'Hình dạng núi sông', 'Chòm sao'], 'zh-CN': ['动物的形状', '天地人（天、地、人）', '山和河的形状', '星座'], 'zh-TW': ['動物的形狀', '天地人（天、地、人）', '山和河的形狀', '星座'] }, correctIndex: 1, explanation: 'ㅣ는 사람, ㅡ는 땅, ㆍ는 하늘을 본떠 만들었습니다.', explanationI18n: { en: 'ㅣ was modeled after a standing person, ㅡ after the flat earth, and ㆍ after the round sky.', es: 'ㅣ fue modelado según una persona de pie, ㅡ según la tierra plana y ㆍ según el cielo redondo.', ja: 'ㅣは人、ㅡは地、ㆍは天を模して作られました。', th: 'ㅣ จำลองจากคนยืน ㅡ จากพื้นดินแบน และ ㆍ จากท้องฟ้ากลม', vi: 'ㅣ mô phỏng người đứng, ㅡ mô phỏng mặt đất, ㆍ mô phỏng bầu trời.', 'zh-CN': 'ㅣ仿照人，ㅡ仿照地，ㆍ仿照天。', 'zh-TW': 'ㅣ仿照人，ㅡ仿照地，ㆍ仿照天。' } } },
+            { id: 'sejong-hangul-step-8', type: 'dialog', speaker: '세종대왕', speakerI18n: { en: 'King Sejong', es: 'Rey Sejong', ja: '世宗大王', th: 'กษัตริย์เซจง', vi: 'Vua Sejong', 'zh-CN': '世宗大王', 'zh-TW': '世宗大王' }, text: '이 글자의 이름은 \'훈민정음\'이라. 백성을 가르치는 바른 소리라는 뜻이니라.', textI18n: { en: 'The name of this script shall be "Hunminjeongeum" — meaning "The Correct Sounds for the Instruction of the People."', es: 'El nombre de esta escritura será "Hunminjeongeum" — que significa "Los Sonidos Correctos para la Instrucción del Pueblo".', ja: 'この文字の名は「訓民正音」という。民を教える正しい音という意味だ。', th: 'ชื่อของอักษรนี้คือ "ฮุนมินจองอึม" — หมายถึง "เสียงที่ถูกต้องเพื่อสั่งสอนประชาชน"', vi: 'Tên của chữ viết này là "Hunminjeongeum" — nghĩa là "Âm đúng để dạy dân".', 'zh-CN': '此文字名为"训民正音"，意为"教导百姓的正确声音"。', 'zh-TW': '此文字名為「訓民正音」，意為「教導百姓的正確聲音」。' } },
+            { id: 'sejong-hangul-step-9', type: 'narration', text: '1446년, 드디어 훈민정음이 반포되었습니다. 그러나 많은 신하들이 반대했습니다.', textI18n: { en: 'In 1446, Hunminjeongeum was finally promulgated. However, many officials opposed it.', es: 'En 1446, el Hunminjeongeum fue finalmente promulgado. Sin embargo, muchos funcionarios se opusieron.', ja: '1446年、ついに訓民正音が頒布されました。しかし多くの臣下が反対しました。', th: 'ในปี ค.ศ. 1446 ฮุนมินจองอึมถูกประกาศใช้ในที่สุด อย่างไรก็ตาม ขุนนางหลายคนคัดค้าน', vi: 'Năm 1446, Hunminjeongeum cuối cùng được ban bố. Tuy nhiên, nhiều quan lại phản đối.', 'zh-CN': '1446年，训民正音终于颁布。但许多臣子表示反对。', 'zh-TW': '1446年，訓民正音終於頒布。但許多臣子表示反對。' } },
+            { id: 'sejong-hangul-step-10', type: 'dialog', speaker: '세종대왕', speakerI18n: { en: 'King Sejong', es: 'Rey Sejong', ja: '世宗大王', th: 'กษัตริย์เซจง', vi: 'Vua Sejong', 'zh-CN': '世宗大王', 'zh-TW': '世宗大王' }, text: '최만리를 비롯한 신하들이 반대하지만, 이는 백성을 위한 것이다. 반드시 이루어내겠노라!', textI18n: { en: 'Officials including Choe Malli may oppose this, but it is for the people. I shall see it through!', es: '¡Los funcionarios incluyendo Choe Malli pueden oponerse, pero es para el pueblo. ¡Lo llevaré a cabo!', ja: '崔万理をはじめとする臣下たちが反対するが、これは民のためだ。必ず成し遂げよう！', th: 'ขุนนางรวมถึงเชมัลลีอาจคัดค้าน แต่นี่เพื่อประชาชน ข้าจะทำให้สำเร็จ!', vi: 'Các quan như Choe Malli phản đối, nhưng đây là vì dân. Nhất định phải hoàn thành!', 'zh-CN': '崔万理等臣子虽然反对，但这是为了百姓。一定要实现！', 'zh-TW': '崔萬理等臣子雖然反對，但這是為了百姓。一定要實現！' } },
+            { id: 'sejong-hangul-step-11', type: 'quiz', quiz: { question: '훈민정음이 반포된 해는?', questionI18n: { en: 'In what year was Hunminjeongeum promulgated?', es: '¿En qué año se promulgó el Hunminjeongeum?', ja: '訓民正音が頒布された年は？', th: 'ฮุนมินจองอึมถูกประกาศใช้ในปีใด?', vi: 'Hunminjeongeum được ban bố năm nào?', 'zh-CN': '训民正音是哪一年颁布的？', 'zh-TW': '訓民正音是哪一年頒布的？' }, options: ['1443년', '1444년', '1445년', '1446년'], optionsI18n: { en: ['1443', '1444', '1445', '1446'], es: ['1443', '1444', '1445', '1446'], ja: ['1443年', '1444年', '1445年', '1446年'], th: ['ค.ศ. 1443', 'ค.ศ. 1444', 'ค.ศ. 1445', 'ค.ศ. 1446'], vi: ['1443', '1444', '1445', '1446'], 'zh-CN': ['1443年', '1444年', '1445年', '1446年'], 'zh-TW': ['1443年', '1444年', '1445年', '1446年'] }, correctIndex: 3, explanation: '훈민정음은 1443년에 창제되고 1446년에 공식 반포되었습니다.', explanationI18n: { en: 'Hunminjeongeum was created in 1443 and officially promulgated in 1446.', es: 'El Hunminjeongeum fue creado en 1443 y promulgado oficialmente en 1446.', ja: '訓民正音は1443年に創製され、1446年に公式に頒布されました。', th: 'ฮุนมินจองอึมถูกสร้างในปี ค.ศ. 1443 และประกาศใช้อย่างเป็นทางการในปี ค.ศ. 1446', vi: 'Hunminjeongeum được sáng tạo năm 1443 và chính thức ban bố năm 1446.', 'zh-CN': '训民正音于1443年创制，1446年正式颁布。', 'zh-TW': '訓民正音於1443年創製，1446年正式頒布。' } } },
+            { id: 'sejong-hangul-step-12', type: 'narration', text: '훈민정음은 28자로 이루어져 있었으며, 과학적이고 체계적인 문자 체계로 세계적으로도 인정받고 있습니다.', textI18n: { en: 'Hunminjeongeum originally consisted of 28 letters and is recognized worldwide as a scientific and systematic writing system.', es: 'El Hunminjeongeum originalmente consistía en 28 letras y es reconocido mundialmente como un sistema de escritura científico y sistemático.', ja: '訓民正音は28字で構成されており、科学的かつ体系的な文字体系として世界的にも認められています。', th: 'ฮุนมินจองอึมประกอบด้วย 28 ตัวอักษรและได้รับการยอมรับทั่วโลกว่าเป็นระบบการเขียนที่เป็นวิทยาศาสตร์และเป็นระบบ', vi: 'Hunminjeongeum ban đầu gồm 28 chữ cái và được thế giới công nhận là hệ thống chữ viết khoa học, có hệ thống.', 'zh-CN': '训民正音由28个字母组成，作为科学系统的文字体系在全世界受到认可。', 'zh-TW': '訓民正音由28個字母組成，作為科學系統的文字體系在全世界受到認可。' } },
+            { id: 'sejong-hangul-step-13', type: 'quiz', quiz: { question: '원래 훈민정음은 몇 자로 이루어져 있었나요?', questionI18n: { en: 'How many letters did the original Hunminjeongeum consist of?', es: '¿De cuántas letras consistía el Hunminjeongeum original?', ja: '元の訓民正音は何文字で構成されていましたか？', th: 'ฮุนมินจองอึมดั้งเดิมประกอบด้วยกี่ตัวอักษร?', vi: 'Hunminjeongeum ban đầu gồm bao nhiêu chữ cái?', 'zh-CN': '训民正音原来由多少个字母组成？', 'zh-TW': '訓民正音原來由多少個字母組成？' }, options: ['24자', '26자', '28자', '30자'], optionsI18n: { en: ['24', '26', '28', '30'], es: ['24', '26', '28', '30'], ja: ['24字', '26字', '28字', '30字'], th: ['24 ตัว', '26 ตัว', '28 ตัว', '30 ตัว'], vi: ['24', '26', '28', '30'], 'zh-CN': ['24个', '26个', '28个', '30个'], 'zh-TW': ['24個', '26個', '28個', '30個'] }, correctIndex: 2, explanation: '훈민정음은 원래 28자(자음 17자, 모음 11자)로 만들어졌으며, 현재 한글은 24자를 사용합니다.', explanationI18n: { en: 'Hunminjeongeum originally had 28 letters (17 consonants and 11 vowels). Modern Hangul uses 24 letters.', es: 'El Hunminjeongeum originalmente tenía 28 letras (17 consonantes y 11 vocales). El Hangul moderno usa 24 letras.', ja: '訓民正音は元々28字（子音17字、母音11字）で作られ、現在のハングルは24字を使用しています。', th: 'ฮุนมินจองอึมมี 28 ตัวอักษร (พยัญชนะ 17 ตัว สระ 11 ตัว) ฮันกึลสมัยใหม่ใช้ 24 ตัว', vi: 'Hunminjeongeum ban đầu có 28 chữ (17 phụ âm, 11 nguyên âm). Hangul hiện đại sử dụng 24 chữ.', 'zh-CN': '训民正音原有28个字母（辅音17个、元音11个），现代韩文使用24个字母。', 'zh-TW': '訓民正音原有28個字母（輔音17個、元音11個），現代韓文使用24個字母。' } } },
+            { id: 'sejong-hangul-step-14', type: 'dialog', speaker: '세종대왕', speakerI18n: { en: 'King Sejong', es: 'Rey Sejong', ja: '世宗大王', th: 'กษัตริย์เซจง', vi: 'Vua Sejong', 'zh-CN': '世宗大王', 'zh-TW': '世宗大王' }, text: '지혜로운 사람은 하루 아침에 깨칠 수 있고, 어리석은 사람도 열흘이면 배울 수 있느니라.', textI18n: { en: 'A wise person can learn it in a single morning, and even an unlearned person can master it in ten days.', es: 'Una persona sabia puede aprenderlo en una sola mañana, y hasta una persona ignorante puede dominarlo en diez días.', ja: '賢い者は一朝にして悟ることができ、愚かな者でも十日あれば学ぶことができる。', th: 'คนฉลาดสามารถเรียนรู้ได้ภายในเช้าวันเดียว และแม้แต่คนที่ไม่รู้หนังสือก็สามารถเรียนรู้ได้ในสิบวัน', vi: 'Người thông minh có thể hiểu trong một buổi sáng, người ngu dốt cũng có thể học trong mười ngày.', 'zh-CN': '聪明之人一朝即可领悟，愚钝之人十日亦能学会。', 'zh-TW': '聰明之人一朝即可領悟，愚鈍之人十日亦能學會。' } },
+            { id: 'sejong-hangul-step-15', type: 'narration', text: '한글은 오늘날 대한민국의 공식 문자로, 유네스코 세계기록유산에 등재되어 전 세계에서 가장 과학적인 문자 체계로 인정받고 있습니다.', textI18n: { en: 'Today, Hangul is the official script of the Republic of Korea, registered as a UNESCO Memory of the World, and recognized as one of the most scientific writing systems in the world.', es: 'Hoy, el Hangul es la escritura oficial de la República de Corea, registrada como Memoria del Mundo de la UNESCO, y reconocida como uno de los sistemas de escritura más científicos del mundo.', ja: 'ハングルは今日、大韓民国の公式文字として、ユネスコ世界記憶遺産に登録され、世界で最も科学的な文字体系として認められています。', th: 'ปัจจุบัน ฮันกึลเป็นอักษรทางการของสาธารณรัฐเกาหลี ได้รับการขึ้นทะเบียนเป็นความทรงจำแห่งโลกของยูเนสโก และได้รับการยอมรับว่าเป็นหนึ่งในระบบการเขียนที่เป็นวิทยาศาสตร์มากที่สุดในโลก', vi: 'Ngày nay, Hangul là chữ viết chính thức của Hàn Quốc, được UNESCO ghi danh là Di sản Ký ức Thế giới và được công nhận là một trong những hệ thống chữ viết khoa học nhất thế giới.', 'zh-CN': '如今韩文是大韩民国的官方文字，被列入联合国教科文组织世界记忆遗产，被公认为世界上最具科学性的文字体系之一。', 'zh-TW': '如今韓文是大韓民國的官方文字，被列入聯合國教科文組織世界記憶遺產，被公認為世界上最具科學性的文字體系之一。' } },
           ],
         },
-        // ── Event 4: 측우기와 과학 ──
+        // ── Event 4: 측우기와 과학 ── (truncated for brevity - this event and remaining periods/events follow same pattern)
         {
-          id: 'jang-yeongshil-science',
-          periodId: 'sejong-era',
-          eraId: 'joseon-early',
+          id: 'jang-yeongshil-science', periodId: 'sejong-era', eraId: 'joseon-early',
           title: '측우기와 과학',
-          description:
-            '세종대왕 시대 장영실의 과학 발명품들 — 측우기, 앙부일구, 자격루 등의 이야기를 체험합니다.',
+          titleI18n: { en: 'The Rain Gauge and Science', es: 'El Pluviómetro y la Ciencia', ja: '測雨器と科学', th: 'เครื่องวัดน้ำฝนและวิทยาศาสตร์', vi: 'Máy đo mưa và Khoa học', 'zh-CN': '测雨器与科学', 'zh-TW': '測雨器與科學' },
+          description: '세종대왕 시대 장영실의 과학 발명품들 — 측우기, 앙부일구, 자격루 등의 이야기를 체험합니다.',
+          descriptionI18n: { en: 'Experience the scientific inventions of Jang Yeong-sil during King Sejong\'s reign — the rain gauge, sundial, and water clock.', es: 'Experimenta las invenciones científicas de Jang Yeong-sil durante el reinado del Rey Sejong — el pluviómetro, el reloj de sol y el reloj de agua.', ja: '世宗大王時代の蒋英実の科学発明品——測雨器、仰釜日晷、自撃漏などの物語を体験します。', th: 'สัมผัสสิ่งประดิษฐ์ทางวิทยาศาสตร์ของจัง ยองซิล ในรัชสมัยกษัตริย์เซจง — เครื่องวัดน้ำฝน นาฬิกาแดด และนาฬิกาน้ำ', vi: 'Trải nghiệm các phát minh khoa học của Jang Yeong-sil thời Vua Sejong — máy đo mưa, đồng hồ mặt trời và đồng hồ nước.', 'zh-CN': '体验世宗大王时期蒋英实的科学发明——测雨器、仰釜日晷、自击漏等。', 'zh-TW': '體驗世宗大王時期蔣英實的科學發明——測雨器、仰釜日晷、自擊漏等。' },
           character: {
-            id: 'jang-yeongshil',
-            name: '장영실',
+            id: 'jang-yeongshil', name: '장영실',
+            nameI18n: { en: 'Jang Yeong-sil', es: 'Jang Yeong-sil', ja: '蒋英実', th: 'จัง ยองซิล', vi: 'Jang Yeong-sil (Tưởng Anh Thực)', 'zh-CN': '蒋英实', 'zh-TW': '蔣英實' },
             title: '발명가',
-            description:
-              '노비 출신이면서도 뛰어난 재능을 인정받아 세종대왕의 총애를 받으며 측우기, 앙부일구, 자격루 등 수많은 과학 기구를 발명한 조선 최고의 과학자입니다.',
-            primaryColor: '#2E8B57',
-            secondaryColor: '#87CEEB',
+            titleI18n: { en: 'Inventor', es: 'Inventor', ja: '発明家', th: 'นักประดิษฐ์', vi: 'Nhà phát minh', 'zh-CN': '发明家', 'zh-TW': '發明家' },
+            description: '노비 출신이면서도 뛰어난 재능을 인정받아 세종대왕의 총애를 받으며 측우기, 앙부일구, 자격루 등 수많은 과학 기구를 발명한 조선 최고의 과학자입니다.',
+            descriptionI18n: { en: 'Born a slave but recognized for his extraordinary talent, he was favored by King Sejong and invented numerous scientific instruments including the rain gauge, sundial, and water clock — Joseon\'s greatest scientist.', es: 'Nacido esclavo pero reconocido por su talento extraordinario, fue favorecido por el Rey Sejong e inventó numerosos instrumentos científicos incluyendo el pluviómetro, reloj de sol y reloj de agua — el mayor científico de Joseon.', ja: '奴婢出身ながら卓越した才能を認められ、世宗大王の寵愛を受け、測雨器・仰釜日晷・自撃漏など数多くの科学器具を発明した朝鮮最高の科学者です。', th: 'เกิดเป็นทาสแต่ได้รับการยอมรับในพรสวรรค์อันยิ่งใหญ่ ได้รับความโปรดปรานจากกษัตริย์เซจงและประดิษฐ์เครื่องมือวิทยาศาสตร์มากมาย — นักวิทยาศาสตร์ที่ยิ่งใหญ่ที่สุดของโชซอน', vi: 'Xuất thân nô tỳ nhưng được công nhận tài năng xuất chúng, được Vua Sejong sủng ái, phát minh nhiều dụng cụ khoa học — nhà khoa học vĩ đại nhất Joseon.', 'zh-CN': '虽出身奴婢但才华出众受世宗大王宠信，发明了测雨器、仰釜日晷、自击漏等众多科学仪器的朝鲜最伟大的科学家。', 'zh-TW': '雖出身奴婢但才華出眾受世宗大王寵信，發明了測雨器、仰釜日晷、自擊漏等眾多科學儀器的朝鮮最偉大的科學家。' },
+            primaryColor: '#2E8B57', secondaryColor: '#87CEEB',
           },
-          difficulty: 'medium',
-          pointReward: 500,
+          difficulty: 'medium', pointReward: 500,
           steps: [
-            {
-              id: 'jang-step-1',
-              type: 'narration',
-              text: '세종대왕은 백성의 삶을 개선하기 위해 과학 기술 발전에 큰 관심을 기울였습니다. 그중에서도 노비 출신 장영실의 재능을 알아보고 파격적으로 등용하였습니다.',
-            },
-            {
-              id: 'jang-step-2',
-              type: 'dialog',
-              speaker: '장영실',
-              text: '소인은 미천한 노비 출신이오나, 전하께서 재능을 알아봐 주시니 목숨을 다해 보답하겠사옵니다.',
-            },
-            {
-              id: 'jang-step-3',
-              type: 'dialog',
-              speaker: '장영실',
-              text: '전하, 농사는 하늘에 달려 있사옵니다. 비가 얼마나 오는지 정확히 재는 기구를 만들면 백성들의 농사에 큰 도움이 될 것이옵니다.',
-            },
-            {
-              id: 'jang-step-4',
-              type: 'narration',
-              text: '1441년, 장영실은 세계 최초의 강우량 측정 기구인 측우기를 발명하였습니다. 이는 서양보다 약 200년이나 앞선 것이었습니다.',
-            },
-            {
-              id: 'jang-step-5',
-              type: 'quiz',
-              quiz: {
-                question: '측우기가 발명된 해는 언제인가요?',
-                options: ['1420년', '1432년', '1441년', '1446년'],
-                correctIndex: 2,
-                explanation:
-                  '측우기는 1441년에 발명되었습니다. 이는 서양의 강우량 측정기보다 약 200년이나 앞선 세계 최초의 우량 측정 기구입니다.',
-              },
-            },
-            {
-              id: 'jang-step-6',
-              type: 'dialog',
-              speaker: '장영실',
-              text: '전하, 이 그릇에 빗물이 고이면 자 대로 그 깊이를 재어 기록하면 되옵니다. 이를 측우기라 이름 짓겠사옵니다.',
-            },
-            {
-              id: 'jang-step-7',
-              type: 'narration',
-              text: '장영실의 발명은 여기서 그치지 않았습니다. 해시계인 앙부일구를 만들어 백성들이 시간을 알 수 있게 하였습니다.',
-            },
-            {
-              id: 'jang-step-8',
-              type: 'dialog',
-              speaker: '장영실',
-              text: '앙부일구는 솥을 엎어놓은 모양의 해시계이옵니다. 가마솥처럼 오목한 면에 그림자가 지면 시각을 알 수 있사옵니다. 글을 모르는 백성도 동물 그림으로 시각을 알 수 있도록 십이지를 새겨 넣었사옵니다.',
-            },
-            {
-              id: 'jang-step-9',
-              type: 'quiz',
-              quiz: {
-                question: '앙부일구는 어떤 용도의 기구인가요?',
-                options: [
-                  '강우량을 측정하는 기구',
-                  '해시계 (시간을 측정하는 기구)',
-                  '바람의 방향을 측정하는 기구',
-                  '온도를 측정하는 기구',
-                ],
-                correctIndex: 1,
-                explanation:
-                  '앙부일구는 오목한 반구 모양의 해시계로, 해의 그림자로 시간을 알려주는 기구입니다.',
-              },
-            },
-            {
-              id: 'jang-step-10',
-              type: 'narration',
-              text: '장영실은 또한 물의 힘으로 스스로 시간을 알려주는 자동 물시계인 자격루도 만들었습니다.',
-            },
-            {
-              id: 'jang-step-11',
-              type: 'dialog',
-              speaker: '장영실',
-              text: '자격루는 물이 일정하게 흘러내리면 자동으로 종과 북, 징을 울려 시각을 알려주는 물시계이옵니다. 밤에도 시간을 알 수 있사옵니다.',
-            },
-            {
-              id: 'jang-step-12',
-              type: 'quiz',
-              quiz: {
-                question:
-                  '다음 중 장영실이 발명한 것이 아닌 것은?',
-                options: ['측우기', '앙부일구', '자격루', '훈민정음'],
-                correctIndex: 3,
-                explanation:
-                  '훈민정음은 세종대왕이 직접 창제한 문자입니다. 측우기, 앙부일구, 자격루는 장영실이 발명한 과학 기구입니다.',
-              },
-            },
+            { id: 'jang-step-1', type: 'narration', text: '세종대왕은 백성의 삶을 개선하기 위해 과학 기술 발전에 큰 관심을 기울였습니다. 그중에서도 노비 출신 장영실의 재능을 알아보고 파격적으로 등용하였습니다.', textI18n: { en: 'King Sejong took great interest in developing science and technology to improve the lives of his people. He notably recognized the talents of Jang Yeong-sil, born a slave, and gave him an unprecedented appointment.', es: 'El Rey Sejong se interesó mucho en desarrollar la ciencia y la tecnología para mejorar las vidas de su pueblo. Reconoció notablemente los talentos de Jang Yeong-sil, nacido esclavo, y le dio un nombramiento sin precedentes.', ja: '世宗大王は民の暮らしを改善するために科学技術の発展に大きな関心を寄せました。中でも奴婢出身の蒋英実の才能を見出し、破格の登用を行いました。', th: 'กษัตริย์เซจงสนใจอย่างมากในการพัฒนาวิทยาศาสตร์และเทคโนโลยีเพื่อปรับปรุงชีวิตของประชาชน เขาเห็นความสามารถของจัง ยองซิล ผู้เกิดเป็นทาส และแต่งตั้งอย่างไม่เคยมีมาก่อน', vi: 'Vua Sejong rất quan tâm đến phát triển khoa học kỹ thuật để cải thiện đời sống dân. Đặc biệt, ông nhận ra tài năng của Jang Yeong-sil xuất thân nô tỳ và bổ nhiệm đặc cách.', 'zh-CN': '世宗大王十分关注科学技术的发展以改善百姓生活。其中发现了奴婢出身的蒋英实的才能，破格予以提拔。', 'zh-TW': '世宗大王十分關注科學技術的發展以改善百姓生活。其中發現了奴婢出身的蔣英實的才能，破格予以提拔。' } },
+            { id: 'jang-step-2', type: 'dialog', speaker: '장영실', speakerI18n: { en: 'Jang Yeong-sil', es: 'Jang Yeong-sil', ja: '蒋英実', th: 'จัง ยองซิล', vi: 'Jang Yeong-sil', 'zh-CN': '蒋英实', 'zh-TW': '蔣英實' }, text: '소인은 미천한 노비 출신이오나, 전하께서 재능을 알아봐 주시니 목숨을 다해 보답하겠사옵니다.', textI18n: { en: 'Though I am of humble slave origin, Your Majesty has recognized my abilities. I shall repay this grace with my very life.', es: 'Aunque soy de humilde origen esclavo, Su Majestad ha reconocido mis habilidades. Pagaré esta gracia con mi propia vida.', ja: '小人は卑しい奴婢の出でございますが、殿下が才能をお認めくださいましたので、命を懸けてお報いいたします。', th: 'แม้ข้าจะเป็นทาสผู้ต่ำต้อย แต่พระองค์ทรงเห็นความสามารถของข้า ข้าจะตอบแทนพระคุณด้วยชีวิต', vi: 'Tiểu nhân xuất thân hèn mọn nô tỳ, nhưng bệ hạ đã nhận ra tài năng, xin lấy tính mạng báo đáp.', 'zh-CN': '小人虽出身卑微的奴婢，但殿下识得小人才能，小人愿以命相报。', 'zh-TW': '小人雖出身卑微的奴婢，但殿下識得小人才能，小人願以命相報。' } },
+            { id: 'jang-step-3', type: 'dialog', speaker: '장영실', speakerI18n: { en: 'Jang Yeong-sil', es: 'Jang Yeong-sil', ja: '蒋英実', th: 'จัง ยองซิล', vi: 'Jang Yeong-sil', 'zh-CN': '蒋英实', 'zh-TW': '蔣英實' }, text: '전하, 농사는 하늘에 달려 있사옵니다. 비가 얼마나 오는지 정확히 재는 기구를 만들면 백성들의 농사에 큰 도움이 될 것이옵니다.', textI18n: { en: 'Your Majesty, farming depends on the heavens. If I create an instrument to accurately measure rainfall, it would greatly help the people\'s agriculture.', es: 'Su Majestad, la agricultura depende del cielo. Si creo un instrumento para medir con precisión la lluvia, ayudaría enormemente a la agricultura del pueblo.', ja: '殿下、農業は天に左右されます。雨がどれだけ降るかを正確に測る器具を作れば、民の農業に大きな助けとなります。', th: 'ฝ่าพระบาท การทำนาขึ้นอยู่กับฟ้า หากข้าสร้างเครื่องมือวัดปริมาณน้ำฝนอย่างแม่นยำ จะช่วยการเกษตรของประชาชนได้อย่างมาก', vi: 'Tâu bệ hạ, nông nghiệp phụ thuộc vào trời. Nếu thần chế tạo dụng cụ đo chính xác lượng mưa sẽ giúp ích lớn cho nông nghiệp của dân.', 'zh-CN': '殿下，农事靠天。若能制造精确测量降雨量的器具，将大大有助于百姓的农业。', 'zh-TW': '殿下，農事靠天。若能製造精確測量降雨量的器具，將大大有助於百姓的農業。' } },
+            { id: 'jang-step-4', type: 'narration', text: '1441년, 장영실은 세계 최초의 강우량 측정 기구인 측우기를 발명하였습니다. 이는 서양보다 약 200년이나 앞선 것이었습니다.', textI18n: { en: 'In 1441, Jang Yeong-sil invented the world\'s first standardized rain gauge. This predated Western rain gauges by approximately 200 years.', es: 'En 1441, Jang Yeong-sil inventó el primer pluviómetro estandarizado del mundo. Esto precedió a los pluviómetros occidentales por aproximadamente 200 años.', ja: '1441年、蒋英実は世界初の標準化された雨量計測器・測雨器を発明しました。これは西洋より約200年も先んじたものでした。', th: 'ในปี ค.ศ. 1441 จัง ยองซิล ประดิษฐ์เครื่องวัดน้ำฝนมาตรฐานเครื่องแรกของโลก ซึ่งเร็วกว่าเครื่องวัดน้ำฝนตะวันตกประมาณ 200 ปี', vi: 'Năm 1441, Jang Yeong-sil phát minh máy đo mưa chuẩn hóa đầu tiên trên thế giới, sớm hơn phương Tây khoảng 200 năm.', 'zh-CN': '1441年，蒋英实发明了世界上第一个标准化雨量计——测雨器。这比西方早了约200年。', 'zh-TW': '1441年，蔣英實發明了世界上第一個標準化雨量計——測雨器。這比西方早了約200年。' } },
+            { id: 'jang-step-5', type: 'quiz', quiz: { question: '측우기가 발명된 해는 언제인가요?', questionI18n: { en: 'In what year was the rain gauge invented?', es: '¿En qué año se inventó el pluviómetro?', ja: '測雨器が発明された年は？', th: 'เครื่องวัดน้ำฝนถูกประดิษฐ์ในปีใด?', vi: 'Máy đo mưa được phát minh năm nào?', 'zh-CN': '测雨器是哪一年发明的？', 'zh-TW': '測雨器是哪一年發明的？' }, options: ['1420년', '1432년', '1441년', '1446년'], optionsI18n: { en: ['1420', '1432', '1441', '1446'], es: ['1420', '1432', '1441', '1446'], ja: ['1420年', '1432年', '1441年', '1446年'], th: ['ค.ศ. 1420', 'ค.ศ. 1432', 'ค.ศ. 1441', 'ค.ศ. 1446'], vi: ['1420', '1432', '1441', '1446'], 'zh-CN': ['1420年', '1432年', '1441年', '1446年'], 'zh-TW': ['1420年', '1432年', '1441年', '1446年'] }, correctIndex: 2, explanation: '측우기는 1441년에 발명되었습니다. 이는 서양의 강우량 측정기보다 약 200년이나 앞선 세계 최초의 우량 측정 기구입니다.', explanationI18n: { en: 'The rain gauge was invented in 1441. It was the world\'s first standardized rainfall measurement device, predating Western equivalents by about 200 years.', es: 'El pluviómetro fue inventado en 1441. Fue el primer dispositivo estandarizado de medición de lluvia del mundo, precediendo equivalentes occidentales por unos 200 años.', ja: '測雨器は1441年に発明されました。西洋の雨量計より約200年先んじた世界初の雨量測定器具です。', th: 'เครื่องวัดน้ำฝนถูกประดิษฐ์ในปี ค.ศ. 1441 เป็นอุปกรณ์วัดปริมาณน้ำฝนมาตรฐานเครื่องแรกของโลก เร็วกว่าตะวันตกประมาณ 200 ปี', vi: 'Máy đo mưa được phát minh năm 1441, là dụng cụ đo lượng mưa chuẩn hóa đầu tiên trên thế giới, sớm hơn phương Tây khoảng 200 năm.', 'zh-CN': '测雨器发明于1441年，是世界上第一个标准化雨量测量器具，比西方早了约200年。', 'zh-TW': '測雨器發明於1441年，是世界上第一個標準化雨量測量器具，比西方早了約200年。' } } },
+            { id: 'jang-step-6', type: 'dialog', speaker: '장영실', speakerI18n: { en: 'Jang Yeong-sil', es: 'Jang Yeong-sil', ja: '蒋英実', th: 'จัง ยองซิล', vi: 'Jang Yeong-sil', 'zh-CN': '蒋英实', 'zh-TW': '蔣英實' }, text: '전하, 이 그릇에 빗물이 고이면 자 대로 그 깊이를 재어 기록하면 되옵니다. 이를 측우기라 이름 짓겠사옵니다.', textI18n: { en: 'Your Majesty, when rainwater collects in this vessel, one simply measures its depth with a ruler and records it. I shall name it the Cheugugi (rain gauge).', es: 'Su Majestad, cuando el agua de lluvia se acumula en este recipiente, simplemente se mide su profundidad con una regla y se registra. Lo llamaré Cheugugi (pluviómetro).', ja: '殿下、この器に雨水がたまったら物差しでその深さを測り記録すればよいのです。これを測雨器と名付けます。', th: 'ฝ่าพระบาท เมื่อน้ำฝนรวมตัวในภาชนะนี้ เพียงวัดความลึกด้วยไม้บรรทัดแล้วบันทึก ข้าจะตั้งชื่อว่า ชึกูกี (เครื่องวัดน้ำฝน)', vi: 'Tâu bệ hạ, khi nước mưa đọng trong bình này, chỉ cần dùng thước đo độ sâu và ghi chép. Thần xin đặt tên là Cheugugi (máy đo mưa).', 'zh-CN': '殿下，雨水积于此器中后，用尺子量其深度并记录即可。小人将其命名为测雨器。', 'zh-TW': '殿下，雨水積於此器中後，用尺子量其深度並記錄即可。小人將其命名為測雨器。' } },
+            { id: 'jang-step-7', type: 'narration', text: '장영실의 발명은 여기서 그치지 않았습니다. 해시계인 앙부일구를 만들어 백성들이 시간을 알 수 있게 하였습니다.', textI18n: { en: 'Jang Yeong-sil\'s inventions did not stop there. He created the Angbuilgu, a sundial that allowed common people to tell time.', es: 'Las invenciones de Jang Yeong-sil no se detuvieron ahí. Creó el Angbuilgu, un reloj de sol que permitía al pueblo común conocer la hora.', ja: '蒋英実の発明はここで止まりませんでした。日時計の仰釜日晷を作り、民が時刻を知ることができるようにしました。', th: 'สิ่งประดิษฐ์ของจัง ยองซิล ไม่ได้หยุดเพียงเท่านี้ เขาสร้างอังบุอิลกู นาฬิกาแดดที่ช่วยให้สามัญชนบอกเวลาได้', vi: 'Phát minh của Jang Yeong-sil không dừng lại ở đó. Ông chế tạo Angbuilgu, đồng hồ mặt trời giúp dân biết giờ.', 'zh-CN': '蒋英实的发明并不止于此。他制造了日晷——仰釜日晷，让百姓能够知道时间。', 'zh-TW': '蔣英實的發明並不止於此。他製造了日晷——仰釜日晷，讓百姓能夠知道時間。' } },
+            { id: 'jang-step-8', type: 'dialog', speaker: '장영실', speakerI18n: { en: 'Jang Yeong-sil', es: 'Jang Yeong-sil', ja: '蒋英実', th: 'จัง ยองซิล', vi: 'Jang Yeong-sil', 'zh-CN': '蒋英实', 'zh-TW': '蔣英實' }, text: '앙부일구는 솥을 엎어놓은 모양의 해시계이옵니다. 가마솥처럼 오목한 면에 그림자가 지면 시각을 알 수 있사옵니다. 글을 모르는 백성도 동물 그림으로 시각을 알 수 있도록 십이지를 새겨 넣었사옵니다.', textI18n: { en: 'The Angbuilgu is a sundial shaped like an overturned cauldron. When shadows fall on the concave surface, one can read the time. I have carved the twelve zodiac animals so that even those who cannot read can tell the time.', es: 'El Angbuilgu es un reloj de sol con forma de caldero invertido. Cuando las sombras caen en la superficie cóncava, se puede leer la hora. He grabado los doce animales del zodiaco para que incluso quienes no saben leer puedan saber la hora.', ja: '仰釜日晷は釜を伏せた形の日時計でございます。釜のように凹んだ面に影が落ちれば時刻がわかります。字の読めない民も動物の絵で時刻がわかるよう十二支を刻み込みました。', th: 'อังบุอิลกูเป็นนาฬิกาแดดรูปร่างเหมือนหม้อคว่ำ เมื่อเงาตกบนพื้นผิวเว้า ก็สามารถอ่านเวลาได้ ข้าแกะสลักสัตว์สิบสองราศีเพื่อให้แม้ผู้ที่อ่านไม่ออกก็บอกเวลาได้', vi: 'Angbuilgu là đồng hồ mặt trời hình nồi úp. Khi bóng rơi trên mặt lõm thì biết giờ. Thần đã khắc mười hai con giáp để người không biết chữ cũng có thể xem giờ qua hình động vật.', 'zh-CN': '仰釜日晷是形如倒扣锅的日晷。影子落在凹面上即可知时。还刻上了十二生肖，让不识字的百姓也能通过动物图案知道时辰。', 'zh-TW': '仰釜日晷是形如倒扣鍋的日晷。影子落在凹面上即可知時。還刻上了十二生肖，讓不識字的百姓也能通過動物圖案知道時辰。' } },
+            { id: 'jang-step-9', type: 'quiz', quiz: { question: '앙부일구는 어떤 용도의 기구인가요?', questionI18n: { en: 'What was the Angbuilgu used for?', es: '¿Para qué se usaba el Angbuilgu?', ja: '仰釜日晷はどんな用途の器具ですか？', th: 'อังบุอิลกูใช้สำหรับอะไร?', vi: 'Angbuilgu được sử dụng để làm gì?', 'zh-CN': '仰釜日晷是什么用途的器具？', 'zh-TW': '仰釜日晷是什麼用途的器具？' }, options: ['강우량을 측정하는 기구', '해시계 (시간을 측정하는 기구)', '바람의 방향을 측정하는 기구', '온도를 측정하는 기구'], optionsI18n: { en: ['A device for measuring rainfall', 'A sundial (device for telling time)', 'A device for measuring wind direction', 'A device for measuring temperature'], es: ['Un dispositivo para medir la lluvia', 'Un reloj de sol (dispositivo para saber la hora)', 'Un dispositivo para medir la dirección del viento', 'Un dispositivo para medir la temperatura'], ja: ['降水量を測定する器具', '日時計（時間を測定する器具）', '風向を測定する器具', '温度を測定する器具'], th: ['อุปกรณ์วัดปริมาณน้ำฝน', 'นาฬิกาแดด (อุปกรณ์บอกเวลา)', 'อุปกรณ์วัดทิศทางลม', 'อุปกรณ์วัดอุณหภูมิ'], vi: ['Dụng cụ đo lượng mưa', 'Đồng hồ mặt trời (dụng cụ xem giờ)', 'Dụng cụ đo hướng gió', 'Dụng cụ đo nhiệt độ'], 'zh-CN': ['测量降雨量的器具', '日晷（测量时间的器具）', '测量风向的器具', '测量温度的器具'], 'zh-TW': ['測量降雨量的器具', '日晷（測量時間的器具）', '測量風向的器具', '測量溫度的器具'] }, correctIndex: 1, explanation: '앙부일구는 오목한 반구 모양의 해시계로, 해의 그림자로 시간을 알려주는 기구입니다.', explanationI18n: { en: 'The Angbuilgu is a hemispherical sundial that tells time using the sun\'s shadow.', es: 'El Angbuilgu es un reloj de sol hemisférico que indica la hora usando la sombra del sol.', ja: '仰釜日晷は凹面半球形の日時計で、太陽の影で時間を知らせる器具です。', th: 'อังบุอิลกูเป็นนาฬิกาแดดรูปครึ่งวงกลมที่บอกเวลาโดยใช้เงาของดวงอาทิตย์', vi: 'Angbuilgu là đồng hồ mặt trời hình bán cầu lõm, xem giờ qua bóng mặt trời.', 'zh-CN': '仰釜日晷是凹面半球形日晷，利用太阳的影子来指示时间。', 'zh-TW': '仰釜日晷是凹面半球形日晷，利用太陽的影子來指示時間。' } } },
+            { id: 'jang-step-10', type: 'narration', text: '장영실은 또한 물의 힘으로 스스로 시간을 알려주는 자동 물시계인 자격루도 만들었습니다.', textI18n: { en: 'Jang Yeong-sil also invented the Jagyeongnu, an automatic water clock that tells time using the power of water.', es: 'Jang Yeong-sil también inventó el Jagyeongnu, un reloj de agua automático que indica la hora usando la fuerza del agua.', ja: '蒋英実はまた、水の力で自動的に時刻を知らせる自動水時計・自撃漏も作りました。', th: 'จัง ยองซิล ยังประดิษฐ์จากยองนู นาฬิกาน้ำอัตโนมัติที่บอกเวลาโดยใช้พลังของน้ำ', vi: 'Jang Yeong-sil còn phát minh Jagyeongnu, đồng hồ nước tự động báo giờ bằng sức nước.', 'zh-CN': '蒋英实还制造了自击漏，一种利用水力自动报时的自动水钟。', 'zh-TW': '蔣英實還製造了自擊漏，一種利用水力自動報時的自動水鐘。' } },
+            { id: 'jang-step-11', type: 'dialog', speaker: '장영실', speakerI18n: { en: 'Jang Yeong-sil', es: 'Jang Yeong-sil', ja: '蒋英実', th: 'จัง ยองซิล', vi: 'Jang Yeong-sil', 'zh-CN': '蒋英实', 'zh-TW': '蔣英實' }, text: '자격루는 물이 일정하게 흘러내리면 자동으로 종과 북, 징을 울려 시각을 알려주는 물시계이옵니다. 밤에도 시간을 알 수 있사옵니다.', textI18n: { en: 'The Jagyeongnu is a water clock that automatically rings bells, drums, and gongs as water flows at a constant rate, announcing the time. It works even at night.', es: 'El Jagyeongnu es un reloj de agua que automáticamente hace sonar campanas, tambores y gongs mientras el agua fluye a un ritmo constante, anunciando la hora. Funciona incluso de noche.', ja: '自撃漏は水が一定に流れ落ちると自動的に鐘と太鼓、鉦を鳴らして時刻を知らせる水時計でございます。夜でも時間がわかります。', th: 'จากยองนูเป็นนาฬิกาน้ำที่ตีระฆัง กลอง และฆ้องโดยอัตโนมัติเมื่อน้ำไหลในอัตราคงที่ ประกาศเวลา ใช้งานได้แม้ในเวลากลางคืน', vi: 'Jagyeongnu là đồng hồ nước tự động gõ chuông, trống, chiêng khi nước chảy đều đặn để báo giờ. Ban đêm cũng biết được giờ.', 'zh-CN': '自击漏是一种水钟，当水以恒定速度流下时，会自动敲响钟、鼓、锣来报时。即使在夜间也能知道时间。', 'zh-TW': '自擊漏是一種水鐘，當水以恆定速度流下時，會自動敲響鐘、鼓、鑼來報時。即使在夜間也能知道時間。' } },
+            { id: 'jang-step-12', type: 'quiz', quiz: { question: '다음 중 장영실이 발명한 것이 아닌 것은?', questionI18n: { en: 'Which of the following was NOT invented by Jang Yeong-sil?', es: '¿Cuál de los siguientes NO fue inventado por Jang Yeong-sil?', ja: '次のうち蒋英実が発明したものでないのは？', th: 'ข้อใดต่อไปนี้ไม่ได้ประดิษฐ์โดยจัง ยองซิล?', vi: 'Điều nào sau đây KHÔNG phải do Jang Yeong-sil phát minh?', 'zh-CN': '以下哪个不是蒋英实发明的？', 'zh-TW': '以下哪個不是蔣英實發明的？' }, options: ['측우기', '앙부일구', '자격루', '훈민정음'], optionsI18n: { en: ['Rain gauge (Cheugugi)', 'Sundial (Angbuilgu)', 'Water clock (Jagyeongnu)', 'Hunminjeongeum'], es: ['Pluviómetro (Cheugugi)', 'Reloj de sol (Angbuilgu)', 'Reloj de agua (Jagyeongnu)', 'Hunminjeongeum'], ja: ['測雨器', '仰釜日晷', '自撃漏', '訓民正音'], th: ['เครื่องวัดน้ำฝน (ชึกูกี)', 'นาฬิกาแดด (อังบุอิลกู)', 'นาฬิกาน้ำ (จากยองนู)', 'ฮุนมินจองอึม'], vi: ['Máy đo mưa (Cheugugi)', 'Đồng hồ mặt trời (Angbuilgu)', 'Đồng hồ nước (Jagyeongnu)', 'Hunminjeongeum'], 'zh-CN': ['测雨器', '仰釜日晷', '自击漏', '训民正音'], 'zh-TW': ['測雨器', '仰釜日晷', '自擊漏', '訓民正音'] }, correctIndex: 3, explanation: '훈민정음은 세종대왕이 직접 창제한 문자입니다. 측우기, 앙부일구, 자격루는 장영실이 발명한 과학 기구입니다.', explanationI18n: { en: 'Hunminjeongeum was created by King Sejong himself. The rain gauge, sundial, and water clock were scientific instruments invented by Jang Yeong-sil.', es: 'El Hunminjeongeum fue creado por el Rey Sejong mismo. El pluviómetro, reloj de sol y reloj de agua fueron instrumentos científicos inventados por Jang Yeong-sil.', ja: '訓民正音は世宗大王が自ら創製した文字です。測雨器・仰釜日晷・自撃漏は蒋英実が発明した科学器具です。', th: 'ฮุนมินจองอึมสร้างโดยกษัตริย์เซจงเอง เครื่องวัดน้ำฝน นาฬิกาแดด และนาฬิกาน้ำเป็นเครื่องมือวิทยาศาสตร์ที่ประดิษฐ์โดยจัง ยองซิล', vi: 'Hunminjeongeum do Vua Sejong đích thân sáng tạo. Máy đo mưa, đồng hồ mặt trời và đồng hồ nước là dụng cụ khoa học do Jang Yeong-sil phát minh.', 'zh-CN': '训民正音是世宗大王亲自创制的文字。测雨器、仰釜日晷、自击漏是蒋英实发明的科学器具。', 'zh-TW': '訓民正音是世宗大王親自創製的文字。測雨器、仰釜日晷、自擊漏是蔣英實發明的科學器具。' } } },
           ],
         },
       ],
     },
-
     // ============================================================
     // Period 3: 사림의 시대 (1469~1545)
     // ============================================================
     {
-      id: 'sarim-era',
-      eraId: 'joseon-early',
+      id: 'sarim-era', eraId: 'joseon-early',
       name: '사림의 시대',
+      nameI18n: { en: 'The Era of the Sarim', es: 'La Era del Sarim', ja: '士林の時代', th: 'ยุคซาริม', vi: 'Thời đại Sĩ lâm', 'zh-CN': '士林时代', 'zh-TW': '士林時代' },
       years: '1469~1545',
-      description:
-        '사림파와 훈구파의 대립, 네 차례의 사화(士禍)가 일어나며 정치적 격변이 이어진 시기입니다.',
+      description: '사림파와 훈구파의 대립, 네 차례의 사화(士禍)가 일어나며 정치적 격변이 이어진 시기입니다.',
+      descriptionI18n: { en: 'A period of political upheaval marked by the conflict between the Sarim (Neo-Confucian literati) and Hungu (meritorious elite) factions, and four literati purges.', es: 'Un período de agitación política marcado por el conflicto entre las facciones Sarim (literatos neoconfucianos) y Hungu (élite meritoria), y cuatro purgas de literatos.', ja: '士林派と勲旧派の対立、四度の士禍が起こり、政治的激変が続いた時代です。', th: 'ช่วงเวลาแห่งความวุ่นวายทางการเมืองที่เกิดจากความขัดแย้งระหว่างฝ่ายซาริม (นักวิชาการขงจื๊อใหม่) และฝ่ายฮุนกู (ชนชั้นสูงผู้มีบุญคุณ) และการกวาดล้างนักวิชาการสี่ครั้ง', vi: 'Thời kỳ biến động chính trị với sự đối đầu giữa phe Sĩ lâm (Tân Nho) và phe Huân cựu (công thần), cùng bốn cuộc thanh trừng sĩ phu.', 'zh-CN': '士林派与勋旧派对立、四次士祸接连发生的政治剧变时期。', 'zh-TW': '士林派與勳舊派對立、四次士禍接連發生的政治劇變時期。' },
       events: [
-        // ── Event 5: 무오사화 ──
         {
-          id: 'muo-sahwa',
-          periodId: 'sarim-era',
-          eraId: 'joseon-early',
+          id: 'muo-sahwa', periodId: 'sarim-era', eraId: 'joseon-early',
           title: '무오사화',
-          description:
-            '1498년 연산군 시대, 사림파의 거두 김종직의 제자들이 화를 입은 무오사화의 이야기를 체험합니다.',
-          character: {
-            id: 'kim-jongjik',
-            name: '김종직',
-            title: '사림파 학자',
-            description:
-              '조선 전기 사림파의 종조(宗祖)로 불리는 대학자입니다. 그의 제자들이 조정에 진출하여 훈구파와 대립하였고, 그가 쓴 조의제문이 화근이 되어 무오사화가 일어났습니다.',
-            primaryColor: '#8B0000',
-            secondaryColor: '#CD853F',
-          },
-          difficulty: 'medium',
-          pointReward: 500,
+          titleI18n: { en: 'The Muo Literati Purge', es: 'La Purga de Literatos Muo', ja: '戊午士禍', th: 'การกวาดล้างนักวิชาการมูโอ', vi: 'Sĩ họa Mậu Ngọ', 'zh-CN': '戊午士祸', 'zh-TW': '戊午士禍' },
+          description: '1498년 연산군 시대, 사림파의 거두 김종직의 제자들이 화를 입은 무오사화의 이야기를 체험합니다.',
+          descriptionI18n: { en: 'Experience the Muo Literati Purge of 1498 during King Yeonsangun\'s reign, when disciples of the Sarim leader Kim Jong-jik were persecuted.', es: 'Experimenta la Purga de Literatos Muo de 1498 durante el reinado del Rey Yeonsangun, cuando los discípulos del líder Sarim Kim Jong-jik fueron perseguidos.', ja: '1498年燕山君時代、士林派の巨頭・金宗直の弟子たちが禍に遭った戊午士禍の物語を体験します。', th: 'สัมผัสการกวาดล้างนักวิชาการมูโอ ค.ศ. 1498 ในรัชสมัยกษัตริย์ยอนซันกุน เมื่อสาวกของผู้นำซาริม คิม จงจิก ถูกข่มเหง', vi: 'Trải nghiệm cuộc thanh trừng Sĩ họa Mậu Ngọ năm 1498 dưới thời Yeonsangun, khi các đệ tử của thủ lĩnh Sĩ lâm Kim Jong-jik bị bức hại.', 'zh-CN': '体验1498年燕山君时期，士林派领袖金宗直的弟子们遭难的戊午士祸。', 'zh-TW': '體驗1498年燕山君時期，士林派領袖金宗直的弟子們遭難的戊午士禍。' },
+          character: { id: 'kim-jongjik', name: '김종직', nameI18n: { en: 'Kim Jong-jik', es: 'Kim Jong-jik', ja: '金宗直', th: 'คิม จงจิก', vi: 'Kim Jong-jik (Kim Tông Trực)', 'zh-CN': '金宗直', 'zh-TW': '金宗直' }, title: '사림파 학자', titleI18n: { en: 'Sarim Scholar', es: 'Erudito Sarim', ja: '士林派学者', th: 'นักวิชาการซาริม', vi: 'Học giả Sĩ lâm', 'zh-CN': '士林派学者', 'zh-TW': '士林派學者' }, description: '조선 전기 사림파의 종조(宗祖)로 불리는 대학자입니다. 그의 제자들이 조정에 진출하여 훈구파와 대립하였고, 그가 쓴 조의제문이 화근이 되어 무오사화가 일어났습니다.', descriptionI18n: { en: 'A great scholar known as the patriarch of the early Joseon Sarim faction. His disciples entered the court and clashed with the Hungu faction, and his "Eulogy for King Yi of Chu" triggered the Muo Literati Purge.', es: 'Un gran erudito conocido como el patriarca de la facción Sarim del Joseon temprano. Sus discípulos entraron a la corte y chocaron con la facción Hungu, y su "Elegía al Rey Yi de Chu" desencadenó la Purga de Literatos Muo.', ja: '朝鮮前期の士林派の宗祖と呼ばれる大学者です。弟子たちが朝廷に進出して勲旧派と対立し、彼が書いた弔義帝文が禍の元となり戊午士禍が起きました。', th: 'นักวิชาการผู้ยิ่งใหญ่ที่รู้จักในฐานะบรรพบุรุษของฝ่ายซาริมในโชซอนยุคต้น สาวกของเขาเข้าสู่ราชสำนักและขัดแย้งกับฝ่ายฮุนกู และ "บทอาลัยกษัตริย์อี้แห่งฉู่" ของเขากลายเป็นชนวนให้เกิดการกวาดล้างมูโอ', vi: 'Đại học giả được gọi là tổ sư của phe Sĩ lâm đầu Joseon. Các đệ tử ông vào triều đình đối đầu phe Huân cựu, và bài "Điếu Nghĩa Đế văn" của ông trở thành nguyên nhân gây ra Sĩ họa Mậu Ngọ.', 'zh-CN': '被称为朝鲜前期士林派宗祖的大学者。其弟子进入朝廷与勋旧派对立，他所写的《吊义帝文》成为导火索引发了戊午士祸。', 'zh-TW': '被稱為朝鮮前期士林派宗祖的大學者。其弟子進入朝廷與勳舊派對立，他所寫的《弔義帝文》成為導火線引發了戊午士禍。' }, primaryColor: '#8B0000', secondaryColor: '#CD853F' },
+          difficulty: 'medium', pointReward: 500,
           steps: [
-            {
-              id: 'muo-step-1',
-              type: 'narration',
-              text: '조선 초기, 조정에는 두 세력이 있었습니다. 조선 건국에 공을 세운 훈구파와, 지방에서 학문을 닦다가 중앙으로 진출한 사림파입니다.',
-            },
-            {
-              id: 'muo-step-2',
-              type: 'dialog',
-              speaker: '김종직',
-              text: '학문이란 벼슬을 위한 것이 아니라 올바른 도리를 행하기 위한 것이니라. 제자들아, 조정에 나아가 바른 정치를 펼쳐야 하느니라.',
-            },
-            {
-              id: 'muo-step-3',
-              type: 'narration',
-              text: '김종직은 일찍이 「조의제문(弔義帝文)」이라는 글을 썼습니다. 이는 표면적으로는 초나라 의제의 죽음을 슬퍼하는 글이었지만, 실제로는 세조의 왕위 찬탈을 비판하는 내용이었습니다.',
-            },
-            {
-              id: 'muo-step-4',
-              type: 'dialog',
-              speaker: '김종직',
-              text: '의로운 임금을 내쫓고 왕위를 빼앗은 것은 천도에 어긋나는 일이니, 후세 사람들이 어찌 통탄하지 않겠는가.',
-            },
-            {
-              id: 'muo-step-5',
-              type: 'quiz',
-              quiz: {
-                question:
-                  '무오사화의 직접적인 원인이 된 김종직의 글은 무엇인가요?',
-                options: [
-                  '격몽요결',
-                  '조의제문',
-                  '동국통감',
-                  '소학',
-                ],
-                correctIndex: 1,
-                explanation:
-                  '조의제문(弔義帝文)은 김종직이 쓴 글로, 세조의 왕위 찬탈을 간접적으로 비판한 내용이 담겨 있어 무오사화의 직접적 원인이 되었습니다.',
-              },
-            },
-            {
-              id: 'muo-step-6',
-              type: 'narration',
-              text: '1498년, 연산군 4년. 훈구파의 유자광 등이 김종직의 조의제문을 문제 삼아 사림파를 대거 숙청하였습니다. 이미 세상을 떠난 김종직은 부관참시를 당했습니다.',
-            },
-            {
-              id: 'muo-step-7',
-              type: 'quiz',
-              quiz: {
-                question: '무오사화가 일어난 해는 언제인가요?',
-                options: ['1494년', '1498년', '1504년', '1519년'],
-                correctIndex: 1,
-                explanation:
-                  '무오사화는 1498년(연산군 4년)에 일어났습니다. 이는 조선 최초의 사화(士禍)였습니다.',
-              },
-            },
-            {
-              id: 'muo-step-8',
-              type: 'narration',
-              text: '무오사화로 사림파는 큰 타격을 입었지만, 이후에도 끊임없이 중앙 정계에 진출하여 훈구파에 맞섰습니다. 이는 조선 정치사의 큰 흐름이 되었습니다.',
-            },
+            { id: 'muo-step-1', type: 'narration', text: '조선 초기, 조정에는 두 세력이 있었습니다. 조선 건국에 공을 세운 훈구파와, 지방에서 학문을 닦다가 중앙으로 진출한 사림파입니다.', textI18n: { en: 'In early Joseon, there were two factions at court: the Hungu faction of meritorious elites who helped found Joseon, and the Sarim faction of Neo-Confucian scholars who studied in the provinces before entering central government.', es: 'En el Joseon temprano, había dos facciones en la corte: la facción Hungu de élites meritorias que ayudaron a fundar Joseon, y la facción Sarim de eruditos neoconfucianos que estudiaron en las provincias antes de entrar al gobierno central.', ja: '朝鮮初期、朝廷には二つの勢力がありました。朝鮮建国に功を立てた勲旧派と、地方で学問を修めてから中央に進出した士林派です。', th: 'ในโชซอนยุคต้น มีสองฝ่ายในราชสำนัก: ฝ่ายฮุนกูของชนชั้นสูงผู้มีบุญคุณที่ช่วยก่อตั้งโชซอน และฝ่ายซาริมของนักวิชาการขงจื๊อใหม่ที่ศึกษาในจังหวัดก่อนเข้ารับราชการส่วนกลาง', vi: 'Đầu thời Joseon, triều đình có hai thế lực: phe Huân cựu gồm các công thần khai quốc, và phe Sĩ lâm gồm các nho sĩ tu học ở địa phương rồi vào triều.', 'zh-CN': '朝鲜初期，朝廷有两大势力。为朝鲜建国立功的勋旧派，和在地方研习学问后进入中央的士林派。', 'zh-TW': '朝鮮初期，朝廷有兩大勢力。為朝鮮建國立功的勳舊派，和在地方研習學問後進入中央的士林派。' } },
+            { id: 'muo-step-2', type: 'dialog', speaker: '김종직', speakerI18n: { en: 'Kim Jong-jik', es: 'Kim Jong-jik', ja: '金宗直', th: 'คิม จงจิก', vi: 'Kim Jong-jik', 'zh-CN': '金宗直', 'zh-TW': '金宗直' }, text: '학문이란 벼슬을 위한 것이 아니라 올바른 도리를 행하기 위한 것이니라. 제자들아, 조정에 나아가 바른 정치를 펼쳐야 하느니라.', textI18n: { en: 'Scholarship is not for gaining office, but for practicing righteous principles. My disciples, you must enter government and practice just governance.', es: 'La erudición no es para obtener cargos, sino para practicar principios justos. Mis discípulos, deben entrar al gobierno y practicar una gobernanza justa.', ja: '学問とは官職のためではなく、正しい道理を行うためのものだ。弟子たちよ、朝廷に出て正しい政治を行わなければならぬ。', th: 'วิชาการไม่ใช่เพื่อได้ตำแหน่ง แต่เพื่อปฏิบัติหลักธรรมที่ถูกต้อง ศิษย์ทั้งหลาย เจ้าต้องเข้ารับราชการและปฏิบัติการปกครองที่ยุติธรรม', vi: 'Học thuật không phải để làm quan mà để thực hành đạo lý chính đáng. Các đệ tử, phải vào triều thi hành chính trị ngay thẳng.', 'zh-CN': '学问不是为了当官，而是为了践行正道。弟子们，要入朝推行正治。', 'zh-TW': '學問不是為了當官，而是為了踐行正道。弟子們，要入朝推行正治。' } },
+            { id: 'muo-step-3', type: 'narration', text: '김종직은 일찍이 「조의제문(弔義帝文)」이라는 글을 썼습니다. 이는 표면적으로는 초나라 의제의 죽음을 슬퍼하는 글이었지만, 실제로는 세조의 왕위 찬탈을 비판하는 내용이었습니다.', textI18n: { en: 'Kim Jong-jik had written the "Eulogy for King Yi of Chu." On the surface, it lamented the death of King Yi of Chu, but in reality, it was a veiled criticism of King Sejo\'s usurpation of the throne.', es: 'Kim Jong-jik había escrito la "Elegía al Rey Yi de Chu". En la superficie, lamentaba la muerte del Rey Yi de Chu, pero en realidad era una crítica velada a la usurpación del trono por el Rey Sejo.', ja: '金宗直はかつて「弔義帝文」という文章を書きました。表面的には楚の義帝の死を悲しむ文でしたが、実際には世祖の王位簒奪を批判する内容でした。', th: 'คิม จงจิก เคยเขียน "บทอาลัยกษัตริย์อี้แห่งฉู่" ภายนอกเป็นการไว้อาลัยการสิ้นพระชนม์ของกษัตริย์อี้แห่งฉู่ แต่ในความจริงเป็นการวิจารณ์การแย่งบัลลังก์ของกษัตริย์เซโจอย่างแอบแฝง', vi: 'Kim Jong-jik đã viết "Điếu Nghĩa Đế văn". Bề ngoài là bài văn thương tiếc cái chết của Nghĩa Đế nước Sở, nhưng thực chất là phê phán việc cướp ngôi của vua Sejo.', 'zh-CN': '金宗直曾写过《吊义帝文》。表面上是哀悼楚义帝之死的文章，实际上是批判世祖篡位的内容。', 'zh-TW': '金宗直曾寫過《弔義帝文》。表面上是哀悼楚義帝之死的文章，實際上是批判世祖篡位的內容。' } },
+            { id: 'muo-step-4', type: 'dialog', speaker: '김종직', speakerI18n: { en: 'Kim Jong-jik', es: 'Kim Jong-jik', ja: '金宗直', th: 'คิม จงจิก', vi: 'Kim Jong-jik', 'zh-CN': '金宗直', 'zh-TW': '金宗直' }, text: '의로운 임금을 내쫓고 왕위를 빼앗은 것은 천도에 어긋나는 일이니, 후세 사람들이 어찌 통탄하지 않겠는가.', textI18n: { en: 'To depose a righteous king and seize the throne is contrary to heaven\'s way — how can later generations not grieve over this?', es: 'Deponer a un rey justo y tomar el trono es contrario al camino del cielo — ¿cómo pueden las generaciones futuras no lamentarse por esto?', ja: '義なる君を追い出し王位を奪ったことは天道に背くことであり、後世の人々がどうして嘆き悲しまずにいられようか。', th: 'การปลดกษัตริย์ผู้ชอบธรรมและยึดบัลลังก์ขัดต่อทางสวรรค์ — คนรุ่นหลังจะไม่โศกเศร้าได้อย่างไร?', vi: 'Phế vua chính nghĩa và cướp ngôi là trái đạo trời — người đời sau làm sao không đau xót cho được?', 'zh-CN': '废黜义君而夺位，违背天道，后世之人岂能不痛惜？', 'zh-TW': '廢黜義君而奪位，違背天道，後世之人豈能不痛惜？' } },
+            { id: 'muo-step-5', type: 'quiz', quiz: { question: '무오사화의 직접적인 원인이 된 김종직의 글은 무엇인가요?', questionI18n: { en: 'What writing by Kim Jong-jik directly caused the Muo Literati Purge?', es: '¿Qué escrito de Kim Jong-jik causó directamente la Purga de Literatos Muo?', ja: '戊午士禍の直接的な原因となった金宗直の文章は？', th: 'งานเขียนใดของคิม จงจิก ที่เป็นสาเหตุโดยตรงของการกวาดล้างมูโอ?', vi: 'Bài viết nào của Kim Jong-jik là nguyên nhân trực tiếp gây ra Sĩ họa Mậu Ngọ?', 'zh-CN': '戊午士祸的直接原因——金宗直的文章是什么？', 'zh-TW': '戊午士禍的直接原因——金宗直的文章是什麼？' }, options: ['격몽요결', '조의제문', '동국통감', '소학'], optionsI18n: { en: ['Gyeongmong Yogyeol', 'Eulogy for King Yi of Chu (Jouijaemun)', 'Dongguk Tonggam', 'Sohak'], es: ['Gyeongmong Yogyeol', 'Elegía al Rey Yi de Chu (Jouijaemun)', 'Dongguk Tonggam', 'Sohak'], ja: ['撃蒙要訣', '弔義帝文', '東国通鑑', '小学'], th: ['กยองมงโยกยอล', 'บทอาลัยกษัตริย์อี้แห่งฉู่ (โจอึยเจมุน)', 'ทงกุกทงกัม', 'โซฮัก'], vi: ['Kích Mông Yếu Quyết', 'Điếu Nghĩa Đế văn', 'Đông Quốc Thông Giám', 'Tiểu học'], 'zh-CN': ['击蒙要诀', '吊义帝文', '东国通鉴', '小学'], 'zh-TW': ['擊蒙要訣', '弔義帝文', '東國通鑑', '小學'] }, correctIndex: 1, explanation: '조의제문(弔義帝文)은 김종직이 쓴 글로, 세조의 왕위 찬탈을 간접적으로 비판한 내용이 담겨 있어 무오사화의 직접적 원인이 되었습니다.', explanationI18n: { en: 'The "Eulogy for King Yi of Chu" was a writing by Kim Jong-jik that indirectly criticized King Sejo\'s usurpation, becoming the direct cause of the Muo Literati Purge.', es: 'La "Elegía al Rey Yi de Chu" fue un escrito de Kim Jong-jik que criticaba indirectamente la usurpación del Rey Sejo, convirtiéndose en la causa directa de la Purga de Literatos Muo.', ja: '弔義帝文は金宗直が書いた文章で、世祖の王位簒奪を間接的に批判する内容が含まれており、戊午士禍の直接的な原因となりました。', th: '"บทอาลัยกษัตริย์อี้แห่งฉู่" เป็นงานเขียนของคิม จงจิก ที่วิจารณ์การแย่งบัลลังก์ของกษัตริย์เซโจอย่างอ้อมค้อม กลายเป็นสาเหตุโดยตรงของการกวาดล้างมูโอ', vi: '"Điếu Nghĩa Đế văn" là bài viết của Kim Jong-jik gián tiếp phê phán việc cướp ngôi của vua Sejo, trở thành nguyên nhân trực tiếp gây ra Sĩ họa Mậu Ngọ.', 'zh-CN': '《吊义帝文》是金宗直所写的文章，间接批判了世祖的篡位，成为戊午士祸的直接原因。', 'zh-TW': '《弔義帝文》是金宗直所寫的文章，間接批判了世祖的篡位，成為戊午士禍的直接原因。' } } },
+            { id: 'muo-step-6', type: 'narration', text: '1498년, 연산군 4년. 훈구파의 유자광 등이 김종직의 조의제문을 문제 삼아 사림파를 대거 숙청하였습니다. 이미 세상을 떠난 김종직은 부관참시를 당했습니다.', textI18n: { en: 'In 1498, the 4th year of Yeonsangun\'s reign, Hungu faction members including Yu Ja-gwang used Kim Jong-jik\'s eulogy as a pretext to purge Sarim scholars en masse. Kim Jong-jik, already deceased, was posthumously punished by exhuming and desecrating his corpse.', es: 'En 1498, el cuarto año del reinado de Yeonsangun, miembros de la facción Hungu incluyendo Yu Ja-gwang usaron la elegía de Kim Jong-jik como pretexto para purgar a los eruditos Sarim en masa. Kim Jong-jik, ya fallecido, fue castigado póstumamente exhumando y profanando su cadáver.', ja: '1498年、燕山君4年。勲旧派の柳子光らが金宗直の弔義帝文を問題視し、士林派を大量に粛清しました。すでに亡くなっていた金宗直は剖棺斬屍の刑に処されました。', th: 'ในปี ค.ศ. 1498 ปีที่ 4 ของรัชสมัยยอนซันกุน สมาชิกฝ่ายฮุนกูรวมถึงยู จากวัง ใช้บทอาลัยของคิม จงจิก เป็นข้ออ้างในการกวาดล้างนักวิชาการซาริมจำนวนมาก คิม จงจิก ผู้เสียชีวิตแล้ว ถูกลงโทษหลังมรณกรรมโดยการขุดศพขึ้นมาทำลาย', vi: 'Năm 1498, năm thứ 4 đời Yeonsangun. Phe Huân cựu do Yu Ja-gwang lấy cớ bài Điếu Nghĩa Đế văn thanh trừng hàng loạt Sĩ lâm. Kim Jong-jik đã qua đời bị phạt phẫu quan trảm thi.', 'zh-CN': '1498年，燕山君四年。勋旧派柳子光等人以金宗直的《吊义帝文》为由，大规模清洗士林派。已经去世的金宗直被剖棺戮尸。', 'zh-TW': '1498年，燕山君四年。勳舊派柳子光等人以金宗直的《弔義帝文》為由，大規模清洗士林派。已經去世的金宗直被剖棺戮屍。' } },
+            { id: 'muo-step-7', type: 'quiz', quiz: { question: '무오사화가 일어난 해는 언제인가요?', questionI18n: { en: 'In what year did the Muo Literati Purge occur?', es: '¿En qué año ocurrió la Purga de Literatos Muo?', ja: '戊午士禍が起きた年は？', th: 'การกวาดล้างนักวิชาการมูโอเกิดขึ้นในปีใด?', vi: 'Sĩ họa Mậu Ngọ xảy ra năm nào?', 'zh-CN': '戊午士祸发生在哪一年？', 'zh-TW': '戊午士禍發生在哪一年？' }, options: ['1494년', '1498년', '1504년', '1519년'], optionsI18n: { en: ['1494', '1498', '1504', '1519'], es: ['1494', '1498', '1504', '1519'], ja: ['1494年', '1498年', '1504年', '1519年'], th: ['ค.ศ. 1494', 'ค.ศ. 1498', 'ค.ศ. 1504', 'ค.ศ. 1519'], vi: ['1494', '1498', '1504', '1519'], 'zh-CN': ['1494年', '1498年', '1504年', '1519年'], 'zh-TW': ['1494年', '1498年', '1504年', '1519年'] }, correctIndex: 1, explanation: '무오사화는 1498년(연산군 4년)에 일어났습니다. 이는 조선 최초의 사화(士禍)였습니다.', explanationI18n: { en: 'The Muo Literati Purge occurred in 1498 (4th year of Yeonsangun). It was the first literati purge in Joseon history.', es: 'La Purga de Literatos Muo ocurrió en 1498 (cuarto año de Yeonsangun). Fue la primera purga de literatos en la historia de Joseon.', ja: '戊午士禍は1498年（燕山君4年）に起きました。朝鮮最初の士禍でした。', th: 'การกวาดล้างนักวิชาการมูโอเกิดขึ้นในปี ค.ศ. 1498 (ปีที่ 4 ของยอนซันกุน) เป็นการกวาดล้างนักวิชาการครั้งแรกในประวัติศาสตร์โชซอน', vi: 'Sĩ họa Mậu Ngọ xảy ra năm 1498 (năm thứ 4 đời Yeonsangun). Đây là cuộc sĩ họa đầu tiên trong lịch sử Joseon.', 'zh-CN': '戊午士祸发生在1498年（燕山君四年），是朝鲜历史上第一次士祸。', 'zh-TW': '戊午士禍發生在1498年（燕山君四年），是朝鮮歷史上第一次士禍。' } } },
+            { id: 'muo-step-8', type: 'narration', text: '무오사화로 사림파는 큰 타격을 입었지만, 이후에도 끊임없이 중앙 정계에 진출하여 훈구파에 맞섰습니다. 이는 조선 정치사의 큰 흐름이 되었습니다.', textI18n: { en: 'Though the Sarim suffered a great blow from the Muo Purge, they continued to enter central politics and challenge the Hungu faction. This became a defining current in Joseon political history.', es: 'Aunque el Sarim sufrió un gran golpe con la Purga Muo, continuaron entrando en la política central y desafiando a la facción Hungu. Esto se convirtió en una corriente definitoria en la historia política de Joseon.', ja: '戊午士禍で士林派は大きな打撃を受けましたが、その後も絶えず中央政界に進出して勲旧派に立ち向かいました。これは朝鮮政治史の大きな流れとなりました。', th: 'แม้ซาริมจะได้รับความเสียหายอย่างหนักจากการกวาดล้างมูโอ แต่ก็ยังคงเข้าสู่การเมืองส่วนกลางและท้าทายฝ่ายฮุนกู สิ่งนี้กลายเป็นกระแสสำคัญในประวัติศาสตร์การเมืองโชซอน', vi: 'Dù bị tổn thất nặng nề từ Sĩ họa Mậu Ngọ, phe Sĩ lâm vẫn tiếp tục tiến vào chính trường trung ương đối đầu phe Huân cựu. Đây trở thành dòng chảy lớn trong lịch sử chính trị Joseon.', 'zh-CN': '虽然戊午士祸使士林派遭受重大打击，但他们此后仍不断进入中央政坛与勋旧派抗衡。这成为朝鲜政治史的重要潮流。', 'zh-TW': '雖然戊午士禍使士林派遭受重大打擊，但他們此後仍不斷進入中央政壇與勳舊派抗衡。這成為朝鮮政治史的重要潮流。' } },
           ],
         },
-        // ── Event 6: 조광조의 개혁 ──
         {
-          id: 'jo-gwangjo-reform',
-          periodId: 'sarim-era',
-          eraId: 'joseon-early',
+          id: 'jo-gwangjo-reform', periodId: 'sarim-era', eraId: 'joseon-early',
           title: '조광조의 개혁',
-          description:
-            '중종 시대 급진적 개혁을 추진하다가 기묘사화로 화를 입은 조광조의 이야기를 체험합니다.',
-          character: {
-            id: 'jo-gwangjo',
-            name: '조광조',
-            title: '개혁가',
-            description:
-              '중종 시대의 사림파 지도자로, 성리학적 이상 정치를 실현하고자 급진적 개혁을 추진하였으나 기묘사화로 사약을 받고 생을 마감한 비운의 개혁가입니다.',
-            primaryColor: '#006400',
-            secondaryColor: '#90EE90',
-          },
-          difficulty: 'medium',
-          pointReward: 500,
+          titleI18n: { en: 'Jo Gwangjo\'s Reforms', es: 'Las Reformas de Jo Gwangjo', ja: '趙光祖の改革', th: 'การปฏิรูปของโจ กวังโจ', vi: 'Cải cách của Jo Gwangjo', 'zh-CN': '赵光祖改革', 'zh-TW': '趙光祖改革' },
+          description: '중종 시대 급진적 개혁을 추진하다가 기묘사화로 화를 입은 조광조의 이야기를 체험합니다.',
+          descriptionI18n: { en: 'Experience the story of Jo Gwangjo, who pursued radical reforms during King Jungjong\'s reign but was persecuted in the Gimyo Literati Purge.', es: 'Experimenta la historia de Jo Gwangjo, quien persiguió reformas radicales durante el reinado del Rey Jungjong pero fue perseguido en la Purga de Literatos Gimyo.', ja: '中宗時代に急進的改革を推進したが己卯士禍で禍に遭った趙光祖の物語を体験します。', th: 'สัมผัสเรื่องราวของโจ กวังโจ ผู้ผลักดันการปฏิรูปอย่างรุนแรงในรัชสมัยกษัตริย์จุงจง แต่ถูกข่มเหงในการกวาดล้างกิเมียว', vi: 'Trải nghiệm câu chuyện của Jo Gwangjo, người theo đuổi cải cách cấp tiến dưới thời vua Jungjong nhưng bị hại trong Sĩ họa Kỷ Mão.', 'zh-CN': '体验中宗时期推进激进改革却在己卯士祸中遇难的赵光祖的故事。', 'zh-TW': '體驗中宗時期推進激進改革卻在己卯士禍中遇難的趙光祖的故事。' },
+          character: { id: 'jo-gwangjo', name: '조광조', nameI18n: { en: 'Jo Gwangjo', es: 'Jo Gwangjo', ja: '趙光祖', th: 'โจ กวังโจ', vi: 'Jo Gwangjo (Triệu Quang Tổ)', 'zh-CN': '赵光祖', 'zh-TW': '趙光祖' }, title: '개혁가', titleI18n: { en: 'Reformer', es: 'Reformador', ja: '改革家', th: 'นักปฏิรูป', vi: 'Nhà cải cách', 'zh-CN': '改革家', 'zh-TW': '改革家' }, description: '중종 시대의 사림파 지도자로, 성리학적 이상 정치를 실현하고자 급진적 개혁을 추진하였으나 기묘사화로 사약을 받고 생을 마감한 비운의 개혁가입니다.', descriptionI18n: { en: 'A Sarim leader during King Jungjong\'s reign who pursued radical Neo-Confucian reforms but was poisoned during the Gimyo Literati Purge — a tragic reformer.', es: 'Un líder Sarim durante el reinado del Rey Jungjong que persiguió reformas neoconfucianas radicales pero fue envenenado durante la Purga de Literatos Gimyo — un reformador trágico.', ja: '中宗時代の士林派指導者で、性理学的理想政治を実現しようと急進的改革を推進したが、己卯士禍で賜薬を受けて生涯を終えた悲運の改革家です。', th: 'ผู้นำซาริมในรัชสมัยกษัตริย์จุงจง ผู้ผลักดันการปฏิรูปแบบขงจื๊อใหม่อย่างสุดโต่ง แต่ถูกวางยาพิษในระหว่างการกวาดล้างกิเมียว — นักปฏิรูปผู้น่าเศร้า', vi: 'Thủ lĩnh Sĩ lâm thời vua Jungjong, theo đuổi cải cách cấp tiến Tân Nho nhưng bị ban thuốc độc trong Sĩ họa Kỷ Mão — nhà cải cách bi kịch.', 'zh-CN': '中宗时期的士林派领袖，推行激进的性理学理想政治改革，但在己卯士祸中被赐毒药而亡的悲剧性改革家。', 'zh-TW': '中宗時期的士林派領袖，推行激進的性理學理想政治改革，但在己卯士禍中被賜毒藥而亡的悲劇性改革家。' }, primaryColor: '#006400', secondaryColor: '#90EE90' },
+          difficulty: 'medium', pointReward: 500,
           steps: [
-            {
-              id: 'jo-step-1',
-              type: 'narration',
-              text: '1515년, 중종 10년. 연산군의 폭정을 끝내고 즉위한 중종은 개혁적인 사림파 학자 조광조를 등용하였습니다.',
-            },
-            {
-              id: 'jo-step-2',
-              type: 'dialog',
-              speaker: '조광조',
-              text: '전하, 임금과 신하가 함께 도학 정치를 행하면 요순시대와 같은 태평성대를 이룰 수 있사옵니다. 소신이 미력하나마 전하를 보필하여 바른 정치를 세우겠나이다.',
-            },
-            {
-              id: 'jo-step-3',
-              type: 'narration',
-              text: '조광조는 소격서 폐지, 현량과 실시, 향약 보급 등 과감한 개혁을 추진하였습니다. 특히 중종반정의 공신 중 부당하게 책봉된 이들의 공훈을 삭제하는 위훈삭제를 단행하였습니다.',
-            },
-            {
-              id: 'jo-step-4',
-              type: 'dialog',
-              speaker: '조광조',
-              text: '전하, 반정 당시 공이 없으면서 공신에 이름을 올린 자들이 있사옵니다. 이는 나라의 기강을 어지럽히는 일이오니 마땅히 바로잡아야 하옵니다.',
-            },
-            {
-              id: 'jo-step-5',
-              type: 'quiz',
-              quiz: {
-                question:
-                  '조광조가 추진한 개혁 중 훈구파의 큰 반발을 산 것은?',
-                options: [
-                  '한글 보급',
-                  '위훈삭제 (부당한 공신 훈작 삭제)',
-                  '과거제 폐지',
-                  '불교 장려',
-                ],
-                correctIndex: 1,
-                explanation:
-                  '위훈삭제는 중종반정 당시 공이 없으면서 공신에 이름을 올린 자들의 훈작을 삭제하는 것으로, 훈구파의 큰 반발을 불러일으켰습니다.',
-              },
-            },
-            {
-              id: 'jo-step-6',
-              type: 'narration',
-              text: '1519년, 훈구파의 남곤·심정 등은 "조광조가 붕당을 만들어 나라를 어지럽힌다"고 중종에게 고하였습니다. 결국 기묘사화가 일어나 조광조와 사림파가 대거 숙청되었습니다.',
-            },
-            {
-              id: 'jo-step-7',
-              type: 'dialog',
-              speaker: '조광조',
-              text: '임금을 사랑하는 마음이 아비를 사랑하는 마음과 같았거늘, 이제 이리 되었으니 하늘이 무심하구나...',
-            },
-            {
-              id: 'jo-step-8',
-              type: 'quiz',
-              quiz: {
-                question:
-                  '기묘사화가 일어난 해는 언제인가요?',
-                options: ['1498년', '1504년', '1519년', '1545년'],
-                correctIndex: 2,
-                explanation:
-                  '기묘사화는 1519년(중종 14년)에 일어났습니다. 조광조를 비롯한 사림파 인사들이 대거 화를 입었습니다.',
-              },
-            },
-            {
-              id: 'jo-step-9',
-              type: 'narration',
-              text: '조광조는 사약을 받고 38세의 나이로 생을 마감했습니다. 그러나 그의 개혁 정신은 후대 사림파에게 이어져 마침내 선조 때 사림파가 정권을 장악하는 데 밑거름이 되었습니다.',
-            },
+            { id: 'jo-step-1', type: 'narration', text: '1515년, 중종 10년. 연산군의 폭정을 끝내고 즉위한 중종은 개혁적인 사림파 학자 조광조를 등용하였습니다.', textI18n: { en: 'In 1515, the 10th year of King Jungjong\'s reign. Jungjong, who had ended Yeonsangun\'s tyranny and taken the throne, appointed the reformist Sarim scholar Jo Gwangjo.', es: 'En 1515, el décimo año del reinado del Rey Jungjong. Jungjong, que había terminado la tiranía de Yeonsangun y tomado el trono, nombró al erudito reformista Sarim Jo Gwangjo.', ja: '1515年、中宗10年。燕山君の暴政を終わらせて即位した中宗は、改革的な士林派学者・趙光祖を登用しました。', th: 'ในปี ค.ศ. 1515 ปีที่ 10 ของรัชสมัยกษัตริย์จุงจง จุงจงผู้ยุติทรราชของยอนซันกุนและขึ้นครองบัลลังก์ ได้แต่งตั้งนักวิชาการซาริมนักปฏิรูป โจ กวังโจ', vi: 'Năm 1515, năm thứ 10 đời Jungjong. Jungjong kết thúc bạo chính Yeonsangun lên ngôi, đã bổ nhiệm học giả Sĩ lâm cải cách Jo Gwangjo.', 'zh-CN': '1515年，中宗十年。结束燕山君暴政而即位的中宗起用了改革派士林学者赵光祖。', 'zh-TW': '1515年，中宗十年。結束燕山君暴政而即位的中宗起用了改革派士林學者趙光祖。' } },
+            { id: 'jo-step-2', type: 'dialog', speaker: '조광조', speakerI18n: { en: 'Jo Gwangjo', es: 'Jo Gwangjo', ja: '趙光祖', th: 'โจ กวังโจ', vi: 'Jo Gwangjo', 'zh-CN': '赵光祖', 'zh-TW': '趙光祖' }, text: '전하, 임금과 신하가 함께 도학 정치를 행하면 요순시대와 같은 태평성대를 이룰 수 있사옵니다. 소신이 미력하나마 전하를 보필하여 바른 정치를 세우겠나이다.', textI18n: { en: 'Your Majesty, if ruler and ministers together practice the governance of the Way, we can achieve an era of peace like the time of Yao and Shun. Though my abilities are meager, I shall assist Your Majesty in establishing righteous governance.', es: 'Su Majestad, si el gobernante y los ministros juntos practican la gobernanza del Camino, podemos lograr una era de paz como la época de Yao y Shun. Aunque mis habilidades son escasas, asistiré a Su Majestad en establecer una gobernanza justa.', ja: '殿下、君臣が共に道学政治を行えば、堯舜時代のような太平盛世を実現できます。微力ながら殿下を補佐し正しい政治を打ち立てます。', th: 'ฝ่าพระบาท หากผู้ปกครองและขุนนางร่วมกันปฏิบัติการปกครองตามหลักธรรม เราจะบรรลุยุคสันติสุขเหมือนสมัยเหยาและซุ่น แม้ความสามารถของข้าจะน้อยนิด ข้าจะช่วยฝ่าพระบาทสร้างการปกครองที่ชอบธรรม', vi: 'Tâu bệ hạ, nếu vua tôi cùng thực hành đạo học chính trị, có thể đạt được thái bình thịnh trị như thời Nghiêu Thuấn. Thần dù sức mọn cũng xin phụ giúp bệ hạ lập nên chính trị ngay thẳng.', 'zh-CN': '殿下，若君臣共行道学政治，便能如尧舜时代般太平盛世。微臣虽才疏学浅，愿辅佐殿下建立正治。', 'zh-TW': '殿下，若君臣共行道學政治，便能如堯舜時代般太平盛世。微臣雖才疏學淺，願輔佐殿下建立正治。' } },
+            { id: 'jo-step-3', type: 'narration', text: '조광조는 소격서 폐지, 현량과 실시, 향약 보급 등 과감한 개혁을 추진하였습니다. 특히 중종반정의 공신 중 부당하게 책봉된 이들의 공훈을 삭제하는 위훈삭제를 단행하였습니다.', textI18n: { en: 'Jo Gwangjo pursued bold reforms including abolishing the Sogyeokseo (Daoist shrine), implementing the Hyeollyangwa (recommendation-based examination), and promoting local compacts. Most notably, he carried out the removal of titles from those unjustly honored as meritorious subjects during Jungjong\'s enthronement.', es: 'Jo Gwangjo impulsó reformas audaces incluyendo la abolición del Sogyeokseo (santuario taoísta), la implementación del Hyeollyangwa (examen basado en recomendación), y la promoción de pactos locales. Más notablemente, llevó a cabo la remoción de títulos de aquellos injustamente honrados como sujetos meritorios durante la entronización de Jungjong.', ja: '趙光祖は昭格署の廃止、賢良科の実施、郷約の普及など大胆な改革を推進しました。特に中宗反正の功臣のうち不当に策封された者たちの功勲を削除する偽勲削除を断行しました。', th: 'โจ กวังโจ ผลักดันการปฏิรูปอย่างกล้าหาญ รวมถึงการยกเลิกโซกยอกซอ (ศาลเจ้าเต๋า) การใช้ฮยอลยังกวา (การสอบแบบแนะนำ) และการส่งเสริมข้อตกลงท้องถิ่น โดยเฉพาะเขาดำเนินการถอดถอนบรรดาศักดิ์ของผู้ที่ได้รับเกียรติอย่างไม่เป็นธรรมในฐานะผู้มีบุญคุณระหว่างการขึ้นครองราชย์ของจุงจง', vi: 'Jo Gwangjo đã thúc đẩy các cải cách mạnh mẽ như bãi bỏ Chiêu Cách Thự, thực thi Hiền lương khoa, phổ biến Hương ước. Đặc biệt, ông thực hiện Ngụy huân tước bỏ - xóa công trạng của những công thần được phong bất chính trong cuộc phản chính Jungjong.', 'zh-CN': '赵光祖推行了废除昭格署、实施贤良科、推广乡约等大胆改革。特别是对中宗反正中被不当册封的功臣进行了伪勋削除。', 'zh-TW': '趙光祖推行了廢除昭格署、實施賢良科、推廣鄉約等大膽改革。特別是對中宗反正中被不當冊封的功臣進行了偽勳削除。' } },
+            { id: 'jo-step-4', type: 'dialog', speaker: '조광조', speakerI18n: { en: 'Jo Gwangjo', es: 'Jo Gwangjo', ja: '趙光祖', th: 'โจ กวังโจ', vi: 'Jo Gwangjo', 'zh-CN': '赵光祖', 'zh-TW': '趙光祖' }, text: '전하, 반정 당시 공이 없으면서 공신에 이름을 올린 자들이 있사옵니다. 이는 나라의 기강을 어지럽히는 일이오니 마땅히 바로잡아야 하옵니다.', textI18n: { en: 'Your Majesty, there are those who claimed merit during the enthronement without having contributed. This disrupts the nation\'s discipline and must be corrected.', es: 'Su Majestad, hay quienes reclamaron méritos durante la entronización sin haber contribuido. Esto perturba la disciplina de la nación y debe ser corregido.', ja: '殿下、反正の際に功がないにもかかわらず功臣に名を連ねた者たちがおります。これは国の規律を乱すことですので、正すべきです。', th: 'ฝ่าพระบาท มีผู้ที่อ้างความดีความชอบระหว่างการขึ้นครองราชย์โดยไม่ได้มีส่วนร่วม สิ่งนี้ทำลายวินัยของชาติและต้องแก้ไข', vi: 'Tâu bệ hạ, có những kẻ không có công trong cuộc phản chính mà vẫn ghi tên vào danh sách công thần. Điều này làm rối loạn kỷ cương quốc gia, phải chấn chỉnh.', 'zh-CN': '殿下，反正时有人无功却名列功臣。此事扰乱国家纲纪，理应纠正。', 'zh-TW': '殿下，反正時有人無功卻名列功臣。此事擾亂國家綱紀，理應糾正。' } },
+            { id: 'jo-step-5', type: 'quiz', quiz: { question: '조광조가 추진한 개혁 중 훈구파의 큰 반발을 산 것은?', questionI18n: { en: 'Which of Jo Gwangjo\'s reforms provoked the greatest backlash from the Hungu faction?', es: '¿Cuál de las reformas de Jo Gwangjo provocó la mayor reacción de la facción Hungu?', ja: '趙光祖が推進した改革のうち勲旧派の大きな反発を買ったのは？', th: 'การปฏิรูปใดของโจ กวังโจ ที่ก่อให้เกิดการตอบโต้มากที่สุดจากฝ่ายฮุนกู?', vi: 'Cải cách nào của Jo Gwangjo gây ra phản ứng dữ dội nhất từ phe Huân cựu?', 'zh-CN': '赵光祖推行的哪项改革遭到勋旧派最大的反对？', 'zh-TW': '趙光祖推行的哪項改革遭到勳舊派最大的反對？' }, options: ['한글 보급', '위훈삭제 (부당한 공신 훈작 삭제)', '과거제 폐지', '불교 장려'], optionsI18n: { en: ['Promoting Hangul', 'Removal of unjust merit titles (Wihun Sakje)', 'Abolishing civil examinations', 'Promoting Buddhism'], es: ['Promover el Hangul', 'Remoción de títulos de mérito injustos (Wihun Sakje)', 'Abolir los exámenes civiles', 'Promover el budismo'], ja: ['ハングルの普及', '偽勲削除（不当な功臣勲爵の削除）', '科挙制の廃止', '仏教の奨励'], th: ['ส่งเสริมฮันกึล', 'การถอดถอนบรรดาศักดิ์ที่ไม่เป็นธรรม (วีฮุนซักเจ)', 'ยกเลิกการสอบราชการ', 'ส่งเสริมพุทธศาสนา'], vi: ['Phổ biến Hangul', 'Ngụy huân tước bỏ (xóa tước vị công thần bất chính)', 'Bãi bỏ khoa cử', 'Khuyến khích Phật giáo'], 'zh-CN': ['推广韩文', '伪勋削除（削除不当功臣勋爵）', '废除科举制', '推崇佛教'], 'zh-TW': ['推廣韓文', '偽勳削除（削除不當功臣勳爵）', '廢除科舉制', '推崇佛教'] }, correctIndex: 1, explanation: '위훈삭제는 중종반정 당시 공이 없으면서 공신에 이름을 올린 자들의 훈작을 삭제하는 것으로, 훈구파의 큰 반발을 불러일으켰습니다.', explanationI18n: { en: 'The removal of unjust merit titles stripped honors from those who had falsely claimed credit during Jungjong\'s enthronement, provoking fierce opposition from the Hungu faction.', es: 'La remoción de títulos de mérito injustos despojó honores a quienes habían reclamado crédito falsamente durante la entronización de Jungjong, provocando una feroz oposición de la facción Hungu.', ja: '偽勲削除は中宗反正の際に功がないにもかかわらず功臣に名を連ねた者たちの勲爵を削除するもので、勲旧派の大きな反発を招きました。', th: 'การถอดถอนบรรดาศักดิ์ที่ไม่เป็นธรรมลิดรอนเกียรติจากผู้ที่อ้างความดีความชอบอย่างเท็จระหว่างการขึ้นครองราชย์ของจุงจง ก่อให้เกิดการต่อต้านอย่างรุนแรงจากฝ่ายฮุนกู', vi: 'Ngụy huân tước bỏ là xóa tước vị của những kẻ không có công mà ghi danh công thần trong cuộc phản chính Jungjong, gây ra phản ứng dữ dội từ phe Huân cựu.', 'zh-CN': '伪勋削除是删除中宗反正时无功却名列功臣者的勋爵，引起了勋旧派的强烈反对。', 'zh-TW': '偽勳削除是刪除中宗反正時無功卻名列功臣者的勳爵，引起了勳舊派的強烈反對。' } } },
+            { id: 'jo-step-6', type: 'narration', text: '1519년, 훈구파의 남곤·심정 등은 "조광조가 붕당을 만들어 나라를 어지럽힌다"고 중종에게 고하였습니다. 결국 기묘사화가 일어나 조광조와 사림파가 대거 숙청되었습니다.', textI18n: { en: 'In 1519, Hungu members such as Nam Gon and Sim Jeong told Jungjong that "Jo Gwangjo is forming factions and disrupting the nation." The Gimyo Literati Purge ensued, and Jo Gwangjo and many Sarim scholars were purged.', es: 'En 1519, miembros Hungu como Nam Gon y Sim Jeong dijeron a Jungjong que "Jo Gwangjo está formando facciones y perturbando la nación". La Purga de Literatos Gimyo sobrevino, y Jo Gwangjo y muchos eruditos Sarim fueron purgados.', ja: '1519年、勲旧派の南袞・沈貞らが「趙光祖が朋党を作り国を乱している」と中宗に訴えました。結局己卯士禍が起き、趙光祖と士林派が大量に粛清されました。', th: 'ในปี ค.ศ. 1519 สมาชิกฮุนกู เช่น นัมกน และซิมจอง บอกจุงจงว่า "โจ กวังโจ กำลังสร้างฝ่ายและทำลายชาติ" การกวาดล้างกิเมียวจึงเกิดขึ้น โจ กวังโจ และนักวิชาการซาริมจำนวนมากถูกกวาดล้าง', vi: 'Năm 1519, phe Huân cựu gồm Nam Gon, Sim Jeong tâu với Jungjong rằng "Jo Gwangjo lập bè đảng làm rối loạn đất nước". Cuối cùng Sĩ họa Kỷ Mão xảy ra, Jo Gwangjo và Sĩ lâm bị thanh trừng hàng loạt.', 'zh-CN': '1519年，勋旧派南衮、沈贞等向中宗告发"赵光祖结党乱政"。最终己卯士祸爆发，赵光祖和士林派被大规模清洗。', 'zh-TW': '1519年，勳舊派南袞、沈貞等向中宗告發「趙光祖結黨亂政」。最終己卯士禍爆發，趙光祖和士林派被大規模清洗。' } },
+            { id: 'jo-step-7', type: 'dialog', speaker: '조광조', speakerI18n: { en: 'Jo Gwangjo', es: 'Jo Gwangjo', ja: '趙光祖', th: 'โจ กวังโจ', vi: 'Jo Gwangjo', 'zh-CN': '赵光祖', 'zh-TW': '趙光祖' }, text: '임금을 사랑하는 마음이 아비를 사랑하는 마음과 같았거늘, 이제 이리 되었으니 하늘이 무심하구나...', textI18n: { en: 'My love for the king was as great as a son\'s love for his father, yet it has come to this... How heartless is heaven...', es: 'Mi amor por el rey era tan grande como el amor de un hijo por su padre, sin embargo ha llegado a esto... Qué despiadado es el cielo...', ja: '王を愛する心は父を愛する心と同じであったのに、今こうなってしまうとは…天も情けない…', th: 'ความรักของข้าที่มีต่อกษัตริย์เท่ากับความรักของลูกที่มีต่อพ่อ แต่กลับมาถึงจุดนี้... สวรรค์ช่างไร้ใจเหลือเกิน...', vi: 'Lòng yêu vua như lòng yêu cha, mà nay lại đến nỗi này... Trời ơi sao vô tâm...', 'zh-CN': '爱君之心如爱父之心，如今竟落得如此下场……天何其无情……', 'zh-TW': '愛君之心如愛父之心，如今竟落得如此下場……天何其無情……' } },
+            { id: 'jo-step-8', type: 'quiz', quiz: { question: '기묘사화가 일어난 해는 언제인가요?', questionI18n: { en: 'In what year did the Gimyo Literati Purge occur?', es: '¿En qué año ocurrió la Purga de Literatos Gimyo?', ja: '己卯士禍が起きた年は？', th: 'การกวาดล้างกิเมียวเกิดขึ้นในปีใด?', vi: 'Sĩ họa Kỷ Mão xảy ra năm nào?', 'zh-CN': '己卯士祸发生在哪一年？', 'zh-TW': '己卯士禍發生在哪一年？' }, options: ['1498년', '1504년', '1519년', '1545년'], optionsI18n: { en: ['1498', '1504', '1519', '1545'], es: ['1498', '1504', '1519', '1545'], ja: ['1498年', '1504年', '1519年', '1545年'], th: ['ค.ศ. 1498', 'ค.ศ. 1504', 'ค.ศ. 1519', 'ค.ศ. 1545'], vi: ['1498', '1504', '1519', '1545'], 'zh-CN': ['1498年', '1504年', '1519年', '1545年'], 'zh-TW': ['1498年', '1504年', '1519年', '1545年'] }, correctIndex: 2, explanation: '기묘사화는 1519년(중종 14년)에 일어났습니다. 조광조를 비롯한 사림파 인사들이 대거 화를 입었습니다.', explanationI18n: { en: 'The Gimyo Literati Purge occurred in 1519 (14th year of Jungjong). Jo Gwangjo and many Sarim figures were persecuted.', es: 'La Purga de Literatos Gimyo ocurrió en 1519 (decimocuarto año de Jungjong). Jo Gwangjo y muchas figuras del Sarim fueron perseguidos.', ja: '己卯士禍は1519年（中宗14年）に起きました。趙光祖をはじめ士林派の人々が大勢禍に遭いました。', th: 'การกวาดล้างกิเมียวเกิดขึ้นในปี ค.ศ. 1519 (ปีที่ 14 ของจุงจง) โจ กวังโจ และบุคคลสำคัญซาริมจำนวนมากถูกข่มเหง', vi: 'Sĩ họa Kỷ Mão xảy ra năm 1519 (năm thứ 14 đời Jungjong). Jo Gwangjo cùng nhiều nhân sĩ Sĩ lâm bị hại.', 'zh-CN': '己卯士祸发生在1519年（中宗十四年）。赵光祖等众多士林派人士遭难。', 'zh-TW': '己卯士禍發生在1519年（中宗十四年）。趙光祖等眾多士林派人士遭難。' } } },
+            { id: 'jo-step-9', type: 'narration', text: '조광조는 사약을 받고 38세의 나이로 생을 마감했습니다. 그러나 그의 개혁 정신은 후대 사림파에게 이어져 마침내 선조 때 사림파가 정권을 장악하는 데 밑거름이 되었습니다.', textI18n: { en: 'Jo Gwangjo received the royal poison and died at the age of 38. However, his spirit of reform was passed on to later Sarim scholars, eventually laying the groundwork for the Sarim\'s rise to power during King Seonjo\'s reign.', es: 'Jo Gwangjo recibió el veneno real y murió a la edad de 38 años. Sin embargo, su espíritu de reforma fue transmitido a posteriores eruditos Sarim, sentando eventualmente las bases para el ascenso al poder del Sarim durante el reinado del Rey Seonjo.', ja: '趙光祖は賜薬を受け38歳で生涯を閉じました。しかしその改革精神は後世の士林派に受け継がれ、ついに宣祖の時に士林派が政権を掌握する礎となりました。', th: 'โจ กวังโจ ได้รับยาพิษจากราชวงศ์และเสียชีวิตเมื่ออายุ 38 ปี อย่างไรก็ตาม จิตวิญญาณแห่งการปฏิรูปของเขาถูกส่งต่อไปยังนักวิชาการซาริมรุ่นหลัง ในที่สุดวางรากฐานให้ซาริมขึ้นครองอำนาจในรัชสมัยกษัตริย์ซอนโจ', vi: 'Jo Gwangjo bị ban thuốc độc, qua đời ở tuổi 38. Tuy nhiên, tinh thần cải cách của ông được truyền lại cho Sĩ lâm đời sau, cuối cùng trở thành nền tảng để Sĩ lâm nắm quyền dưới thời vua Seonjo.', 'zh-CN': '赵光祖被赐毒药，38岁辞世。但他的改革精神传承给了后代士林派，最终为宣祖时期士林派掌权奠定了基础。', 'zh-TW': '趙光祖被賜毒藥，38歲辭世。但他的改革精神傳承給了後代士林派，最終為宣祖時期士林派掌權奠定了基礎。' } },
           ],
         },
       ],
     },
-
     // ============================================================
     // Period 4: 임진왜란 (1592)
     // ============================================================
     {
-      id: 'imjin-war',
-      eraId: 'joseon-early',
+      id: 'imjin-war', eraId: 'joseon-early',
       name: '임진왜란',
+      nameI18n: { en: 'The Imjin War (Japanese Invasions)', es: 'La Guerra Imjin (Invasiones Japonesas)', ja: '壬辰倭乱', th: 'สงครามอิมจิน (การรุกรานของญี่ปุ่น)', vi: 'Chiến tranh Nhâm Thìn (Cuộc xâm lược Nhật Bản)', 'zh-CN': '壬辰倭乱（日本入侵）', 'zh-TW': '壬辰倭亂（日本入侵）' },
       years: '1592',
-      description:
-        '일본의 대규모 침략에 맞서 이순신 장군의 해전 승리와 전국 각지 의병의 활약으로 나라를 지켜낸 시기입니다.',
+      description: '일본의 대규모 침략에 맞서 이순신 장군의 해전 승리와 전국 각지 의병의 활약으로 나라를 지켜낸 시기입니다.',
+      descriptionI18n: { en: 'A period when the nation was defended against Japan\'s massive invasion through Admiral Yi Sun-sin\'s naval victories and the courageous efforts of volunteer soldiers across the country.', es: 'Un período en que la nación fue defendida contra la masiva invasión de Japón a través de las victorias navales del Almirante Yi Sun-sin y los valientes esfuerzos de soldados voluntarios en todo el país.', ja: '日本の大規模な侵略に対し、李舜臣将軍の海戦勝利と全国各地の義兵の活躍により国を守り抜いた時代です。', th: 'ช่วงเวลาที่ชาติถูกปกป้องจากการรุกรานขนาดใหญ่ของญี่ปุ่นผ่านชัยชนะทางเรือของพลเรือเอกอี ซุนซินและความพยายามอันกล้าหาญของทหารอาสาทั่วประเทศ', vi: 'Thời kỳ đất nước được bảo vệ trước cuộc xâm lược quy mô lớn của Nhật Bản nhờ chiến thắng hải quân của Đô đốc Yi Sun-sin và hoạt động dũng cảm của nghĩa binh khắp nơi.', 'zh-CN': '面对日本大规模侵略，凭借李舜臣将军的海战胜利和全国各地义兵的英勇抗争守护了国家的时期。', 'zh-TW': '面對日本大規模侵略，憑藉李舜臣將軍的海戰勝利和全國各地義兵的英勇抗爭守護了國家的時期。' },
       events: [
-        // ── Event 7: 임진왜란 발발 ──
         {
-          id: 'imjin-war-outbreak',
-          periodId: 'imjin-war',
-          eraId: 'joseon-early',
+          id: 'imjin-war-outbreak', periodId: 'imjin-war', eraId: 'joseon-early',
           title: '임진왜란 발발',
-          description:
-            '1592년 일본의 침략과 이순신 장군의 해전 승리, 한산도 대첩의 이야기를 체험합니다.',
-          character: {
-            id: 'yi-sun-sin',
-            name: '이순신',
-            title: '삼도수군통제사',
-            description:
-              '임진왜란 당시 조선 수군을 이끌고 23전 23승의 신화를 이룬 불멸의 명장입니다. 한산도 대첩, 명량 해전 등으로 조선을 위기에서 구했습니다.',
-            primaryColor: '#000080',
-            secondaryColor: '#4169E1',
-          },
-          difficulty: 'hard',
-          pointReward: 700,
+          titleI18n: { en: 'Outbreak of the Imjin War', es: 'Estallido de la Guerra Imjin', ja: '壬辰倭乱勃発', th: 'การปะทุของสงครามอิมจิน', vi: 'Chiến tranh Nhâm Thìn bùng nổ', 'zh-CN': '壬辰倭乱爆发', 'zh-TW': '壬辰倭亂爆發' },
+          description: '1592년 일본의 침략과 이순신 장군의 해전 승리, 한산도 대첩의 이야기를 체험합니다.',
+          descriptionI18n: { en: 'Experience the 1592 Japanese invasion, Admiral Yi Sun-sin\'s naval victories, and the Battle of Hansando.', es: 'Experimenta la invasión japonesa de 1592, las victorias navales del Almirante Yi Sun-sin y la Batalla de Hansando.', ja: '1592年の日本の侵略と李舜臣将軍の海戦勝利、閑山島大捷の物語を体験します。', th: 'สัมผัสการรุกรานของญี่ปุ่นปี ค.ศ. 1592 ชัยชนะทางเรือของพลเรือเอกอี ซุนซิน และยุทธการที่ฮันซันโด', vi: 'Trải nghiệm cuộc xâm lược Nhật Bản năm 1592, chiến thắng hải quân của Đô đốc Yi Sun-sin và Đại thắng Hansando.', 'zh-CN': '体验1592年日本侵略、李舜臣将军的海战胜利和闲山岛大捷。', 'zh-TW': '體驗1592年日本侵略、李舜臣將軍的海戰勝利和閑山島大捷。' },
+          character: { id: 'yi-sun-sin', name: '이순신', nameI18n: { en: 'Yi Sun-sin', es: 'Yi Sun-sin', ja: '李舜臣', th: 'อี ซุนซิน', vi: 'Yi Sun-sin (Lý Thuấn Thần)', 'zh-CN': '李舜臣', 'zh-TW': '李舜臣' }, title: '삼도수군통제사', titleI18n: { en: 'Supreme Naval Commander of Three Provinces', es: 'Comandante Naval Supremo de las Tres Provincias', ja: '三道水軍統制使', th: 'ผู้บัญชาการกองทัพเรือสูงสุดสามจังหวัด', vi: 'Thống chế Thủy quân Ba đạo', 'zh-CN': '三道水军统制使', 'zh-TW': '三道水軍統制使' }, description: '임진왜란 당시 조선 수군을 이끌고 23전 23승의 신화를 이룬 불멸의 명장입니다. 한산도 대첩, 명량 해전 등으로 조선을 위기에서 구했습니다.', descriptionI18n: { en: 'An immortal naval commander who led the Joseon navy to an undefeated record of 23 victories in 23 battles during the Imjin War. He saved Joseon through the Battle of Hansando, the Battle of Myeongnyang, and other engagements.', es: 'Un inmortal comandante naval que lideró la armada de Joseon a un récord invicto de 23 victorias en 23 batallas durante la Guerra Imjin. Salvó a Joseon a través de la Batalla de Hansando, la Batalla de Myeongnyang y otros combates.', ja: '壬辰倭乱時に朝鮮水軍を率いて23戦23勝の神話を築いた不滅の名将です。閑山島大捷、鳴梁海戦などで朝鮮を危機から救いました。', th: 'ผู้บัญชาการกองทัพเรือผู้เป็นอมตะที่นำกองทัพเรือโชซอนสู่สถิติไร้พ่าย 23 ชนะใน 23 ศึกระหว่างสงครามอิมจิน ช่วยโชซอนจากวิกฤตผ่านยุทธการที่ฮันซันโดและยุทธการที่เมียงนยัง', vi: 'Danh tướng bất tử dẫn dắt thủy quân Joseon đạt kỷ lục bất bại 23 trận 23 thắng trong Chiến tranh Nhâm Thìn. Ông cứu Joseon qua Đại thắng Hansando, Hải chiến Myeongnyang và nhiều trận khác.', 'zh-CN': '壬辰倭乱中率领朝鲜水军创造23战23胜神话的不朽名将。通过闲山岛大捷、鸣梁海战等将朝鲜从危机中拯救。', 'zh-TW': '壬辰倭亂中率領朝鮮水軍創造23戰23勝神話的不朽名將。通過閑山島大捷、鳴梁海戰等將朝鮮從危機中拯救。' }, primaryColor: '#000080', secondaryColor: '#4169E1' },
+          difficulty: 'hard', pointReward: 700,
           steps: [
-            {
-              id: 'imjin-step-1',
-              type: 'narration',
-              text: '1592년 4월 13일, 도요토미 히데요시가 이끄는 일본군 약 20만 명이 부산포에 상륙하였습니다. 200년간 평화가 이어지던 조선은 전쟁 준비가 되어 있지 않았습니다.',
-            },
-            {
-              id: 'imjin-step-2',
-              type: 'narration',
-              text: '일본군은 파죽지세로 북상하여 불과 20일 만에 한양을 함락시켰습니다. 선조는 의주로 피란을 떠났습니다.',
-            },
-            {
-              id: 'imjin-step-3',
-              type: 'dialog',
-              speaker: '이순신',
-              text: '육지에서의 패배 소식이 연이어 들려오나 낙심할 때가 아니다. 바다를 지키면 적의 보급로를 끊을 수 있다. 수군이 나라를 구할 것이니라!',
-            },
-            {
-              id: 'imjin-step-4',
-              type: 'quiz',
-              quiz: {
-                question: '임진왜란이 발발한 해는 언제인가요?',
-                options: ['1590년', '1591년', '1592년', '1593년'],
-                correctIndex: 2,
-                explanation:
-                  '임진왜란은 1592년 4월 13일 일본군이 부산포에 상륙하면서 시작되었습니다.',
-              },
-            },
-            {
-              id: 'imjin-step-5',
-              type: 'narration',
-              text: '전라좌수사 이순신은 옥포, 사천, 당포 해전에서 연이어 승리를 거두며 일본 수군을 격파하였습니다.',
-            },
-            {
-              id: 'imjin-step-6',
-              type: 'dialog',
-              speaker: '이순신',
-              text: '거북선을 앞세워 적진으로 돌격하라! 거북선은 지붕에 철갑을 두르고 사방에 총통을 장착하였으니, 적이 감히 올라타지 못하리라!',
-            },
-            {
-              id: 'imjin-step-7',
-              type: 'quiz',
-              quiz: {
-                question: '거북선의 특징으로 올바른 것은?',
-                options: [
-                  '항해 속도가 가장 빨랐다',
-                  '지붕을 덮어 적이 올라타지 못하게 하였다',
-                  '대포가 장착되지 않았다',
-                  '일본에서 수입한 배였다',
-                ],
-                correctIndex: 1,
-                explanation:
-                  '거북선은 지붕을 덮고 그 위에 칼과 송곳을 꽂아 적이 올라타지 못하게 한 것이 가장 큰 특징입니다.',
-              },
-            },
-            {
-              id: 'imjin-step-8',
-              type: 'narration',
-              text: '1592년 7월, 한산도 앞바다. 이순신은 결전의 때가 왔음을 직감했습니다.',
-            },
-            {
-              id: 'imjin-step-9',
-              type: 'dialog',
-              speaker: '이순신',
-              text: '학익진(鶴翼陣)을 펼쳐라! 학이 날개를 펼치듯 적을 포위하여 섬멸하겠노라! 판옥선들은 활 모양으로 에워싸고, 일제히 포격하라!',
-            },
-            {
-              id: 'imjin-step-10',
-              type: 'narration',
-              text: '한산도 대첩에서 조선 수군은 학익진 전법으로 일본 전선 약 60여 척을 격침시키는 대승을 거두었습니다. 이 전투로 일본군의 서해 진출이 완전히 차단되었습니다.',
-            },
-            {
-              id: 'imjin-step-11',
-              type: 'quiz',
-              quiz: {
-                question: '한산도 대첩에서 이순신이 사용한 진법은?',
-                options: [
-                  '어린진 (물고기 비늘 진)',
-                  '학익진 (학의 날개 진)',
-                  '방원진 (원형 진)',
-                  '장사진 (뱀 모양 진)',
-                ],
-                correctIndex: 1,
-                explanation:
-                  '학익진은 학이 날개를 펼친 형태로 적을 포위하는 진법입니다. 한산도 대첩에서 이순신이 사용하여 대승을 거두었습니다.',
-              },
-            },
-            {
-              id: 'imjin-step-12',
-              type: 'dialog',
-              speaker: '이순신',
-              text: '한산도 대첩의 승리로 적의 보급로를 끊었노라. 그러나 전쟁은 아직 끝나지 않았다. 방심하지 말고 더욱 경계하라!',
-            },
-            {
-              id: 'imjin-step-13',
-              type: 'quiz',
-              quiz: {
-                question:
-                  '임진왜란 당시 이순신 장군의 직책은 무엇이었나요?',
-                options: [
-                  '병조판서',
-                  '도원수',
-                  '삼도수군통제사',
-                  '훈련도감 대장',
-                ],
-                correctIndex: 2,
-                explanation:
-                  '이순신은 임진왜란 중 삼도수군통제사에 임명되어 경상·전라·충청 삼도의 수군을 총지휘하였습니다.',
-              },
-            },
-            {
-              id: 'imjin-step-14',
-              type: 'narration',
-              text: '이순신의 연이은 해전 승리는 일본군의 보급로를 차단하여 전세를 역전시키는 결정적 계기가 되었습니다. 그의 23전 23승은 세계 해전사에서도 유례가 없는 기록입니다.',
-            },
+            { id: 'imjin-step-1', type: 'narration', text: '1592년 4월 13일, 도요토미 히데요시가 이끄는 일본군 약 20만 명이 부산포에 상륙하였습니다. 200년간 평화가 이어지던 조선은 전쟁 준비가 되어 있지 않았습니다.', textI18n: { en: 'On April 13, 1592, approximately 200,000 Japanese troops under Toyotomi Hideyoshi landed at Busanpo. Joseon, which had enjoyed 200 years of peace, was unprepared for war.', es: 'El 13 de abril de 1592, aproximadamente 200.000 tropas japonesas bajo Toyotomi Hideyoshi desembarcaron en Busanpo. Joseon, que había disfrutado de 200 años de paz, no estaba preparado para la guerra.', ja: '1592年4月13日、豊臣秀吉率いる約20万の日本軍が釜山浦に上陸しました。200年間平和が続いていた朝鮮は戦争の準備ができていませんでした。', th: 'ในวันที่ 13 เมษายน ค.ศ. 1592 กองทัพญี่ปุ่นประมาณ 200,000 นายภายใต้โทโยโทมิ ฮิเดโยชิ ขึ้นบกที่บูซันโพ โชซอนซึ่งมีสันติสุขมา 200 ปี ไม่ได้เตรียมพร้อมสำหรับสงคราม', vi: 'Ngày 13 tháng 4 năm 1592, khoảng 200.000 quân Nhật dưới quyền Toyotomi Hideyoshi đổ bộ tại Busanpo. Joseon sau 200 năm hòa bình không sẵn sàng cho chiến tranh.', 'zh-CN': '1592年4月13日，丰臣秀吉率约20万日军在釜山浦登陆。持续200年和平的朝鲜毫无战争准备。', 'zh-TW': '1592年4月13日，豐臣秀吉率約20萬日軍在釜山浦登陸。持續200年和平的朝鮮毫無戰爭準備。' } },
+            { id: 'imjin-step-2', type: 'narration', text: '일본군은 파죽지세로 북상하여 불과 20일 만에 한양을 함락시켰습니다. 선조는 의주로 피란을 떠났습니다.', textI18n: { en: 'The Japanese army swept northward and captured Hanyang in just 20 days. King Seonjo fled to Uiju.', es: 'El ejército japonés barrió hacia el norte y capturó Hanyang en solo 20 días. El Rey Seonjo huyó a Uiju.', ja: '日本軍は破竹の勢いで北上し、わずか20日で漢陽を陥落させました。宣祖は義州へ避難しました。', th: 'กองทัพญี่ปุ่นกวาดขึ้นเหนือและยึดฮันยังได้ในเวลาเพียง 20 วัน กษัตริย์ซอนโจหนีไปอึยจู', vi: 'Quân Nhật tiến nhanh về phía bắc và chiếm Hanyang chỉ trong 20 ngày. Vua Seonjo lánh nạn đến Uiju.', 'zh-CN': '日军势如破竹北上，仅20天便攻陷汉阳。宣祖逃往义州避难。', 'zh-TW': '日軍勢如破竹北上，僅20天便攻陷漢陽。宣祖逃往義州避難。' } },
+            { id: 'imjin-step-3', type: 'dialog', speaker: '이순신', speakerI18n: { en: 'Yi Sun-sin', es: 'Yi Sun-sin', ja: '李舜臣', th: 'อี ซุนซิน', vi: 'Yi Sun-sin', 'zh-CN': '李舜臣', 'zh-TW': '李舜臣' }, text: '육지에서의 패배 소식이 연이어 들려오나 낙심할 때가 아니다. 바다를 지키면 적의 보급로를 끊을 수 있다. 수군이 나라를 구할 것이니라!', textI18n: { en: 'Reports of defeats on land keep coming, but this is no time for despair. If we control the sea, we can cut the enemy\'s supply lines. The navy will save the nation!', es: '¡Los informes de derrotas en tierra siguen llegando, pero no es momento de desesperarse. Si controlamos el mar, podemos cortar las líneas de suministro del enemigo. ¡La armada salvará a la nación!', ja: '陸での敗北の知らせが次々と入ってくるが、落胆している場合ではない。海を守れば敵の補給路を断てる。水軍が国を救うのだ！', th: 'รายงานความพ่ายแพ้บนบกมาอย่างต่อเนื่อง แต่นี่ไม่ใช่เวลาสิ้นหวัง หากเราควบคุมทะเล เราสามารถตัดเส้นทางส่งกำลังบำรุงของศัตรูได้ กองทัพเรือจะช่วยชาติ!', vi: 'Tin thua trận trên bộ liên tục truyền đến nhưng không phải lúc nản lòng. Giữ được biển thì cắt đứt đường tiếp tế của địch. Thủy quân sẽ cứu nước!', 'zh-CN': '陆地上的败报接连传来，但不是气馁的时候。守住海洋就能切断敌人的补给线。水军将拯救国家！', 'zh-TW': '陸地上的敗報接連傳來，但不是氣餒的時候。守住海洋就能切斷敵人的補給線。水軍將拯救國家！' } },
+            { id: 'imjin-step-4', type: 'quiz', quiz: { question: '임진왜란이 발발한 해는 언제인가요?', questionI18n: { en: 'In what year did the Imjin War break out?', es: '¿En qué año estalló la Guerra Imjin?', ja: '壬辰倭乱が勃発した年は？', th: 'สงครามอิมจินเกิดขึ้นในปีใด?', vi: 'Chiến tranh Nhâm Thìn bùng nổ năm nào?', 'zh-CN': '壬辰倭乱爆发在哪一年？', 'zh-TW': '壬辰倭亂爆發在哪一年？' }, options: ['1590년', '1591년', '1592년', '1593년'], optionsI18n: { en: ['1590', '1591', '1592', '1593'], es: ['1590', '1591', '1592', '1593'], ja: ['1590年', '1591年', '1592年', '1593年'], th: ['ค.ศ. 1590', 'ค.ศ. 1591', 'ค.ศ. 1592', 'ค.ศ. 1593'], vi: ['1590', '1591', '1592', '1593'], 'zh-CN': ['1590年', '1591年', '1592年', '1593年'], 'zh-TW': ['1590年', '1591年', '1592年', '1593年'] }, correctIndex: 2, explanation: '임진왜란은 1592년 4월 13일 일본군이 부산포에 상륙하면서 시작되었습니다.', explanationI18n: { en: 'The Imjin War began on April 13, 1592, when Japanese troops landed at Busanpo.', es: 'La Guerra Imjin comenzó el 13 de abril de 1592, cuando las tropas japonesas desembarcaron en Busanpo.', ja: '壬辰倭乱は1592年4月13日、日本軍が釜山浦に上陸したことで始まりました。', th: 'สงครามอิมจินเริ่มต้นในวันที่ 13 เมษายน ค.ศ. 1592 เมื่อกองทัพญี่ปุ่นขึ้นบกที่บูซันโพ', vi: 'Chiến tranh Nhâm Thìn bắt đầu ngày 13 tháng 4 năm 1592 khi quân Nhật đổ bộ tại Busanpo.', 'zh-CN': '壬辰倭乱始于1592年4月13日日军在釜山浦登陆。', 'zh-TW': '壬辰倭亂始於1592年4月13日日軍在釜山浦登陸。' } } },
+            { id: 'imjin-step-5', type: 'narration', text: '전라좌수사 이순신은 옥포, 사천, 당포 해전에서 연이어 승리를 거두며 일본 수군을 격파하였습니다.', textI18n: { en: 'Left Naval Commander of Jeolla Province Yi Sun-sin won successive victories at the battles of Okpo, Sacheon, and Dangpo, destroying the Japanese navy.', es: 'El Comandante Naval Izquierdo de la Provincia de Jeolla, Yi Sun-sin, obtuvo victorias sucesivas en las batallas de Okpo, Sacheon y Dangpo, destruyendo la armada japonesa.', ja: '全羅左水使の李舜臣は玉浦・泗川・唐浦海戦で連勝し、日本水軍を撃破しました。', th: 'ผู้บัญชาการกองเรือซ้ายของจังหวัดจอลลา อี ซุนซิน ชนะติดต่อกันในยุทธการอกโพ ซาชอน และดังโพ ทำลายกองทัพเรือญี่ปุ่น', vi: 'Tả Thủy sứ Jeolla Yi Sun-sin liên tiếp giành chiến thắng tại các trận Okpo, Sacheon, Dangpo, đánh tan thủy quân Nhật.', 'zh-CN': '全罗左水使李舜臣在玉浦、泗川、唐浦海战中连续获胜，击败日本水军。', 'zh-TW': '全羅左水使李舜臣在玉浦、泗川、唐浦海戰中連續獲勝，擊敗日本水軍。' } },
+            { id: 'imjin-step-6', type: 'dialog', speaker: '이순신', speakerI18n: { en: 'Yi Sun-sin', es: 'Yi Sun-sin', ja: '李舜臣', th: 'อี ซุนซิน', vi: 'Yi Sun-sin', 'zh-CN': '李舜臣', 'zh-TW': '李舜臣' }, text: '거북선을 앞세워 적진으로 돌격하라! 거북선은 지붕에 철갑을 두르고 사방에 총통을 장착하였으니, 적이 감히 올라타지 못하리라!', textI18n: { en: 'Lead with the turtle ships and charge into the enemy! The turtle ships have iron-clad roofs and cannons on all sides — the enemy shall not dare board them!', es: '¡Liderar con los barcos tortuga y cargar contra el enemigo! Los barcos tortuga tienen techos blindados y cañones en todos los lados — ¡el enemigo no se atreverá a abordarlos!', ja: '亀甲船を先頭にして敵陣に突撃せよ！亀甲船は屋根に鉄甲を巻き四方に銃筒を装備しているので、敵は乗り込むことなどできまい！', th: 'นำด้วยเรือเต่าและบุกเข้าหาศัตรู! เรือเต่ามีหลังคาหุ้มเกราะเหล็กและปืนใหญ่รอบด้าน — ศัตรูไม่กล้าขึ้นเรือ!', vi: 'Cho thuyền rùa tiên phong xông vào trận địch! Thuyền rùa có mái bọc sắt, bốn phía gắn đại bác, địch không dám trèo lên!', 'zh-CN': '以龟甲船为先锋冲入敌阵！龟甲船顶覆铁甲、四面装有火炮，敌人休想登船！', 'zh-TW': '以龜甲船為先鋒衝入敵陣！龜甲船頂覆鐵甲、四面裝有火砲，敵人休想登船！' } },
+            { id: 'imjin-step-7', type: 'quiz', quiz: { question: '거북선의 특징으로 올바른 것은?', questionI18n: { en: 'Which is a correct feature of the turtle ship?', es: '¿Cuál es una característica correcta del barco tortuga?', ja: '亀甲船の特徴として正しいものは？', th: 'ข้อใดเป็นคุณลักษณะที่ถูกต้องของเรือเต่า?', vi: 'Đặc điểm đúng của thuyền rùa là gì?', 'zh-CN': '龟甲船的正确特征是什么？', 'zh-TW': '龜甲船的正確特徵是什麼？' }, options: ['항해 속도가 가장 빨랐다', '지붕을 덮어 적이 올라타지 못하게 하였다', '대포가 장착되지 않았다', '일본에서 수입한 배였다'], optionsI18n: { en: ['It had the fastest sailing speed', 'It had a covered roof to prevent enemy boarding', 'It had no cannons', 'It was imported from Japan'], es: ['Tenía la velocidad de navegación más rápida', 'Tenía un techo cubierto para prevenir el abordaje enemigo', 'No tenía cañones', 'Fue importado de Japón'], ja: ['航海速度が最も速かった', '屋根を覆い敵が乗り込めないようにした', '大砲が装備されていなかった', '日本から輸入した船だった'], th: ['มีความเร็วในการเดินเรือเร็วที่สุด', 'มีหลังคาคลุมเพื่อป้องกันศัตรูขึ้นเรือ', 'ไม่มีปืนใหญ่', 'นำเข้าจากญี่ปุ่น'], vi: ['Có tốc độ hàng hải nhanh nhất', 'Có mái che ngăn địch trèo lên', 'Không trang bị đại bác', 'Là tàu nhập từ Nhật'], 'zh-CN': ['航速最快', '覆盖船顶使敌人无法登船', '没有装备大炮', '是从日本进口的船'], 'zh-TW': ['航速最快', '覆蓋船頂使敵人無法登船', '沒有裝備大砲', '是從日本進口的船'] }, correctIndex: 1, explanation: '거북선은 지붕을 덮고 그 위에 칼과 송곳을 꽂아 적이 올라타지 못하게 한 것이 가장 큰 특징입니다.', explanationI18n: { en: 'The turtle ship\'s most distinctive feature was its covered roof studded with iron spikes to prevent enemy soldiers from boarding.', es: 'La característica más distintiva del barco tortuga era su techo cubierto con puntas de hierro para evitar que los soldados enemigos abordaran.', ja: '亀甲船の最大の特徴は、屋根を覆いその上に刀や錐を差して敵が乗り込めないようにしたことです。', th: 'คุณลักษณะที่โดดเด่นที่สุดของเรือเต่าคือหลังคาที่คลุมพร้อมตะปูเหล็กเพื่อป้องกันทหารศัตรูขึ้นเรือ', vi: 'Đặc điểm nổi bật nhất của thuyền rùa là mái che có gắn gai sắt ngăn quân địch trèo lên.', 'zh-CN': '龟甲船最大的特征是覆盖船顶并在上面插满刀和锥子，使敌人无法登船。', 'zh-TW': '龜甲船最大的特徵是覆蓋船頂並在上面插滿刀和錐子，使敵人無法登船。' } } },
+            { id: 'imjin-step-8', type: 'narration', text: '1592년 7월, 한산도 앞바다. 이순신은 결전의 때가 왔음을 직감했습니다.', textI18n: { en: 'July 1592, the waters off Hansando. Yi Sun-sin sensed that the moment of the decisive battle had come.', es: 'Julio de 1592, las aguas frente a Hansando. Yi Sun-sin sintió que el momento de la batalla decisiva había llegado.', ja: '1592年7月、閑山島沖。李舜臣は決戦の時が来たことを直感しました。', th: 'กรกฎาคม ค.ศ. 1592 น่านน้ำนอกฮันซันโด อี ซุนซิน สัมผัสได้ว่าช่วงเวลาแห่งการรบชี้ขาดมาถึงแล้ว', vi: 'Tháng 7 năm 1592, vùng biển ngoài Hansando. Yi Sun-sin linh cảm thời khắc quyết chiến đã đến.', 'zh-CN': '1592年7月，闲山岛前海。李舜臣直觉决战的时刻到了。', 'zh-TW': '1592年7月，閑山島前海。李舜臣直覺決戰的時刻到了。' } },
+            { id: 'imjin-step-9', type: 'dialog', speaker: '이순신', speakerI18n: { en: 'Yi Sun-sin', es: 'Yi Sun-sin', ja: '李舜臣', th: 'อี ซุนซิน', vi: 'Yi Sun-sin', 'zh-CN': '李舜臣', 'zh-TW': '李舜臣' }, text: '학익진(鶴翼陣)을 펼쳐라! 학이 날개를 펼치듯 적을 포위하여 섬멸하겠노라! 판옥선들은 활 모양으로 에워싸고, 일제히 포격하라!', textI18n: { en: 'Deploy the Crane Wing Formation! Like a crane spreading its wings, we shall encircle and annihilate the enemy! Panokseon warships, form a crescent and fire in unison!', es: '¡Desplieguen la Formación Ala de Grulla! ¡Como una grulla desplegando sus alas, rodearemos y aniquilaremos al enemigo! ¡Barcos de guerra Panokseon, formen una media luna y disparen al unísono!', ja: '鶴翼陣を展開せよ！鶴が翼を広げるように敵を包囲して殲滅する！板屋船は弓形に取り囲み、一斉に砲撃せよ！', th: 'กางขบวนรบปีกนกกระเรียน! เหมือนนกกระเรียนกางปีก เราจะล้อมและทำลายศัตรู! เรือรบพาน็อกซอน จัดรูปเสี้ยวพระจันทร์แล้วยิงพร้อมกัน!', vi: 'Triển khai trận Hạc dực! Như hạc xòe cánh, bao vây tiêu diệt địch! Các chiến thuyền Panokseon hãy bao vây hình cung và đồng loạt khai hỏa!', 'zh-CN': '展开鹤翼阵！如鹤展翅般包围歼灭敌人！板屋船呈弓形包围，齐射！', 'zh-TW': '展開鶴翼陣！如鶴展翅般包圍殲滅敵人！板屋船呈弓形包圍，齊射！' } },
+            { id: 'imjin-step-10', type: 'narration', text: '한산도 대첩에서 조선 수군은 학익진 전법으로 일본 전선 약 60여 척을 격침시키는 대승을 거두었습니다. 이 전투로 일본군의 서해 진출이 완전히 차단되었습니다.', textI18n: { en: 'At the Battle of Hansando, the Joseon navy achieved a great victory using the Crane Wing Formation, sinking approximately 60 Japanese warships. This battle completely blocked the Japanese advance to the West Sea.', es: 'En la Batalla de Hansando, la armada de Joseon logró una gran victoria usando la Formación Ala de Grulla, hundiendo aproximadamente 60 barcos de guerra japoneses. Esta batalla bloqueó completamente el avance japonés al Mar del Oeste.', ja: '閑山島大捷で朝鮮水軍は鶴翼陣戦法により日本の戦船約60隻を撃沈する大勝を収めました。この戦いで日本軍の西海進出が完全に阻止されました。', th: 'ในยุทธการที่ฮันซันโด กองทัพเรือโชซอนได้รับชัยชนะอย่างยิ่งใหญ่โดยใช้ขบวนรบปีกนกกระเรียน จมเรือรบญี่ปุ่นประมาณ 60 ลำ ยุทธการนี้ปิดกั้นการรุกของญี่ปุ่นสู่ทะเลตะวันตกอย่างสมบูรณ์', vi: 'Tại Đại thắng Hansando, thủy quân Joseon giành thắng lợi lớn bằng trận pháp Hạc dực, đánh chìm khoảng 60 chiến thuyền Nhật. Trận này hoàn toàn chặn đứng bước tiến của Nhật ra Biển Tây.', 'zh-CN': '在闲山岛大捷中，朝鲜水军以鹤翼阵战法击沉约60艘日本战船，取得大胜。此战完全切断了日军向西海的进军。', 'zh-TW': '在閑山島大捷中，朝鮮水軍以鶴翼陣戰法擊沉約60艘日本戰船，取得大勝。此戰完全切斷了日軍向西海的進軍。' } },
+            { id: 'imjin-step-11', type: 'quiz', quiz: { question: '한산도 대첩에서 이순신이 사용한 진법은?', questionI18n: { en: 'What formation did Yi Sun-sin use at the Battle of Hansando?', es: '¿Qué formación usó Yi Sun-sin en la Batalla de Hansando?', ja: '閑山島大捷で李舜臣が使用した陣法は？', th: 'อี ซุนซิน ใช้ขบวนรบอะไรในยุทธการที่ฮันซันโด?', vi: 'Yi Sun-sin sử dụng trận pháp gì tại Đại thắng Hansando?', 'zh-CN': '李舜臣在闲山岛大捷中使用的阵法是？', 'zh-TW': '李舜臣在閑山島大捷中使用的陣法是？' }, options: ['어린진 (물고기 비늘 진)', '학익진 (학의 날개 진)', '방원진 (원형 진)', '장사진 (뱀 모양 진)'], optionsI18n: { en: ['Fish Scale Formation', 'Crane Wing Formation', 'Circular Formation', 'Serpent Formation'], es: ['Formación Escama de Pez', 'Formación Ala de Grulla', 'Formación Circular', 'Formación Serpiente'], ja: ['魚鱗陣', '鶴翼陣', '方円陣', '長蛇陣'], th: ['ขบวนรบเกล็ดปลา', 'ขบวนรบปีกนกกระเรียน', 'ขบวนรบวงกลม', 'ขบวนรบงู'], vi: ['Trận Ngư lân (vảy cá)', 'Trận Hạc dực (cánh hạc)', 'Trận Phương viên (hình tròn)', 'Trận Trường xà (hình rắn)'], 'zh-CN': ['鱼鳞阵', '鹤翼阵', '方圆阵', '长蛇阵'], 'zh-TW': ['魚鱗陣', '鶴翼陣', '方圓陣', '長蛇陣'] }, correctIndex: 1, explanation: '학익진은 학이 날개를 펼친 형태로 적을 포위하는 진법입니다. 한산도 대첩에서 이순신이 사용하여 대승을 거두었습니다.', explanationI18n: { en: 'The Crane Wing Formation encircles the enemy in the shape of a crane spreading its wings. Yi Sun-sin used it at the Battle of Hansando to achieve a great victory.', es: 'La Formación Ala de Grulla rodea al enemigo en forma de grulla desplegando sus alas. Yi Sun-sin la usó en la Batalla de Hansando para lograr una gran victoria.', ja: '鶴翼陣は鶴が翼を広げた形で敵を包囲する陣法です。閑山島大捷で李舜臣がこれを使用して大勝を収めました。', th: 'ขบวนรบปีกนกกระเรียนล้อมศัตรูในรูปร่างของนกกระเรียนกางปีก อี ซุนซิน ใช้มันในยุทธการที่ฮันซันโดเพื่อได้รับชัยชนะอันยิ่งใหญ่', vi: 'Trận Hạc dực bao vây địch theo hình cánh hạc xòe. Yi Sun-sin sử dụng tại Đại thắng Hansando để giành đại thắng.', 'zh-CN': '鹤翼阵是以鹤展翅的形态包围敌人的阵法。李舜臣在闲山岛大捷中使用此阵取得大胜。', 'zh-TW': '鶴翼陣是以鶴展翅的形態包圍敵人的陣法。李舜臣在閑山島大捷中使用此陣取得大勝。' } } },
+            { id: 'imjin-step-12', type: 'dialog', speaker: '이순신', speakerI18n: { en: 'Yi Sun-sin', es: 'Yi Sun-sin', ja: '李舜臣', th: 'อี ซุนซิน', vi: 'Yi Sun-sin', 'zh-CN': '李舜臣', 'zh-TW': '李舜臣' }, text: '한산도 대첩의 승리로 적의 보급로를 끊었노라. 그러나 전쟁은 아직 끝나지 않았다. 방심하지 말고 더욱 경계하라!', textI18n: { en: 'Our victory at Hansando has cut the enemy\'s supply lines. But the war is not yet over. Stay vigilant and remain on guard!', es: '¡Nuestra victoria en Hansando ha cortado las líneas de suministro del enemigo. Pero la guerra aún no ha terminado. ¡Manténganse vigilantes y en guardia!', ja: '閑山島大捷の勝利で敵の補給路を断った。しかし戦争はまだ終わっていない。油断せずさらに警戒せよ！', th: 'ชัยชนะของเราที่ฮันซันโดตัดเส้นทางส่งกำลังบำรุงของศัตรูแล้ว แต่สงครามยังไม่จบ จงตื่นตัวและเฝ้าระวัง!', vi: 'Chiến thắng Hansando đã cắt đứt đường tiếp tế của địch. Nhưng chiến tranh chưa kết thúc. Đừng lơ là, hãy cảnh giác hơn nữa!', 'zh-CN': '闲山岛大捷的胜利切断了敌人的补给线。但战争尚未结束。不可大意，更要加强警戒！', 'zh-TW': '閑山島大捷的勝利切斷了敵人的補給線。但戰爭尚未結束。不可大意，更要加強警戒！' } },
+            { id: 'imjin-step-13', type: 'quiz', quiz: { question: '임진왜란 당시 이순신 장군의 직책은 무엇이었나요?', questionI18n: { en: 'What was Admiral Yi Sun-sin\'s official title during the Imjin War?', es: '¿Cuál era el título oficial del Almirante Yi Sun-sin durante la Guerra Imjin?', ja: '壬辰倭乱時の李舜臣将軍の職位は？', th: 'ตำแหน่งทางการของพลเรือเอกอี ซุนซิน ระหว่างสงครามอิมจินคืออะไร?', vi: 'Chức vụ chính thức của Đô đốc Yi Sun-sin trong Chiến tranh Nhâm Thìn là gì?', 'zh-CN': '壬辰倭乱时李舜臣将军的职位是什么？', 'zh-TW': '壬辰倭亂時李舜臣將軍的職位是什麼？' }, options: ['병조판서', '도원수', '삼도수군통제사', '훈련도감 대장'], optionsI18n: { en: ['Minister of War', 'Supreme Military Commander', 'Supreme Naval Commander of Three Provinces', 'Commander of the Military Training Agency'], es: ['Ministro de Guerra', 'Comandante Militar Supremo', 'Comandante Naval Supremo de las Tres Provincias', 'Comandante de la Agencia de Entrenamiento Militar'], ja: ['兵曹判書', '都元帥', '三道水軍統制使', '訓練都監大将'], th: ['รัฐมนตรีว่าการกระทรวงกลาโหม', 'ผู้บัญชาการทหารสูงสุด', 'ผู้บัญชาการกองทัพเรือสูงสุดสามจังหวัด', 'ผู้บัญชาการหน่วยฝึกทหาร'], vi: ['Binh Tào Phán Thư', 'Đô Nguyên Soái', 'Thống chế Thủy quân Ba đạo', 'Đại tướng Huấn luyện Đô giám'], 'zh-CN': ['兵曹判书', '都元帅', '三道水军统制使', '训练都监大将'], 'zh-TW': ['兵曹判書', '都元帥', '三道水軍統制使', '訓練都監大將'] }, correctIndex: 2, explanation: '이순신은 임진왜란 중 삼도수군통제사에 임명되어 경상·전라·충청 삼도의 수군을 총지휘하였습니다.', explanationI18n: { en: 'Yi Sun-sin was appointed Supreme Naval Commander of Three Provinces during the Imjin War, commanding the navies of Gyeongsang, Jeolla, and Chungcheong provinces.', es: 'Yi Sun-sin fue nombrado Comandante Naval Supremo de las Tres Provincias durante la Guerra Imjin, comandando las armadas de las provincias de Gyeongsang, Jeolla y Chungcheong.', ja: '李舜臣は壬辰倭乱中に三道水軍統制使に任命され、慶尚・全羅・忠清三道の水軍を総指揮しました。', th: 'อี ซุนซิน ได้รับการแต่งตั้งเป็นผู้บัญชาการกองทัพเรือสูงสุดสามจังหวัดระหว่างสงครามอิมจิน บัญชาการกองทัพเรือของจังหวัดคยองซัง จอลลา และชุงชอง', vi: 'Yi Sun-sin được bổ nhiệm làm Thống chế Thủy quân Ba đạo trong Chiến tranh Nhâm Thìn, tổng chỉ huy thủy quân ba đạo Gyeongsang, Jeolla và Chungcheong.', 'zh-CN': '李舜臣在壬辰倭乱中被任命为三道水军统制使，总指挥庆尚、全罗、忠清三道水军。', 'zh-TW': '李舜臣在壬辰倭亂中被任命為三道水軍統制使，總指揮慶尚、全羅、忠清三道水軍。' } } },
+            { id: 'imjin-step-14', type: 'narration', text: '이순신의 연이은 해전 승리는 일본군의 보급로를 차단하여 전세를 역전시키는 결정적 계기가 되었습니다. 그의 23전 23승은 세계 해전사에서도 유례가 없는 기록입니다.', textI18n: { en: 'Yi Sun-sin\'s successive naval victories were the decisive factor in turning the tide of war by cutting Japanese supply lines. His undefeated record of 23 victories in 23 battles is unmatched in world naval history.', es: 'Las victorias navales sucesivas de Yi Sun-sin fueron el factor decisivo para cambiar el rumbo de la guerra al cortar las líneas de suministro japonesas. Su récord invicto de 23 victorias en 23 batallas no tiene parangón en la historia naval mundial.', ja: '李舜臣の連続する海戦勝利は、日本軍の補給路を遮断して戦況を逆転させる決定的な契機となりました。23戦23勝は世界海戦史でも類例のない記録です。', th: 'ชัยชนะทางเรือต่อเนื่องของอี ซุนซิน เป็นปัจจัยชี้ขาดในการพลิกสถานการณ์สงครามโดยตัดเส้นทางส่งกำลังบำรุงของญี่ปุ่น สถิติไร้พ่าย 23 ชนะใน 23 ศึกของเขาไม่มีใครเทียบได้ในประวัติศาสตร์การรบทางเรือของโลก', vi: 'Các chiến thắng hải quân liên tiếp của Yi Sun-sin là yếu tố quyết định đảo ngược cục diện chiến tranh bằng việc cắt đường tiếp tế Nhật. Kỷ lục bất bại 23 trận 23 thắng là vô tiền khoáng hậu trong lịch sử hải chiến thế giới.', 'zh-CN': '李舜臣接连的海战胜利切断了日军补给线，成为扭转战局的决定性因素。其23战23胜的记录在世界海战史上也是绝无仅有的。', 'zh-TW': '李舜臣接連的海戰勝利切斷了日軍補給線，成為扭轉戰局的決定性因素。其23戰23勝的記錄在世界海戰史上也是絕無僅有的。' } },
           ],
         },
-        // ── Event 8: 의병의 활약 ──
         {
-          id: 'uibyeong-activity',
-          periodId: 'imjin-war',
-          eraId: 'joseon-early',
+          id: 'uibyeong-activity', periodId: 'imjin-war', eraId: 'joseon-early',
           title: '의병의 활약',
-          description:
-            '임진왜란 당시 전국 각지에서 일어난 의병 활동과 곽재우 홍의장군의 활약상을 체험합니다.',
-          character: {
-            id: 'gwak-jae-u',
-            name: '곽재우',
-            title: '의병장',
-            description:
-              '임진왜란 최초의 의병장으로, 붉은 옷을 입고 전투에 나서 "홍의장군"이라 불렸습니다. 경상도 의령 지역에서 일본군을 크게 무찔러 백성들의 사기를 높였습니다.',
-            primaryColor: '#8B4513',
-            secondaryColor: '#DEB887',
-          },
-          difficulty: 'medium',
-          pointReward: 500,
+          titleI18n: { en: 'Exploits of the Righteous Army', es: 'Hazañas del Ejército Justo', ja: '義兵の活躍', th: 'วีรกรรมของกองทัพธรรมะ', vi: 'Hoạt động của Nghĩa binh', 'zh-CN': '义兵的活跃', 'zh-TW': '義兵的活躍' },
+          description: '임진왜란 당시 전국 각지에서 일어난 의병 활동과 곽재우 홍의장군의 활약상을 체험합니다.',
+          descriptionI18n: { en: 'Experience the volunteer army (Uibyeong) activities across the nation during the Imjin War and the exploits of Gwak Jae-u, the "General in Red."', es: 'Experimenta las actividades del ejército voluntario (Uibyeong) en todo el país durante la Guerra Imjin y las hazañas de Gwak Jae-u, el "General de Rojo".', ja: '壬辰倭乱時に全国各地で起きた義兵活動と郭再祐「紅衣将軍」の活躍を体験します。', th: 'สัมผัสกิจกรรมกองทัพอาสา (อึยบยอง) ทั่วประเทศระหว่างสงครามอิมจินและวีรกรรมของควัก แจอู "นายพลชุดแดง"', vi: 'Trải nghiệm hoạt động nghĩa binh (Uibyeong) khắp cả nước trong Chiến tranh Nhâm Thìn và chiến công của Gwak Jae-u "Tướng quân áo đỏ".', 'zh-CN': '体验壬辰倭乱期间全国各地的义兵活动和郭再祐"红衣将军"的英勇事迹。', 'zh-TW': '體驗壬辰倭亂期間全國各地的義兵活動和郭再祐「紅衣將軍」的英勇事蹟。' },
+          character: { id: 'gwak-jae-u', name: '곽재우', nameI18n: { en: 'Gwak Jae-u', es: 'Gwak Jae-u', ja: '郭再祐', th: 'ควัก แจอู', vi: 'Gwak Jae-u (Quách Tái Hựu)', 'zh-CN': '郭再祐', 'zh-TW': '郭再祐' }, title: '의병장', titleI18n: { en: 'Volunteer Army Commander', es: 'Comandante del Ejército Voluntario', ja: '義兵将', th: 'ผู้บัญชาการกองทัพอาสา', vi: 'Chỉ huy Nghĩa binh', 'zh-CN': '义兵将领', 'zh-TW': '義兵將領' }, description: '임진왜란 최초의 의병장으로, 붉은 옷을 입고 전투에 나서 "홍의장군"이라 불렸습니다. 경상도 의령 지역에서 일본군을 크게 무찔러 백성들의 사기를 높였습니다.', descriptionI18n: { en: 'The first volunteer army commander of the Imjin War, called the "General in Red" for wearing crimson into battle. He greatly defeated Japanese forces in the Uiryeong area of Gyeongsang Province, boosting the people\'s morale.', es: 'El primer comandante del ejército voluntario de la Guerra Imjin, llamado el "General de Rojo" por vestir carmesí en batalla. Derrotó enormemente a las fuerzas japonesas en el área de Uiryeong de la provincia de Gyeongsang, elevando la moral del pueblo.', ja: '壬辰倭乱最初の義兵将で、赤い衣を着て戦いに臨んだことから「紅衣将軍」と呼ばれました。慶尚道宜寧地域で日本軍を大いに打ち破り民の士気を高めました。', th: 'ผู้บัญชาการกองทัพอาสาคนแรกของสงครามอิมจิน ถูกเรียกว่า "นายพลชุดแดง" เพราะสวมชุดสีแดงเข้าสู่สนามรบ เขาเอาชนะกองทัพญี่ปุ่นในพื้นที่อึยรยองของจังหวัดคยองซังอย่างยิ่งใหญ่ ยกระดับขวัญกำลังใจของประชาชน', vi: 'Chỉ huy nghĩa binh đầu tiên trong Chiến tranh Nhâm Thìn, mặc áo đỏ ra trận nên được gọi là "Tướng quân áo đỏ". Ông đánh bại quân Nhật lớn tại vùng Uiryeong, Gyeongsang, nâng cao sĩ khí nhân dân.', 'zh-CN': '壬辰倭乱中最早的义兵将领，因身穿红衣上阵而被称为"红衣将军"。在庆尚道宜宁地区大败日军，极大鼓舞了百姓士气。', 'zh-TW': '壬辰倭亂中最早的義兵將領，因身穿紅衣上陣而被稱為「紅衣將軍」。在慶尚道宜寧地區大敗日軍，極大鼓舞了百姓士氣。' }, primaryColor: '#8B4513', secondaryColor: '#DEB887' },
+          difficulty: 'medium', pointReward: 500,
           steps: [
-            {
-              id: 'uibyeong-step-1',
-              type: 'narration',
-              text: '1592년, 일본군이 파죽지세로 북상하는 가운데 관군은 연이어 패배하였습니다. 그러나 전국 각지에서 백성들이 스스로 무기를 들고 일어났습니다. 이들이 바로 의병입니다.',
-            },
-            {
-              id: 'uibyeong-step-2',
-              type: 'dialog',
-              speaker: '곽재우',
-              text: '나라가 위태로운데 어찌 집에 앉아 있을 수 있겠는가! 비록 관군은 아니지만, 이 땅의 백성으로서 적을 무찌르겠노라!',
-            },
-            {
-              id: 'uibyeong-step-3',
-              type: 'narration',
-              text: '경상도 의령의 선비 곽재우는 재산을 털어 의병을 모집하고, 붉은 옷을 입고 전투에 나섰습니다. 사람들은 그를 "홍의장군"이라 불렀습니다.',
-            },
-            {
-              id: 'uibyeong-step-4',
-              type: 'dialog',
-              speaker: '곽재우',
-              text: '이 붉은 옷은 나라를 지키겠다는 결의의 표시이니라! 낙동강과 남강의 지리를 이용하여 적을 기습하겠노라. 적은 이 고장의 물길을 모르니 이것이 우리의 이점이다!',
-            },
-            {
-              id: 'uibyeong-step-5',
-              type: 'quiz',
-              quiz: {
-                question:
-                  '곽재우가 "홍의장군"이라 불린 이유는?',
-                options: [
-                  '성씨가 홍(洪)이어서',
-                  '붉은 옷을 입고 전투에 나서서',
-                  '홍의문 앞에서 승리해서',
-                  '붉은 깃발을 사용해서',
-                ],
-                correctIndex: 1,
-                explanation:
-                  '곽재우는 전투에 나설 때 항상 붉은 옷(홍의, 紅衣)을 입었기 때문에 "홍의장군"이라 불렸습니다.',
-              },
-            },
-            {
-              id: 'uibyeong-step-6',
-              type: 'narration',
-              text: '곽재우 외에도 전국 각지에서 의병이 일어났습니다. 전라도의 고경명, 충청도의 조헌, 경상도의 정인홍 등 수많은 의병장이 활약하였습니다.',
-            },
-            {
-              id: 'uibyeong-step-7',
-              type: 'dialog',
-              speaker: '곽재우',
-              text: '의병은 이 고장 지리를 손바닥 보듯 아는 백성들이니라. 산과 강, 고개와 골짜기를 이용하면 적은 수로도 큰 적을 무찌를 수 있느니라!',
-            },
-            {
-              id: 'uibyeong-step-8',
-              type: 'quiz',
-              quiz: {
-                question:
-                  '임진왜란 때 의병이 중요했던 이유로 가장 적절한 것은?',
-                options: [
-                  '외국에서 원군을 데려와서',
-                  '최신 무기를 보유하고 있어서',
-                  '지역 지리를 잘 알고 유격전으로 적의 후방을 교란했으므로',
-                  '관군보다 수가 많아서',
-                ],
-                correctIndex: 2,
-                explanation:
-                  '의병은 해당 지역의 지리를 잘 알았기 때문에 유격전으로 일본군의 후방 보급로를 교란하고 점령지를 회복하는 데 큰 역할을 하였습니다.',
-              },
-            },
-            {
-              id: 'uibyeong-step-9',
-              type: 'narration',
-              text: '의병의 활약은 이순신의 해전 승리, 명나라 원군과 함께 임진왜란의 전세를 역전시키는 세 가지 핵심 요인 중 하나였습니다. 백성 스스로 나라를 지킨 의병 정신은 이후 한국사에서 외침에 맞서는 전통으로 이어졌습니다.',
-            },
+            { id: 'uibyeong-step-1', type: 'narration', text: '1592년, 일본군이 파죽지세로 북상하는 가운데 관군은 연이어 패배하였습니다. 그러나 전국 각지에서 백성들이 스스로 무기를 들고 일어났습니다. 이들이 바로 의병입니다.', textI18n: { en: 'In 1592, as the Japanese army swept northward and the regular army suffered successive defeats, commoners across the nation took up arms on their own. These were the Uibyeong — the Righteous Army.', es: 'En 1592, mientras el ejército japonés avanzaba hacia el norte y el ejército regular sufría derrotas sucesivas, los plebeyos de todo el país tomaron las armas por su cuenta. Estos eran los Uibyeong — el Ejército Justo.', ja: '1592年、日本軍が破竹の勢いで北上する中、官軍は連敗しました。しかし全国各地で民が自ら武器を取り立ち上がりました。彼らこそが義兵です。', th: 'ในปี ค.ศ. 1592 ขณะที่กองทัพญี่ปุ่นกวาดขึ้นเหนือและกองทัพปกติพ่ายแพ้ติดต่อกัน สามัญชนทั่วประเทศหยิบอาวุธขึ้นต่อสู้ด้วยตนเอง พวกเขาคืออึยบยอง — กองทัพธรรมะ', vi: 'Năm 1592, khi quân Nhật tiến nhanh về phía bắc và quân chính quy liên tiếp thất bại, bách tính khắp nơi tự cầm vũ khí đứng lên. Họ chính là Nghĩa binh.', 'zh-CN': '1592年，日军势如破竹北上，官军连连败退。但全国各地的百姓自发拿起武器站了起来。他们就是义兵。', 'zh-TW': '1592年，日軍勢如破竹北上，官軍連連敗退。但全國各地的百姓自發拿起武器站了起來。他們就是義兵。' } },
+            { id: 'uibyeong-step-2', type: 'dialog', speaker: '곽재우', speakerI18n: { en: 'Gwak Jae-u', es: 'Gwak Jae-u', ja: '郭再祐', th: 'ควัก แจอู', vi: 'Gwak Jae-u', 'zh-CN': '郭再祐', 'zh-TW': '郭再祐' }, text: '나라가 위태로운데 어찌 집에 앉아 있을 수 있겠는가! 비록 관군은 아니지만, 이 땅의 백성으로서 적을 무찌르겠노라!', textI18n: { en: 'How can I sit at home when the nation is in danger! Though I am not a regular soldier, as a citizen of this land, I shall defeat the enemy!', es: '¡Cómo puedo quedarme sentado en casa cuando la nación está en peligro! Aunque no soy un soldado regular, ¡como ciudadano de esta tierra, derrotaré al enemigo!', ja: '国が危ういのに家に座っていられるか！官軍ではないが、この国の民として敵を討つ！', th: 'ข้าจะนั่งอยู่บ้านได้อย่างไรเมื่อชาติตกอยู่ในอันตราย! แม้ข้าไม่ใช่ทหารประจำ แต่ในฐานะประชาชนของแผ่นดินนี้ ข้าจะเอาชนะศัตรู!', vi: 'Đất nước lâm nguy sao có thể ngồi nhà! Dù không phải quân chính quy, nhưng là dân của đất nước này, ta sẽ đánh bại kẻ thù!', 'zh-CN': '国家危难之际岂能坐守家中！虽非官军，但身为这片土地的百姓，定要击退敌人！', 'zh-TW': '國家危難之際豈能坐守家中！雖非官軍，但身為這片土地的百姓，定要擊退敵人！' } },
+            { id: 'uibyeong-step-3', type: 'narration', text: '경상도 의령의 선비 곽재우는 재산을 털어 의병을 모집하고, 붉은 옷을 입고 전투에 나섰습니다. 사람들은 그를 "홍의장군"이라 불렀습니다.', textI18n: { en: 'The scholar Gwak Jae-u of Uiryeong, Gyeongsang Province, spent his entire fortune to recruit volunteer soldiers and went into battle wearing red robes. People called him the "General in Red."', es: 'El erudito Gwak Jae-u de Uiryeong, provincia de Gyeongsang, gastó toda su fortuna para reclutar soldados voluntarios y fue a la batalla vistiendo túnicas rojas. La gente lo llamaba el "General de Rojo".', ja: '慶尚道宜寧の学者・郭再祐は財産を投じて義兵を募集し、赤い衣を着て戦いに臨みました。人々は彼を「紅衣将軍」と呼びました。', th: 'ควัก แจอู นักวิชาการจากอึยรยอง จังหวัดคยองซัง ใช้ทรัพย์สมบัติทั้งหมดเพื่อรับสมัครทหารอาสาและออกรบในชุดสีแดง ผู้คนเรียกเขาว่า "นายพลชุดแดง"', vi: 'Sĩ phu Gwak Jae-u ở Uiryeong, tỉnh Gyeongsang, bỏ hết tài sản chiêu mộ nghĩa binh và mặc áo đỏ ra trận. Mọi người gọi ông là "Tướng quân áo đỏ".', 'zh-CN': '庆尚道宜宁的读书人郭再祐倾尽家财招募义兵，穿红衣上阵作战。人们称他为"红衣将军"。', 'zh-TW': '慶尚道宜寧的讀書人郭再祐傾盡家財招募義兵，穿紅衣上陣作戰。人們稱他為「紅衣將軍」。' } },
+            { id: 'uibyeong-step-4', type: 'dialog', speaker: '곽재우', speakerI18n: { en: 'Gwak Jae-u', es: 'Gwak Jae-u', ja: '郭再祐', th: 'ควัก แจอู', vi: 'Gwak Jae-u', 'zh-CN': '郭再祐', 'zh-TW': '郭再祐' }, text: '이 붉은 옷은 나라를 지키겠다는 결의의 표시이니라! 낙동강과 남강의 지리를 이용하여 적을 기습하겠노라. 적은 이 고장의 물길을 모르니 이것이 우리의 이점이다!', textI18n: { en: 'This red robe is a symbol of my resolve to defend the nation! I shall use the geography of the Nakdong and Nam rivers to ambush the enemy. They do not know the waterways of this land — that is our advantage!', es: '¡Esta túnica roja es un símbolo de mi determinación de defender la nación! Usaré la geografía de los ríos Nakdong y Nam para emboscar al enemigo. No conocen las vías fluviales de esta tierra — ¡esa es nuestra ventaja!', ja: 'この赤い衣は国を守る決意の表れだ！洛東江と南江の地理を利用して敵を奇襲する。敵はこの地の水路を知らぬ、これが我々の利点だ！', th: 'เสื้อคลุมสีแดงนี้เป็นสัญลักษณ์ของความมุ่งมั่นที่จะปกป้องชาติ! ข้าจะใช้ภูมิศาสตร์ของแม่น้ำนักดงและนัมซุ่มโจมตีศัตรู พวกเขาไม่รู้เส้นทางน้ำของดินแดนนี้ — นั่นคือข้อได้เปรียบของเรา!', vi: 'Áo đỏ này là biểu tượng quyết tâm bảo vệ tổ quốc! Ta sẽ dùng địa hình sông Nakdong và sông Nam phục kích địch. Chúng không biết đường nước vùng này — đó là lợi thế của ta!', 'zh-CN': '这红衣是守护国家的决心的象征！利用洛东江和南江的地形伏击敌人。敌人不了解这里的水路，这就是我们的优势！', 'zh-TW': '這紅衣是守護國家的決心的象徵！利用洛東江和南江的地形伏擊敵人。敵人不了解這裡的水路，這就是我們的優勢！' } },
+            { id: 'uibyeong-step-5', type: 'quiz', quiz: { question: '곽재우가 "홍의장군"이라 불린 이유는?', questionI18n: { en: 'Why was Gwak Jae-u called the "General in Red"?', es: '¿Por qué Gwak Jae-u fue llamado el "General de Rojo"?', ja: '郭再祐が「紅衣将軍」と呼ばれた理由は？', th: 'ทำไมควัก แจอู ถึงถูกเรียกว่า "นายพลชุดแดง"?', vi: 'Tại sao Gwak Jae-u được gọi là "Tướng quân áo đỏ"?', 'zh-CN': '郭再祐为何被称为"红衣将军"？', 'zh-TW': '郭再祐為何被稱為「紅衣將軍」？' }, options: ['성씨가 홍(洪)이어서', '붉은 옷을 입고 전투에 나서서', '홍의문 앞에서 승리해서', '붉은 깃발을 사용해서'], optionsI18n: { en: ['Because his surname was Hong', 'Because he wore red robes into battle', 'Because he won at Honguimun Gate', 'Because he used red flags'], es: ['Porque su apellido era Hong', 'Porque vestía túnicas rojas en batalla', 'Porque ganó en la Puerta Honguimun', 'Porque usaba banderas rojas'], ja: ['姓が洪だったから', '赤い衣を着て戦いに臨んだから', '弘義門の前で勝利したから', '赤い旗を使ったから'], th: ['เพราะนามสกุลเขาคือฮง', 'เพราะเขาสวมชุดสีแดงเข้าสู่สนามรบ', 'เพราะเขาชนะที่ประตูฮงอึยมุน', 'เพราะเขาใช้ธงแดง'], vi: ['Vì họ là Hồng', 'Vì mặc áo đỏ ra trận', 'Vì chiến thắng trước cửa Honguimun', 'Vì dùng cờ đỏ'], 'zh-CN': ['因为姓洪', '因为穿红衣上阵', '因为在弘义门前获胜', '因为使用红色旗帜'], 'zh-TW': ['因為姓洪', '因為穿紅衣上陣', '因為在弘義門前獲勝', '因為使用紅色旗幟'] }, correctIndex: 1, explanation: '곽재우는 전투에 나설 때 항상 붉은 옷(홍의, 紅衣)을 입었기 때문에 "홍의장군"이라 불렸습니다.', explanationI18n: { en: 'Gwak Jae-u was called the "General in Red" because he always wore crimson robes (Hongui, 紅衣) when going into battle.', es: 'Gwak Jae-u fue llamado el "General de Rojo" porque siempre vestía túnicas carmesí (Hongui, 紅衣) al ir a la batalla.', ja: '郭再祐は戦いに臨む際に常に赤い衣（紅衣）を着ていたため「紅衣将軍」と呼ばれました。', th: 'ควัก แจอู ถูกเรียกว่า "นายพลชุดแดง" เพราะเขาสวมชุดสีแดง (ฮงอึย, 紅衣) เสมอเมื่อออกรบ', vi: 'Gwak Jae-u được gọi là "Tướng quân áo đỏ" vì luôn mặc áo đỏ (Hồng y, 紅衣) khi ra trận.', 'zh-CN': '郭再祐因每次出战都穿红衣（红衣，紅衣）而被称为"红衣将军"。', 'zh-TW': '郭再祐因每次出戰都穿紅衣（紅衣）而被稱為「紅衣將軍」。' } } },
+            { id: 'uibyeong-step-6', type: 'narration', text: '곽재우 외에도 전국 각지에서 의병이 일어났습니다. 전라도의 고경명, 충청도의 조헌, 경상도의 정인홍 등 수많은 의병장이 활약하였습니다.', textI18n: { en: 'Beyond Gwak Jae-u, volunteer armies rose across the nation. Numerous volunteer commanders distinguished themselves, including Go Gyeong-myeong of Jeolla, Jo Heon of Chungcheong, and Jeong In-hong of Gyeongsang Province.', es: 'Más allá de Gwak Jae-u, ejércitos voluntarios surgieron en todo el país. Numerosos comandantes voluntarios se distinguieron, incluyendo Go Gyeong-myeong de Jeolla, Jo Heon de Chungcheong y Jeong In-hong de la provincia de Gyeongsang.', ja: '郭再祐の他にも全国各地で義兵が蜂起しました。全羅道の高敬命、忠清道の趙憲、慶尚道の鄭仁弘など数多くの義兵将が活躍しました。', th: 'นอกจากควัก แจอู กองทัพอาสายังลุกขึ้นทั่วประเทศ ผู้บัญชาการอาสาจำนวนมากโดดเด่น รวมถึงโก กยองเมียง จากจอลลา โจ ฮอน จากชุงชอง และจอง อินฮง จากจังหวัดคยองซัง', vi: 'Ngoài Gwak Jae-u, nghĩa binh nổi lên khắp nơi. Nhiều chỉ huy nghĩa binh xuất sắc như Go Gyeong-myeong ở Jeolla, Jo Heon ở Chungcheong, Jeong In-hong ở Gyeongsang.', 'zh-CN': '除郭再祐外，全国各地义兵纷纷而起。全罗道高敬命、忠清道赵宪、庆尚道郑仁弘等众多义兵将领英勇奋战。', 'zh-TW': '除郭再祐外，全國各地義兵紛紛而起。全羅道高敬命、忠清道趙憲、慶尚道鄭仁弘等眾多義兵將領英勇奮戰。' } },
+            { id: 'uibyeong-step-7', type: 'dialog', speaker: '곽재우', speakerI18n: { en: 'Gwak Jae-u', es: 'Gwak Jae-u', ja: '郭再祐', th: 'ควัก แจอู', vi: 'Gwak Jae-u', 'zh-CN': '郭再祐', 'zh-TW': '郭再祐' }, text: '의병은 이 고장 지리를 손바닥 보듯 아는 백성들이니라. 산과 강, 고개와 골짜기를 이용하면 적은 수로도 큰 적을 무찌를 수 있느니라!', textI18n: { en: 'The volunteer soldiers know the local geography like the back of their hand. Using the mountains, rivers, passes, and valleys, even a small force can defeat a great enemy!', es: '¡Los soldados voluntarios conocen la geografía local como la palma de su mano. Usando las montañas, ríos, pasos y valles, incluso una fuerza pequeña puede derrotar a un gran enemigo!', ja: '義兵はこの地の地理を掌を見るように知っている民だ。山と川、峠と谷を利用すれば、少数でも大敵を打ち破ることができる！', th: 'ทหารอาสารู้จักภูมิศาสตร์ท้องถิ่นเหมือนหลังมือ โดยใช้ภูเขา แม่น้ำ ช่องเขา และหุบเขา แม้กำลังน้อยก็สามารถเอาชนะศัตรูที่แข็งแกร่งได้!', vi: 'Nghĩa binh là dân vùng này, biết địa hình như lòng bàn tay. Dùng núi sông, đèo dốc, thung lũng thì ít quân cũng đánh bại đông quân!', 'zh-CN': '义兵是熟知这片乡土地理如同掌纹的百姓。利用山川、山口和山谷，即使兵少也能击败强敌！', 'zh-TW': '義兵是熟知這片鄉土地理如同掌紋的百姓。利用山川、山口和山谷，即使兵少也能擊敗強敵！' } },
+            { id: 'uibyeong-step-8', type: 'quiz', quiz: { question: '임진왜란 때 의병이 중요했던 이유로 가장 적절한 것은?', questionI18n: { en: 'What best explains why the volunteer armies were important during the Imjin War?', es: '¿Qué explica mejor por qué los ejércitos voluntarios fueron importantes durante la Guerra Imjin?', ja: '壬辰倭乱で義兵が重要だった理由として最も適切なものは？', th: 'อะไรอธิบายได้ดีที่สุดว่าทำไมกองทัพอาสาจึงสำคัญในช่วงสงครามอิมจิน?', vi: 'Lý do nào giải thích tốt nhất tại sao nghĩa binh quan trọng trong Chiến tranh Nhâm Thìn?', 'zh-CN': '壬辰倭乱时义兵重要的最主要原因是？', 'zh-TW': '壬辰倭亂時義兵重要的最主要原因是？' }, options: ['외국에서 원군을 데려와서', '최신 무기를 보유하고 있어서', '지역 지리를 잘 알고 유격전으로 적의 후방을 교란했으므로', '관군보다 수가 많아서'], optionsI18n: { en: ['They brought reinforcements from abroad', 'They possessed the latest weapons', 'They knew local geography and disrupted enemy rear areas through guerrilla warfare', 'They outnumbered the regular army'], es: ['Trajeron refuerzos del extranjero', 'Poseían las últimas armas', 'Conocían la geografía local y perturbaron las áreas traseras del enemigo mediante guerra de guerrillas', 'Superaban en número al ejército regular'], ja: ['外国から援軍を連れてきたから', '最新の武器を持っていたから', '地域の地理をよく知り遊撃戦で敵の後方を撹乱したから', '官軍より数が多かったから'], th: ['พวกเขานำกำลังเสริมจากต่างประเทศ', 'พวกเขามีอาวุธล่าสุด', 'พวกเขารู้จักภูมิศาสตร์ท้องถิ่นและรบกวนพื้นที่หลังของศัตรูด้วยสงครามกองโจร', 'พวกเขามีจำนวนมากกว่ากองทัพปกติ'], vi: ['Đem viện binh từ nước ngoài', 'Sở hữu vũ khí hiện đại nhất', 'Am hiểu địa hình và quấy phá hậu phương địch bằng chiến tranh du kích', 'Đông hơn quân chính quy'], 'zh-CN': ['从国外带来了援军', '拥有最新武器', '熟悉当地地理，通过游击战骚扰敌人后方', '人数比官军多'], 'zh-TW': ['從國外帶來了援軍', '擁有最新武器', '熟悉當地地理，通過游擊戰騷擾敵人後方', '人數比官軍多'] }, correctIndex: 2, explanation: '의병은 해당 지역의 지리를 잘 알았기 때문에 유격전으로 일본군의 후방 보급로를 교란하고 점령지를 회복하는 데 큰 역할을 하였습니다.', explanationI18n: { en: 'The volunteer armies knew the local geography well, enabling them to play a major role in disrupting Japanese supply lines through guerrilla warfare and recovering occupied territories.', es: 'Los ejércitos voluntarios conocían bien la geografía local, lo que les permitió desempeñar un papel importante en la interrupción de las líneas de suministro japonesas mediante guerra de guerrillas y la recuperación de territorios ocupados.', ja: '義兵は該当地域の地理をよく知っていたため、遊撃戦で日本軍の後方補給路を撹乱し、占領地を回復するのに大きな役割を果たしました。', th: 'กองทัพอาสารู้จักภูมิศาสตร์ท้องถิ่นเป็นอย่างดี ทำให้สามารถมีบทบาทสำคัญในการรบกวนเส้นทางส่งกำลังบำรุงของญี่ปุ่นผ่านสงครามกองโจรและกู้คืนดินแดนที่ถูกยึดครอง', vi: 'Nghĩa binh am hiểu địa hình địa phương nên đóng vai trò lớn trong việc quấy phá đường tiếp tế Nhật bằng chiến tranh du kích và thu hồi vùng đất bị chiếm.', 'zh-CN': '义兵熟悉当地地理，因此通过游击战骚扰日军后方补给线、收复失地发挥了重要作用。', 'zh-TW': '義兵熟悉當地地理，因此通過游擊戰騷擾日軍後方補給線、收復失地發揮了重要作用。' } } },
+            { id: 'uibyeong-step-9', type: 'narration', text: '의병의 활약은 이순신의 해전 승리, 명나라 원군과 함께 임진왜란의 전세를 역전시키는 세 가지 핵심 요인 중 하나였습니다. 백성 스스로 나라를 지킨 의병 정신은 이후 한국사에서 외침에 맞서는 전통으로 이어졌습니다.', textI18n: { en: 'The exploits of the volunteer armies, along with Yi Sun-sin\'s naval victories and Ming Chinese reinforcements, were the three key factors that turned the tide of the Imjin War. The spirit of citizens defending their nation was carried forward as a tradition of resistance against foreign invasion in Korean history.', es: 'Las hazañas de los ejércitos voluntarios, junto con las victorias navales de Yi Sun-sin y los refuerzos chinos Ming, fueron los tres factores clave que cambiaron el rumbo de la Guerra Imjin. El espíritu de los ciudadanos defendiendo su nación se transmitió como una tradición de resistencia contra la invasión extranjera en la historia coreana.', ja: '義兵の活躍は、李舜臣の海戦勝利、明の援軍と共に壬辰倭乱の戦局を逆転させた三つの核心要因の一つでした。民自らが国を守った義兵精神は、以後韓国史において外敵に抗する伝統として受け継がれました。', th: 'วีรกรรมของกองทัพอาสา ร่วมกับชัยชนะทางเรือของอี ซุนซิน และกำลังเสริมจากจีนราชวงศ์หมิง เป็นสามปัจจัยหลักที่พลิกสถานการณ์สงครามอิมจิน จิตวิญญาณของประชาชนที่ปกป้องชาติถูกส่งต่อเป็นประเพณีการต่อต้านการรุกรานจากต่างชาติในประวัติศาสตร์เกาหลี', vi: 'Hoạt động của nghĩa binh, cùng với chiến thắng hải quân của Yi Sun-sin và viện quân nhà Minh, là ba yếu tố then chốt đảo ngược cục diện Chiến tranh Nhâm Thìn. Tinh thần dân tự bảo vệ nước của nghĩa binh đã trở thành truyền thống chống ngoại xâm trong lịch sử Hàn Quốc.', 'zh-CN': '义兵的活跃与李舜臣的海战胜利、明朝援军一起，是扭转壬辰倭乱战局的三大关键因素之一。百姓自发保卫国家的义兵精神，此后成为韩国历史上抵御外侵的传统。', 'zh-TW': '義兵的活躍與李舜臣的海戰勝利、明朝援軍一起，是扭轉壬辰倭亂戰局的三大關鍵因素之一。百姓自發保衛國家的義兵精神，此後成為韓國歷史上抵禦外侵的傳統。' } },
           ],
         },
       ],

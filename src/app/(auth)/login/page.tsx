@@ -84,7 +84,7 @@ export default function LoginPage() {
               type="checkbox"
               checked={stayLoggedIn}
               onChange={(e) => setStayLoggedIn(e.target.checked)}
-              className="h-4 w-4 rounded border-white/30 bg-white/10 text-gold accent-amber-500"
+              className="h-4 w-4 rounded border-white/30 bg-white/10 text-gold accent-[#d4a017]"
             />
             <span className="text-sm text-white/70">{t('auth.stayLoggedIn')}</span>
           </label>

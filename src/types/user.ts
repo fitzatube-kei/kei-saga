@@ -6,6 +6,7 @@ export interface UserProfile {
   points: number;
   cash: number;
   level: number;
+  lastPlayedEraId?: string;
   createdAt: Date;
 }
 

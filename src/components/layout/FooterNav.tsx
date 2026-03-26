@@ -61,10 +61,10 @@ export function FooterNav() {
               href={item.href}
               className={cn(
                 'flex flex-col items-center gap-0.5 px-2 py-1 transition-colors',
-                isActive ? 'text-gold' : 'text-white/40 hover:text-white/60'
+                isActive ? 'text-[#FFC100]' : 'text-white/40 hover:text-white/60'
               )}
             >
-              <span className={cn(isActive && 'drop-shadow-[0_0_6px_rgba(212,160,23,0.6)]')}>
+              <span className={cn(isActive && 'drop-shadow-[0_0_6px_rgba(255,193,0,0.6)]')}>
                 {item.icon}
               </span>
               <span className="text-[10px] font-medium">{item.label}</span>
