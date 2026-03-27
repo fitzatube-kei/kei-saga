@@ -13,7 +13,17 @@
       "Bash(./node_modules/.bin/tsc --noEmit --pretty)",
       "Bash(ls:*)",
       "Bash(git init:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(npx next:*)",
+      "Bash(grep -r skinTone /Users/hanjoo/Desktop/h0001/개발/keisaga/src --include=*.ts --include=*.tsx)",
+      "Bash(grep -r \"sizeMap\\\\|256\\\\|128\\\\|64\\\\|40\" /Users/hanjoo/Desktop/h0001/개발/keisaga/src --include=*.ts --include=*.tsx)",
+      "Bash(grep -n \"^  ''''zh-CN'''':\" src/lib/i18n/translations.ts)",
+      "Bash(grep -n \"^  ''''zh-TW'''':\" src/lib/i18n/translations.ts)",
+      "Bash(grep:*)",
+      "Bash(gh repo:*)",
+      "Bash(gh api:*)",
+      "Bash(git push:*)"
     ]
   }
 }

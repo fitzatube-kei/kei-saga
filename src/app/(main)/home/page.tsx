@@ -76,7 +76,7 @@ export default function HomePage() {
           </div>
 
           {/* Sejong character — right side */}
-          <div className="pointer-events-none relative mr-4 h-28 w-24 shrink-0 scale-[1.2] origin-bottom sm:mr-2 sm:h-32 sm:w-28 md:mr-0 md:h-40 md:w-36 lg:h-48 lg:w-44">
+          <div className="pointer-events-none relative mr-4 h-28 w-24 shrink-0 scale-[1.344] origin-bottom sm:mr-2 sm:h-32 sm:w-28 md:mr-0 md:h-40 md:w-36 lg:h-48 lg:w-44">
             <Image
               src="/images/home/sejong_illust001.png"
               alt="세종대왕"

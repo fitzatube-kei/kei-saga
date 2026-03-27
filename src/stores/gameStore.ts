@@ -20,7 +20,7 @@ interface GameStoreActions {
   answerQuiz: (stepId: string, correct: boolean) => void;
   setGameState: (state: GameState) => void;
   resetGame: () => void;
-  loadProgress: (progress: GameProgress) => void;
+  loadProgress: (progress: GameProgress, event: GameEvent) => void;
 }
 
 const initialState: GameStoreState = {
@@ -110,8 +110,9 @@ export const useGameStore = create<GameStoreState & GameStoreActions>((set) => (
 
   resetGame: () => set({ ...initialState }),
 
-  loadProgress: (progress) =>
+  loadProgress: (progress, event) =>
     set({
+      currentEvent: event,
       progress,
       currentStep: progress.currentStep,
       quizAnswers: progress.quizAnswers,

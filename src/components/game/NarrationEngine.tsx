@@ -45,7 +45,7 @@ export function NarrationEngine({
   // Initialize game
   useEffect(() => {
     if (initialProgress && !initialProgress.completed) {
-      loadProgress(initialProgress);
+      loadProgress(initialProgress, event);
     } else {
       startGame(event);
     }
