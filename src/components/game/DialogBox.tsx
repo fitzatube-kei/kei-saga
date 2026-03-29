@@ -8,11 +8,12 @@ interface DialogBoxProps {
   text: string;
   speaker?: string;
   onComplete: () => void;
+  onBack?: () => void;
 }
 
 const TYPING_SPEED_MS = 30;
 
-export function DialogBox({ text, speaker, onComplete }: DialogBoxProps) {
+export function DialogBox({ text, speaker, onComplete, onBack }: DialogBoxProps) {
   const { t } = useTranslation();
   const [displayedText, setDisplayedText] = useState('');
   const [isComplete, setIsComplete] = useState(false);
@@ -46,7 +47,8 @@ export function DialogBox({ text, speaker, onComplete }: DialogBoxProps) {
     return clearTyping;
   }, [text, clearTyping]);
 
-  const handleClick = useCallback(() => {
+  const handleClick = useCallback((e: React.MouseEvent | React.KeyboardEvent) => {
+    e.stopPropagation();
     if (!isComplete) {
       clearTyping();
       setDisplayedText(text);
@@ -65,14 +67,14 @@ export function DialogBox({ text, speaker, onComplete }: DialogBoxProps) {
       onKeyDown={(e) => {
         if (e.key === 'Enter' || e.key === ' ') {
           e.preventDefault();
-          handleClick();
+          handleClick(e);
         }
       }}
     >
       <div
         className={cn(
           'relative mx-auto max-w-3xl rounded-lg',
-          'bg-black/80 backdrop-blur-md',
+          'bg-black/60 backdrop-blur-sm',
           'border border-gold/50',
           'shadow-[0_0_20px_rgba(212,160,23,0.2)]',
           'cursor-pointer select-none'
@@ -108,9 +110,23 @@ export function DialogBox({ text, speaker, onComplete }: DialogBoxProps) {
             )}
           </p>
 
-          {/* Next button */}
+          {/* Navigation buttons */}
           {isComplete && (
-            <div className="mt-3 flex justify-end">
+            <div className="mt-3 flex items-center justify-between">
+              {onBack ? (
+                <button
+                  type="button"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    onBack();
+                  }}
+                  className="text-sm font-medium text-white/50 transition-colors hover:text-white/80"
+                >
+                  {t('game.back')}
+                </button>
+              ) : (
+                <span />
+              )}
               <span className="animate-pulse text-sm font-medium text-gold">
                 {t('game.next')}
               </span>

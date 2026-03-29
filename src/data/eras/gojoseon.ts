@@ -109,6 +109,7 @@ export const gojoseon: Era = {
             },
             primaryColor: '#8B4513',
             secondaryColor: '#DAA520',
+            image: '/images/play/bg/gojoseon/hwanwoon001.png',
           },
           difficulty: 'easy',
           pointReward: 300,
@@ -116,6 +117,8 @@ export const gojoseon: Era = {
             {
               id: 'dangun-myth-step-1',
               type: 'narration',
+              backgroundImage: '/images/play/bg/gojoseon/bg_001.png',
+              backgroundPosition: 'right center',
               text: '아득히 먼 옛날, 하늘나라 환인의 아들 환웅이 인간 세상을 내려다보며 큰 뜻을 품었습니다.',
               textI18n: {
                 en: 'In the distant past, Hwanung, the son of Hwanin, the Lord of Heaven, looked down upon the human world and harbored a great ambition.',
@@ -130,6 +133,8 @@ export const gojoseon: Era = {
             {
               id: 'dangun-myth-step-2',
               type: 'dialog',
+              backgroundImage: '/images/play/bg/gojoseon/bg_002.png',
+              backgroundPosition: 'right center',
               speaker: '환웅',
               speakerI18n: {
                 en: 'Hwanung',
@@ -154,6 +159,7 @@ export const gojoseon: Era = {
             {
               id: 'dangun-myth-step-3',
               type: 'narration',
+              backgroundImage: '/images/play/bg/gojoseon/bg_003.png',
               text: '환웅은 바람의 신, 비의 신, 구름의 신과 3,000명의 무리를 이끌고 태백산 신단수 아래로 내려왔습니다. 이곳을 신시(神市)라 하였습니다.',
               textI18n: {
                 en: 'Hwanung descended to the base of the Sacred Sandalwood Tree on Mount Taebaek, leading the Earl of Wind, the Master of Rain, the Master of Clouds, and 3,000 followers. This place was called Sinsi (City of God).',
@@ -168,6 +174,7 @@ export const gojoseon: Era = {
             {
               id: 'dangun-myth-step-4',
               type: 'narration',
+              backgroundImage: '/images/play/bg/gojoseon/bg_004.png',
               text: '그때 한 곰과 호랑이가 환웅을 찾아와 사람이 되게 해달라고 빌었습니다.',
               textI18n: {
                 en: 'At that time, a bear and a tiger came to Hwanung and pleaded to be transformed into humans.',
@@ -182,6 +189,7 @@ export const gojoseon: Era = {
             {
               id: 'dangun-myth-step-5',
               type: 'dialog',
+              backgroundImage: '/images/play/bg/gojoseon/bg_005.png',
               speaker: '환웅',
               speakerI18n: {
                 en: 'Hwanung',
@@ -206,6 +214,7 @@ export const gojoseon: Era = {
             {
               id: 'dangun-myth-step-6',
               type: 'narration',
+              backgroundImage: '/images/play/bg/gojoseon/bg_006.png',
               text: '곰은 삼칠일(21일) 만에 여자의 몸이 되었으나, 호랑이는 참지 못하고 뛰쳐나가 사람이 되지 못했습니다.',
               textI18n: {
                 en: 'The bear endured for twenty-one days and was transformed into a woman, but the tiger could not endure and ran out, failing to become human.',
@@ -257,6 +266,7 @@ export const gojoseon: Era = {
             {
               id: 'dangun-myth-step-8',
               type: 'narration',
+              backgroundImage: '/images/play/bg/gojoseon/bg_007.png',
               text: '사람이 된 웅녀는 환웅과 혼인하여 아들을 낳았으니, 그가 바로 단군왕검입니다.',
               textI18n: {
                 en: 'Ungnyeo, now a woman, married Hwanung and bore a son — he was none other than Dangun Wanggeom.',
@@ -271,6 +281,7 @@ export const gojoseon: Era = {
             {
               id: 'dangun-myth-step-9',
               type: 'dialog',
+              characterImage: '/images/play/bg/gojoseon/dangun001.png',
               speaker: '단군왕검',
               speakerI18n: {
                 en: 'Dangun Wanggeom',
@@ -466,6 +477,7 @@ export const gojoseon: Era = {
             },
             primaryColor: '#8B4513',
             secondaryColor: '#DAA520',
+            image: '/images/play/bg/gojoseon/dangun001.png',
           },
           difficulty: 'easy',
           pointReward: 300,

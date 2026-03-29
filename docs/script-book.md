@@ -1,5 +1,27 @@
 # KEI-SAGA 대본집 (배경 이미지 제작용)
 
+폴더 생성 완료! 구조는 이렇습니다:                                               
+             
+  public/images/play/bg/                                                           
+  ├── gojoseon/          # 고조선 (14장면)                                      
+  ├── samguk-early/      # 삼국시대 초기 (19장면)                                  
+  ├── samguk-late/       # 삼국시대 후기 (25장면)                                
+  ├── unified-silla/     # 통일신라 (14장면)                                       
+  ├── balhae/            # 발해 (21장면)                                         
+  ├── goryeo-early/      # 고려 전기 (21장면)                                      
+  ├── goryeo-late/       # 고려 후기 (15장면)                                      
+  ├── joseon-early/      # 조선 전기 (65장면)                                      
+  ├── joseon-late/       # 조선 후기 (23장면)                                      
+  ├── daehan-empire/     # 대한제국 (28장면)                                       
+  ├── japanese-colonial/ # 일제강점기 (16장면)                                     
+  └── modern/            # 현대 (16장면)                                           
+                                                                                 
+  파일 네이밍 권장: bg_001.png, bg_002.png, ... (대본집 번호순)                    
+                                                                                 
+  예시: public/images/play/bg/gojoseon/bg_001.png = "하늘나라, 구름 위, 환웅" 장면 
+
+
+
 > 총 12개 시대 / 222개 내러티브 / 79개 퀴즈
 > 각 장면별 배경 이미지 제작을 위한 참고 자료
 

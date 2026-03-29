@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useEffect } from 'react';
 import { cn } from '@/lib/utils/cn';
 import { useTranslation } from '@/hooks/useTranslation';
 import type { Quiz } from '@/types/game';
@@ -8,37 +8,49 @@ import type { Quiz } from '@/types/game';
 interface QuizModalProps {
   quiz: Quiz;
   onAnswer: (selectedIndex: number) => void;
+  onContinue: () => void;
 }
 
-export function QuizModal({ quiz, onAnswer }: QuizModalProps) {
+export function QuizModal({ quiz, onAnswer, onContinue }: QuizModalProps) {
   const { t } = useTranslation();
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
   const [answered, setAnswered] = useState(false);
+  const [ready, setReady] = useState(false);
+
+  // Block ALL interactions until mount animation finishes
+  useEffect(() => {
+    const timer = setTimeout(() => setReady(true), 600);
+    return () => clearTimeout(timer);
+  }, []);
 
   const handleSelect = useCallback(
     (index: number) => {
-      if (answered) return;
+      if (answered || !ready) return;
       setSelectedIndex(index);
       setAnswered(true);
+      onAnswer(index);
     },
-    [answered]
+    [answered, ready, onAnswer]
   );
-
-  const handleContinue = useCallback(() => {
-    if (selectedIndex !== null) {
-      onAnswer(selectedIndex);
-    }
-  }, [selectedIndex, onAnswer]);
 
   const isCorrect = selectedIndex === quiz.correctIndex;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center animate-[quiz-enter_0.4s_ease-out]">
+    <div
+      className="fixed inset-0 z-50 flex items-center justify-center animate-[quiz-enter_0.4s_ease-out]"
+      // Swallow any stray clicks on the backdrop
+      onClick={(e) => e.stopPropagation()}
+    >
       {/* Backdrop */}
       <div className="absolute inset-0 bg-black/80 backdrop-blur-sm" />
 
-      {/* Content */}
-      <div className="relative z-10 mx-4 w-full max-w-2xl">
+      {/* Content - pointer-events blocked until ready */}
+      <div
+        className={cn(
+          'relative z-10 mx-4 w-full max-w-2xl transition-opacity duration-300',
+          ready ? 'pointer-events-auto opacity-100' : 'pointer-events-none opacity-90'
+        )}
+      >
         {/* Question */}
         <div
           className={cn(
@@ -82,14 +94,14 @@ export function QuizModal({ quiz, onAnswer }: QuizModalProps) {
               <button
                 key={index}
                 onClick={() => handleSelect(index)}
-                disabled={answered}
+                disabled={answered || !ready}
                 className={cn(
                   'rounded-lg border p-4 text-left transition-all duration-200',
                   'font-medium leading-relaxed',
                   !answered &&
                     'border-gold/30 bg-surface/80 text-gray-100 hover:border-gold hover:bg-gold/10 hover:shadow-[0_0_12px_rgba(212,160,23,0.2)] active:scale-[0.98]',
                   answered && optionStyle,
-                  answered && 'cursor-default'
+                  (answered || !ready) && 'cursor-default'
                 )}
               >
                 <span className="mr-2 inline-flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full border border-current text-xs">
@@ -127,7 +139,7 @@ export function QuizModal({ quiz, onAnswer }: QuizModalProps) {
             </div>
 
             <button
-              onClick={handleContinue}
+              onClick={onContinue}
               className={cn(
                 'w-full rounded-lg bg-gold px-6 py-3',
                 'font-bold text-background',

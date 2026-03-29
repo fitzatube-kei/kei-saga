@@ -17,6 +17,7 @@ interface GameStoreState {
 interface GameStoreActions {
   startGame: (event: GameEvent) => void;
   nextStep: () => void;
+  prevStep: () => void;
   answerQuiz: (stepId: string, correct: boolean) => void;
   setGameState: (state: GameState) => void;
   resetGame: () => void;
@@ -83,6 +84,27 @@ export const useGameStore = create<GameStoreState & GameStoreActions>((set) => (
           ? {
               ...state.progress,
               currentStep: nextStep,
+              lastUpdated: new Date(),
+            }
+          : null,
+      };
+    }),
+
+  prevStep: () =>
+    set((state) => {
+      if (!state.currentEvent || state.currentStep <= 0) return state;
+
+      const prevStep = state.currentStep - 1;
+      const prevStepData = state.currentEvent.steps[prevStep];
+      const newGameState: GameState = prevStepData.type === 'quiz' ? 'QUIZ' : 'DIALOG';
+
+      return {
+        currentStep: prevStep,
+        gameState: newGameState,
+        progress: state.progress
+          ? {
+              ...state.progress,
+              currentStep: prevStep,
               lastUpdated: new Date(),
             }
           : null,

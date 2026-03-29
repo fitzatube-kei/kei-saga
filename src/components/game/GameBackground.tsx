@@ -6,12 +6,14 @@ import { getEra } from '@/data/eras/content';
 
 interface GameBackgroundProps {
   eraId: string;
+  backgroundImage?: string;
+  backgroundPosition?: string;
   className?: string;
 }
 
 const PARTICLE_COUNT = 20;
 
-export function GameBackground({ eraId, className }: GameBackgroundProps) {
+export function GameBackground({ eraId, backgroundImage, backgroundPosition, className }: GameBackgroundProps) {
   const era = getEra(eraId);
   const baseColor = era?.imageColor ?? '#4B0082';
 
@@ -31,15 +33,33 @@ export function GameBackground({ eraId, className }: GameBackgroundProps) {
 
   return (
     <div
-      className={cn('fixed inset-0 -z-10 overflow-hidden', className)}
-      style={{
-        background: `
-          radial-gradient(ellipse at 30% 20%, ${baseColor}33 0%, transparent 60%),
-          radial-gradient(ellipse at 70% 80%, ${baseColor}22 0%, transparent 50%),
-          linear-gradient(180deg, #0a0a0f 0%, #0d0d18 50%, #0a0a0f 100%)
-        `,
-      }}
+      className={cn('fixed inset-0 z-0 overflow-hidden', className)}
     >
+      {/* Background image layer */}
+      {backgroundImage && (
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-700"
+          style={{
+            backgroundImage: `url(${backgroundImage})`,
+            ...(backgroundPosition && { backgroundPosition }),
+          }}
+        />
+      )}
+
+      {/* Gradient overlay (always shown, blends with image) */}
+      <div
+        className="absolute inset-0"
+        style={{
+          background: backgroundImage
+            ? `linear-gradient(180deg, rgba(10,10,15,0.3) 0%, rgba(10,10,15,0.5) 100%)`
+            : `
+              radial-gradient(ellipse at 30% 20%, ${baseColor}33 0%, transparent 60%),
+              radial-gradient(ellipse at 70% 80%, ${baseColor}22 0%, transparent 50%),
+              linear-gradient(180deg, #0a0a0f 0%, #0d0d18 50%, #0a0a0f 100%)
+            `,
+        }}
+      />
+
       {/* Subtle pattern overlay */}
       <div
         className="absolute inset-0 opacity-[0.03]"

@@ -56,6 +56,7 @@ export interface Character {
   descriptionI18n?: MultilingualText;
   primaryColor: string;
   secondaryColor: string;
+  image?: string;
 }
 
 export interface DialogStep {
@@ -66,6 +67,9 @@ export interface DialogStep {
   text?: string;
   textI18n?: MultilingualText;
   quiz?: Quiz;
+  backgroundImage?: string;
+  backgroundPosition?: string;
+  characterImage?: string;
 }
 
 export interface Quiz {

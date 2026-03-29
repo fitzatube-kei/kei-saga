@@ -11,7 +11,7 @@ export default function GameLayout({
   useAuth();
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen">
       {children}
     </div>
   );

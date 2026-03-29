@@ -37,6 +37,7 @@ export function NarrationEngine({
     progress,
     startGame,
     nextStep,
+    prevStep,
     answerQuiz,
     setGameState,
     loadProgress,
@@ -88,18 +89,22 @@ export function NarrationEngine({
     nextStep();
   }, [nextStep]);
 
+  const handleDialogBack = useCallback(() => {
+    prevStep();
+  }, [prevStep]);
+
   const handleQuizAnswer = useCallback(
     (selectedIndex: number) => {
       if (!currentStepData?.quiz) return;
       const correct = selectedIndex === currentStepData.quiz.correctIndex;
       answerQuiz(currentStepData.id, correct);
-      // Small delay then advance
-      setTimeout(() => {
-        nextStep();
-      }, 300);
     },
-    [currentStepData, answerQuiz, nextStep]
+    [currentStepData, answerQuiz]
   );
+
+  const handleQuizContinue = useCallback(() => {
+    nextStep();
+  }, [nextStep]);
 
   const handleRewardContinue = useCallback(async () => {
     try {
@@ -108,7 +113,7 @@ export function NarrationEngine({
     } catch (err) {
       console.error('Failed to save completion:', err);
     }
-    router.push(`/play/${event.eraId}`);
+    router.push(`/play/${event.eraId}/${event.periodId}`);
   }, [event, quizAnswers, userId, router]);
 
   // Compute reward stats
@@ -116,14 +121,48 @@ export function NarrationEngine({
   const totalQuizzes = event.steps.filter((s) => s.type === 'quiz').length;
   const earnedPoints = calculateReward(event, quizAnswers);
 
+  // Track current background image & position (use most recent step that has one)
+  const { currentBgImage, currentBgPosition } = useMemo(() => {
+    for (let i = currentStep; i >= 0; i--) {
+      if (i < event.steps.length && event.steps[i].backgroundImage) {
+        return {
+          currentBgImage: event.steps[i].backgroundImage,
+          currentBgPosition: event.steps[i].backgroundPosition,
+        };
+      }
+    }
+    return { currentBgImage: undefined, currentBgPosition: undefined };
+  }, [currentStep, event.steps]);
+
+  // Track current character image override (use most recent step that has one)
+  const currentCharImage = useMemo(() => {
+    for (let i = currentStep; i >= 0; i--) {
+      if (i < event.steps.length && event.steps[i].characterImage) {
+        return event.steps[i].characterImage;
+      }
+    }
+    return undefined;
+  }, [currentStep, event.steps]);
+
+  // Build character with possible image override
+  const displayCharacter = useMemo(() => {
+    const charImage = currentCharImage ?? event.character.image;
+    if (charImage !== event.character.image) {
+      return { ...event.character, image: charImage };
+    }
+    return event.character;
+  }, [event.character, currentCharImage]);
+
   // Determine if character should speak
   const isSpeaking = gameState === 'DIALOG' && currentStepData?.type === 'dialog';
 
   return (
     <div className="relative min-h-screen w-full overflow-hidden">
       {/* Background */}
-      <GameBackground eraId={event.eraId} />
+      <GameBackground eraId={event.eraId} backgroundImage={currentBgImage} backgroundPosition={currentBgPosition} />
 
+      {/* Content wrapper - above background */}
+      <div className="relative z-10">
       {/* HUD */}
       <GameHUD
         currentStep={currentStep}
@@ -132,18 +171,20 @@ export function NarrationEngine({
         eventTitle={lg.eventTitle(event)}
       />
 
-      {/* Main content area */}
-      <div className="flex min-h-screen flex-col items-center justify-center px-4 pb-48 pt-20">
-        {/* Character (shown during dialog steps) */}
-        {gameState === 'DIALOG' && currentStepData?.type === 'dialog' && (
+      {/* Character - fixed at bottom, overlapping dialog box */}
+      {gameState === 'DIALOG' && currentStepData?.type === 'dialog' && (
+        <div className="fixed bottom-0 left-4 z-30 sm:left-[10%]">
           <CharacterSprite
-            character={event.character}
+            character={displayCharacter}
             speaking={isSpeaking}
             className="animate-fade-in"
           />
-        )}
+        </div>
+      )}
 
-        {/* Narration visual: show character in subtle / smaller way */}
+      {/* Main content area */}
+      <div className="flex min-h-screen flex-col items-center justify-center px-4 pb-48 pt-20">
+        {/* Narration visual */}
         {gameState === 'DIALOG' && currentStepData?.type === 'narration' && (
           <div className="animate-fade-in text-center">
             <div className="mx-auto mb-4 h-px w-24 bg-gold/30" />
@@ -161,6 +202,7 @@ export function NarrationEngine({
           text={lg.stepText(currentStepData) ?? ''}
           speaker={lg.stepSpeaker(currentStepData)}
           onComplete={handleDialogComplete}
+            onBack={currentStep > 0 ? handleDialogBack : undefined}
         />
       )}
 
@@ -172,7 +214,7 @@ export function NarrationEngine({
           options: lg.quizOptions(currentStepData.quiz),
           explanation: lg.quizExplanation(currentStepData.quiz),
         };
-        return <QuizModal quiz={localizedQuiz} onAnswer={handleQuizAnswer} />;
+        return <QuizModal key={currentStepData.id} quiz={localizedQuiz} onAnswer={handleQuizAnswer} onContinue={handleQuizContinue} />;
       })()}
 
       {/* Reward screen */}
@@ -184,6 +226,7 @@ export function NarrationEngine({
           onContinue={handleRewardContinue}
         />
       )}
+      </div>
     </div>
   );
 }
