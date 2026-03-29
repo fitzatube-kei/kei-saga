@@ -15,6 +15,7 @@ export async function saveProgress(
   uid: string,
   progress: GameProgress
 ): Promise<void> {
+  if (uid === 'guest') return; // 비로그인 사용자는 저장하지 않음
   const ref = doc(db, 'users', uid, 'progress', progress.eventId);
   await setDoc(
     ref,
@@ -49,6 +50,7 @@ export async function markEventComplete(
   eventId: string,
   earnedPoints: number
 ): Promise<void> {
+  if (uid === 'guest') return; // 비로그인 사용자는 포인트/진행 저장하지 않음
   const progressRef = doc(db, 'users', uid, 'progress', eventId);
   await setDoc(
     progressRef,

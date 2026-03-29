@@ -120,7 +120,7 @@ function FriendListTab({ uid }: { uid: string }) {
           key={friend.uid}
           className="flex items-center gap-3 rounded-lg border border-gold/10 bg-black/30 p-3 transition-colors hover:border-gold/25"
         >
-          <AvatarRenderer avatar={friend.avatar as AvatarConfig} size="sm" />
+          <AvatarRenderer avatar={friend.avatar as unknown as AvatarConfig} size="sm" />
 
           <div className="flex-1 min-w-0">
             <p className="truncate font-medium text-white">{friend.nickname}</p>
@@ -211,7 +211,7 @@ function FriendRequestsTab({ uid }: { uid: string }) {
           key={req.id}
           className="flex items-center gap-3 rounded-lg border border-gold/10 bg-black/30 p-3 transition-colors hover:border-gold/25"
         >
-          <AvatarRenderer avatar={req.fromAvatar as AvatarConfig} size="sm" />
+          <AvatarRenderer avatar={req.fromAvatar as unknown as AvatarConfig} size="sm" />
 
           <div className="flex-1 min-w-0">
             <p className="truncate font-medium text-white">{req.fromNickname}</p>
@@ -285,7 +285,7 @@ function FriendSearchTab({
   const handleSendRequest = async (toUid: string) => {
     try {
       await sendFriendRequest(
-        { uid: user.uid, nickname: user.nickname, avatar: user.avatar as Record<string, string> },
+        { uid: user.uid, nickname: user.nickname, avatar: user.avatar as unknown as Record<string, string> },
         toUid
       );
       setSentUids((prev) => new Set(prev).add(toUid));
@@ -328,7 +328,7 @@ function FriendSearchTab({
                 key={u.uid}
                 className="flex items-center gap-3 rounded-lg border border-gold/10 bg-black/30 p-3 transition-colors hover:border-gold/25"
               >
-                <AvatarRenderer avatar={u.avatar as AvatarConfig} size="sm" />
+                <AvatarRenderer avatar={u.avatar as unknown as AvatarConfig} size="sm" />
 
                 <div className="flex-1 min-w-0">
                   <p className="truncate font-medium text-white">{u.nickname}</p>

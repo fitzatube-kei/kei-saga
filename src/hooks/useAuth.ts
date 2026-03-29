@@ -2,6 +2,7 @@
 import { useEffect, useRef } from 'react';
 import { useAuthStore } from '@/stores/authStore';
 import { onAuthChange, getUserProfile } from '@/lib/firebase/auth';
+import { DEFAULT_AVATAR } from '@/types/user';
 
 // Global flag to prevent multiple listeners
 let listenerInitialized = false;
@@ -28,7 +29,7 @@ export function useAuth() {
               uid: firebaseUser.uid,
               email: firebaseUser.email || '',
               nickname: firebaseUser.email?.split('@')[0] || '모험가',
-              avatar: { gender: 'male' as const, skinTone: '#F5D0A9', hair: 'default', outfit: 'default', accessory: 'none' },
+              avatar: { ...DEFAULT_AVATAR },
               points: 0,
               cash: 0,
               level: 1,
@@ -41,7 +42,7 @@ export function useAuth() {
             uid: firebaseUser.uid,
             email: firebaseUser.email || '',
             nickname: firebaseUser.email?.split('@')[0] || '모험가',
-            avatar: { gender: 'male' as const, skinTone: '#F5D0A9', hair: 'default', outfit: 'default', accessory: 'none' },
+            avatar: { ...DEFAULT_AVATAR },
             points: 0,
             cash: 0,
             level: 1,

@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { useParams } from 'next/navigation';
+import Link from 'next/link';
 import { useAuthStore } from '@/stores/authStore';
 import { useTranslation } from '@/hooks/useTranslation';
 import { getEvent } from '@/data/eras/content';
@@ -63,32 +64,44 @@ export default function GameScreen() {
           <p className="mb-6 text-white/50">
             {t('game.eventNotFoundSub')}
           </p>
-          <a
+          <Link
             href="/play"
             className="inline-block rounded-lg bg-gold px-6 py-3 font-bold text-background transition-all hover:brightness-110"
           >
             {t('game.backToEras')}
-          </a>
+          </Link>
         </div>
       </div>
     );
   }
 
+  // 로그아웃 상태: 고조선만 플레이 가능 (포인트 없음)
   if (!user) {
-    return (
-      <div className="flex min-h-screen flex-col items-center justify-center bg-background px-4">
-        <div className="text-center">
-          <h1 className="mb-2 text-2xl font-bold text-gold">
-            {t('game.loginRequired')}
-          </h1>
-          <a
-            href="/login"
-            className="mt-4 inline-block rounded-lg bg-gold px-6 py-3 font-bold text-background"
-          >
-            {t('auth.login')}
-          </a>
+    if (eraId !== 'gojoseon') {
+      return (
+        <div className="flex min-h-screen flex-col items-center justify-center bg-background px-4">
+          <div className="text-center">
+            <h1 className="mb-2 text-2xl font-bold text-gold">
+              {t('game.loginRequired')}
+            </h1>
+            <Link
+              href="/login"
+              className="mt-4 inline-block rounded-lg bg-gold px-6 py-3 font-bold text-background"
+            >
+              {t('auth.login')}
+            </Link>
+          </div>
         </div>
-      </div>
+      );
+    }
+
+    // 비로그인 고조선 플레이: userId를 'guest'로, 포인트 저장 안 됨
+    return (
+      <NarrationEngine
+        event={event}
+        initialProgress={null}
+        userId="guest"
+      />
     );
   }
 

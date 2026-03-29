@@ -23,7 +23,12 @@
       "Bash(grep:*)",
       "Bash(gh repo:*)",
       "Bash(gh api:*)",
-      "Bash(git push:*)"
+      "Bash(git push:*)",
+      "Bash(find /Users/hanjoo/Desktop/keisaga/src -type d -not -path */.*)",
+      "Bash(find /Users/hanjoo/Desktop/keisaga/src -type f \\\\\\(-name *.json -o -name *.ts -o -name *.tsx \\\\\\))",
+      "Bash(find /Users/hanjoo/Desktop/keisaga -path */node_modules -prune -o -type f -name *translation* -o -name *locale* -o -name *i18n*)",
+      "Bash(wc:*)",
+      "Bash(python3:*)"
     ]
   }
 }

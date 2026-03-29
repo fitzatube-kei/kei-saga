@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
-import { notFound, useParams } from 'next/navigation';
+import { notFound, useParams, useRouter } from 'next/navigation';
 import { cn } from '@/lib/utils/cn';
 import { getEra, getPeriod } from '@/data/eras/content';
 import { useAuth } from '@/hooks/useAuth';
@@ -19,10 +19,18 @@ export default function PeriodPage() {
   const era = getEra(eraId);
   const period = getPeriod(eraId, periodId);
   const { user, initialized } = useAuth();
+  const router = useRouter();
   const { t } = useTranslation();
   const lg = useLocalizedGame();
   const [completedMap, setCompletedMap] = useState<Record<string, GameProgress>>({});
   const [loadingProgress, setLoadingProgress] = useState(true);
+
+  useEffect(() => {
+    // 비로그인 사용자: 고조선 외 접근 시 로그인 페이지로 리다이렉트
+    if (initialized && !user && eraId !== 'gojoseon') {
+      router.replace('/login');
+    }
+  }, [initialized, user, eraId, router]);
 
   useEffect(() => {
     if (!initialized) return;

@@ -4,9 +4,17 @@ import { useMemo } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useAuthStore } from '@/stores/authStore';
+import { cn } from '@/lib/utils/cn';
+import { AvatarRenderer } from '@/components/avatar/AvatarRenderer';
 import { useTranslation } from '@/hooks/useTranslation';
 import { useLocalizedGame } from '@/hooks/useLocalizedGame';
 import { getEras } from '@/data/eras/content';
+
+function getRankByLevel(level: number): { nameKey: string } {
+  if (level >= 5) return { nameKey: 'rank.royalty' };
+  if (level >= 3) return { nameKey: 'rank.noble' };
+  return { nameKey: 'rank.commoner' };
+}
 
 const ERA_IMAGES: Record<string, { src: string; position?: string }> = {
   'gojoseon': { src: '/images/play/gojosun_real_001.png' },
@@ -35,13 +43,13 @@ export default function HomePage() {
     return shuffled.slice(0, 3);
   }, []);
 
-  if (!user) return null;
+  const isLoggedIn = !!user;
 
   return (
     <>
       {/* ── Hero Banner — full width, 20vh, danchung bg with text & character ── */}
       {/* negative margin to cancel layout's px-4 pt-16 lg:px-8 */}
-      <section className="relative -mx-4 -mt-16 w-[calc(100%+2rem)] lg:-mx-8 lg:w-[calc(100%+4rem)]">
+      <section className="relative -mx-4 -mt-16 w-[calc(100%+2rem)] md:overflow-hidden lg:-mx-8 lg:w-[calc(100%+4rem)]">
         {/* Danchung background — always centered */}
         <Image
           src="/images/home/danchung_real_001.png"
@@ -64,19 +72,31 @@ export default function HomePage() {
             <p className="mt-2 text-[10px] leading-relaxed text-white/90 whitespace-pre-line sm:text-xs md:whitespace-normal md:text-sm lg:text-base">
               {t('home.welcomeDesc')}
             </p>
-            <Link href="/play" className="mt-3 inline-block sm:mt-4">
-              <button
-                type="button"
-                className="flex items-center gap-2 rounded-lg bg-gradient-to-r from-gold to-goldLight px-5 py-2 text-xs font-bold text-background shadow-lg shadow-gold/25 transition-all hover:brightness-110 active:scale-[0.98] sm:px-6 sm:py-2.5 sm:text-sm md:rounded-xl md:px-8 md:py-3 md:text-base"
-              >
-                <span>&#9654;</span>
-                {t('home.startAdventure')}
-              </button>
-            </Link>
+            <div className="mt-3 flex gap-2 sm:mt-4">
+              <Link href="/play">
+                <button
+                  type="button"
+                  className="flex items-center gap-2 rounded-lg bg-gradient-to-r from-gold to-goldLight px-5 py-2 text-xs font-bold text-background shadow-lg shadow-gold/25 transition-all hover:brightness-110 active:scale-[0.98] sm:px-6 sm:py-2.5 sm:text-sm md:rounded-xl md:px-8 md:py-3 md:text-base"
+                >
+                  <span>&#9654;</span>
+                  {t('home.startAdventure')}
+                </button>
+              </Link>
+              {!isLoggedIn && (
+                <Link href="/login">
+                  <button
+                    type="button"
+                    className="flex items-center gap-2 rounded-lg border-2 border-white/40 bg-white/10 px-5 py-2 text-xs font-bold text-white backdrop-blur-sm transition-all hover:bg-white/20 active:scale-[0.98] sm:px-6 sm:py-2.5 sm:text-sm md:rounded-xl md:px-8 md:py-3 md:text-base"
+                  >
+                    {t('auth.login')}
+                  </button>
+                </Link>
+              )}
+            </div>
           </div>
 
           {/* Sejong character — right side */}
-          <div className="pointer-events-none relative mr-4 h-28 w-24 shrink-0 scale-[1.344] origin-bottom sm:mr-2 sm:h-32 sm:w-28 md:mr-0 md:h-40 md:w-36 lg:h-48 lg:w-44">
+          <div className="pointer-events-none relative mr-6 h-28 w-24 shrink-0 scale-[1.48] origin-bottom md:origin-top sm:mr-2 sm:scale-[1.344] sm:h-32 sm:w-28 md:mr-0 md:h-40 md:w-36 lg:h-48 lg:w-44">
             <Image
               src="/images/home/sejong_illust001.png"
               alt="세종대왕"
@@ -91,78 +111,87 @@ export default function HomePage() {
     <div className="mx-auto max-w-lg space-y-5 py-2 md:max-w-2xl lg:max-w-4xl">
 
       {/* ── MY AVATA + Recent Activity + Button ── */}
-      <section className="relative overflow-hidden space-y-3 px-1 sm:space-y-4 md:space-y-5 lg:space-y-6">
-        {/* joonjun character - responsive size & position, pushed down so button covers bottom */}
-        <div className="pointer-events-none absolute right-2 top-8 bottom-0 w-32 sm:right-4 sm:top-10 sm:w-40 md:right-6 md:top-12 md:w-48 lg:right-8 lg:top-10 lg:w-56 z-0 scale-110 origin-bottom-right">
-          <Image
-            src="/images/home/girl_illust001.png"
-            alt="캐릭터"
-            width={400}
-            height={560}
-            className="w-32 max-w-none sm:w-40 md:w-48 lg:w-56"
-          />
-        </div>
+      {isLoggedIn && user && (
+        <section className="relative overflow-hidden space-y-3 px-1 sm:space-y-4 md:space-y-5 lg:space-y-6">
+          {/* My avatar character - responsive size & position */}
+          <div className="pointer-events-none absolute right-0 top-4 w-[185px] sm:right-2 sm:top-4 sm:w-[230px] md:right-4 md:top-4 md:w-[276px] lg:right-6 lg:top-4 lg:w-[322px] z-0">
+            <AvatarRenderer avatar={user.avatar} size="preview" />
+          </div>
 
-        {/* MY AVATAR */}
-        <div className="relative z-10">
-          <div>
-            <h3 className="text-base font-bold text-[#FFC100] sm:text-lg md:text-xl lg:text-2xl">{t('home.myAvatar')}</h3>
-            <p className="mt-0.5 text-xs text-white/70 sm:mt-1 sm:text-sm md:text-base">
-              <span className="text-white/50">{t('home.nickLabel')}: </span>
-              <span className="font-medium text-white">{user.nickname}</span>
-            </p>
-            <div className="mt-1.5 flex gap-1.5 sm:mt-2 sm:gap-2">
-              <span className="inline-flex items-center rounded-full border border-[#FFC100]/20 bg-[#FFC100]/10 px-3 py-1 text-[10px] font-semibold text-[#FFC100] sm:px-4 sm:py-1.5 sm:text-xs md:text-sm">
-                Level {user.level}
-              </span>
-              <span className="inline-flex items-center rounded-full border border-[#FFC100]/20 bg-[#FFC100]/10 px-3 py-1 text-[10px] font-semibold text-[#FFC100] sm:px-4 sm:py-1.5 sm:text-xs md:text-sm">
-                Point {(user.points ?? 0).toLocaleString()}
-              </span>
+          {/* MY AVATAR */}
+          <div className="relative z-10">
+            <div>
+              <h3 className="text-base font-bold text-[#FFC100] sm:text-lg md:text-xl lg:text-2xl">{t('home.myAvatar')}</h3>
+              <p className="mt-0.5 text-xs text-white/70 sm:mt-1 sm:text-sm md:text-base">
+                <span className="text-white/50">{t('home.nickLabel')}: </span>
+                <span className="font-medium text-white">{user.nickname}</span>
+              </p>
+              <div className="mt-1.5 flex items-center gap-1.5 sm:mt-2 sm:gap-2">
+                <span className="inline-flex items-center gap-1 rounded-full border border-[#FFC100]/20 bg-[#FFC100]/10 px-3 py-1 text-[10px] font-semibold text-[#FFC100] sm:px-4 sm:py-1.5 sm:text-xs md:text-sm">
+                  Lv.{user.level} <span className="opacity-60">·</span> {t(getRankByLevel(user.level).nameKey)}
+                </span>
+                <span className="inline-flex items-center rounded-full border border-[#FFC100]/20 bg-[#FFC100]/10 px-3 py-1 text-[10px] font-semibold text-[#FFC100] sm:px-4 sm:py-1.5 sm:text-xs md:text-sm">
+                  {(user.points ?? 0).toLocaleString()} P
+                </span>
+                <Link href="/mypage" className="inline-flex items-center rounded-full border border-white/20 bg-white/10 px-3 py-1 text-[10px] font-semibold text-white/70 transition-colors hover:bg-white/20 hover:text-white sm:px-4 sm:py-1.5 sm:text-xs md:text-sm">
+                  {t('nav.mypage')}
+                </Link>
+              </div>
             </div>
           </div>
-        </div>
 
-        {/* 최근 활동기록 */}
-        <div className="relative z-10">
-          <h4 className="text-xs font-bold text-gold sm:text-sm md:text-base">{t('home.recentActivity')}</h4>
-          <p className="mt-0.5 text-[10px] leading-relaxed text-white/50 sm:mt-1 sm:text-xs md:text-sm">
-            {t('home.noActivity')}{' '}
-            <span className="inline md:inline">{t('home.noActivitySub')}</span>
-          </p>
-        </div>
+          {/* 최근 활동기록 */}
+          <div className="relative z-10">
+            <h4 className="text-xs font-bold text-gold sm:text-sm md:text-base">{t('home.recentActivity')}</h4>
+            <p className="mt-0.5 text-[10px] leading-relaxed text-white/50 sm:mt-1 sm:text-xs md:text-sm">
+              {t('home.noActivity')}{' '}
+              <span className="inline md:inline">{t('home.noActivitySub')}</span>
+            </p>
+          </div>
 
-        {/* 모험 이어서하기 Button */}
-        <Link href={user.lastPlayedEraId ? `/play/${user.lastPlayedEraId}` : '/play'} className="relative z-10 block">
-          <button
-            type="button"
-            className="flex w-full items-center justify-center gap-2 rounded-xl bg-[#FFC100] py-3 text-sm font-bold text-background shadow-lg shadow-[#FFC100]/25 transition-all hover:brightness-110 active:scale-[0.98] sm:py-3.5 sm:text-base md:rounded-2xl md:py-4 md:text-lg lg:py-5 lg:text-xl"
-          >
-            <span>&#9654;</span>
-            {t('home.continueAdventure')}
-          </button>
-        </Link>
-      </section>
+          {/* 모험 이어서하기 Button */}
+          <Link href={user.lastPlayedEraId ? `/play/${user.lastPlayedEraId}` : '/play'} className="relative z-10 block">
+            <button
+              type="button"
+              className="flex w-full items-center justify-center gap-2 rounded-xl bg-[#FFC100] py-3 text-sm font-bold text-background shadow-lg shadow-[#FFC100]/25 transition-all hover:brightness-110 active:scale-[0.98] sm:py-3.5 sm:text-base md:rounded-2xl md:py-4 md:text-lg lg:py-5 lg:text-xl"
+            >
+              <span>&#9654;</span>
+              {t('home.continueAdventure')}
+            </button>
+          </Link>
+        </section>
+      )}
 
       {/* ── Select an Era ── */}
       <div className="flex items-center justify-between px-1">
-        <Link href="/play" className="text-base font-bold text-[#FFC100] transition-colors hover:brightness-110 sm:text-lg md:text-xl lg:text-2xl">SELECT AN ERA</Link>
-        <Link href="/play" className="text-xs text-white transition-colors hover:text-white/70 sm:text-sm">+more</Link>
+        <Link href={isLoggedIn ? '/play' : '/login'} className="text-base font-bold text-[#FFC100] transition-colors hover:brightness-110 sm:text-lg md:text-xl lg:text-2xl">SELECT AN ERA</Link>
+        <Link href={isLoggedIn ? '/play' : '/login'} className="text-xs text-white transition-colors hover:text-white/70 sm:text-sm">+more</Link>
       </div>
       <section className="grid grid-cols-3 gap-2 sm:gap-2.5 md:gap-4 lg:gap-5">
         {randomEras.map((era) => {
           const img = ERA_IMAGES[era.id];
-          return (
-            <Link key={era.id} href={`/play/${era.id}`} className="group">
-              <div className="overflow-hidden rounded-lg border border-gold/10 bg-surface transition-all hover:border-gold/30 sm:rounded-xl">
+          const eraAccessible = isLoggedIn || era.id === 'gojoseon';
+          const content = (
+              <div className="overflow-hidden rounded-lg border border-gold/10 bg-surface sm:rounded-xl transition-all hover:border-gold/30">
                 <div className="relative h-20 w-full sm:h-24 md:h-32 lg:h-40">
                   {img && (
                     <Image
                       src={img.src}
                       alt={era.name}
                       fill
-                      className={`object-cover transition-transform group-hover:scale-105 ${img.position === 'top' ? 'object-top' : 'object-center'}`}
+                      className={cn(
+                        'object-cover transition-transform group-hover:scale-105',
+                        img.position === 'top' ? 'object-top' : 'object-center'
+                      )}
                       sizes="(max-width: 640px) 33vw, (max-width: 768px) 33vw, 25vw"
                     />
+                  )}
+                  {!eraAccessible && (
+                    <div className="absolute inset-0 flex items-center justify-center bg-black/40">
+                      <span className="rounded-full bg-black/50 px-2 py-0.5 text-[8px] font-semibold text-white/80 backdrop-blur-sm sm:text-[9px] md:text-[10px]">
+                        {t('play.levelUpgrade')}
+                      </span>
+                    </div>
                   )}
                 </div>
                 <div className="px-1 py-1.5 text-center sm:px-1.5 sm:py-2 md:py-2.5">
@@ -170,7 +199,15 @@ export default function HomePage() {
                   <p className="text-[8px] text-white/40 sm:text-[9px] md:text-xs lg:text-sm">{era.period}</p>
                 </div>
               </div>
+          );
+          return eraAccessible ? (
+            <Link key={era.id} href={`/play/${era.id}`} className="group">
+              {content}
             </Link>
+          ) : (
+            <div key={era.id} className="cursor-not-allowed">
+              {content}
+            </div>
           );
         })}
       </section>

@@ -1,10 +1,12 @@
 'use client';
 
+import { useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { notFound, useParams } from 'next/navigation';
+import { notFound, useParams, useRouter } from 'next/navigation';
 import { cn } from '@/lib/utils/cn';
 import { getEra } from '@/data/eras/content';
+import { useAuthStore } from '@/stores/authStore';
 import { useTranslation } from '@/hooks/useTranslation';
 import { useLocalizedGame } from '@/hooks/useLocalizedGame';
 
@@ -27,8 +29,16 @@ export default function EraPage() {
   const params = useParams();
   const eraId = params.eraId as string;
   const era = getEra(eraId);
+  const user = useAuthStore((s) => s.user);
+  const router = useRouter();
   const { t } = useTranslation();
   const lg = useLocalizedGame();
+
+  useEffect(() => {
+    if (!user && eraId !== 'gojoseon') {
+      router.replace('/login');
+    }
+  }, [user, eraId, router]);
 
   if (!era) {
     notFound();

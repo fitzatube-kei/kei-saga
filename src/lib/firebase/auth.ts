@@ -2,6 +2,7 @@ import { auth, db } from './config';
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut as firebaseSignOut, onAuthStateChanged, User, browserLocalPersistence, browserSessionPersistence, setPersistence } from 'firebase/auth';
 import { doc, setDoc, getDoc, updateDoc, serverTimestamp } from 'firebase/firestore';
 import { UserProfile, AvatarConfig } from '@/types';
+import { DEFAULT_AVATAR } from '@/types/user';
 
 const PREMIUM_EMAILS = ['han0726k@gmail.co', 'han0726k@gmail.com'];
 
@@ -12,7 +13,7 @@ export async function signUp(email: string, password: string, nickname: string):
     uid: cred.user.uid,
     email,
     nickname,
-    avatar: { gender: 'male', skinTone: '#F5D0A9', hair: 'default', outfit: 'default', accessory: 'none' },
+    avatar: { ...DEFAULT_AVATAR },
     points: isPremium ? 99999 : 0,
     cash: isPremium ? 99999 : 0,
     level: isPremium ? 7 : 1,
@@ -54,6 +55,10 @@ export async function updateUserAvatar(uid: string, avatar: AvatarConfig) {
 
 export async function updateUserNickname(uid: string, nickname: string) {
   await updateDoc(doc(db, 'users', uid), { nickname });
+}
+
+export async function updateUserProfileBg(uid: string, profileBg: string) {
+  await updateDoc(doc(db, 'users', uid), { profileBg });
 }
 
 export function onAuthChange(callback: (user: User | null) => void) {

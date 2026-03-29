@@ -15,6 +15,7 @@ interface AuthActions {
   updatePoints: (points: number) => void;
   updateCash: (cash: number) => void;
   updateNickname: (nickname: string) => void;
+  updateProfileBg: (profileBg: string) => void;
 }
 
 export const useAuthStore = create<AuthState & AuthActions>((set) => ({
@@ -46,5 +47,10 @@ export const useAuthStore = create<AuthState & AuthActions>((set) => ({
   updateNickname: (nickname) =>
     set((state) => ({
       user: state.user ? { ...state.user, nickname } : null,
+    })),
+
+  updateProfileBg: (profileBg) =>
+    set((state) => ({
+      user: state.user ? { ...state.user, profileBg } : null,
     })),
 }));
