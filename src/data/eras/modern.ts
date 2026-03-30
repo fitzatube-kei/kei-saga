@@ -109,6 +109,7 @@ export const modern: Era = {
           steps: [
             {
               id: 'liberation-step-1', type: 'narration',
+              backgroundImage: '/images/play/bg/modern/bg_m_008.png',
               text: '1945년 8월 15일, 일본이 연합군에 무조건 항복하면서 35년간의 일제강점기가 끝나고 광복을 맞이하였습니다.',
               textI18n: {
                 en: 'On August 15, 1945, Japan surrendered unconditionally to the Allied Forces, ending 35 years of Japanese colonial rule and bringing liberation (Gwangbok).',
@@ -122,6 +123,7 @@ export const modern: Era = {
             },
             {
               id: 'liberation-step-2', type: 'dialog',
+              backgroundImage: '/images/play/bg/modern/bg_m_008.png',
               speaker: '김구',
               speakerI18n: {
                 en: 'Kim Gu',
@@ -145,6 +147,7 @@ export const modern: Era = {
             },
             {
               id: 'liberation-step-3', type: 'narration',
+              backgroundImage: '/images/play/bg/modern/bg_m_009.png',
               text: '미국과 소련의 냉전 대립 속에서 한반도는 38도선을 기준으로 남과 북으로 나뉘게 되었습니다.',
               textI18n: {
                 en: 'Amid the Cold War rivalry between the United States and the Soviet Union, the Korean Peninsula was divided into north and south along the 38th parallel.',
@@ -158,6 +161,7 @@ export const modern: Era = {
             },
             {
               id: 'liberation-step-4', type: 'dialog',
+              backgroundImage: '/images/play/bg/modern/bg_m_009.png',
               speaker: '김구',
               speakerI18n: {
                 en: 'Kim Gu',
@@ -181,6 +185,7 @@ export const modern: Era = {
             },
             {
               id: 'liberation-step-5', type: 'quiz',
+              backgroundImage: '/images/play/bg/modern/bg_m_009.png',
               quiz: {
                 question: '광복 후 한반도를 남북으로 나눈 기준선은?',
                 questionI18n: {
@@ -217,6 +222,7 @@ export const modern: Era = {
             },
             {
               id: 'liberation-step-6', type: 'narration',
+              backgroundImage: '/images/play/bg/modern/bg_m_010.png',
               text: '1948년 5월 10일, 유엔 감시 하에 남한 단독 총선거가 실시되었습니다. 김구는 단독 정부 수립에 반대하여 선거에 불참하였습니다.',
               textI18n: {
                 en: 'On May 10, 1948, a general election was held in South Korea under UN supervision. Kim Gu opposed the establishment of a separate government and refused to participate in the election.',
@@ -230,6 +236,7 @@ export const modern: Era = {
             },
             {
               id: 'liberation-step-7', type: 'dialog',
+              backgroundImage: '/images/play/bg/modern/bg_m_010.png',
               speaker: '김구',
               speakerI18n: {
                 en: 'Kim Gu',
@@ -253,6 +260,7 @@ export const modern: Era = {
             },
             {
               id: 'liberation-step-8', type: 'quiz',
+              backgroundImage: '/images/play/bg/modern/bg_m_010.png',
               quiz: {
                 question: '대한민국 정부가 수립된 해는?',
                 questionI18n: {
@@ -289,6 +297,7 @@ export const modern: Era = {
             },
             {
               id: 'liberation-step-9', type: 'narration',
+              backgroundImage: '/images/play/bg/modern/bg_m_011.png',
               text: '1948년 8월 15일, 이승만을 초대 대통령으로 하는 대한민국 정부가 수립되었습니다. 북한에서도 9월 9일 조선민주주의인민공화국이 수립되어 분단이 고착화되었습니다.',
               textI18n: {
                 en: 'On August 15, 1948, the Republic of Korea was established with Syngman Rhee as the first president. On September 9, the Democratic People\'s Republic of Korea was established in the north, solidifying the division.',
@@ -302,6 +311,7 @@ export const modern: Era = {
             },
             {
               id: 'liberation-step-10', type: 'quiz',
+              backgroundImage: '/images/play/bg/modern/bg_m_011.png',
               quiz: {
                 question: '김구가 남한 단독 선거에 반대한 이유는?',
                 questionI18n: {
@@ -397,6 +407,7 @@ export const modern: Era = {
           steps: [
             {
               id: 'war-step-1', type: 'narration',
+              backgroundImage: '/images/play/bg/modern/bg_m_008.png',
               text: '1950년 6월 25일 새벽, 북한군이 38도선 전역에서 남침을 개시하였습니다. 한국전쟁이 시작된 것입니다.',
               textI18n: {
                 en: 'At dawn on June 25, 1950, North Korean forces launched a full-scale invasion across the entire 38th parallel. The Korean War had begun.',
@@ -410,6 +421,7 @@ export const modern: Era = {
             },
             {
               id: 'war-step-2', type: 'narration',
+              backgroundImage: '/images/play/bg/modern/bg_m_009.png',
               text: '북한군의 기습 남침으로 3일 만에 서울이 함락되었습니다. 국군은 낙동강 방어선까지 후퇴하며 최후의 방어전을 펼쳤습니다.',
               textI18n: {
                 en: 'Seoul fell within three days of the surprise North Korean invasion. The South Korean army retreated to the Nakdong River defense line and fought a desperate last stand.',
@@ -423,6 +435,8 @@ export const modern: Era = {
             },
             {
               id: 'war-step-3', type: 'dialog',
+              backgroundImage: '/images/play/bg/modern/bg_m_010.png',
+              characterImage: '/images/play/bg/modern/leeseungman001.png',
               speaker: '이승만',
               speakerI18n: {
                 en: 'Syngman Rhee',
@@ -446,6 +460,7 @@ export const modern: Era = {
             },
             {
               id: 'war-step-4', type: 'quiz',
+              backgroundImage: '/images/play/bg/modern/bg_m_010.png',
               quiz: {
                 question: '6.25 전쟁이 발발한 해는?',
                 questionI18n: {
@@ -482,6 +497,7 @@ export const modern: Era = {
             },
             {
               id: 'war-step-5', type: 'narration',
+              backgroundImage: '/images/play/bg/modern/bg_m_011.png',
               text: '유엔 안전보장이사회는 북한의 침략을 규탄하고, 유엔군 파병을 결정하였습니다. 맥아더 장군이 유엔군 총사령관에 임명되었습니다.',
               textI18n: {
                 en: 'The UN Security Council condemned North Korea\'s aggression and decided to send UN forces. General Douglas MacArthur was appointed Supreme Commander of UN Forces.',
@@ -495,6 +511,7 @@ export const modern: Era = {
             },
             {
               id: 'war-step-6', type: 'narration',
+              backgroundImage: '/images/play/bg/modern/bg_m_012.png',
               text: '1950년 9월 15일, 맥아더 장군이 지휘하는 유엔군은 인천상륙작전을 감행하여 전세를 뒤집었습니다.',
               textI18n: {
                 en: 'On September 15, 1950, UN forces under General MacArthur executed the Incheon Landing Operation, turning the tide of the war.',
@@ -508,6 +525,7 @@ export const modern: Era = {
             },
             {
               id: 'war-step-7', type: 'quiz',
+              backgroundImage: '/images/play/bg/modern/bg_m_012.png',
               quiz: {
                 question: '전쟁의 전세를 역전시킨 인천상륙작전이 실행된 날짜는?',
                 questionI18n: {
@@ -544,6 +562,7 @@ export const modern: Era = {
             },
             {
               id: 'war-step-8', type: 'narration',
+              backgroundImage: '/images/play/bg/modern/bg_m_013.png',
               text: '인천상륙작전 성공 후 서울을 수복하고 북진하였으나, 중공군의 개입으로 다시 후퇴하는 1.4 후퇴를 겪었습니다.',
               textI18n: {
                 en: 'After the success of the Incheon Landing, Seoul was recaptured and forces advanced northward, but Chinese intervention forced the January 4th Retreat.',
@@ -557,6 +576,7 @@ export const modern: Era = {
             },
             {
               id: 'war-step-9', type: 'narration',
+              backgroundImage: '/images/play/bg/modern/bg_m_014.png',
               text: '이후 전선은 38도선 부근에서 교착 상태에 빠졌고, 2년간의 휴전 협상 끝에 1953년 7월 27일 휴전 협정이 체결되었습니다.',
               textI18n: {
                 en: 'The front line became stalemated near the 38th parallel, and after two years of armistice negotiations, the Armistice Agreement was signed on July 27, 1953.',
@@ -570,6 +590,8 @@ export const modern: Era = {
             },
             {
               id: 'war-step-10', type: 'dialog',
+              backgroundImage: '/images/play/bg/modern/bg_m_015.png',
+              characterImage: '/images/play/bg/modern/leeseungman001.png',
               speaker: '이승만',
               speakerI18n: {
                 en: 'Syngman Rhee',
@@ -593,6 +615,7 @@ export const modern: Era = {
             },
             {
               id: 'war-step-11', type: 'quiz',
+              backgroundImage: '/images/play/bg/modern/bg_m_015.png',
               quiz: {
                 question: '한국전쟁 휴전 협정이 체결된 해는?',
                 questionI18n: {
@@ -629,6 +652,7 @@ export const modern: Era = {
             },
             {
               id: 'war-step-12', type: 'narration',
+              backgroundImage: '/images/play/bg/modern/bg_m_016.png',
               text: '3년간의 전쟁으로 수백만 명의 사상자와 이산가족이 발생하였습니다. 한반도는 오늘날까지 휴전 상태로 남아 있습니다.',
               textI18n: {
                 en: 'The three-year war caused millions of casualties and separated families. The Korean Peninsula remains in an armistice state to this day.',

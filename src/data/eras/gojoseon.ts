@@ -485,6 +485,7 @@ export const gojoseon: Era = {
             {
               id: 'gojoseon-law-step-1',
               type: 'narration',
+              backgroundImage: '/images/play/bg/gojoseon/bg_008.png',
               text: '고조선은 나라를 다스리기 위해 범금8조(犯禁八條)라는 법률을 만들었습니다. 오늘날에는 그중 3개 조항만이 전해지고 있습니다.',
               textI18n: {
                 en: 'Gojoseon established a legal code called the Eight Prohibitions (Beomgeum Paljo) to govern the nation. Only three of the original eight articles survive today.',
@@ -499,6 +500,7 @@ export const gojoseon: Era = {
             {
               id: 'gojoseon-law-step-2',
               type: 'dialog',
+              backgroundImage: '/images/play/bg/gojoseon/bg_009.png',
               speaker: '단군왕검',
               speakerI18n: {
                 en: 'Dangun Wanggeom',
@@ -523,6 +525,7 @@ export const gojoseon: Era = {
             {
               id: 'gojoseon-law-step-3',
               type: 'narration',
+              backgroundImage: '/images/play/bg/gojoseon/bg_010.png',
               text: '첫째, 사람을 죽인 자는 즉시 사형에 처한다. 이는 생명을 소중히 여기는 고조선의 정신을 보여줍니다.',
               textI18n: {
                 en: 'First, anyone who kills another person shall be put to death immediately. This reflects the value Gojoseon placed on human life.',
@@ -537,6 +540,7 @@ export const gojoseon: Era = {
             {
               id: 'gojoseon-law-step-4',
               type: 'narration',
+              backgroundImage: '/images/play/bg/gojoseon/bg_011.png',
               text: '둘째, 남에게 상해를 입힌 자는 곡식으로 배상한다. 이를 통해 고조선이 농경 사회였음을 알 수 있습니다.',
               textI18n: {
                 en: 'Second, anyone who injures another must compensate with grain. This tells us that Gojoseon was an agricultural society.',
@@ -551,6 +555,7 @@ export const gojoseon: Era = {
             {
               id: 'gojoseon-law-step-5',
               type: 'narration',
+              backgroundImage: '/images/play/bg/gojoseon/bg_012.png',
               text: '셋째, 남의 물건을 훔친 자는 노비로 삼는다. 다만 스스로 속죄하려는 자는 50만 전을 내야 한다. 이는 사유 재산이 존재했음을 보여줍니다.',
               textI18n: {
                 en: 'Third, anyone who steals shall be made a slave. However, those who wish to atone must pay 500,000 coins. This shows that private property existed in Gojoseon.',
@@ -565,6 +570,7 @@ export const gojoseon: Era = {
             {
               id: 'gojoseon-law-step-6',
               type: 'dialog',
+              backgroundImage: '/images/play/bg/gojoseon/bg_013.png',
               speaker: '단군왕검',
               speakerI18n: {
                 en: 'Dangun Wanggeom',
@@ -589,6 +595,7 @@ export const gojoseon: Era = {
             {
               id: 'gojoseon-law-step-7',
               type: 'quiz',
+              backgroundImage: '/images/play/bg/gojoseon/bg_014.png',
               quiz: {
                 question: '범금8조에서 알 수 있는 고조선 사회의 모습이 아닌 것은?',
                 questionI18n: {

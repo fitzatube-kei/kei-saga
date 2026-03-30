@@ -24,7 +24,7 @@ const ERA_BG_IMAGES: Record<string, string> = {
   'joseon-late': '/images/play/joseonlate_real_001.png',
   'daehan-empire': '/images/play/koreanempire_real_001.png',
   'japanese-colonial': '/images/play/japanese Colonial_real_001.png',
-  'modern': '/images/play/seokguam_real_001.png',
+  'modern': '/images/play/modern_real_001.png',
 };
 
 // 콘텐츠가 있는 시대는 모두 해금
