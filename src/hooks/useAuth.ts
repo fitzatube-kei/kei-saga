@@ -17,7 +17,9 @@ export function useAuth() {
     listenerInitialized = true;
 
     unsubRef.current = onAuthChange(async (firebaseUser) => {
-      setLoading(true);
+      // Only show loading spinner on initial auth check, not on route transitions
+      const alreadyInitialized = useAuthStore.getState().initialized;
+      if (!alreadyInitialized) setLoading(true);
       if (firebaseUser) {
         try {
           const profile = await getUserProfile(firebaseUser.uid);

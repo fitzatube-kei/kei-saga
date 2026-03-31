@@ -2,6 +2,7 @@
 
 import { useEffect, useCallback, useMemo } from 'react';
 import { useRouter } from 'next/navigation';
+import { cn } from '@/lib/utils/cn';
 import { useGameStore } from '@/stores/gameStore';
 import { useTranslation } from '@/hooks/useTranslation';
 import { useLocalizedGame } from '@/hooks/useLocalizedGame';
@@ -171,9 +172,14 @@ export function NarrationEngine({
         eventTitle={lg.eventTitle(event)}
       />
 
-      {/* Character - fixed at bottom, overlapping dialog box */}
+      {/* Character - fixed above dialog box */}
       {gameState === 'DIALOG' && currentStepData?.type === 'dialog' && (
-        <div className="fixed bottom-0 left-4 z-30 sm:left-[10%]">
+        <div className={cn(
+          'fixed bottom-0 z-30',
+          currentStepData.id === 'liberation-step-2'
+            ? 'right-4 sm:right-[10%]'
+            : 'left-4 sm:left-[10%]'
+        )}>
           <CharacterSprite
             character={displayCharacter}
             speaking={isSpeaking}

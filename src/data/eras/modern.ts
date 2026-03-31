@@ -104,12 +104,13 @@ export const modern: Era = {
               'zh-TW': '大韓民國臨時政府的最後一任主席，畢生獻身於獨立運動的民族領袖。為建立統一政府而努力。',
             },
             primaryColor: '#1E90FF', secondaryColor: '#4169E1',
+            image: '/images/play/bg/modern/kimkoo001.png',
           },
           difficulty: 'medium', pointReward: 500,
           steps: [
             {
               id: 'liberation-step-1', type: 'narration',
-              backgroundImage: '/images/play/bg/modern/bg_m_008.png',
+              backgroundImage: '/images/play/bg/modern/bg_m_001.png',
               text: '1945년 8월 15일, 일본이 연합군에 무조건 항복하면서 35년간의 일제강점기가 끝나고 광복을 맞이하였습니다.',
               textI18n: {
                 en: 'On August 15, 1945, Japan surrendered unconditionally to the Allied Forces, ending 35 years of Japanese colonial rule and bringing liberation (Gwangbok).',
@@ -123,7 +124,8 @@ export const modern: Era = {
             },
             {
               id: 'liberation-step-2', type: 'dialog',
-              backgroundImage: '/images/play/bg/modern/bg_m_008.png',
+              backgroundImage: '/images/play/bg/modern/bg_m_002.png',
+              backgroundPosition: 'right center',
               speaker: '김구',
               speakerI18n: {
                 en: 'Kim Gu',
@@ -147,7 +149,7 @@ export const modern: Era = {
             },
             {
               id: 'liberation-step-3', type: 'narration',
-              backgroundImage: '/images/play/bg/modern/bg_m_009.png',
+              backgroundImage: '/images/play/bg/modern/bg_m_003.png',
               text: '미국과 소련의 냉전 대립 속에서 한반도는 38도선을 기준으로 남과 북으로 나뉘게 되었습니다.',
               textI18n: {
                 en: 'Amid the Cold War rivalry between the United States and the Soviet Union, the Korean Peninsula was divided into north and south along the 38th parallel.',
@@ -161,7 +163,8 @@ export const modern: Era = {
             },
             {
               id: 'liberation-step-4', type: 'dialog',
-              backgroundImage: '/images/play/bg/modern/bg_m_009.png',
+              backgroundImage: '/images/play/bg/modern/bg_m_004.png',
+              backgroundPosition: 'left center',
               speaker: '김구',
               speakerI18n: {
                 en: 'Kim Gu',
@@ -185,7 +188,7 @@ export const modern: Era = {
             },
             {
               id: 'liberation-step-5', type: 'quiz',
-              backgroundImage: '/images/play/bg/modern/bg_m_009.png',
+              backgroundImage: '/images/play/bg/modern/bg_m_004.png',
               quiz: {
                 question: '광복 후 한반도를 남북으로 나눈 기준선은?',
                 questionI18n: {
@@ -222,7 +225,7 @@ export const modern: Era = {
             },
             {
               id: 'liberation-step-6', type: 'narration',
-              backgroundImage: '/images/play/bg/modern/bg_m_010.png',
+              backgroundImage: '/images/play/bg/modern/bg_m_005.png',
               text: '1948년 5월 10일, 유엔 감시 하에 남한 단독 총선거가 실시되었습니다. 김구는 단독 정부 수립에 반대하여 선거에 불참하였습니다.',
               textI18n: {
                 en: 'On May 10, 1948, a general election was held in South Korea under UN supervision. Kim Gu opposed the establishment of a separate government and refused to participate in the election.',
@@ -236,7 +239,7 @@ export const modern: Era = {
             },
             {
               id: 'liberation-step-7', type: 'dialog',
-              backgroundImage: '/images/play/bg/modern/bg_m_010.png',
+              backgroundImage: '/images/play/bg/modern/bg_m_006.png',
               speaker: '김구',
               speakerI18n: {
                 en: 'Kim Gu',
@@ -260,7 +263,7 @@ export const modern: Era = {
             },
             {
               id: 'liberation-step-8', type: 'quiz',
-              backgroundImage: '/images/play/bg/modern/bg_m_010.png',
+              backgroundImage: '/images/play/bg/modern/bg_m_006.png',
               quiz: {
                 question: '대한민국 정부가 수립된 해는?',
                 questionI18n: {
@@ -297,7 +300,7 @@ export const modern: Era = {
             },
             {
               id: 'liberation-step-9', type: 'narration',
-              backgroundImage: '/images/play/bg/modern/bg_m_011.png',
+              backgroundImage: '/images/play/bg/modern/bg_m_007.png',
               text: '1948년 8월 15일, 이승만을 초대 대통령으로 하는 대한민국 정부가 수립되었습니다. 북한에서도 9월 9일 조선민주주의인민공화국이 수립되어 분단이 고착화되었습니다.',
               textI18n: {
                 en: 'On August 15, 1948, the Republic of Korea was established with Syngman Rhee as the first president. On September 9, the Democratic People\'s Republic of Korea was established in the north, solidifying the division.',
@@ -311,7 +314,7 @@ export const modern: Era = {
             },
             {
               id: 'liberation-step-10', type: 'quiz',
-              backgroundImage: '/images/play/bg/modern/bg_m_011.png',
+              backgroundImage: '/images/play/bg/modern/bg_m_007.png',
               quiz: {
                 question: '김구가 남한 단독 선거에 반대한 이유는?',
                 questionI18n: {
@@ -402,6 +405,7 @@ export const modern: Era = {
               'zh-TW': '大韓民國的首任總統，在韓戰這一國難中領導國家的領袖。',
             },
             primaryColor: '#000080', secondaryColor: '#0000CD',
+            image: '/images/play/bg/modern/bg_m_016.png',
           },
           difficulty: 'hard', pointReward: 700,
           steps: [

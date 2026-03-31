@@ -104,11 +104,13 @@ export const japaneseColonial: Era = {
               'zh-TW': '在並木市場領導萬歲示威的獨立運動家。即使遭受日本的酷刑也展現了不屈的意志。',
             },
             primaryColor: '#2F4F4F', secondaryColor: '#FFFFFF',
+            image: '/images/play/bg/japanese-colonial/gwansun001.png',
           },
           difficulty: 'medium', pointReward: 500,
           steps: [
             {
               id: 'march1-step-1', type: 'narration',
+              backgroundImage: '/images/play/bg/japanese-colonial/bg_j_001.png',
               text: '1919년, 제1차 세계대전이 끝나고 윌슨 대통령의 민족자결주의가 전 세계에 퍼졌습니다. 조선에서도 독립의 희망이 타올랐습니다.',
               textI18n: {
                 en: 'In 1919, World War I ended and President Wilson\'s principle of national self-determination spread worldwide. In Korea too, the flame of hope for independence was kindled.',
@@ -122,6 +124,7 @@ export const japaneseColonial: Era = {
             },
             {
               id: 'march1-step-2', type: 'narration',
+              backgroundImage: '/images/play/bg/japanese-colonial/bg_j_002.png',
               text: '1919년 3월 1일, 민족 대표 33인이 독립선언서를 낭독하고, 서울 탑골공원을 시작으로 전국에서 만세 시위가 벌어졌습니다.',
               textI18n: {
                 en: 'On March 1, 1919, 33 national representatives read the Declaration of Independence, and Manse demonstrations erupted across the nation, beginning at Tapgol Park in Seoul.',
@@ -135,6 +138,7 @@ export const japaneseColonial: Era = {
             },
             {
               id: 'march1-step-3', type: 'dialog',
+              backgroundImage: '/images/play/bg/japanese-colonial/bg_j_003.png',
               speaker: '유관순',
               speakerI18n: {
                 en: 'Yu Gwan-sun',
@@ -158,6 +162,7 @@ export const japaneseColonial: Era = {
             },
             {
               id: 'march1-step-4', type: 'quiz',
+              backgroundImage: '/images/play/bg/japanese-colonial/bg_j_003.png',
               quiz: {
                 question: '3.1 운동이 일어난 해는?',
                 questionI18n: {
@@ -194,6 +199,7 @@ export const japaneseColonial: Era = {
             },
             {
               id: 'march1-step-5', type: 'narration',
+              backgroundImage: '/images/play/bg/japanese-colonial/bg_j_004.png',
               text: '이화학당 학생이었던 유관순은 학교가 휴교되자 고향 천안으로 내려가 만세 시위를 준비하였습니다.',
               textI18n: {
                 en: 'Yu Gwan-sun, a student at Ewha Haktang, returned to her hometown of Cheonan when the school was closed and prepared Manse demonstrations.',
@@ -207,6 +213,7 @@ export const japaneseColonial: Era = {
             },
             {
               id: 'march1-step-6', type: 'dialog',
+              backgroundImage: '/images/play/bg/japanese-colonial/bg_j_005.png',
               speaker: '유관순',
               speakerI18n: {
                 en: 'Yu Gwan-sun',
@@ -230,6 +237,7 @@ export const japaneseColonial: Era = {
             },
             {
               id: 'march1-step-7', type: 'narration',
+              backgroundImage: '/images/play/bg/japanese-colonial/bg_j_006.png',
               text: '4월 1일, 유관순은 아우내 장터에서 수천 명의 군중과 함께 만세 시위를 주도하였습니다. 일본 헌병의 발포로 부모님이 순국하였습니다.',
               textI18n: {
                 en: 'On April 1, Yu Gwan-sun led Manse demonstrations with thousands of people at the Aunae Market. Her parents were killed by Japanese military police gunfire.',
@@ -243,6 +251,7 @@ export const japaneseColonial: Era = {
             },
             {
               id: 'march1-step-8', type: 'dialog',
+              backgroundImage: '/images/play/bg/japanese-colonial/bg_j_007.png',
               speaker: '유관순',
               speakerI18n: {
                 en: 'Yu Gwan-sun',
@@ -266,6 +275,7 @@ export const japaneseColonial: Era = {
             },
             {
               id: 'march1-step-9', type: 'quiz',
+              backgroundImage: '/images/play/bg/japanese-colonial/bg_j_007.png',
               quiz: {
                 question: '유관순이 만세 시위를 주도한 곳은?',
                 questionI18n: {
@@ -302,6 +312,7 @@ export const japaneseColonial: Era = {
             },
             {
               id: 'march1-step-10', type: 'narration',
+              backgroundImage: '/images/play/bg/japanese-colonial/bg_j_008.png',
               text: '유관순은 체포되어 서대문 형무소에 수감되었으나, 옥중에서도 만세를 외치며 저항하다가 1920년 순국하였습니다.',
               textI18n: {
                 en: 'Yu Gwan-sun was arrested and imprisoned at Seodaemun Prison, but continued to resist by crying Manse from her cell. She died a martyr in 1920.',
@@ -315,6 +326,7 @@ export const japaneseColonial: Era = {
             },
             {
               id: 'march1-step-11', type: 'narration',
+              backgroundImage: '/images/play/bg/japanese-colonial/bg_j_009.png',
               text: '3.1 운동의 결과, 1919년 4월 상해에 대한민국 임시정부가 수립되었습니다. 이는 대한민국의 법통이 되었습니다.',
               textI18n: {
                 en: 'As a result of the March 1st Movement, the Provisional Government of the Republic of Korea was established in Shanghai in April 1919. This became the legal lineage of the Republic of Korea.',
@@ -328,6 +340,7 @@ export const japaneseColonial: Era = {
             },
             {
               id: 'march1-step-12', type: 'quiz',
+              backgroundImage: '/images/play/bg/japanese-colonial/bg_j_009.png',
               quiz: {
                 question: '3.1 운동의 결과로 수립된 것은?',
                 questionI18n: {
@@ -423,6 +436,7 @@ export const japaneseColonial: Era = {
           steps: [
             {
               id: 'yun-bg-step-1', type: 'narration',
+              backgroundImage: '/images/play/bg/japanese-colonial/bg_j_010.png',
               text: '1930년대, 대한민국 임시정부는 독립운동의 돌파구를 찾기 위해 고심하고 있었습니다. 김구는 한인애국단을 조직하여 의열 투쟁을 계획했습니다.',
               textI18n: {
                 en: 'In the 1930s, the Provisional Government was struggling to find a breakthrough for the independence movement. Kim Gu organized the Korean Patriotic Organization to plan armed resistance.',
@@ -436,6 +450,7 @@ export const japaneseColonial: Era = {
             },
             {
               id: 'yun-bg-step-2', type: 'dialog',
+              backgroundImage: '/images/play/bg/japanese-colonial/bg_j_011.png',
               speaker: '윤봉길',
               speakerI18n: {
                 en: 'Yun Bong-gil',

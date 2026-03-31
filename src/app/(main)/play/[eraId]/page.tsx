@@ -22,7 +22,7 @@ const ERA_BG: Record<string, { src: string; position?: string }> = {
   'joseon-late': { src: '/images/play/joseonlate_real_001.png', position: 'top' },
   'daehan-empire': { src: '/images/play/koreanempire_real_001.png' },
   'japanese-colonial': { src: '/images/play/japanese Colonial_real_001.png', position: 'top' },
-  'modern': { src: '/images/play/seokguam_real_001.png', position: 'top' },
+  'modern': { src: '/images/play/modern_real_001.png' },
 };
 
 export default function EraPage() {
