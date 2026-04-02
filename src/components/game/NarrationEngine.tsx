@@ -176,7 +176,7 @@ export function NarrationEngine({
       {gameState === 'DIALOG' && currentStepData?.type === 'dialog' && (
         <div className={cn(
           'fixed bottom-0 z-30',
-          currentStepData.id === 'liberation-step-2'
+          currentStepData.id === 'liberation-step-2' || currentStepData.id.startsWith('silla-founding-step-') || currentStepData.id.startsWith('goguryeo-founding-step-') || currentStepData.id.startsWith('baekje-founding-step-') || currentStepData.id.startsWith('gwanggaeto-step-') || currentStepData.id.startsWith('salsu-step-')
             ? 'right-4 sm:right-[10%]'
             : 'left-4 sm:left-[10%]'
         )}>

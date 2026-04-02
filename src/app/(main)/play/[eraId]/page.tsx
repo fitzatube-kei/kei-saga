@@ -12,7 +12,7 @@ import { useLocalizedGame } from '@/hooks/useLocalizedGame';
 
 const ERA_BG: Record<string, { src: string; position?: string }> = {
   'gojoseon': { src: '/images/play/gojosun_real_001.png' },
-  'samguk-early': { src: '/images/play/treekingdomsearly_real_001.png', position: 'top' },
+  'samguk-early': { src: '/images/play/treekingdomsearly_real_001.png' },
   'samguk-late': { src: '/images/play/treekingdomslate_real_001.png' },
   'unified-silla': { src: '/images/play/Silla_real_001.png', position: 'top' },
   'balhae': { src: '/images/play/Balhae_real_001.png', position: 'top' },

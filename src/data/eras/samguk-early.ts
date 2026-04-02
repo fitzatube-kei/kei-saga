@@ -109,6 +109,7 @@ export const samgukEarly: Era = {
             },
             primaryColor: '#CD5C5C',
             secondaryColor: '#FFD700',
+            image: '/images/play/bg/samguk-early/Hyeokgeose001.png',
           },
           difficulty: 'easy',
           pointReward: 300,
@@ -116,6 +117,8 @@ export const samgukEarly: Era = {
             {
               id: 'silla-founding-step-1',
               type: 'narration',
+              backgroundImage: '/images/play/bg/samguk-early/bg_se_001.png',
+              backgroundPosition: 'right center',
               text: '기원전 57년, 한반도 동남쪽 서라벌 땅. 여섯 마을의 촌장들이 모여 새 나라를 세울 임금을 찾고 있었습니다.',
               textI18n: {
                 en: 'In 57 BC, in the land of Seorabeol in the southeast of the Korean Peninsula, the chiefs of six villages gathered to find a king to establish a new nation.',
@@ -130,6 +133,8 @@ export const samgukEarly: Era = {
             {
               id: 'silla-founding-step-2',
               type: 'narration',
+              backgroundImage: '/images/play/bg/samguk-early/bg_se_002.png',
+              backgroundPosition: 'right center',
               text: '나정(蘿井)이라는 우물가에서 커다란 알이 발견되었습니다. 그 알에서 빛이 나며 한 아이가 태어났습니다.',
               textI18n: {
                 en: 'A large egg was discovered near a well called Najeong. Light emanated from the egg, and a child was born.',
@@ -144,6 +149,9 @@ export const samgukEarly: Era = {
             {
               id: 'silla-founding-step-3',
               type: 'dialog',
+              backgroundImage: '/images/play/bg/samguk-early/bg_se_003.png',
+              backgroundPosition: 'right center',
+              characterImage: '/images/play/bg/samguk-early/villagechief001.png',
               speaker: '촌장',
               speakerI18n: {
                 en: 'Village Chief',
@@ -168,6 +176,9 @@ export const samgukEarly: Era = {
             {
               id: 'silla-founding-step-4',
               type: 'dialog',
+              backgroundImage: '/images/play/bg/samguk-early/bg_se_004.png',
+              backgroundPosition: 'right center',
+              characterImage: '/images/play/bg/samguk-early/Hyeokgeose001.png',
               speaker: '박혁거세',
               speakerI18n: {
                 en: 'Bak Hyeokgeose',
@@ -192,6 +203,8 @@ export const samgukEarly: Era = {
             {
               id: 'silla-founding-step-5',
               type: 'quiz',
+              backgroundImage: '/images/play/bg/samguk-early/bg_se_004.png',
+              backgroundPosition: 'right center',
               quiz: {
                 question: '신라가 건국된 해는 언제인가요?',
                 questionI18n: {
@@ -229,6 +242,8 @@ export const samgukEarly: Era = {
             {
               id: 'silla-founding-step-6',
               type: 'narration',
+              backgroundImage: '/images/play/bg/samguk-early/bg_se_005.png',
+              backgroundPosition: 'right center',
               text: '같은 시기, 알영정(閼英井)에서 용이 나타나 옆구리에서 여자아이를 낳았으니, 이가 알영 부인입니다. 박혁거세와 알영은 부부가 되어 신라를 다스렸습니다.',
               textI18n: {
                 en: 'Around the same time, a dragon appeared at the Alyeong Well and gave birth to a baby girl from its side — she was Lady Alyeong. Bak Hyeokgeose and Alyeong became husband and wife and ruled Silla together.',
@@ -242,7 +257,10 @@ export const samgukEarly: Era = {
             },
             {
               id: 'silla-founding-step-7',
+              characterImage: '/images/play/bg/samguk-early/Hyeokgeose001.png',
               type: 'dialog',
+              backgroundImage: '/images/play/bg/samguk-early/bg_se_006.png',
+              backgroundPosition: 'right center',
               speaker: '박혁거세',
               speakerI18n: {
                 en: 'Bak Hyeokgeose',
@@ -267,6 +285,8 @@ export const samgukEarly: Era = {
             {
               id: 'silla-founding-step-8',
               type: 'quiz',
+              backgroundImage: '/images/play/bg/samguk-early/bg_se_006.png',
+              backgroundPosition: 'right center',
               quiz: {
                 question: '박혁거세는 어디에서 태어났나요?',
                 questionI18n: {
@@ -361,6 +381,7 @@ export const samgukEarly: Era = {
             },
             primaryColor: '#B22222',
             secondaryColor: '#FF6347',
+            image: '/images/play/bg/samguk-early/jumong001.png',
           },
           difficulty: 'easy',
           pointReward: 300,
@@ -368,6 +389,8 @@ export const samgukEarly: Era = {
             {
               id: 'goguryeo-founding-step-1',
               type: 'narration',
+              backgroundImage: '/images/play/bg/samguk-early/bg_se_007.png',
+              backgroundPosition: 'right center',
               text: '북쪽 부여 땅, 해모수와 유화 부인 사이에서 태어난 주몽은 어릴 때부터 활 솜씨가 뛰어났습니다. "주몽"이란 이름 자체가 "활을 잘 쏘는 사람"이라는 뜻입니다.',
               textI18n: {
                 en: 'In the northern land of Buyeo, Jumong was born to Haemosu and Lady Yuhwa. From childhood, his archery skills were exceptional. The name "Jumong" itself means "skilled archer."',
@@ -382,6 +405,8 @@ export const samgukEarly: Era = {
             {
               id: 'goguryeo-founding-step-2',
               type: 'dialog',
+              backgroundImage: '/images/play/bg/samguk-early/bg_se_008.png',
+              backgroundPosition: 'right center',
               speaker: '주몽',
               speakerI18n: {
                 en: 'Jumong',
@@ -406,6 +431,8 @@ export const samgukEarly: Era = {
             {
               id: 'goguryeo-founding-step-3',
               type: 'narration',
+              backgroundImage: '/images/play/bg/samguk-early/bg_se_009.png',
+              backgroundPosition: 'right center',
               text: '그러나 부여의 왕자들이 주몽의 재능을 시기하여 목숨을 위협했습니다. 주몽은 오이, 마리, 협보와 함께 남쪽으로 탈출을 결심합니다.',
               textI18n: {
                 en: 'However, the princes of Buyeo grew jealous of Jumong\'s talents and threatened his life. Jumong resolved to escape southward with his companions Oi, Mari, and Hyeopbo.',
@@ -420,6 +447,8 @@ export const samgukEarly: Era = {
             {
               id: 'goguryeo-founding-step-4',
               type: 'dialog',
+              backgroundImage: '/images/play/bg/samguk-early/bg_se_010.png',
+              backgroundPosition: 'right center',
               speaker: '주몽',
               speakerI18n: {
                 en: 'Jumong',
@@ -444,6 +473,8 @@ export const samgukEarly: Era = {
             {
               id: 'goguryeo-founding-step-5',
               type: 'narration',
+              backgroundImage: '/images/play/bg/samguk-early/bg_se_011.png',
+              backgroundPosition: 'right center',
               text: '추격병이 뒤따라왔으나, 엄사수(淹㴲水)에 이르렀을 때 물고기와 자라가 다리를 만들어 주몽 일행을 건너게 해주었습니다.',
               textI18n: {
                 en: 'Pursuers followed close behind, but when they reached the Eomsa River, fish and turtles formed a bridge to let Jumong and his party cross.',
@@ -458,6 +489,8 @@ export const samgukEarly: Era = {
             {
               id: 'goguryeo-founding-step-6',
               type: 'quiz',
+              backgroundImage: '/images/play/bg/samguk-early/bg_se_011.png',
+              backgroundPosition: 'right center',
               quiz: {
                 question: '"주몽"이라는 이름의 뜻은?',
                 questionI18n: {
@@ -495,6 +528,8 @@ export const samgukEarly: Era = {
             {
               id: 'goguryeo-founding-step-7',
               type: 'narration',
+              backgroundImage: '/images/play/bg/samguk-early/bg_se_012.png',
+              backgroundPosition: 'left center',
               text: '기원전 37년, 주몽은 졸본(卒本) 지역에 도착하여 마침내 고구려를 건국하였습니다.',
               textI18n: {
                 en: 'In 37 BC, Jumong arrived in the Jolbon region and finally founded Goguryeo.',
@@ -509,6 +544,8 @@ export const samgukEarly: Era = {
             {
               id: 'goguryeo-founding-step-8',
               type: 'dialog',
+              backgroundImage: '/images/play/bg/samguk-early/bg_se_013.png',
+              backgroundPosition: 'right center',
               speaker: '주몽',
               speakerI18n: {
                 en: 'Jumong',
@@ -533,6 +570,8 @@ export const samgukEarly: Era = {
             {
               id: 'goguryeo-founding-step-9',
               type: 'quiz',
+              backgroundImage: '/images/play/bg/samguk-early/bg_se_013.png',
+              backgroundPosition: 'right center',
               quiz: {
                 question: '고구려가 건국된 해는?',
                 questionI18n: {
@@ -570,6 +609,8 @@ export const samgukEarly: Era = {
             {
               id: 'goguryeo-founding-step-10',
               type: 'quiz',
+              backgroundImage: '/images/play/bg/samguk-early/bg_se_013.png',
+              backgroundPosition: 'right center',
               quiz: {
                 question: '주몽이 부여를 떠난 이유는?',
                 questionI18n: {
@@ -704,6 +745,7 @@ export const samgukEarly: Era = {
             },
             primaryColor: '#4169E1',
             secondaryColor: '#87CEEB',
+            image: '/images/play/bg/samguk-early/onjo001.png',
           },
           difficulty: 'easy',
           pointReward: 300,
@@ -711,6 +753,8 @@ export const samgukEarly: Era = {
             {
               id: 'baekje-founding-step-1',
               type: 'narration',
+              backgroundImage: '/images/play/bg/samguk-early/bg_se_014.png',
+              backgroundPosition: 'left center',
               text: '고구려를 세운 주몽에게는 부여에 두고 온 아들 유리가 있었습니다. 유리가 고구려로 찾아와 태자가 되자, 주몽의 다른 아들인 비류와 온조는 자리가 좁아졌습니다.',
               textI18n: {
                 en: 'Jumong, the founder of Goguryeo, had a son named Yuri whom he had left behind in Buyeo. When Yuri came to Goguryeo and became crown prince, Jumong\'s other sons Biryu and Onjo found their position diminished.',
@@ -725,6 +769,8 @@ export const samgukEarly: Era = {
             {
               id: 'baekje-founding-step-2',
               type: 'dialog',
+              backgroundImage: '/images/play/bg/samguk-early/bg_se_015.png',
+              backgroundPosition: 'left center',
               speaker: '온조',
               speakerI18n: {
                 en: 'Onjo',
@@ -749,6 +795,8 @@ export const samgukEarly: Era = {
             {
               id: 'baekje-founding-step-3',
               type: 'narration',
+              backgroundImage: '/images/play/bg/samguk-early/bg_se_016.png',
+              backgroundPosition: 'right center',
               text: '비류와 온조는 열 명의 신하와 많은 백성을 이끌고 남쪽으로 내려왔습니다. 비류는 미추홀(인천)에, 온조는 위례성(서울)에 자리를 잡았습니다.',
               textI18n: {
                 en: 'Biryu and Onjo led ten ministers and many followers south. Biryu settled in Michuhol (present-day Incheon), while Onjo settled in Wiryeseong (present-day Seoul).',
@@ -763,6 +811,8 @@ export const samgukEarly: Era = {
             {
               id: 'baekje-founding-step-4',
               type: 'dialog',
+              backgroundImage: '/images/play/bg/samguk-early/bg_se_017.png',
+              backgroundPosition: 'right center',
               speaker: '온조',
               speakerI18n: {
                 en: 'Onjo',
@@ -787,6 +837,8 @@ export const samgukEarly: Era = {
             {
               id: 'baekje-founding-step-5',
               type: 'narration',
+              backgroundImage: '/images/play/bg/samguk-early/bg_se_018.png',
+              backgroundPosition: 'right center',
               text: '기원전 18년, 온조는 위례성에 나라를 세우고 "백제(百濟)"라 이름 지었습니다. 열 명의 신하가 도왔다 하여 처음에는 "십제(十濟)"라 하였다가, 백성이 즐겨 따르므로 "백제"로 고쳤습니다.',
               textI18n: {
                 en: 'In 18 BC, Onjo established a nation at Wiryeseong and named it "Baekje (百濟)." It was initially called "Sipje (十濟, Ten Who Crossed)" because ten ministers helped him, but was changed to "Baekje (Hundred Who Crossed)" as many people happily followed him.',
@@ -801,6 +853,8 @@ export const samgukEarly: Era = {
             {
               id: 'baekje-founding-step-6',
               type: 'quiz',
+              backgroundImage: '/images/play/bg/samguk-early/bg_se_018.png',
+              backgroundPosition: 'right center',
               quiz: {
                 question: '백제가 건국된 해는?',
                 questionI18n: {
@@ -838,6 +892,8 @@ export const samgukEarly: Era = {
             {
               id: 'baekje-founding-step-7',
               type: 'narration',
+              backgroundImage: '/images/play/bg/samguk-early/bg_se_019.png',
+              backgroundPosition: 'right center',
               text: '한편 미추홀에 자리 잡은 비류는 땅이 습하고 물이 짜서 백성들이 편안하지 못했습니다. 결국 비류의 백성들도 온조에게 합류하였습니다.',
               textI18n: {
                 en: 'Meanwhile, Biryu, who had settled in Michuhol, found the land damp and the water salty, making life difficult for the people. Eventually, Biryu\'s people also joined Onjo.',
@@ -852,6 +908,8 @@ export const samgukEarly: Era = {
             {
               id: 'baekje-founding-step-8',
               type: 'quiz',
+              backgroundImage: '/images/play/bg/samguk-early/bg_se_019.png',
+              backgroundPosition: 'right center',
               quiz: {
                 question: '온조가 백제의 도읍으로 삼은 곳은?',
                 questionI18n: {

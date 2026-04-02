@@ -109,6 +109,7 @@ export const samgukLate: Era = {
             },
             primaryColor: '#B22222',
             secondaryColor: '#FFD700',
+            image: '/images/play/bg/samguk-late/gwanggaeto001.png',
           },
           difficulty: 'medium',
           pointReward: 500,
@@ -116,6 +117,8 @@ export const samgukLate: Era = {
             {
               id: 'gwanggaeto-step-1',
               type: 'narration',
+              backgroundImage: '/images/play/bg/samguk-late/bg_sl_001.png',
+              backgroundPosition: 'right center',
               text: '391년, 고구려에 18세의 젊은 왕이 즉위하였습니다. 그의 이름은 담덕, 훗날 "광개토경평안호태왕"이라 불리게 될 위대한 정복 군주입니다.',
               textI18n: {
                 en: 'In 391 AD, an 18-year-old king ascended the throne of Goguryeo. His name was Damdeok, the great conqueror who would later be known as "Gwanggaeto the Great — King who Broadly Expanded Territory and Brought Peace."',
@@ -130,6 +133,8 @@ export const samgukLate: Era = {
             {
               id: 'gwanggaeto-step-2',
               type: 'dialog',
+              backgroundImage: '/images/play/bg/samguk-late/bg_sl_002.png',
+              backgroundPosition: 'right center',
               speaker: '광개토대왕',
               speakerI18n: {
                 en: 'Gwanggaeto the Great',
@@ -154,6 +159,8 @@ export const samgukLate: Era = {
             {
               id: 'gwanggaeto-step-3',
               type: 'narration',
+              backgroundImage: '/images/play/bg/samguk-late/bg_sl_003.png',
+              backgroundPosition: 'right center',
               text: '광개토대왕은 즉위 후 활발한 정복 활동을 펼쳤습니다. 북으로는 거란, 동부여를 정복하고, 남으로는 백제를 압박하였습니다.',
               textI18n: {
                 en: 'After ascending the throne, Gwanggaeto the Great launched vigorous conquests. He conquered the Khitan and Eastern Buyeo to the north, and pressured Baekje to the south.',
@@ -168,6 +175,8 @@ export const samgukLate: Era = {
             {
               id: 'gwanggaeto-step-4',
               type: 'dialog',
+              backgroundImage: '/images/play/bg/samguk-late/bg_sl_004.png',
+              backgroundPosition: 'right center',
               speaker: '광개토대왕',
               speakerI18n: {
                 en: 'Gwanggaeto the Great',
@@ -192,6 +201,8 @@ export const samgukLate: Era = {
             {
               id: 'gwanggaeto-step-5',
               type: 'narration',
+              backgroundImage: '/images/play/bg/samguk-late/bg_sl_005.png',
+              backgroundPosition: 'right center',
               text: '400년, 광개토대왕은 5만 대군을 보내 신라에 침입한 왜구를 물리치고, 가야 지역까지 세력을 넓혔습니다.',
               textI18n: {
                 en: 'In 400 AD, Gwanggaeto the Great sent an army of 50,000 to repel the Japanese pirates who had invaded Silla, extending his influence as far as the Gaya region.',
@@ -206,6 +217,8 @@ export const samgukLate: Era = {
             {
               id: 'gwanggaeto-step-6',
               type: 'quiz',
+              backgroundImage: '/images/play/bg/samguk-late/bg_sl_005.png',
+              backgroundPosition: 'right center',
               quiz: {
                 question: '광개토대왕이 즉위한 나이는?',
                 questionI18n: {
@@ -243,6 +256,8 @@ export const samgukLate: Era = {
             {
               id: 'gwanggaeto-step-7',
               type: 'narration',
+              backgroundImage: '/images/play/bg/samguk-late/bg_sl_006.png',
+              backgroundPosition: 'right center',
               text: '광개토대왕은 재위 22년간 64개 성과 1,400개의 마을을 정복하여 고구려 역사상 가장 넓은 영토를 이룩하였습니다.',
               textI18n: {
                 en: 'During his 22-year reign, Gwanggaeto the Great conquered 64 fortresses and 1,400 villages, achieving the largest territorial extent in Goguryeo history.',
@@ -257,6 +272,8 @@ export const samgukLate: Era = {
             {
               id: 'gwanggaeto-step-8',
               type: 'dialog',
+              backgroundImage: '/images/play/bg/samguk-late/bg_sl_007.png',
+              backgroundPosition: 'right center',
               speaker: '광개토대왕',
               speakerI18n: {
                 en: 'Gwanggaeto the Great',
@@ -281,6 +298,8 @@ export const samgukLate: Era = {
             {
               id: 'gwanggaeto-step-9',
               type: 'narration',
+              backgroundImage: '/images/play/bg/samguk-late/bg_sl_008.png',
+              backgroundPosition: 'right center',
               text: '광개토대왕이 세상을 떠난 후, 아들 장수왕은 아버지의 업적을 기리기 위해 거대한 비석을 세웠으니, 이것이 바로 광개토대왕비입니다.',
               textI18n: {
                 en: 'After Gwanggaeto the Great passed away, his son King Jangsu erected a massive stele to honor his father\'s achievements — this is the Gwanggaeto Stele.',
@@ -295,6 +314,8 @@ export const samgukLate: Era = {
             {
               id: 'gwanggaeto-step-10',
               type: 'quiz',
+              backgroundImage: '/images/play/bg/samguk-late/bg_sl_008.png',
+              backgroundPosition: 'right center',
               quiz: {
                 question: '광개토대왕비를 세운 사람은?',
                 questionI18n: {
@@ -332,6 +353,8 @@ export const samgukLate: Era = {
             {
               id: 'gwanggaeto-step-11',
               type: 'narration',
+              backgroundImage: '/images/play/bg/samguk-late/bg_sl_009.png',
+              backgroundPosition: 'right center',
               text: '높이 약 6.39m의 광개토대왕비에는 고구려 건국 신화와 광개토대왕의 정복 활동이 1,775자로 새겨져 있습니다.',
               textI18n: {
                 en: 'The Gwanggaeto Stele, standing approximately 6.39 meters tall, is inscribed with 1,775 characters recording the Goguryeo founding myth and Gwanggaeto the Great\'s military campaigns.',
@@ -346,6 +369,8 @@ export const samgukLate: Era = {
             {
               id: 'gwanggaeto-step-12',
               type: 'quiz',
+              backgroundImage: '/images/play/bg/samguk-late/bg_sl_009.png',
+              backgroundPosition: 'right center',
               quiz: {
                 question: '광개토대왕의 본명은?',
                 questionI18n: {
@@ -440,6 +465,7 @@ export const samgukLate: Era = {
             },
             primaryColor: '#800000',
             secondaryColor: '#DC143C',
+            image: '/images/play/bg/samguk-late/euljimundeok001.png',
           },
           difficulty: 'medium',
           pointReward: 500,
@@ -447,6 +473,8 @@ export const samgukLate: Era = {
             {
               id: 'salsu-step-1',
               type: 'narration',
+              backgroundImage: '/images/play/bg/samguk-late/bg_sl_010.png',
+              backgroundPosition: 'right center',
               text: '612년, 수나라 양제가 113만 대군을 이끌고 고구려를 침공하였습니다. 역사상 유례없는 대규모 침략이었습니다.',
               textI18n: {
                 en: 'In 612 AD, Emperor Yang of Sui led an army of 1.13 million to invade Goguryeo — an unprecedented invasion in history.',
@@ -461,6 +489,8 @@ export const samgukLate: Era = {
             {
               id: 'salsu-step-2',
               type: 'dialog',
+              backgroundImage: '/images/play/bg/samguk-late/bg_sl_011.png',
+              backgroundPosition: 'right center',
               speaker: '을지문덕',
               speakerI18n: {
                 en: 'Eulji Mundeok',
@@ -485,6 +515,8 @@ export const samgukLate: Era = {
             {
               id: 'salsu-step-3',
               type: 'narration',
+              backgroundImage: '/images/play/bg/samguk-late/bg_sl_012.png',
+              backgroundPosition: 'right center',
               text: '을지문덕은 거짓으로 후퇴하는 전략을 썼습니다. 수나라 별동대 30만을 깊이 유인하며, 하루에도 일곱 번 싸우고 일곱 번 물러났습니다.',
               textI18n: {
                 en: 'Eulji Mundeok employed a feigned retreat strategy. He lured the 300,000-strong Sui detachment deep into Goguryeo territory, fighting and retreating seven times in a single day.',
@@ -499,6 +531,8 @@ export const samgukLate: Era = {
             {
               id: 'salsu-step-4',
               type: 'dialog',
+              backgroundImage: '/images/play/bg/samguk-late/bg_sl_013.png',
+              backgroundPosition: 'right center',
               speaker: '을지문덕',
               speakerI18n: {
                 en: 'Eulji Mundeok',
@@ -523,6 +557,8 @@ export const samgukLate: Era = {
             {
               id: 'salsu-step-5',
               type: 'quiz',
+              backgroundImage: '/images/play/bg/samguk-late/bg_sl_013.png',
+              backgroundPosition: 'right center',
               quiz: {
                 question: '수나라가 고구려를 침공한 해는?',
                 questionI18n: {
@@ -560,6 +596,8 @@ export const samgukLate: Era = {
             {
               id: 'salsu-step-6',
               type: 'narration',
+              backgroundImage: '/images/play/bg/samguk-late/bg_sl_014.png',
+              backgroundPosition: 'right center',
               text: '지치고 굶주린 수나라 군대가 살수(청천강)를 건너려 할 때, 을지문덕이 미리 막아두었던 물을 한꺼번에 터뜨렸습니다!',
               textI18n: {
                 en: 'When the exhausted and starving Sui army tried to cross the Salsu River (Cheongcheon River), Eulji Mundeok released the water he had dammed upstream all at once!',
@@ -574,6 +612,8 @@ export const samgukLate: Era = {
             {
               id: 'salsu-step-7',
               type: 'dialog',
+              backgroundImage: '/images/play/bg/samguk-late/bg_sl_015.png',
+              backgroundPosition: 'right center',
               speaker: '을지문덕',
               speakerI18n: {
                 en: 'Eulji Mundeok',
@@ -598,6 +638,8 @@ export const samgukLate: Era = {
             {
               id: 'salsu-step-8',
               type: 'narration',
+              backgroundImage: '/images/play/bg/samguk-late/bg_sl_016.png',
+              backgroundPosition: 'right center',
               text: '살수를 건너던 수나라 군사들은 갑자기 불어난 물에 휩쓸리고, 고구려군의 공격에 궤멸되었습니다.',
               textI18n: {
                 en: 'The Sui soldiers crossing the Salsu were swept away by the suddenly surging waters and annihilated by the Goguryeo counterattack.',
@@ -612,6 +654,8 @@ export const samgukLate: Era = {
             {
               id: 'salsu-step-9',
               type: 'quiz',
+              backgroundImage: '/images/play/bg/samguk-late/bg_sl_016.png',
+              backgroundPosition: 'right center',
               quiz: {
                 question: '을지문덕의 주요 전략은?',
                 questionI18n: {
@@ -689,6 +733,8 @@ export const samgukLate: Era = {
             {
               id: 'salsu-step-10',
               type: 'quiz',
+              backgroundImage: '/images/play/bg/samguk-late/bg_sl_016.png',
+              backgroundPosition: 'right center',
               quiz: {
                 question: '살수대첩 후 살아 돌아간 수나라 군사는 약 몇 명이었나요?',
                 questionI18n: {
