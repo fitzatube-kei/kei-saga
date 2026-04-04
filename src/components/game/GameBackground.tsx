@@ -7,13 +7,14 @@ import { getEra } from '@/data/eras/content';
 interface GameBackgroundProps {
   eraId: string;
   backgroundImage?: string;
+  backgroundVideo?: string;
   backgroundPosition?: string;
   className?: string;
 }
 
 const PARTICLE_COUNT = 20;
 
-export function GameBackground({ eraId, backgroundImage, backgroundPosition, className }: GameBackgroundProps) {
+export function GameBackground({ eraId, backgroundImage, backgroundVideo, backgroundPosition, className }: GameBackgroundProps) {
   const era = getEra(eraId);
   const baseColor = era?.imageColor ?? '#4B0082';
 
@@ -35,8 +36,20 @@ export function GameBackground({ eraId, backgroundImage, backgroundPosition, cla
     <div
       className={cn('fixed inset-0 z-0 overflow-hidden', className)}
     >
+      {/* Background video layer */}
+      {backgroundVideo && (
+        <video
+          className="absolute inset-0 w-full h-full object-cover"
+          src={backgroundVideo}
+          autoPlay
+          muted
+          playsInline
+          style={backgroundPosition ? { objectPosition: backgroundPosition } : undefined}
+        />
+      )}
+
       {/* Background image layer */}
-      {backgroundImage && (
+      {backgroundImage && !backgroundVideo && (
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-700"
           style={{
@@ -50,7 +63,7 @@ export function GameBackground({ eraId, backgroundImage, backgroundPosition, cla
       <div
         className="absolute inset-0"
         style={{
-          background: backgroundImage
+          background: (backgroundImage || backgroundVideo)
             ? `linear-gradient(180deg, rgba(10,10,15,0.3) 0%, rgba(10,10,15,0.5) 100%)`
             : `
               radial-gradient(ellipse at 30% 20%, ${baseColor}33 0%, transparent 60%),

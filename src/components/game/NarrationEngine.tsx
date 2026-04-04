@@ -122,17 +122,18 @@ export function NarrationEngine({
   const totalQuizzes = event.steps.filter((s) => s.type === 'quiz').length;
   const earnedPoints = calculateReward(event, quizAnswers);
 
-  // Track current background image & position (use most recent step that has one)
-  const { currentBgImage, currentBgPosition } = useMemo(() => {
+  // Track current background image/video & position (use most recent step that has one)
+  const { currentBgImage, currentBgVideo, currentBgPosition } = useMemo(() => {
     for (let i = currentStep; i >= 0; i--) {
-      if (i < event.steps.length && event.steps[i].backgroundImage) {
+      if (i < event.steps.length && (event.steps[i].backgroundImage || event.steps[i].backgroundVideo)) {
         return {
           currentBgImage: event.steps[i].backgroundImage,
+          currentBgVideo: event.steps[i].backgroundVideo,
           currentBgPosition: event.steps[i].backgroundPosition,
         };
       }
     }
-    return { currentBgImage: undefined, currentBgPosition: undefined };
+    return { currentBgImage: undefined, currentBgVideo: undefined, currentBgPosition: undefined };
   }, [currentStep, event.steps]);
 
   // Track current character image override (use most recent step that has one)
@@ -160,7 +161,7 @@ export function NarrationEngine({
   return (
     <div className="relative min-h-screen w-full overflow-hidden">
       {/* Background */}
-      <GameBackground eraId={event.eraId} backgroundImage={currentBgImage} backgroundPosition={currentBgPosition} />
+      <GameBackground eraId={event.eraId} backgroundImage={currentBgImage} backgroundVideo={currentBgVideo} backgroundPosition={currentBgPosition} />
 
       {/* Content wrapper - above background */}
       <div className="relative z-10">

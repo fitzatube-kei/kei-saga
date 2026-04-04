@@ -117,8 +117,8 @@ export const samgukLate: Era = {
             {
               id: 'gwanggaeto-step-1',
               type: 'narration',
-              backgroundImage: '/images/play/bg/samguk-late/bg_sl_001.png',
-              backgroundPosition: 'right center',
+              backgroundVideo: '/images/play/bg/samguk-late/gwangaeto.mp4',
+              backgroundPosition: 'center center',
               text: '391년, 고구려에 18세의 젊은 왕이 즉위하였습니다. 그의 이름은 담덕, 훗날 "광개토경평안호태왕"이라 불리게 될 위대한 정복 군주입니다.',
               textI18n: {
                 en: 'In 391 AD, an 18-year-old king ascended the throne of Goguryeo. His name was Damdeok, the great conqueror who would later be known as "Gwanggaeto the Great — King who Broadly Expanded Territory and Brought Peace."',
@@ -863,6 +863,9 @@ export const samgukLate: Era = {
             {
               id: 'unification-step-1',
               type: 'narration',
+              backgroundImage: '/images/play/bg/samguk-late/bg_sl_017.png',
+              backgroundPosition: 'center center',
+              characterImage: '/images/play/bg/samguk-late/kimyushin001.png',
               text: '7세기, 삼국 간의 전쟁이 격화되었습니다. 신라는 고구려와 백제의 압박 속에서 생존을 위한 선택을 해야 했습니다.',
               textI18n: {
                 en: 'In the 7th century, warfare among the Three Kingdoms intensified. Silla, under pressure from both Goguryeo and Baekje, had to make a choice for survival.',
@@ -877,6 +880,9 @@ export const samgukLate: Era = {
             {
               id: 'unification-step-2',
               type: 'dialog',
+              backgroundImage: '/images/play/bg/samguk-late/bg_sl_018.png',
+              backgroundPosition: 'center center',
+              characterImage: '/images/play/bg/samguk-late/kimyushin001.png',
               speaker: '김유신',
               speakerI18n: { en: 'Kim Yushin', es: 'Kim Yushin', ja: '金庾信', th: 'คิมยูชิน', vi: 'Kim Yushin', 'zh-CN': '金庾信', 'zh-TW': '金庾信' },
               text: '신라가 살아남으려면 강력한 동맹이 필요하니라. 당나라와 손을 잡아 백제와 고구려를 물리쳐야 하리라!',
@@ -893,6 +899,9 @@ export const samgukLate: Era = {
             {
               id: 'unification-step-3',
               type: 'narration',
+              backgroundImage: '/images/play/bg/samguk-late/bg_sl_019.png',
+              backgroundPosition: 'center center',
+              characterImage: '/images/play/bg/samguk-late/kimchunchu001.png',
               text: '648년, 김춘추(태종무열왕)는 당나라로 건너가 나당동맹을 체결하였습니다. 이로써 삼국통일의 큰 그림이 그려졌습니다.',
               textI18n: {
                 en: 'In 648 AD, Kim Chunchu (later King Muyeol) traveled to Tang China and concluded the Silla-Tang Alliance. This laid the grand blueprint for the unification of the Three Kingdoms.',
@@ -907,6 +916,8 @@ export const samgukLate: Era = {
             {
               id: 'unification-step-4',
               type: 'quiz',
+              backgroundImage: '/images/play/bg/samguk-late/bg_sl_020.png',
+              backgroundPosition: 'center center',
               quiz: {
                 question: '신라가 삼국통일을 위해 동맹을 맺은 나라는?',
                 questionI18n: {
@@ -944,6 +955,8 @@ export const samgukLate: Era = {
             {
               id: 'unification-step-5',
               type: 'narration',
+              backgroundImage: '/images/play/bg/samguk-late/bg_sl_021.png',
+              backgroundPosition: 'center center',
               text: '660년, 나당연합군이 백제를 공격하였습니다. 신라군 5만은 김유신이, 당나라 수군 13만은 소정방이 이끌었습니다.',
               textI18n: {
                 en: 'In 660 AD, the Silla-Tang allied forces attacked Baekje. Kim Yushin led 50,000 Silla troops while Su Dingfang commanded 130,000 Tang naval forces.',
@@ -958,6 +971,9 @@ export const samgukLate: Era = {
             {
               id: 'unification-step-6',
               type: 'dialog',
+              backgroundImage: '/images/play/bg/samguk-late/bg_sl_022.png',
+              backgroundPosition: 'center center',
+              characterImage: '/images/play/bg/samguk-late/kimyushin001.png',
               speaker: '김유신',
               speakerI18n: { en: 'Kim Yushin', es: 'Kim Yushin', ja: '金庾信', th: 'คิมยูชิน', vi: 'Kim Yushin', 'zh-CN': '金庾信', 'zh-TW': '金庾信' },
               text: '백제 황산벌에서 계백 장군이 5천 결사대로 막아서고 있다. 목숨을 걸고 싸우겠노라! 신라의 운명이 이 전투에 달려있느니라!',
@@ -974,6 +990,8 @@ export const samgukLate: Era = {
             {
               id: 'unification-step-7',
               type: 'narration',
+              backgroundImage: '/images/play/bg/samguk-late/bg_sl_023.png',
+              backgroundPosition: 'center center',
               text: '치열한 황산벌 전투 끝에 백제의 계백 장군이 전사하고, 사비성이 함락되어 백제는 660년 멸망하였습니다.',
               textI18n: {
                 en: 'After the fierce Battle of Hwangsanbeol, Baekje\'s General Gyebaek fell in battle, and Sabi Fortress was captured. Baekje fell in 660 AD.',
@@ -988,6 +1006,8 @@ export const samgukLate: Era = {
             {
               id: 'unification-step-8',
               type: 'quiz',
+              backgroundImage: '/images/play/bg/samguk-late/bg_sl_023.png',
+              backgroundPosition: 'center center',
               quiz: {
                 question: '백제가 멸망한 해는?',
                 questionI18n: {
@@ -1025,6 +1045,8 @@ export const samgukLate: Era = {
             {
               id: 'unification-step-9',
               type: 'narration',
+              backgroundImage: '/images/play/bg/samguk-late/bg_sl_024.png',
+              backgroundPosition: 'center center',
               text: '백제를 멸망시킨 나당연합군은 이어서 고구려를 공격하였습니다. 연개소문 사후 내분에 빠진 고구려는 크게 약해져 있었습니다.',
               textI18n: {
                 en: 'After defeating Baekje, the Silla-Tang allied forces turned their attention to Goguryeo. Following the death of Yeon Gaesomun, Goguryeo was greatly weakened by internal strife.',
@@ -1039,6 +1061,9 @@ export const samgukLate: Era = {
             {
               id: 'unification-step-10',
               type: 'dialog',
+              backgroundImage: '/images/play/bg/samguk-late/bg_sl_025.png',
+              backgroundPosition: 'center center',
+              characterImage: '/images/play/bg/samguk-late/kimyushin001.png',
               speaker: '김유신',
               speakerI18n: { en: 'Kim Yushin', es: 'Kim Yushin', ja: '金庾信', th: 'คิมยูชิน', vi: 'Kim Yushin', 'zh-CN': '金庾信', 'zh-TW': '金庾信' },
               text: '고구려도 내분으로 흔들리고 있노라. 지금이야말로 삼국통일의 대업을 이룰 때이니라!',
@@ -1055,6 +1080,8 @@ export const samgukLate: Era = {
             {
               id: 'unification-step-11',
               type: 'narration',
+              backgroundImage: '/images/play/bg/samguk-late/bg_sl_026.png',
+              backgroundPosition: 'center center',
               text: '668년, 고구려의 수도 평양성이 함락되었습니다. 보장왕이 항복하며 705년의 고구려 역사가 막을 내렸습니다.',
               textI18n: {
                 en: 'In 668 AD, the Goguryeo capital of Pyongyang Fortress fell. King Bojang surrendered, bringing 705 years of Goguryeo history to a close.',
@@ -1069,6 +1096,8 @@ export const samgukLate: Era = {
             {
               id: 'unification-step-12',
               type: 'quiz',
+              backgroundImage: '/images/play/bg/samguk-late/bg_sl_026.png',
+              backgroundPosition: 'center center',
               quiz: {
                 question: '고구려가 멸망한 해는?',
                 questionI18n: {
@@ -1106,6 +1135,8 @@ export const samgukLate: Era = {
             {
               id: 'unification-step-13',
               type: 'quiz',
+              backgroundImage: '/images/play/bg/samguk-late/bg_sl_026.png',
+              backgroundPosition: 'center center',
               quiz: {
                 question: '삼국 중 먼저 멸망한 나라는?',
                 questionI18n: {
@@ -1138,6 +1169,148 @@ export const samgukLate: Era = {
                   'zh-CN': '百济在660年先灭亡，高句丽在668年灭亡。新罗是统一三国的国家。',
                   'zh-TW': '百濟在660年先滅亡，高句麗在668年滅亡。新羅是統一三國的國家。',
                 },
+              },
+            },
+            {
+              id: 'unification-step-14',
+              type: 'narration',
+              backgroundImage: '/images/play/bg/samguk-late/bg_sl_027.png',
+              backgroundPosition: 'center center',
+              characterImage: '/images/play/bg/samguk-late/gyebaek001.png',
+              text: '계백 장군은 출전 전 가족을 스스로 죽이고 5천 결사대를 이끌고 황산벌에 나섰습니다. "살아서 치욕을 당하느니 차라리 죽음을 택하겠노라!" 백제의 마지막 충신이었습니다.',
+              textI18n: {
+                en: 'Before the battle, General Gyebaek killed his own family to steel his resolve and led 5,000 death-sworn soldiers to Hwangsanbeol. "Rather than live in disgrace, I choose death!" He was Baekje\'s last loyal warrior.',
+                es: 'Antes de la batalla, el General Gyebaek mató a su propia familia para fortalecer su determinación y lideró 5.000 soldados jurados a muerte hacia Hwangsanbeol. "¡Antes morir que vivir en desgracia!" Fue el último guerrero leal de Baekje.',
+                ja: '階伯将軍は出陣前に自ら家族を殺し、5千の決死隊を率いて黄山伐に臨みました。「生きて恥辱を受けるくらいなら死を選ぶ！」百済最後の忠臣でした。',
+                th: 'ก่อนการรบ นายพลเกแบ็กสังหารครอบครัวของตนเองเพื่อเสริมความแน่วแน่ และนำทหารพลีชีพ 5,000 คนไปที่ฮวังซันบอล "สู้ตายดีกว่าอยู่อย่างอัปยศ!" เขาเป็นนักรบผู้ซื่อสัตย์คนสุดท้ายของแพ็กเจ',
+                vi: 'Trước trận đánh, tướng Gyebaek tự tay giết gia đình mình để tỏ quyết tâm, dẫn 5.000 quân cảm tử ra Hwangsanbeol. "Thà chết còn hơn sống nhục!" Ông là trung thần cuối cùng của Bách Tế.',
+                'zh-CN': '阶伯将军出战前亲手杀死家人以表决心，率5千决死队奔赴黄山伐。"与其苟活受辱，不如选择死亡！"他是百济最后的忠臣。',
+                'zh-TW': '階伯將軍出戰前親手殺死家人以表決心，率5千決死隊奔赴黃山伐。「與其苟活受辱，不如選擇死亡！」他是百濟最後的忠臣。',
+              },
+            },
+            {
+              id: 'unification-step-15',
+              type: 'dialog',
+              backgroundImage: '/images/play/bg/samguk-late/bg_sl_028.png',
+              backgroundPosition: 'center center',
+              characterImage: '/images/play/bg/samguk-late/gyebaek001.png',
+              speaker: '계백',
+              speakerI18n: { en: 'Gyebaek', es: 'Gyebaek', ja: '階伯', th: 'เกแบ็ก', vi: 'Gyebaek', 'zh-CN': '阶伯', 'zh-TW': '階伯' },
+              text: '한 번 죽음으로써 충의를 다하겠노라! 5천 결사대여, 오늘 이 황산벌에서 백제의 혼을 보여주자!',
+              textI18n: {
+                en: 'I shall fulfill my loyalty through death! My 5,000 warriors, let us show the soul of Baekje here at Hwangsanbeol today!',
+                es: '¡Cumpliré mi lealtad con la muerte! ¡Mis 5.000 guerreros, mostremos el alma de Baekje aquí en Hwangsanbeol hoy!',
+                ja: '一度の死をもって忠義を尽くそう！5千の決死隊よ、今日この黄山伐で百済の魂を見せよう！',
+                th: 'ข้าจะแสดงความจงรักภักดีด้วยความตาย! ทหาร 5,000 คนของข้า วันนี้ที่ฮวังซันบอลนี้ ให้เราแสดงวิญญาณของแพ็กเจ!',
+                vi: 'Ta sẽ tận trung bằng cái chết! 5.000 quân cảm tử, hôm nay tại Hwangsanbeol này, hãy thể hiện hồn thiêng Bách Tế!',
+                'zh-CN': '以一死尽忠义！五千决死队，今日在这黄山伐展现百济之魂！',
+                'zh-TW': '以一死盡忠義！五千決死隊，今日在這黃山伐展現百濟之魂！',
+              },
+            },
+            {
+              id: 'unification-step-16',
+              type: 'narration',
+              backgroundImage: '/images/play/bg/samguk-late/bg_sl_029.png',
+              backgroundPosition: 'center center',
+              text: '그러나 백제와 고구려를 멸망시킨 당나라는 한반도 전체를 지배하려는 야욕을 드러냈습니다. 옛 백제, 고구려 땅에 도독부를 설치하고, 심지어 신라마저 계림도독부로 삼으려 하였습니다.',
+              textI18n: {
+                en: 'However, after destroying Baekje and Goguryeo, Tang China revealed its ambition to dominate the entire Korean Peninsula. It established military governorships in former Baekje and Goguryeo lands, and even attempted to make Silla a Tang protectorate called the Gyerim Commandery.',
+                es: 'Sin embargo, después de destruir Baekje y Goguryeo, la China Tang reveló su ambición de dominar toda la península coreana. Estableció gobernaciones militares en las antiguas tierras de Baekje y Goguryeo, e incluso intentó convertir a Silla en un protectorado Tang llamado la Comandancia Gyerim.',
+                ja: 'しかし百済と高句麗を滅ぼした唐は、朝鮮半島全体を支配しようとする野心を露わにしました。旧百済・高句麗の地に都督府を設置し、新羅さえも鶏林都督府にしようとしました。',
+                th: 'อย่างไรก็ตาม หลังจากทำลายแพ็กเจและโคกูรยอ จีนถังก็เปิดเผยความทะเยอทะยานที่จะครอบครองคาบสมุทรเกาหลีทั้งหมด โดยตั้งเขตปกครองทหารในดินแดนแพ็กเจและโคกูรยอเดิม และพยายามทำให้ชิลลาเป็นรัฐในอารักขาชื่อเขตปกครองคเยริม',
+                vi: 'Tuy nhiên, sau khi diệt Bách Tế và Cao Câu Ly, nhà Đường bộc lộ dã tâm thống trị toàn bán đảo Triều Tiên. Họ lập đô đốc phủ trên đất Bách Tế, Cao Câu Ly cũ, thậm chí định biến Tân La thành Kê Lâm đô đốc phủ.',
+                'zh-CN': '然而，灭亡百济和高句丽后，唐朝暴露了统治整个朝鲜半岛的野心。在原百济、高句丽故地设置都督府，甚至企图将新罗也设为鸡林都督府。',
+                'zh-TW': '然而，滅亡百濟和高句麗後，唐朝暴露了統治整個朝鮮半島的野心。在原百濟、高句麗故地設置都督府，甚至企圖將新羅也設為雞林都督府。',
+              },
+            },
+            {
+              id: 'unification-step-17',
+              type: 'dialog',
+              backgroundImage: '/images/play/bg/samguk-late/bg_sl_030.png',
+              backgroundPosition: 'center center',
+              characterImage: '/images/play/bg/samguk-late/kingmunmu001.png',
+              speaker: '문무왕',
+              speakerI18n: { en: 'King Munmu', es: 'Rey Munmu', ja: '文武王', th: 'พระเจ้ามุนมู', vi: 'Vua Munmu', 'zh-CN': '文武王', 'zh-TW': '文武王' },
+              text: '당나라가 우리 신라마저 삼키려 하는구나! 백제와 고구려의 유민들과 힘을 합쳐 당나라 세력을 이 땅에서 몰아내겠노라!',
+              textI18n: {
+                en: 'Tang dares to swallow even our Silla! I shall unite with the remnants of Baekje and Goguryeo and drive the Tang forces from this land!',
+                es: '¡Tang se atreve a tragarse incluso nuestra Silla! ¡Me uniré con los remanentes de Baekje y Goguryeo y expulsaré las fuerzas Tang de esta tierra!',
+                ja: '唐が我が新羅まで飲み込もうとしているのか！百済と高句麗の遺民たちと力を合わせ、唐の勢力をこの地から追い出す！',
+                th: 'ถังกล้าที่จะกลืนกินแม้แต่ชิลลาของเรา! ข้าจะร่วมมือกับชาวแพ็กเจและโคกูรยอที่เหลือ ขับไล่กองทัพถังออกจากแผ่นดินนี้!',
+                vi: 'Nhà Đường dám nuốt chửng cả Tân La ta! Ta sẽ liên kết với di dân Bách Tế, Cao Câu Ly, đuổi thế lực nhà Đường khỏi mảnh đất này!',
+                'zh-CN': '唐朝竟然连我们新罗也要吞并！我要联合百济和高句丽的遗民，将唐朝势力驱逐出这片土地！',
+                'zh-TW': '唐朝竟然連我們新羅也要吞併！我要聯合百濟和高句麗的遺民，將唐朝勢力驅逐出這片土地！',
+              },
+            },
+            {
+              id: 'unification-step-18',
+              type: 'narration',
+              backgroundImage: '/images/play/bg/samguk-late/bg_sl_031.png',
+              backgroundPosition: 'center center',
+              text: '675년 매소성 전투에서 신라군은 당나라 20만 대군을 대파하였습니다. 이듬해 676년, 기벌포 해전에서도 당나라 수군을 격파하며, 마침내 당나라 세력을 한반도에서 완전히 몰아냈습니다.',
+              textI18n: {
+                en: 'In 675 AD, Silla\'s forces crushed the 200,000-strong Tang army at the Battle of Maesoseong. The following year in 676 AD, they also defeated the Tang navy at the Battle of Gibeolpo, finally driving Tang forces completely off the Korean Peninsula.',
+                es: 'En el 675 d.C., las fuerzas de Silla aplastaron al ejército Tang de 200.000 hombres en la Batalla de Maesoseong. Al año siguiente, en el 676 d.C., también derrotaron a la armada Tang en la Batalla de Gibeolpo, expulsando finalmente las fuerzas Tang de la península coreana.',
+                ja: '675年の買肖城の戦いで新羅軍は唐の20万大軍を大破しました。翌676年には伎伐浦海戦でも唐の水軍を撃破し、ついに唐の勢力を朝鮮半島から完全に追い出しました。',
+                th: 'ในปี ค.ศ. 675 กองทัพชิลลาบดขยี้กองทัพถัง 200,000 นายที่ยุทธการแมโซซอง ปีถัดมา ค.ศ. 676 ยังเอาชนะกองทัพเรือถังที่ยุทธนาวีกีบอลโพ ขับไล่กองทัพถังออกจากคาบสมุทรเกาหลีอย่างสมบูรณ์',
+                vi: 'Năm 675, quân Tân La đại phá 20 vạn quân Đường tại trận Maesoseong. Năm sau 676, lại đánh bại thủy quân Đường tại trận Gibeolpo, hoàn toàn đuổi thế lực nhà Đường khỏi bán đảo Triều Tiên.',
+                'zh-CN': '675年买肖城之战，新罗军大破唐军20万。次年676年，又在伎伐浦海战中击败唐朝水军，终于将唐朝势力彻底驱逐出朝鲜半岛。',
+                'zh-TW': '675年買肖城之戰，新羅軍大破唐軍20萬。次年676年，又在伎伐浦海戰中擊敗唐朝水軍，終於將唐朝勢力徹底驅逐出朝鮮半島。',
+              },
+            },
+            {
+              id: 'unification-step-19',
+              type: 'quiz',
+              backgroundImage: '/images/play/bg/samguk-late/bg_sl_031.png',
+              backgroundPosition: 'center center',
+              quiz: {
+                question: '신라가 당나라 세력을 한반도에서 몰아낸 결정적 전투는?',
+                questionI18n: {
+                  en: 'What was the decisive battle where Silla drove Tang forces from the Korean Peninsula?',
+                  es: '¿Cuál fue la batalla decisiva en la que Silla expulsó las fuerzas Tang de la península coreana?',
+                  ja: '新羅が唐の勢力を朝鮮半島から追い出した決定的な戦いは？',
+                  th: 'ยุทธการใดที่ชิลลาขับไล่กองทัพถังออกจากคาบสมุทรเกาหลี?',
+                  vi: 'Trận đánh quyết định nào Tân La đuổi quân Đường khỏi bán đảo?',
+                  'zh-CN': '新罗将唐朝势力逐出朝鲜半岛的决定性战役是？',
+                  'zh-TW': '新羅將唐朝勢力逐出朝鮮半島的決定性戰役是？',
+                },
+                options: ['살수대첩', '황산벌 전투', '매소성 전투', '관도대전'],
+                optionsI18n: {
+                  en: ['Battle of Salsu', 'Battle of Hwangsanbeol', 'Battle of Maesoseong', 'Battle of Guandu'],
+                  es: ['Batalla de Salsu', 'Batalla de Hwangsanbeol', 'Batalla de Maesoseong', 'Batalla de Guandu'],
+                  ja: ['薩水大捷', '黄山伐の戦い', '買肖城の戦い', '官渡の戦い'],
+                  th: ['ยุทธการซัลซู', 'ยุทธการฮวังซันบอล', 'ยุทธการแมโซซอง', 'ยุทธการกวานตู'],
+                  vi: ['Trận Salsu', 'Trận Hwangsanbeol', 'Trận Maesoseong', 'Trận Quan Độ'],
+                  'zh-CN': ['萨水大捷', '黄山伐之战', '买肖城之战', '官渡之战'],
+                  'zh-TW': ['薩水大捷', '黃山伐之戰', '買肖城之戰', '官渡之戰'],
+                },
+                correctIndex: 2,
+                explanation: '675년 매소성 전투에서 신라는 당나라 20만 대군을 격파하고, 676년 기벌포 해전에서도 승리하여 당나라를 한반도에서 몰아냈습니다. 이로써 진정한 삼국통일이 완성되었습니다.',
+                explanationI18n: {
+                  en: 'At the Battle of Maesoseong in 675 AD, Silla defeated the 200,000-strong Tang army, and also won the Battle of Gibeolpo in 676 AD, driving Tang from the peninsula. This completed the true unification of the Three Kingdoms.',
+                  es: 'En la Batalla de Maesoseong en el 675 d.C., Silla derrotó al ejército Tang de 200.000 hombres, y también ganó la Batalla de Gibeolpo en el 676 d.C., expulsando a Tang de la península. Esto completó la verdadera unificación de los Tres Reinos.',
+                  ja: '675年の買肖城の戦いで新羅は唐の20万大軍を撃破し、676年の伎伐浦海戦でも勝利して唐を半島から追い出しました。これにより真の三国統一が完成しました。',
+                  th: 'ในยุทธการแมโซซองปี ค.ศ. 675 ชิลลาเอาชนะกองทัพถัง 200,000 นาย และชนะยุทธนาวีกีบอลโพในปี ค.ศ. 676 ขับไล่ถังออกจากคาบสมุทร นี่ทำให้การรวมสามอาณาจักรเสร็จสมบูรณ์อย่างแท้จริง',
+                  vi: 'Tại trận Maesoseong năm 675, Tân La đánh bại 20 vạn quân Đường, và cũng thắng trận Gibeolpo năm 676, đuổi nhà Đường khỏi bán đảo. Điều này hoàn thành việc thống nhất Tam Quốc thực sự.',
+                  'zh-CN': '675年买肖城之战，新罗击败唐军20万，676年伎伐浦海战也获胜，将唐朝驱逐出半岛。至此真正的三国统一宣告完成。',
+                  'zh-TW': '675年買肖城之戰，新羅擊敗唐軍20萬，676年伎伐浦海戰也獲勝，將唐朝驅逐出半島。至此真正的三國統一宣告完成。',
+                },
+              },
+            },
+            {
+              id: 'unification-step-20',
+              type: 'narration',
+              backgroundImage: '/images/play/bg/samguk-late/bg_sl_032.png',
+              backgroundPosition: 'center center',
+              text: '676년, 신라는 대동강 이남의 한반도를 통일하였습니다. 비록 고구려의 만주 영토는 잃었지만, 외세를 물리치고 하나의 나라를 이룬 최초의 통일이었습니다. 이로써 삼국시대는 막을 내리고 통일신라의 시대가 열렸습니다.',
+              textI18n: {
+                en: 'In 676 AD, Silla unified the Korean Peninsula south of the Daedong River. Although Goguryeo\'s Manchurian territories were lost, this was the first unification achieved by driving out foreign powers and forging one nation. Thus the Three Kingdoms era ended, and the Unified Silla period began.',
+                es: 'En el 676 d.C., Silla unificó la península coreana al sur del río Daedong. Aunque se perdieron los territorios manchúes de Goguryeo, esta fue la primera unificación lograda al expulsar potencias extranjeras y forjar una nación. Así terminó la era de los Tres Reinos y comenzó el período de Silla Unificada.',
+                ja: '676年、新羅は大同江以南の朝鮮半島を統一しました。高句麗の満州領土は失われましたが、外勢を退けて一つの国を成した最初の統一でした。こうして三国時代は幕を下ろし、統一新羅の時代が始まりました。',
+                th: 'ในปี ค.ศ. 676 ชิลลารวมคาบสมุทรเกาหลีทางใต้ของแม่น้ำแทดง แม้ดินแดนแมนจูเรียของโคกูรยอจะสูญเสียไป แต่นี่เป็นการรวมชาติครั้งแรกที่สำเร็จด้วยการขับไล่อำนาจต่างชาติ ยุคสามอาณาจักรสิ้นสุดลง และยุคชิลลาที่รวมเป็นหนึ่งก็เริ่มต้นขึ้น',
+                vi: 'Năm 676, Tân La thống nhất bán đảo Triều Tiên phía nam sông Đại Đồng. Dù mất vùng Mãn Châu của Cao Câu Ly, đây là lần thống nhất đầu tiên đạt được bằng cách đuổi ngoại bang, lập nên một quốc gia. Thời đại Tam Quốc kết thúc, mở ra thời kỳ Tân La thống nhất.',
+                'zh-CN': '676年，新罗统一了大同江以南的朝鲜半岛。虽然失去了高句丽的满洲领土，但这是驱逐外势、建立统一国家的首次统一。至此三国时代落幕，统一新罗时代开启。',
+                'zh-TW': '676年，新羅統一了大同江以南的朝鮮半島。雖然失去了高句麗的滿洲領土，但這是驅逐外勢、建立統一國家的首次統一。至此三國時代落幕，統一新羅時代開啟。',
               },
             },
           ],

@@ -68,6 +68,7 @@ export interface DialogStep {
   textI18n?: MultilingualText;
   quiz?: Quiz;
   backgroundImage?: string;
+  backgroundVideo?: string;
   backgroundPosition?: string;
   characterImage?: string;
 }

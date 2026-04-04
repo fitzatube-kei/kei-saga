@@ -260,7 +260,7 @@ export const samgukEarly: Era = {
               characterImage: '/images/play/bg/samguk-early/Hyeokgeose001.png',
               type: 'dialog',
               backgroundImage: '/images/play/bg/samguk-early/bg_se_006.png',
-              backgroundPosition: 'right center',
+              backgroundPosition: 'right bottom',
               speaker: '박혁거세',
               speakerI18n: {
                 en: 'Bak Hyeokgeose',
@@ -286,7 +286,7 @@ export const samgukEarly: Era = {
               id: 'silla-founding-step-8',
               type: 'quiz',
               backgroundImage: '/images/play/bg/samguk-early/bg_se_006.png',
-              backgroundPosition: 'right center',
+              backgroundPosition: 'right bottom',
               quiz: {
                 question: '박혁거세는 어디에서 태어났나요?',
                 questionI18n: {
@@ -529,7 +529,7 @@ export const samgukEarly: Era = {
               id: 'goguryeo-founding-step-7',
               type: 'narration',
               backgroundImage: '/images/play/bg/samguk-early/bg_se_012.png',
-              backgroundPosition: 'left center',
+              backgroundPosition: 'center center',
               text: '기원전 37년, 주몽은 졸본(卒本) 지역에 도착하여 마침내 고구려를 건국하였습니다.',
               textI18n: {
                 en: 'In 37 BC, Jumong arrived in the Jolbon region and finally founded Goguryeo.',
@@ -545,7 +545,7 @@ export const samgukEarly: Era = {
               id: 'goguryeo-founding-step-8',
               type: 'dialog',
               backgroundImage: '/images/play/bg/samguk-early/bg_se_013.png',
-              backgroundPosition: 'right center',
+              backgroundPosition: 'center top',
               speaker: '주몽',
               speakerI18n: {
                 en: 'Jumong',
