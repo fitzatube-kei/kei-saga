@@ -67,14 +67,18 @@ export default function EraPage() {
 
         {/* Content */}
         <div className="relative z-10 mx-auto max-w-4xl px-4 pt-20 pb-6 sm:pb-8 md:px-8 lg:px-12">
-          {/* Breadcrumb */}
-          <nav className="mb-4 flex items-center gap-2 text-sm text-white/50">
-            <Link href="/play" className="transition-colors hover:text-gold">
-              {t('nav.play')}
-            </Link>
-            <span>/</span>
-            <span className="text-white/80">{lg.eraName(era)}</span>
-          </nav>
+          {/* Back button */}
+          <div className="mb-4">
+            <button
+              onClick={() => router.push('/play')}
+              className="flex items-center gap-1.5 rounded-full bg-black/30 px-3 py-1.5 text-sm text-white/70 backdrop-blur-sm transition-colors hover:bg-black/50 hover:text-gold"
+            >
+              <svg width="16" height="16" viewBox="0 0 20 20" fill="none">
+                <path d="M13 4l-6 6 6 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+              플레이 홈
+            </button>
+          </div>
 
           {/* Era icon + title */}
           <div className="flex items-center gap-3">

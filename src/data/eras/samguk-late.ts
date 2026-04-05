@@ -176,7 +176,7 @@ export const samgukLate: Era = {
               id: 'gwanggaeto-step-4',
               type: 'dialog',
               backgroundImage: '/images/play/bg/samguk-late/bg_sl_004.png',
-              backgroundPosition: 'right center',
+              backgroundPosition: 'center center',
               speaker: '광개토대왕',
               speakerI18n: {
                 en: 'Gwanggaeto the Great',
@@ -257,7 +257,7 @@ export const samgukLate: Era = {
               id: 'gwanggaeto-step-7',
               type: 'narration',
               backgroundImage: '/images/play/bg/samguk-late/bg_sl_006.png',
-              backgroundPosition: 'right center',
+              backgroundPosition: 'center center',
               text: '광개토대왕은 재위 22년간 64개 성과 1,400개의 마을을 정복하여 고구려 역사상 가장 넓은 영토를 이룩하였습니다.',
               textI18n: {
                 en: 'During his 22-year reign, Gwanggaeto the Great conquered 64 fortresses and 1,400 villages, achieving the largest territorial extent in Goguryeo history.',
@@ -273,7 +273,7 @@ export const samgukLate: Era = {
               id: 'gwanggaeto-step-8',
               type: 'dialog',
               backgroundImage: '/images/play/bg/samguk-late/bg_sl_007.png',
-              backgroundPosition: 'right center',
+              backgroundPosition: 'center center',
               speaker: '광개토대왕',
               speakerI18n: {
                 en: 'Gwanggaeto the Great',
@@ -299,7 +299,7 @@ export const samgukLate: Era = {
               id: 'gwanggaeto-step-9',
               type: 'narration',
               backgroundImage: '/images/play/bg/samguk-late/bg_sl_008.png',
-              backgroundPosition: 'right center',
+              backgroundPosition: 'center center',
               text: '광개토대왕이 세상을 떠난 후, 아들 장수왕은 아버지의 업적을 기리기 위해 거대한 비석을 세웠으니, 이것이 바로 광개토대왕비입니다.',
               textI18n: {
                 en: 'After Gwanggaeto the Great passed away, his son King Jangsu erected a massive stele to honor his father\'s achievements — this is the Gwanggaeto Stele.',
@@ -315,7 +315,7 @@ export const samgukLate: Era = {
               id: 'gwanggaeto-step-10',
               type: 'quiz',
               backgroundImage: '/images/play/bg/samguk-late/bg_sl_008.png',
-              backgroundPosition: 'right center',
+              backgroundPosition: 'center center',
               quiz: {
                 question: '광개토대왕비를 세운 사람은?',
                 questionI18n: {

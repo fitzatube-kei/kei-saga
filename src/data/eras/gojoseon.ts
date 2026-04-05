@@ -134,7 +134,7 @@ export const gojoseon: Era = {
               id: 'dangun-myth-step-2',
               type: 'dialog',
               backgroundImage: '/images/play/bg/gojoseon/bg_002.png',
-              backgroundPosition: 'right center',
+              backgroundPosition: 'center center',
               speaker: '환웅',
               speakerI18n: {
                 en: 'Hwanung',

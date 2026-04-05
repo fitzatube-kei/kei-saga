@@ -30,9 +30,9 @@ export function CharacterSprite({
         <Image
           src={character.image}
           alt={lg.charName(character)}
-          width={300}
-          height={468}
-          className="max-h-[67vh] max-w-[60vw] drop-shadow-[0_0_30px_rgba(212,160,23,0.4)] object-contain"
+          width={588}
+          height={917}
+          className="max-h-[64vh] max-w-[72vw] sm:max-w-[48vw] drop-shadow-[0_0_30px_rgba(212,160,23,0.4)] object-contain"
           unoptimized
           priority
         />

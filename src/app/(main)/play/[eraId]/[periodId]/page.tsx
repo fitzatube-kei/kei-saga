@@ -89,20 +89,17 @@ export default function PeriodPage() {
           {/* Header overlaid on banner */}
           <div className="absolute inset-x-0 bottom-0 px-4 pb-5 md:px-8 lg:px-12">
             <div className="mx-auto max-w-4xl">
-              <nav className="mb-3 flex items-center gap-2 text-sm text-white/60">
-                <Link href="/play" className="transition-colors hover:text-gold">
-                  {t('nav.play')}
-                </Link>
-                <span>/</span>
-                <Link
-                  href={`/play/${era.id}`}
-                  className="transition-colors hover:text-gold"
+              <div className="mb-3 flex items-center gap-3">
+                <button
+                  onClick={() => router.push(`/play/${era.id}`)}
+                  className="flex items-center gap-1.5 rounded-full bg-black/30 px-3 py-1.5 text-sm text-white/70 backdrop-blur-sm transition-colors hover:bg-black/50 hover:text-gold"
                 >
+                  <svg width="16" height="16" viewBox="0 0 20 20" fill="none">
+                    <path d="M13 4l-6 6 6 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
                   {lg.eraName(era)}
-                </Link>
-                <span>/</span>
-                <span className="text-gold">{lg.periodName(period)}</span>
-              </nav>
+                </button>
+              </div>
               <h1 className="text-2xl font-bold text-gold drop-shadow-lg md:text-3xl">
                 {lg.periodName(period)}
               </h1>
@@ -116,20 +113,17 @@ export default function PeriodPage() {
         {/* Fallback header when no hero image */}
         {!heroImage && (
           <>
-            <nav className="mb-6 flex items-center gap-2 text-sm text-white/50">
-              <Link href="/play" className="transition-colors hover:text-gold">
-                {t('nav.play')}
-              </Link>
-              <span>/</span>
-              <Link
-                href={`/play/${era.id}`}
-                className="transition-colors hover:text-gold"
+            <div className="mb-4">
+              <button
+                onClick={() => router.push(`/play/${era.id}`)}
+                className="flex items-center gap-1.5 rounded-full bg-white/5 px-3 py-1.5 text-sm text-white/60 transition-colors hover:bg-white/10 hover:text-gold"
               >
+                <svg width="16" height="16" viewBox="0 0 20 20" fill="none">
+                  <path d="M13 4l-6 6 6 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
                 {lg.eraName(era)}
-              </Link>
-              <span>/</span>
-              <span className="text-gold">{lg.periodName(period)}</span>
-            </nav>
+              </button>
+            </div>
             <div className="mb-8">
               <h1 className="text-2xl font-bold text-gold md:text-3xl">
                 {lg.periodName(period)}
