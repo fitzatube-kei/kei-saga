@@ -116,6 +116,9 @@ export const balhae: Era = {
             {
               id: 'balhae-found-1',
               type: 'narration',
+              backgroundImage: '/images/play/bg/balhae/bg_bh_001.png',
+              backgroundPosition: 'center center',
+              characterImage: '/images/play/bg/balhae/daejoyeong001.png',
               text: '668년 고구려가 멸망한 후, 당나라는 고구려 유민들을 영주(營州) 지역으로 강제 이주시켰습니다. 그러나 고구려의 후예들은 나라를 되찾겠다는 꿈을 포기하지 않았습니다.',
               textI18n: {
                 en: 'After Goguryeo fell in 668 AD, the Tang dynasty forcibly relocated Goguryeo refugees to the Yingzhou region. However, the descendants of Goguryeo never gave up their dream of restoring their nation.',
@@ -130,6 +133,9 @@ export const balhae: Era = {
             {
               id: 'balhae-found-2',
               type: 'dialog',
+              backgroundImage: '/images/play/bg/balhae/bg_bh_001.png',
+              backgroundPosition: 'center center',
+              characterImage: '/images/play/bg/balhae/daejoyeong001.png',
               speaker: '대조영',
               speakerI18n: {
                 en: 'Dae Joyeong',
@@ -154,6 +160,8 @@ export const balhae: Era = {
             {
               id: 'balhae-found-3',
               type: 'narration',
+              backgroundImage: '/images/play/bg/balhae/bg_bh_002.png',
+              backgroundPosition: 'center center',
               text: '696년, 거란족의 이진충이 당나라에 반란을 일으켰습니다. 이 혼란을 틈타 대조영의 아버지 걸걸중상과 말갈의 걸사비우가 고구려 유민을 이끌고 동쪽으로 이동하기 시작했습니다.',
               textI18n: {
                 en: 'In 696 AD, the Khitan leader Li Jinzhong revolted against the Tang dynasty. Seizing this opportunity, Dae Joyeong\'s father Geolgeol Jungsang and the Mohe leader Geolsa Biu led Goguryeo refugees eastward.',
@@ -168,6 +176,9 @@ export const balhae: Era = {
             {
               id: 'balhae-found-4',
               type: 'dialog',
+              backgroundImage: '/images/play/bg/balhae/bg_bh_002.png',
+              backgroundPosition: 'center center',
+              characterImage: '/images/play/bg/balhae/daejoyeong001.png',
               speaker: '대조영',
               speakerI18n: {
                 en: 'Dae Joyeong',
@@ -192,6 +203,8 @@ export const balhae: Era = {
             {
               id: 'balhae-found-5',
               type: 'quiz',
+              backgroundImage: '/images/play/bg/balhae/bg_bh_003.png',
+              backgroundPosition: 'center center',
               quiz: {
                 question: '대조영이 발해를 건국할 수 있었던 직접적인 계기는?',
                 questionI18n: {
@@ -269,6 +282,8 @@ export const balhae: Era = {
             {
               id: 'balhae-found-6',
               type: 'narration',
+              backgroundImage: '/images/play/bg/balhae/bg_bh_004.png',
+              backgroundPosition: 'center center',
               text: '당나라는 이해고가 이끄는 추격군을 보냈습니다. 698년, 대조영은 천문령 전투에서 당나라 군대를 크게 물리쳤습니다.',
               textI18n: {
                 en: 'Tang sent a pursuing army led by Li Haigu. In 698 AD, Dae Joyeong decisively defeated the Tang forces at the Battle of Tianmenling.',
@@ -283,6 +298,9 @@ export const balhae: Era = {
             {
               id: 'balhae-found-7',
               type: 'dialog',
+              backgroundImage: '/images/play/bg/balhae/bg_bh_004.png',
+              backgroundPosition: 'center center',
+              characterImage: '/images/play/bg/balhae/daejoyeong001.png',
               speaker: '대조영',
               speakerI18n: {
                 en: 'Dae Joyeong',
@@ -307,6 +325,8 @@ export const balhae: Era = {
             {
               id: 'balhae-found-8',
               type: 'narration',
+              backgroundImage: '/images/play/bg/balhae/bg_bh_005.png',
+              backgroundPosition: 'center center',
               text: '698년, 대조영은 동모산(지금의 중국 지린성)에 도읍을 정하고 나라를 세웠습니다. 처음 국호는 진(振)이었으나, 713년 당나라로부터 "발해군왕"으로 책봉받으며 국호를 발해로 바꾸었습니다.',
               textI18n: {
                 en: 'In 698 AD, Dae Joyeong established the capital at Dongmo Mountain (in present-day Jilin Province, China) and founded a kingdom. It was initially called Jin (振), but the name was changed to Balhae in 713 when Tang recognized him as "King of Balhae Commandery."',
@@ -321,6 +341,8 @@ export const balhae: Era = {
             {
               id: 'balhae-found-9',
               type: 'quiz',
+              backgroundImage: '/images/play/bg/balhae/bg_bh_006.png',
+              backgroundPosition: 'center center',
               quiz: {
                 question: '대조영이 당나라 추격군을 크게 물리친 전투는?',
                 questionI18n: {
@@ -358,6 +380,8 @@ export const balhae: Era = {
             {
               id: 'balhae-found-10',
               type: 'quiz',
+              backgroundImage: '/images/play/bg/balhae/bg_bh_006.png',
+              backgroundPosition: 'center center',
               quiz: {
                 question: '발해 건국 전 최초 국호는?',
                 questionI18n: {

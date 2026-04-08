@@ -116,6 +116,9 @@ export const unifiedSilla: Era = {
             {
               id: 'bulguksa-step-1',
               type: 'narration',
+              backgroundImage: '/images/play/bg/unified-silla/bg_us_001.png',
+              backgroundPosition: 'center center',
+              characterImage: '/images/play/bg/unified-silla/kimdaeseong001.png',
               text: '751년, 통일신라 경덕왕 시대. 재상 김대성이 부모에 대한 효심으로 큰 불사(佛事)를 시작하였습니다.',
               textI18n: {
                 en: 'In 751 AD, during the reign of King Gyeongdeok of Unified Silla, Chief Minister Kim Daeseong began a great Buddhist project out of filial devotion to his parents.',
@@ -130,6 +133,9 @@ export const unifiedSilla: Era = {
             {
               id: 'bulguksa-step-2',
               type: 'dialog',
+              backgroundImage: '/images/play/bg/unified-silla/bg_us_002.png',
+              backgroundPosition: 'center center',
+              characterImage: '/images/play/bg/unified-silla/kimdaeseong001.png',
               speaker: '김대성',
               speakerI18n: {
                 en: 'Kim Daeseong',
@@ -154,6 +160,8 @@ export const unifiedSilla: Era = {
             {
               id: 'bulguksa-step-3',
               type: 'narration',
+              backgroundImage: '/images/play/bg/unified-silla/bg_us_003.png',
+              backgroundPosition: 'center center',
               text: '불국사는 부처의 나라를 이 땅에 구현한다는 뜻으로 지어졌습니다. 청운교, 백운교, 자하문을 거쳐 극락의 세계로 들어가는 구조입니다.',
               textI18n: {
                 en: 'Bulguksa was built to manifest the land of Buddha on earth. Its structure leads visitors through Cheongungyo and Baegungyo bridges and Jahamun Gate into the realm of paradise.',
@@ -168,6 +176,9 @@ export const unifiedSilla: Era = {
             {
               id: 'bulguksa-step-4',
               type: 'dialog',
+              backgroundImage: '/images/play/bg/unified-silla/bg_us_004.png',
+              backgroundPosition: 'center center',
+              characterImage: '/images/play/bg/unified-silla/kimdaeseong001.png',
               speaker: '김대성',
               speakerI18n: {
                 en: 'Kim Daeseong',
@@ -192,6 +203,8 @@ export const unifiedSilla: Era = {
             {
               id: 'bulguksa-step-5',
               type: 'quiz',
+              backgroundImage: '/images/play/bg/unified-silla/bg_us_004.png',
+              backgroundPosition: 'center center',
               quiz: {
                 question: '김대성이 석굴암을 지은 이유는?',
                 questionI18n: {
@@ -269,6 +282,8 @@ export const unifiedSilla: Era = {
             {
               id: 'bulguksa-step-6',
               type: 'narration',
+              backgroundImage: '/images/play/bg/unified-silla/bg_us_005.png',
+              backgroundPosition: 'center center',
               text: '석굴암은 토함산 중턱에 인공으로 석굴을 만들고 그 안에 본존불을 모신 걸작입니다. 과학적인 설계로 습기를 자연 조절하는 놀라운 기술이 적용되었습니다.',
               textI18n: {
                 en: 'Seokguram Grotto is a masterpiece — an artificial stone cave built midway up Mount Toham, housing the main Buddha statue. It features remarkable engineering that naturally regulates humidity through scientific design.',
@@ -283,6 +298,9 @@ export const unifiedSilla: Era = {
             {
               id: 'bulguksa-step-7',
               type: 'dialog',
+              backgroundImage: '/images/play/bg/unified-silla/bg_us_006.png',
+              backgroundPosition: 'center center',
+              characterImage: '/images/play/bg/unified-silla/kimdaeseong001.png',
               speaker: '김대성',
               speakerI18n: {
                 en: 'Kim Daeseong',
@@ -307,6 +325,8 @@ export const unifiedSilla: Era = {
             {
               id: 'bulguksa-step-8',
               type: 'narration',
+              backgroundImage: '/images/play/bg/unified-silla/bg_us_007.png',
+              backgroundPosition: 'center center',
               text: '불국사의 다보탑과 석가탑은 신라 석탑 예술의 정수입니다. 석가탑에서는 세계에서 가장 오래된 목판 인쇄물인 무구정광대다라니경이 발견되었습니다.',
               textI18n: {
                 en: 'Bulguksa\'s Dabotap and Seokgatap pagodas represent the pinnacle of Silla stone pagoda art. The Mugujeonggwang Dharani Sutra, the world\'s oldest known woodblock print, was discovered inside Seokgatap.',
@@ -321,6 +341,8 @@ export const unifiedSilla: Era = {
             {
               id: 'bulguksa-step-9',
               type: 'quiz',
+              backgroundImage: '/images/play/bg/unified-silla/bg_us_007.png',
+              backgroundPosition: 'center center',
               quiz: {
                 question: '불국사 석가탑에서 발견된 것은?',
                 questionI18n: {
@@ -398,6 +420,8 @@ export const unifiedSilla: Era = {
             {
               id: 'bulguksa-step-10',
               type: 'quiz',
+              backgroundImage: '/images/play/bg/unified-silla/bg_us_007.png',
+              backgroundPosition: 'center center',
               quiz: {
                 question: '불국사와 석굴암이 지어지기 시작한 해는?',
                 questionI18n: {
@@ -499,6 +523,9 @@ export const unifiedSilla: Era = {
             {
               id: 'jangbogo-step-1',
               type: 'narration',
+              backgroundImage: '/images/play/bg/unified-silla/bg_us_008.png',
+              backgroundPosition: 'center center',
+              characterImage: '/images/play/bg/unified-silla/jangbogo001.png',
               text: '9세기 초, 당나라에서 무예를 닦고 군인으로 활약하던 장보고는 충격적인 현실을 목격합니다.',
               textI18n: {
                 en: 'In the early 9th century, Jang Bogo, who had trained in martial arts and served as a soldier in Tang China, witnessed a shocking reality.',
@@ -513,6 +540,9 @@ export const unifiedSilla: Era = {
             {
               id: 'jangbogo-step-2',
               type: 'dialog',
+              backgroundImage: '/images/play/bg/unified-silla/bg_us_009.png',
+              backgroundPosition: 'center center',
+              characterImage: '/images/play/bg/unified-silla/jangbogo001.png',
               speaker: '장보고',
               speakerI18n: {
                 en: 'Jang Bogo',
@@ -537,6 +567,8 @@ export const unifiedSilla: Era = {
             {
               id: 'jangbogo-step-3',
               type: 'narration',
+              backgroundImage: '/images/play/bg/unified-silla/bg_us_010.png',
+              backgroundPosition: 'center center',
               text: '828년, 장보고는 신라로 돌아와 흥덕왕을 알현하고 청해진 설치를 건의하였습니다.',
               textI18n: {
                 en: 'In 828 AD, Jang Bogo returned to Silla, had an audience with King Heungdeok, and proposed the establishment of Cheonghaejin.',
@@ -551,6 +583,9 @@ export const unifiedSilla: Era = {
             {
               id: 'jangbogo-step-4',
               type: 'dialog',
+              backgroundImage: '/images/play/bg/unified-silla/bg_us_011.png',
+              backgroundPosition: 'center center',
+              characterImage: '/images/play/bg/unified-silla/jangbogo001.png',
               speaker: '장보고',
               speakerI18n: {
                 en: 'Jang Bogo',
@@ -575,6 +610,8 @@ export const unifiedSilla: Era = {
             {
               id: 'jangbogo-step-5',
               type: 'narration',
+              backgroundImage: '/images/play/bg/unified-silla/bg_us_012.png',
+              backgroundPosition: 'center center',
               text: '흥덕왕의 허락을 받은 장보고는 완도에 청해진을 설치하고 1만 명의 군사를 거느리며 해적을 소탕하였습니다.',
               textI18n: {
                 en: 'With King Heungdeok\'s approval, Jang Bogo established Cheonghaejin on Wando, commanding 10,000 soldiers to eradicate the pirates.',
@@ -589,6 +626,8 @@ export const unifiedSilla: Era = {
             {
               id: 'jangbogo-step-6',
               type: 'quiz',
+              backgroundImage: '/images/play/bg/unified-silla/bg_us_012.png',
+              backgroundPosition: 'center center',
               quiz: {
                 question: '장보고가 청해진을 설치한 곳은?',
                 questionI18n: {
@@ -626,6 +665,8 @@ export const unifiedSilla: Era = {
             {
               id: 'jangbogo-step-7',
               type: 'narration',
+              backgroundImage: '/images/play/bg/unified-silla/bg_us_013.png',
+              backgroundPosition: 'center center',
               text: '장보고는 해적 소탕에 그치지 않고, 신라-당나라-일본을 잇는 해상 무역 네트워크를 구축하였습니다. 그는 "해상왕"이라 불리게 되었습니다.',
               textI18n: {
                 en: 'Jang Bogo did not stop at eradicating pirates — he established a maritime trade network connecting Silla, Tang China, and Japan. He came to be known as the "King of the Sea."',
@@ -640,6 +681,9 @@ export const unifiedSilla: Era = {
             {
               id: 'jangbogo-step-8',
               type: 'dialog',
+              backgroundImage: '/images/play/bg/unified-silla/bg_us_014.png',
+              backgroundPosition: 'center center',
+              characterImage: '/images/play/bg/unified-silla/jangbogo001.png',
               speaker: '장보고',
               speakerI18n: {
                 en: 'Jang Bogo',
@@ -664,6 +708,8 @@ export const unifiedSilla: Era = {
             {
               id: 'jangbogo-step-9',
               type: 'quiz',
+              backgroundImage: '/images/play/bg/unified-silla/bg_us_014.png',
+              backgroundPosition: 'center center',
               quiz: {
                 question: '장보고가 청해진을 설치한 직접적인 이유는?',
                 questionI18n: {
@@ -741,6 +787,8 @@ export const unifiedSilla: Era = {
             {
               id: 'jangbogo-step-10',
               type: 'quiz',
+              backgroundImage: '/images/play/bg/unified-silla/bg_us_014.png',
+              backgroundPosition: 'center center',
               quiz: {
                 question: '장보고가 장악한 무역 경로에 해당하지 않는 나라는?',
                 questionI18n: {
