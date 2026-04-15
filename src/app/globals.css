@@ -4,12 +4,14 @@
 
 @layer base {
   html {
-    @apply bg-background text-gray-100 antialiased;
+    background-color: #000000;
+    @apply text-gray-100 antialiased;
     scroll-behavior: smooth;
   }
 
   body {
-    @apply min-h-screen bg-background;
+    background-color: #000000;
+    @apply min-h-screen;
   }
 
   /* Custom scrollbar */

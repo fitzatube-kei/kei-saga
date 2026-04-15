@@ -54,6 +54,7 @@ export default function CommunityPage() {
     tab === 'all' ? posts : posts.filter((p) => p.type === tab);
 
   return (
+    <div className="relative -mx-4 -mt-16 min-h-screen w-[calc(100%+2rem)] bg-black px-4 pb-8 pt-20 lg:-mx-8 lg:w-[calc(100%+4rem)]">
     <div className="mx-auto max-w-lg space-y-4 py-4 lg:max-w-3xl">
       <h1 className="text-glow text-2xl font-bold text-gold">{t('community.title')}</h1>
 
@@ -170,11 +171,12 @@ export default function CommunityPage() {
         href="/community/create"
         className="fixed bottom-24 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-gold shadow-[0_0_20px_rgba(212,160,23,0.4)] transition-transform hover:scale-110 lg:bottom-8"
       >
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1a1a2e" strokeWidth="2.5" strokeLinecap="round">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#000000" strokeWidth="2.5" strokeLinecap="round">
           <line x1="12" y1="5" x2="12" y2="19" />
           <line x1="5" y1="12" x2="19" y2="12" />
         </svg>
       </Link>
+    </div>
     </div>
   );
 }

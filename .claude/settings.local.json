@@ -28,7 +28,21 @@
       "Bash(find /Users/hanjoo/Desktop/keisaga/src -type f \\\\\\(-name *.json -o -name *.ts -o -name *.tsx \\\\\\))",
       "Bash(find /Users/hanjoo/Desktop/keisaga -path */node_modules -prune -o -type f -name *translation* -o -name *locale* -o -name *i18n*)",
       "Bash(wc:*)",
-      "Bash(python3:*)"
+      "Bash(python3:*)",
+      "Bash(curl -s http://192.168.50.149:3000/play/gojoseon/dangun-era/dangun-myth)",
+      "Bash(curl -sI http://192.168.50.149:3000/images/play/bg/gojoseon/bg_001.png)",
+      "WebFetch(domain:192.168.50.149)",
+      "Bash(cat:*)",
+      "Bash(find /Users/hanjoo/Desktop/keisaga -type f -name *silla*)",
+      "Bash(git:*)",
+      "Bash(node:*)",
+      "Bash(identify /Users/hanjoo/Desktop/keisaga/public/images/play/bg/samguk-late/gwanggaeto001.png)",
+      "Bash(sips -g pixelWidth -g pixelHeight /Users/hanjoo/Desktop/keisaga/public/images/play/bg/samguk-late/gwanggaeto001.png)",
+      "Bash(sips:*)",
+      "Bash(mkdir -p /tmp/design_crop)",
+      "Read(//tmp/**)",
+      "Read(//private/tmp/design_crop/**)",
+      "Bash(sips -c 540 750 full_large.png --out part1.png)"
     ]
   }
 }

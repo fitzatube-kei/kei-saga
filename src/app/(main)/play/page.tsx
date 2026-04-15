@@ -51,7 +51,7 @@ export default function PlayPage() {
   const isLoggedIn = !!user;
 
   return (
-    <div className="min-h-screen bg-background px-4 py-8">
+    <div className="relative -mx-4 -mt-16 min-h-screen w-[calc(100%+2rem)] bg-black px-4 pb-8 pt-20 lg:-mx-8 lg:w-[calc(100%+4rem)]">
       <div className="mx-auto max-w-4xl">
         {/* Header */}
         <div className="mb-8 text-center">

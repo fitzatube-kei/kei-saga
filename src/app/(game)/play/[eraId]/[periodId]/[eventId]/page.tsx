@@ -48,7 +48,7 @@ export default function GameScreen() {
 
   if (loading || event === undefined) {
     return (
-      <div className="flex min-h-screen items-center justify-center bg-background">
+      <div className="flex min-h-screen items-center justify-center bg-black">
         <Loading size="lg" text={t('game.loading')} />
       </div>
     );
@@ -56,7 +56,7 @@ export default function GameScreen() {
 
   if (!event) {
     return (
-      <div className="flex min-h-screen flex-col items-center justify-center bg-background px-4">
+      <div className="flex min-h-screen flex-col items-center justify-center bg-black px-4">
         <div className="text-center">
           <h1 className="mb-2 text-2xl font-bold text-gold">
             {t('game.eventNotFound')}
@@ -79,7 +79,7 @@ export default function GameScreen() {
   if (!user) {
     if (eraId !== 'gojoseon') {
       return (
-        <div className="flex min-h-screen flex-col items-center justify-center bg-background px-4">
+        <div className="flex min-h-screen flex-col items-center justify-center bg-black px-4">
           <div className="text-center">
             <h1 className="mb-2 text-2xl font-bold text-gold">
               {t('game.loginRequired')}

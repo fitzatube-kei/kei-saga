@@ -70,7 +70,7 @@ export default function PeriodPage() {
   const heroImage = period.events[0]?.steps[0]?.backgroundImage;
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-black">
       {/* Hero Banner */}
       {heroImage && (
         <section className="relative -mx-4 -mt-16 w-[calc(100%+2rem)] overflow-hidden lg:-mx-8 lg:w-[calc(100%+4rem)]">
@@ -83,7 +83,7 @@ export default function PeriodPage() {
               sizes="100vw"
               priority
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-black/30" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-black/30" />
           </div>
 
           {/* Header overlaid on banner */}
@@ -178,7 +178,7 @@ export default function PeriodPage() {
                         className="object-cover opacity-20 transition-opacity duration-300 group-hover:opacity-30"
                         sizes="(max-width: 768px) 100vw, 896px"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/80 to-background/60" />
+                      <div className="absolute inset-0 bg-gradient-to-r from-black/95 via-black/80 to-black/60" />
                     </div>
                   )}
 

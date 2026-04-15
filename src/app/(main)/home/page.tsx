@@ -1,347 +1,259 @@
 'use client';
 
-import { useMemo } from 'react';
+import { useMemo, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useAuthStore } from '@/stores/authStore';
-import { cn } from '@/lib/utils/cn';
-import { AvatarRenderer } from '@/components/avatar/AvatarRenderer';
-import { useTranslation } from '@/hooks/useTranslation';
 import { useLocalizedGame } from '@/hooks/useLocalizedGame';
+import { useTranslation } from '@/hooks/useTranslation';
 import { getEras } from '@/data/eras/content';
+import { cn } from '@/lib/utils/cn';
 
-function getRankByLevel(level: number): { nameKey: string } {
-  if (level >= 5) return { nameKey: 'rank.royalty' };
-  if (level >= 3) return { nameKey: 'rank.noble' };
-  return { nameKey: 'rank.commoner' };
-}
+const ERA_THUMB: Record<string, string> = {
+  'gojoseon': '/images/play/bg/gojoseon/bg_001.png',
+  'samguk-early': '/images/play/bg/samguk-early/bg_se_004.png',
+  'samguk-late': '/images/play/bg/samguk-late/bg_sl_001.png',
+  'unified-silla': '/images/play/Silla_real_001.png',
+  'balhae': '/images/play/Balhae_real_001.png',
+  'goryeo-early': '/images/play/goryeoearly_real_001.png',
+  'goryeo-late': '/images/play/goryeolate_real_001.png',
+  'joseon-early': '/images/play/joseonearly_real_001.png',
+  'joseon-late': '/images/play/joseonlate_real_001.png',
+  'daehan-empire': '/images/play/koreanempire_real_001.png',
+  'japanese-colonial': '/images/play/japanese Colonial_real_001.png',
+  'modern': '/images/play/seokguam_real_001.png',
+};
 
-const ERA_IMAGES: Record<string, { src: string; position?: string }> = {
-  'gojoseon': { src: '/images/play/gojosun_real_001.png' },
-  'samguk-early': { src: '/images/play/treekingdomsearly_real_001.png' },
-  'samguk-late': { src: '/images/play/treekingdomslate_real_001.png' },
-  'unified-silla': { src: '/images/play/Silla_real_001.png', position: 'top' },
-  'balhae': { src: '/images/play/Balhae_real_001.png', position: 'top' },
-  'goryeo-early': { src: '/images/play/goryeoearly_real_001.png', position: 'top' },
-  'goryeo-late': { src: '/images/play/goryeolate_real_001.png' },
-  'joseon-early': { src: '/images/play/joseonearly_real_001.png', position: 'top' },
-  'joseon-late': { src: '/images/play/joseonlate_real_001.png', position: 'top' },
-  'daehan-empire': { src: '/images/play/koreanempire_real_001.png' },
-  'japanese-colonial': { src: '/images/play/japanese Colonial_real_001.png', position: 'top' },
-  'modern': { src: '/images/play/seokguam_real_001.png', position: 'top' },
+type Scene = {
+  key: string;
+  title: string;
+  period: string;
+  eraName: string;
+  thumb: string;
+  href: string;
+  viewers: string;
+  likes: number;
 };
 
 export default function HomePage() {
   const user = useAuthStore((s) => s.user);
-  const { t } = useTranslation();
   const lg = useLocalizedGame();
-
-  const randomEras = useMemo(() => {
-    const allEras = getEras();
-    const shuffled = [...allEras].sort(() => Math.random() - 0.5);
-    return shuffled.slice(0, 4);
-  }, []);
-
+  const { t } = useTranslation();
   const isLoggedIn = !!user;
 
+  const [sortMode, setSortMode] = useState<'era' | 'popular'>('popular');
+
+  const scenes = useMemo<Scene[]>(() => {
+    const eras = getEras();
+    const list: (Scene & { popularity: number })[] = [];
+    const viewerSamples = ['78.4K', '62.1K', '54.3K', '48.9K', '41.2K', '37.6K', '29.8K', '24.5K', '21.3K', '18.7K', '15.2K', '12.8K', '10.4K', '8.9K'];
+    const likeSamples = [256, 198, 172, 143, 121, 98, 84, 67, 55, 48, 41, 33, 27, 21];
+
+    eras.forEach((era) => {
+      era.periods.forEach((period) => {
+        period.events.forEach((ev) => {
+          const stepThumb = ev.steps.find((s) => s.backgroundImage)?.backgroundImage;
+          const key = `${era.id}-${period.id}-${ev.id}`;
+          // Deterministic popularity score per scene (stable across renders)
+          let hash = 0;
+          for (let i = 0; i < key.length; i++) hash = (hash * 31 + key.charCodeAt(i)) | 0;
+          list.push({
+            key,
+            title: lg.eventTitle(ev),
+            period: era.period,
+            eraName: lg.eraName(era),
+            thumb: stepThumb ?? ERA_THUMB[era.id] ?? '/images/play/gojosun_real_001.png',
+            href:
+              isLoggedIn || era.id === 'gojoseon'
+                ? `/play/${era.id}/${period.id}/${ev.id}`
+                : '/login',
+            viewers: '',
+            likes: 0,
+            popularity: Math.abs(hash),
+          });
+        });
+      });
+    });
+
+    const trimmed = list.slice(0, 14);
+
+    // Rank by popularity to assign stats (highest popularity → highest viewers/likes)
+    const byPopularity = [...trimmed].sort((a, b) => b.popularity - a.popularity);
+    const statsByKey = new Map<string, { viewers: string; likes: number }>();
+    byPopularity.forEach((s, i) => {
+      statsByKey.set(s.key, {
+        viewers: viewerSamples[i % viewerSamples.length],
+        likes: likeSamples[i % likeSamples.length],
+      });
+    });
+
+    const withStats = trimmed.map((s) => ({
+      ...s,
+      ...statsByKey.get(s.key)!,
+    }));
+
+    // Apply sort
+    if (sortMode === 'popular') {
+      withStats.sort((a, b) => b.popularity - a.popularity);
+    }
+    // 'era' keeps chronological order (iteration order of getEras)
+
+    return withStats;
+  }, [lg, isLoggedIn, sortMode]);
+
+  const recentScene = scenes[0];
+
+  const [liked, setLiked] = useState<Record<string, boolean>>({});
+  const toggleLike = (e: React.MouseEvent, key: string) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setLiked((prev) => ({ ...prev, [key]: !prev[key] }));
+  };
+
   return (
-    <>
-      {/* ══════════════════════════════════════════════
-          HERO SECTION — Full viewport cinematic intro
-          ══════════════════════════════════════════════ */}
-      <section className="relative -mx-4 -mt-16 w-[calc(100%+2rem)] lg:-mx-8 lg:w-[calc(100%+4rem)] overflow-hidden">
-        {/* Background — dramatic scene */}
-        <div className="absolute inset-0">
-          <Image
-            src="/images/play/gojosun_real_001.png"
-            alt="background"
-            fill
-            className="object-cover object-center scale-110"
-            sizes="100vw"
-            priority
-          />
-          {/* Cinematic gradient overlays */}
-          <div className="absolute inset-0 bg-gradient-to-b from-[#0a1128]/80 via-[#0a1128]/40 to-[#0a1128]" />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0a1128]/60 via-transparent to-[#0a1128]/60" />
-          {/* Vignette effect */}
-          <div className="absolute inset-0" style={{ boxShadow: 'inset 0 0 150px rgba(10,17,40,0.8)' }} />
-        </div>
+    <div className="relative -mx-4 -mt-16 min-h-screen w-[calc(100%+2rem)] bg-[#000000] pb-24 lg:-mx-8 lg:w-[calc(100%+4rem)]">
+      {/* ── HERO ────────────────────────────────────── */}
+      <section className="relative h-[380px] w-full overflow-hidden">
+        <Image
+          src="/images/play/treekingdomslate_real_001.png"
+          alt="hero"
+          fill
+          priority
+          className="object-cover object-center"
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#000000]/30 via-[#000000]/50 to-[#000000]" />
 
-        {/* Animated golden particles */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          {Array.from({ length: 20 }).map((_, i) => (
-            <div
-              key={i}
-              className="absolute rounded-full bg-gold/60"
-              style={{
-                width: `${Math.random() * 3 + 1}px`,
-                height: `${Math.random() * 3 + 1}px`,
-                left: `${Math.random() * 100}%`,
-                top: `${Math.random() * 100}%`,
-                animation: `float-particle ${Math.random() * 6 + 4}s ease-in-out infinite`,
-                animationDelay: `${Math.random() * 5}s`,
-                filter: 'blur(0.5px)',
-              }}
-            />
-          ))}
-        </div>
-
-        {/* Hero content */}
-        <div className="relative z-10 flex min-h-[100svh] flex-col items-center justify-center px-4 pt-16 pb-8">
-          {/* Logo with glow */}
-          <div className="relative mb-2 sm:mb-4">
-            <div className="absolute inset-0 blur-3xl opacity-30 bg-gold rounded-full scale-150" />
-            <Image
-              src="/images/home/KEISAGA001.png"
-              alt="KEI SAGA"
-              width={360}
-              height={80}
-              className="relative w-48 sm:w-56 md:w-72 lg:w-80 drop-shadow-[0_0_30px_rgba(212,160,23,0.5)]"
-              priority
-            />
-          </div>
-
-          {/* Tagline */}
-          <p className="mb-6 text-center text-xs tracking-[0.3em] text-gold/70 uppercase sm:text-sm md:text-base sm:mb-8">
-            Korean History RPG Adventure
-          </p>
-
-          {/* Description */}
-          <p className="mb-8 max-w-md text-center text-xs leading-relaxed text-white/60 sm:text-sm md:max-w-lg md:text-base sm:mb-10">
+        <div className="relative z-10 px-5 pt-16">
+          <h2 className="text-2xl font-extrabold tracking-wide text-white">K-SAGA</h2>
+          <h1 className="mt-3 whitespace-pre-line text-[24px] font-extrabold leading-[1.2] text-white">
+            {t('home.welcomeTitle')}
+          </h1>
+          <p className="mt-3 max-w-[320px] whitespace-pre-line text-[13px] leading-relaxed text-white/70">
             {t('home.welcomeDesc')}
           </p>
-
-          {/* CTA Buttons */}
-          <div className="flex flex-col items-center gap-3 sm:flex-row sm:gap-4 mb-10 sm:mb-14">
-            <Link href="/play">
-              <button
-                type="button"
-                className="group relative overflow-hidden rounded-xl bg-gradient-to-r from-gold via-goldLight to-gold px-10 py-3.5 text-sm font-bold uppercase tracking-widest text-background shadow-[0_0_40px_rgba(212,160,23,0.4)] transition-all hover:shadow-[0_0_60px_rgba(212,160,23,0.6)] hover:scale-105 active:scale-[0.98] sm:px-14 sm:py-4 sm:text-base md:text-lg"
-              >
-                <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-700" />
-                <span className="relative flex items-center gap-2">
-                  <span>&#9654;</span>
-                  {t('home.startAdventure')}
-                </span>
-              </button>
-            </Link>
-            {!isLoggedIn && (
-              <Link href="/login">
-                <button
-                  type="button"
-                  className="rounded-xl border-2 border-gold/40 bg-gold/5 px-8 py-3 text-sm font-bold uppercase tracking-wider text-gold/90 backdrop-blur-sm transition-all hover:border-gold/60 hover:bg-gold/10 active:scale-[0.98] sm:px-10 sm:py-3.5 sm:text-base"
-                >
-                  {t('auth.login')}
-                </button>
-              </Link>
-            )}
-          </div>
-
-          {/* Character lineup at bottom */}
-          <div className="relative flex items-end justify-center gap-0 sm:gap-2">
-            {/* Left character — Yi Sun-sin */}
-            <div className="relative h-24 w-20 sm:h-32 sm:w-28 md:h-40 md:w-36 lg:h-48 lg:w-44 translate-y-2 opacity-80 hover:opacity-100 transition-opacity">
-              <Image
-                src="/images/home/soonsin_illust001.png"
-                alt="이순신"
-                fill
-                className="object-contain object-bottom drop-shadow-[0_0_20px_rgba(212,160,23,0.3)]"
-                sizes="(max-width: 640px) 80px, (max-width: 768px) 112px, 176px"
-              />
-            </div>
-            {/* Center character — Sejong (larger) */}
-            <div className="relative h-32 w-28 sm:h-40 sm:w-36 md:h-52 md:w-44 lg:h-60 lg:w-52 z-10">
-              <Image
-                src="/images/home/sejong_illust001.png"
-                alt="세종대왕"
-                fill
-                className="object-contain object-bottom drop-shadow-[0_0_30px_rgba(212,160,23,0.4)]"
-                sizes="(max-width: 640px) 112px, (max-width: 768px) 144px, 208px"
-              />
-            </div>
-            {/* Right character — Girl */}
-            <div className="relative h-24 w-20 sm:h-32 sm:w-28 md:h-40 md:w-36 lg:h-48 lg:w-44 translate-y-2 opacity-80 hover:opacity-100 transition-opacity">
-              <Image
-                src="/images/home/girl_illust001.png"
-                alt="캐릭터"
-                fill
-                className="object-contain object-bottom drop-shadow-[0_0_20px_rgba(212,160,23,0.3)]"
-                sizes="(max-width: 640px) 80px, (max-width: 768px) 112px, 176px"
-              />
-            </div>
-          </div>
-
-          {/* Scroll indicator */}
-          <div className="mt-4 flex flex-col items-center gap-1 animate-bounce sm:mt-6">
-            <span className="text-[10px] tracking-widest text-white/30 uppercase sm:text-xs">Scroll</span>
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="text-white/30">
-              <path d="M4 6L8 10L12 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-            </svg>
-          </div>
         </div>
       </section>
 
-      {/* ══════════════════════════════════════════════
-          BELOW THE FOLD — User info + Era selection
-          ══════════════════════════════════════════════ */}
-      <div className="mx-auto max-w-lg space-y-6 py-6 md:max-w-2xl md:space-y-8 lg:max-w-4xl">
-
-        {/* ── MY AVATAR + Recent Activity ── */}
-        {isLoggedIn && user && (
-          <section className="relative overflow-hidden rounded-2xl border border-gold/10 bg-gradient-to-br from-surface via-surface to-[#1a1d35] p-4 sm:p-5 md:p-6">
-            {/* Decorative corner accents */}
-            <div className="absolute top-0 left-0 h-8 w-8 border-t-2 border-l-2 border-gold/20 rounded-tl-2xl" />
-            <div className="absolute top-0 right-0 h-8 w-8 border-t-2 border-r-2 border-gold/20 rounded-tr-2xl" />
-            <div className="absolute bottom-0 left-0 h-8 w-8 border-b-2 border-l-2 border-gold/20 rounded-bl-2xl" />
-            <div className="absolute bottom-0 right-0 h-8 w-8 border-b-2 border-r-2 border-gold/20 rounded-br-2xl" />
-
-            <div className="relative flex items-start gap-4">
-              {/* Avatar */}
-              <div className="w-20 shrink-0 sm:w-24 md:w-28">
-                <AvatarRenderer avatar={user.avatar} size="preview" />
-              </div>
-
-              {/* Info */}
-              <div className="flex-1 min-w-0">
-                <h3 className="text-base font-bold text-gold sm:text-lg md:text-xl">{user.nickname}</h3>
-                <div className="mt-1.5 flex flex-wrap items-center gap-1.5 sm:mt-2 sm:gap-2">
-                  <span className="inline-flex items-center gap-1 rounded-full border border-gold/20 bg-gold/10 px-3 py-1 text-[10px] font-semibold text-gold sm:px-4 sm:py-1.5 sm:text-xs">
-                    Lv.{user.level} <span className="opacity-40">|</span> {t(getRankByLevel(user.level).nameKey)}
-                  </span>
-                  <span className="inline-flex items-center rounded-full border border-gold/20 bg-gold/10 px-3 py-1 text-[10px] font-semibold text-gold sm:px-4 sm:py-1.5 sm:text-xs">
-                    {(user.points ?? 0).toLocaleString()} P
-                  </span>
-                </div>
-                <p className="mt-2 text-[10px] text-white/40 sm:text-xs">{t('home.noActivity')} {t('home.noActivitySub')}</p>
-              </div>
-            </div>
-
-            {/* Continue button */}
-            <Link href={user.lastPlayedEraId ? `/play/${user.lastPlayedEraId}` : '/play'} className="mt-4 block">
-              <button
-                type="button"
-                className="flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-gold to-goldLight py-3 text-sm font-bold uppercase tracking-wider text-background shadow-lg shadow-gold/20 transition-all hover:brightness-110 active:scale-[0.98] sm:py-3.5 sm:text-base"
-              >
-                <span>&#9654;</span>
-                {t('home.continueAdventure')}
-              </button>
-            </Link>
-          </section>
+      {/* ── RECENT PLAY ROW ─────────────────────────── */}
+      <div className="relative z-10 mx-4 -mt-12">
+        {/* Character peeking out above the box (clipped at box bottom) */}
+        {isLoggedIn && (
+          <div className="pointer-events-none absolute -right-3 -top-[172px] bottom-0 z-0 w-[258px] overflow-hidden lg:right-0 lg:-top-[230px] lg:w-[344px]">
+            <Image
+              src={`/images/avt/${user?.profileImage ?? 'dangun001'}.png`}
+              alt="avatar"
+              width={344}
+              height={402}
+              className="absolute left-0 top-0 h-[302px] w-[258px] object-contain object-bottom drop-shadow-[0_8px_16px_rgba(0,0,0,0.6)] lg:h-[402px] lg:w-[344px]"
+            />
+          </div>
         )}
 
-        {/* ── SELECT AN ERA — Cinematic grid ── */}
-        <section>
-          <div className="mb-3 flex items-center justify-between sm:mb-4">
-            <div className="flex items-center gap-2">
-              <div className="h-px w-6 bg-gradient-to-r from-transparent to-gold/50 sm:w-10" />
-              <Link href={isLoggedIn ? '/play' : '/login'} className="text-sm font-bold uppercase tracking-widest text-gold sm:text-base md:text-lg">
-                Select an Era
-              </Link>
-              <div className="h-px w-6 bg-gradient-to-l from-transparent to-gold/50 sm:w-10" />
-            </div>
-            <Link href={isLoggedIn ? '/play' : '/login'} className="text-[10px] text-white/40 hover:text-gold/70 transition-colors sm:text-xs">
-              VIEW ALL &rarr;
-            </Link>
+        <div className="relative z-10 flex items-center justify-between gap-3 rounded-2xl bg-[#1a1a1a] px-4 py-3 shadow-lg">
+          <div className="flex min-w-0 items-center gap-2">
+            <Image src="/images/icon/compass001.png" width={22} height={22} alt="" className="shrink-0" />
+            <span className="shrink-0 text-sm font-bold text-[#f5c842]">{t('home.recentPlay')}</span>
+            <span className="truncate text-xs text-white/50">
+              {recentScene ? recentScene.title : t('home.noRecentPlay')}
+            </span>
           </div>
-
-          <div className="grid grid-cols-2 gap-2.5 sm:grid-cols-4 sm:gap-3 md:gap-4">
-            {randomEras.map((era) => {
-              const img = ERA_IMAGES[era.id];
-              const eraAccessible = isLoggedIn || era.id === 'gojoseon';
-              const content = (
-                <div className="group relative overflow-hidden rounded-xl border border-white/5 bg-surface transition-all hover:border-gold/30 hover:shadow-[0_0_20px_rgba(212,160,23,0.1)]">
-                  <div className="relative h-28 w-full sm:h-24 md:h-32 lg:h-40 overflow-hidden">
-                    {img && (
-                      <Image
-                        src={img.src}
-                        alt={era.name}
-                        fill
-                        className={cn(
-                          'object-cover transition-transform duration-500 group-hover:scale-110',
-                          img.position === 'top' ? 'object-top' : 'object-center'
-                        )}
-                        sizes="(max-width: 640px) 50vw, 25vw"
-                      />
-                    )}
-                    {/* Bottom gradient for text readability */}
-                    <div className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-black/80 to-transparent" />
-                    {!eraAccessible && (
-                      <div className="absolute inset-0 flex items-center justify-center bg-black/50 backdrop-blur-[1px]">
-                        <span className="rounded-full border border-white/20 bg-black/50 px-3 py-1 text-[9px] font-semibold text-white/80 sm:text-[10px]">
-                          {t('play.levelUpgrade')}
-                        </span>
-                      </div>
-                    )}
-                    {/* Era name overlay on image */}
-                    <div className="absolute inset-x-0 bottom-0 px-2 pb-2 sm:px-2.5 sm:pb-2.5">
-                      <p className="text-[11px] font-bold text-white drop-shadow-lg sm:text-xs md:text-sm lg:text-base">{lg.eraName(era)}</p>
-                      <p className="text-[9px] text-white/50 sm:text-[10px] md:text-xs">{era.period}</p>
-                    </div>
-                  </div>
-                </div>
-              );
-              return eraAccessible ? (
-                <Link key={era.id} href={`/play/${era.id}`} className="group">
-                  {content}
-                </Link>
-              ) : (
-                <div key={era.id} className="cursor-not-allowed">
-                  {content}
-                </div>
-              );
-            })}
-          </div>
-        </section>
-
-        {/* ── Community ── */}
-        <section>
-          <div className="mb-3 flex items-center gap-2 sm:mb-4">
-            <div className="h-px w-6 bg-gradient-to-r from-transparent to-gold/50 sm:w-10" />
-            <h3 className="text-sm font-bold uppercase tracking-widest text-gold sm:text-base">{t('home.recentPosts')}</h3>
-            <div className="h-px flex-1 bg-gradient-to-l from-transparent to-gold/50" />
-            <Link href="/community" className="text-[10px] text-white/40 hover:text-gold/70 transition-colors sm:text-xs">
-              {t('home.seeAll')} &rarr;
-            </Link>
-          </div>
-          <div className="grid grid-cols-2 gap-2.5 sm:gap-3 md:gap-4">
-            {[0, 1].map((col) => (
-              <div key={col} className="space-y-2 sm:space-y-2.5">
-                {[1, 2, 3].map((i) => (
-                  <div key={`${col}-${i}`} className="rounded-lg border border-white/5 bg-surface/50 px-3 py-2.5 transition-colors hover:border-white/10 sm:px-3.5 sm:py-3">
-                    <div className="flex items-center gap-2">
-                      <div className="h-5 w-5 shrink-0 rounded-full bg-white/10 sm:h-6 sm:w-6" />
-                      <div className="min-w-0 flex-1">
-                        <p className="truncate text-[10px] font-medium text-white/60 sm:text-xs md:text-sm">Coming soon</p>
-                        <p className="truncate text-[9px] text-white/25 sm:text-[10px]">Stay tuned...</p>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            ))}
-          </div>
-        </section>
+          <Link
+            href={isLoggedIn ? '/mypage' : '/login'}
+            className="shrink-0 rounded-full bg-[#f5c842] px-4 py-1.5 text-xs font-bold text-black"
+          >
+            {t('nav.mypage')}
+          </Link>
+        </div>
       </div>
 
-      {/* Particle animation keyframes */}
-      <style jsx global>{`
-        @keyframes float-particle {
-          0%, 100% {
-            transform: translateY(0) translateX(0);
-            opacity: 0;
-          }
-          10% {
-            opacity: 1;
-          }
-          90% {
-            opacity: 1;
-          }
-          50% {
-            transform: translateY(-40px) translateX(20px);
-            opacity: 0.8;
-          }
-        }
-      `}</style>
-    </>
+      {/* ── SCENE LIST HEADER ───────────────────────── */}
+      <div className="mt-7 flex items-center justify-between px-5">
+        <div className="flex items-center gap-2">
+          <h3 className="text-xl font-extrabold text-white">{t('home.storyShortcut')}</h3>
+          <Link
+            href="/play"
+            className="rounded-full bg-[#f5c842] px-3 py-1 text-[11px] font-bold text-black"
+          >
+            {t('home.viewAll')}
+          </Link>
+        </div>
+        <div className="text-[11px]">
+          <button
+            type="button"
+            onClick={() => setSortMode('era')}
+            className={cn(
+              'transition-colors',
+              sortMode === 'era' ? 'font-bold text-[#f5c842]' : 'text-white/50 hover:text-white/70',
+            )}
+          >
+            {t('home.sortByEra')}
+          </button>
+          <span className="mx-1 text-white/25">|</span>
+          <button
+            type="button"
+            onClick={() => setSortMode('popular')}
+            className={cn(
+              'transition-colors',
+              sortMode === 'popular' ? 'font-bold text-[#f5c842]' : 'text-white/50 hover:text-white/70',
+            )}
+          >
+            {t('home.sortByPopular')}
+          </button>
+        </div>
+      </div>
+
+      {/* ── SCENE CARDS ─────────────────────────────── */}
+      <div className="mt-4 space-y-5 px-5">
+        {scenes.map((s) => (
+          <Link key={s.key} href={s.href} className="flex items-start gap-4">
+            <div className="relative h-[92px] w-[136px] shrink-0 overflow-hidden rounded-2xl">
+              <Image src={s.thumb} alt={s.title} fill className="object-cover" sizes="136px" />
+            </div>
+            <div className="min-w-0 flex-1 pt-0.5">
+              <h4 className="truncate text-[16px] font-extrabold text-white">{s.title}</h4>
+              <p className="mt-1 text-[11px] text-white/50">
+                {s.period} <span className="ml-1 text-white/40">{s.eraName}</span>
+              </p>
+              <div className="mt-1.5 flex items-center gap-1.5">
+                <Image src="/images/icon/eye001.png" width={14} height={14} alt="" />
+                <span className="text-[11px] text-white/60">{s.viewers} Viewers</span>
+              </div>
+              <div className="mt-1 flex items-center gap-1.5">
+                <button
+                  type="button"
+                  onClick={(e) => toggleLike(e, s.key)}
+                  aria-label="like"
+                  className="flex h-4 w-4 items-center justify-center"
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    width="14"
+                    height="14"
+                    fill={liked[s.key] ? '#e85c5c' : 'rgba(255,255,255,0.6)'}
+                    className="transition-colors"
+                  >
+                    <path d="M12 21s-7.5-4.6-9.9-9.1C.4 8.3 2.6 4.5 6.3 4.5c2 0 3.7 1 4.7 2.6C12 5.5 13.7 4.5 15.7 4.5c3.7 0 5.9 3.8 4.2 7.4C19.5 16.4 12 21 12 21z" />
+                  </svg>
+                </button>
+                <span className="text-[11px] text-white/60">
+                  LIKE {s.likes + (liked[s.key] ? 1 : 0)}
+                </span>
+              </div>
+            </div>
+          </Link>
+        ))}
+      </div>
+
+      {/* ── VIEW ALL BUTTON ─────────────────────────── */}
+      <div className="mt-8 flex justify-center px-5">
+        <Link
+          href="/play"
+          className="rounded-full bg-[#f5c842] px-8 py-3 text-sm font-bold text-black shadow-lg transition-transform active:scale-95"
+        >
+          {t('home.viewAll')}
+        </Link>
+      </div>
+    </div>
   );
 }

@@ -43,7 +43,7 @@ export function AuthGuard({ children }: AuthGuardProps) {
   // Only show loading on initial auth check; skip if we already have a user
   if (!initialized || (loading && !user)) {
     return (
-      <div className="flex min-h-screen items-center justify-center bg-background">
+      <div className="flex min-h-screen items-center justify-center bg-black">
         <Loading size="lg" text={t('common.loading')} />
       </div>
     );

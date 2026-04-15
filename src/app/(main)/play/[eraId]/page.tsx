@@ -47,7 +47,7 @@ export default function EraPage() {
   const bg = ERA_BG[era.id];
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-black">
       {/* ── Hero Banner ── */}
       <section className="relative -mx-4 -mt-16 w-[calc(100%+2rem)] overflow-hidden lg:-mx-8 lg:w-[calc(100%+4rem)]">
         {/* Background image */}
@@ -63,7 +63,7 @@ export default function EraPage() {
         )}
 
         {/* Dark overlay */}
-        <div className="absolute inset-0 bg-black/55" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black" />
 
         {/* Content */}
         <div className="relative z-10 mx-auto max-w-4xl px-4 pt-20 pb-6 sm:pb-8 md:px-8 lg:px-12">
@@ -71,7 +71,7 @@ export default function EraPage() {
           <div className="mb-4">
             <button
               onClick={() => router.push('/play')}
-              className="flex items-center gap-1.5 rounded-full bg-black/30 px-3 py-1.5 text-sm text-white/70 backdrop-blur-sm transition-colors hover:bg-black/50 hover:text-gold"
+              className="flex items-center gap-1.5 rounded-full bg-white/10 px-3 py-1.5 text-sm text-white/80 backdrop-blur-sm transition-colors hover:bg-white/15 hover:text-[#f5c842]"
             >
               <svg width="16" height="16" viewBox="0 0 20 20" fill="none">
                 <path d="M13 4l-6 6 6 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
@@ -94,7 +94,7 @@ export default function EraPage() {
               <h1 className="text-2xl font-bold text-white md:text-3xl">
                 {lg.eraName(era)}
               </h1>
-              <p className="text-sm text-gold/80">{era.period}</p>
+              <p className="text-sm text-[#f5c842]/80">{era.period}</p>
             </div>
           </div>
           <p className="mt-3 text-sm leading-relaxed text-white/80 md:text-base">
@@ -106,7 +106,7 @@ export default function EraPage() {
       {/* ── Periods list ── */}
       <div className="mx-auto max-w-4xl px-4 py-6 md:px-8 lg:px-12">
         {era.periods.length === 0 ? (
-          <div className="rounded-lg border border-gold/10 bg-surface p-8 text-center">
+          <div className="rounded-2xl border border-white/10 bg-[#141414] p-8 text-center">
             <p className="text-white/50">
               {t('play.noPeriodsYet')}
             </p>
@@ -118,18 +118,18 @@ export default function EraPage() {
                 key={period.id}
                 href={`/play/${era.id}/${period.id}`}
                 className={cn(
-                  'group rounded-lg border border-gold/20 bg-surface p-5',
+                  'group rounded-2xl border border-white/10 bg-[#141414] p-5',
                   'transition-all duration-200',
-                  'hover:border-gold/40 hover:shadow-[0_0_15px_rgba(212,160,23,0.15)]',
+                  'hover:border-[#f5c842]/40 hover:bg-[#181818]',
                   'active:scale-[0.99]'
                 )}
               >
                 <div className="flex items-start justify-between gap-4">
                   <div className="flex-1">
-                    <h2 className="text-lg font-bold text-gold group-hover:text-goldLight">
+                    <h2 className="text-lg font-extrabold text-white group-hover:text-[#f5c842]">
                       {lg.periodName(period)}
                     </h2>
-                    <p className="mt-0.5 text-sm text-gold/50">
+                    <p className="mt-0.5 text-xs text-white/40">
                       {period.years}
                     </p>
                     <p className="mt-2 text-sm leading-relaxed text-white/60">
@@ -138,7 +138,7 @@ export default function EraPage() {
                   </div>
 
                   <div className="flex flex-shrink-0 flex-col items-end gap-1">
-                    <span className="rounded-full bg-gold/10 px-3 py-1 text-xs font-medium text-gold">
+                    <span className="rounded-full bg-[#f5c842] px-3 py-1 text-[11px] font-bold text-black">
                       {period.events.length}{t('play.events')}
                     </span>
                     <svg
@@ -146,7 +146,7 @@ export default function EraPage() {
                       height="20"
                       viewBox="0 0 20 20"
                       fill="currentColor"
-                      className="mt-2 text-gold/40 transition-colors group-hover:text-gold"
+                      className="mt-2 text-white/30 transition-colors group-hover:text-[#f5c842]"
                     >
                       <path
                         fillRule="evenodd"

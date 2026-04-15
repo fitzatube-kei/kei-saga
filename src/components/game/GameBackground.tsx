@@ -16,7 +16,7 @@ const PARTICLE_COUNT = 20;
 
 export function GameBackground({ eraId, backgroundImage, backgroundVideo, backgroundPosition, className }: GameBackgroundProps) {
   const era = getEra(eraId);
-  const baseColor = era?.imageColor ?? '#4B0082';
+  const baseColor = era?.imageColor ?? '#f5c842';
 
   const particles = useMemo(
     () =>
@@ -64,11 +64,11 @@ export function GameBackground({ eraId, backgroundImage, backgroundVideo, backgr
         className="absolute inset-0"
         style={{
           background: (backgroundImage || backgroundVideo)
-            ? `linear-gradient(180deg, rgba(10,10,15,0.3) 0%, rgba(10,10,15,0.5) 100%)`
+            ? `linear-gradient(180deg, rgba(0,0,0,0.12) 0%, rgba(0,0,0,0.25) 100%)`
             : `
-              radial-gradient(ellipse at 30% 20%, ${baseColor}33 0%, transparent 60%),
-              radial-gradient(ellipse at 70% 80%, ${baseColor}22 0%, transparent 50%),
-              linear-gradient(180deg, #0a0a0f 0%, #0d0d18 50%, #0a0a0f 100%)
+              radial-gradient(ellipse at 30% 20%, ${baseColor}22 0%, transparent 60%),
+              radial-gradient(ellipse at 70% 80%, ${baseColor}15 0%, transparent 50%),
+              #000000
             `,
         }}
       />
@@ -105,7 +105,7 @@ export function GameBackground({ eraId, backgroundImage, backgroundVideo, backgr
       ))}
 
       {/* Vignette */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_30%,rgba(0,0,0,0.6)_100%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_50%,rgba(0,0,0,0.3)_100%)]" />
 
       <style jsx global>{`
         @keyframes particle-float {

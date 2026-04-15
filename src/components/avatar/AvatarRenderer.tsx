@@ -94,7 +94,7 @@ export function AvatarRenderer({ avatar: rawAvatar, size = 'md', className }: Av
   return (
     <div
       className={cn('relative flex-shrink-0 overflow-hidden rounded-full', className)}
-      style={{ width: px, height: px, background: '#2e3150' }}
+      style={{ width: px, height: px, background: '#1a1a1a' }}
     >
       {layers.map((src) => (
         <img

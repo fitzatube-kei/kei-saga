@@ -274,7 +274,7 @@ export function AvatarCustomizer({
       </div>
 
       {/* ── Category tabs ───────────────────────────────────────── */}
-      <div className="flex rounded-t-xl bg-[#393D5E] px-1 pb-0">
+      <div className="flex rounded-t-xl bg-[#1a1a1a] px-1 pb-0">
         {TABS.map((tab) => (
           <button
             key={tab.key}
