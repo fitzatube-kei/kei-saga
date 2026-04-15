@@ -1,7 +1,7 @@
 import { auth, db } from './config';
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut as firebaseSignOut, onAuthStateChanged, User, browserLocalPersistence, browserSessionPersistence, setPersistence } from 'firebase/auth';
 import { doc, setDoc, getDoc, updateDoc, serverTimestamp } from 'firebase/firestore';
-import { UserProfile, AvatarConfig } from '@/types';
+import { UserProfile, AvatarConfig, PlacedTreasure } from '@/types';
 import { DEFAULT_AVATAR } from '@/types/user';
 
 const PREMIUM_EMAILS = ['han0726k@gmail.co', 'han0726k@gmail.com'];
@@ -59,6 +59,18 @@ export async function updateUserNickname(uid: string, nickname: string) {
 
 export async function updateUserProfileBg(uid: string, profileBg: string) {
   await updateDoc(doc(db, 'users', uid), { profileBg });
+}
+
+export async function updateUserProfileImage(uid: string, profileImage: string) {
+  await updateDoc(doc(db, 'users', uid), { profileImage });
+}
+
+export async function updateUserProfileBgColor(uid: string, profileBgColor: string) {
+  await updateDoc(doc(db, 'users', uid), { profileBgColor });
+}
+
+export async function updateUserProfileTreasures(uid: string, profileTreasures: PlacedTreasure[]) {
+  await updateDoc(doc(db, 'users', uid), { profileTreasures });
 }
 
 export function onAuthChange(callback: (user: User | null) => void) {

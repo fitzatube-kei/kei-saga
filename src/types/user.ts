@@ -8,7 +8,17 @@ export interface UserProfile {
   level: number;
   lastPlayedEraId?: string;
   profileBg?: string;
+  profileImage?: string;
+  profileBgColor?: string;
+  profileTreasures?: PlacedTreasure[];
   createdAt: Date;
+}
+
+export interface PlacedTreasure {
+  id: string;
+  image: string;
+  x: number;
+  y: number;
 }
 
 export interface AvatarConfig {

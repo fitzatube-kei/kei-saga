@@ -1,5 +1,5 @@
 import { create } from 'zustand';
-import type { UserProfile, AvatarConfig } from '@/types/user';
+import type { UserProfile, AvatarConfig, PlacedTreasure } from '@/types/user';
 
 interface AuthState {
   user: UserProfile | null;
@@ -16,6 +16,9 @@ interface AuthActions {
   updateCash: (cash: number) => void;
   updateNickname: (nickname: string) => void;
   updateProfileBg: (profileBg: string) => void;
+  updateProfileImage: (profileImage: string) => void;
+  updateProfileBgColor: (profileBgColor: string) => void;
+  updateProfileTreasures: (profileTreasures: PlacedTreasure[]) => void;
 }
 
 export const useAuthStore = create<AuthState & AuthActions>((set) => ({
@@ -52,5 +55,20 @@ export const useAuthStore = create<AuthState & AuthActions>((set) => ({
   updateProfileBg: (profileBg) =>
     set((state) => ({
       user: state.user ? { ...state.user, profileBg } : null,
+    })),
+
+  updateProfileImage: (profileImage) =>
+    set((state) => ({
+      user: state.user ? { ...state.user, profileImage } : null,
+    })),
+
+  updateProfileBgColor: (profileBgColor) =>
+    set((state) => ({
+      user: state.user ? { ...state.user, profileBgColor } : null,
+    })),
+
+  updateProfileTreasures: (profileTreasures) =>
+    set((state) => ({
+      user: state.user ? { ...state.user, profileTreasures } : null,
     })),
 }));

@@ -2,6 +2,7 @@ export type {
   UserProfile,
   AvatarConfig,
   InventoryItem,
+  PlacedTreasure,
 } from '@/types/user';
 
 export type {
