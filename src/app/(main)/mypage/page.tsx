@@ -325,9 +325,85 @@ export default function MyPage() {
   const rankLabel = t(getRankKey(user.level));
 
   return (
-    <div className="relative -mx-4 -mt-16 min-h-screen w-[calc(100%+2rem)] bg-black pb-24 pt-20 lg:-mx-8 lg:w-[calc(100%+4rem)]">
+    <div className="relative -mx-4 -mt-16 min-h-screen w-[calc(100%+2rem)] bg-black pb-24 pt-14 lg:-mx-8 lg:w-[calc(100%+4rem)]">
+      {/* ── PROFILE INFO CARD (full width, above avatar banner) ── */}
+      <div className="mx-4 mt-0 rounded-2xl border-t border-[#f5c842]/30 bg-[#141414] px-3 py-2 shadow-[0_-2px_12px_rgba(245,200,66,0.08)]">
+        {/* Row 1: nickname (left) + pills (right) */}
+        <div className="flex items-center justify-between gap-3">
+          <div className="flex min-w-0 items-center gap-1.5">
+            {isEditingNickname ? (
+              <form onSubmit={handleNicknameSubmit} className="flex items-center gap-1.5">
+                <input
+                  type="text"
+                  value={editNickname}
+                  onChange={(e) => setEditNickname(e.target.value)}
+                  className="w-32 rounded-md border border-[#f5c842]/40 bg-[#0b0b0b] px-2 py-0.5 text-sm font-bold text-white outline-none focus:border-[#f5c842]"
+                  autoFocus
+                  maxLength={12}
+                  minLength={2}
+                />
+                <button type="submit" disabled={nicknameSaving} className="rounded-md bg-[#f5c842]/20 p-1 text-[#f5c842]">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                </button>
+                <button type="button" onClick={() => setIsEditingNickname(false)} className="rounded-md bg-white/10 p-1 text-white/60">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                    <line x1="18" y1="6" x2="6" y2="18" />
+                    <line x1="6" y1="6" x2="18" y2="18" />
+                  </svg>
+                </button>
+              </form>
+            ) : (
+              <>
+                <h1 className="truncate text-[15px] font-extrabold text-white">{user.nickname}</h1>
+                <button
+                  type="button"
+                  onClick={() => {
+                    setEditNickname(user.nickname);
+                    setIsEditingNickname(true);
+                  }}
+                  aria-label="edit nickname"
+                  className="shrink-0 p-0.5 text-white/60"
+                >
+                  <Image src="/images/icon/modify001.png" width={12} height={12} alt="" />
+                </button>
+              </>
+            )}
+          </div>
+          <div className="flex shrink-0 items-center gap-1.5">
+            <span className="rounded-full bg-white/15 px-2 py-0.5 text-[9px] font-bold text-white/80">
+              {t('mypage.premium')}
+            </span>
+            <span className="rounded-full bg-[#f5c842] px-2 py-0.5 text-[9px] font-bold text-black">
+              {t('mypage.levelPrefix')} {rankLabel}
+            </span>
+          </div>
+        </div>
+
+        {/* Row 2: stats */}
+        <div className="mt-1.5 flex items-center justify-around border-t border-white/5 pt-1.5">
+          <div className="flex flex-col items-center">
+            <span className="text-[15px] font-extrabold text-[#f5c842]">{progressPct}%</span>
+            <span className="text-[9px] text-white/50">{t('mypage.progressRate')}</span>
+          </div>
+          <div className="h-6 w-px bg-white/10" />
+          <div className="flex flex-col items-center">
+            <span className="text-[15px] font-extrabold text-[#f5c842]">{quizAccuracy}%</span>
+            <span className="text-[9px] text-white/50">{t('mypage.accuracyRate')}</span>
+          </div>
+          <div className="h-6 w-px bg-white/10" />
+          <div className="flex flex-col items-center">
+            <span className="text-[15px] font-extrabold text-[#f5c842]">
+              {(user.points ?? 0).toLocaleString()}
+            </span>
+            <span className="text-[9px] text-white/50">{t('mypage.points')}</span>
+          </div>
+        </div>
+      </div>
+
       {/* ── PROFILE BANNER + RIGHT COLUMN (stacked on mobile, side-by-side from sm) ── */}
-      <div className="mx-4 mt-2 flex flex-col gap-3 sm:flex-row sm:items-stretch sm:gap-4">
+      <div className="mx-4 mt-3 flex flex-col gap-3 sm:flex-row sm:items-stretch sm:gap-4">
         <div className="w-full sm:flex-[6] sm:min-w-0">
         <div
           ref={bannerRef}
@@ -403,83 +479,8 @@ export default function MyPage() {
         </div>
         </div>
 
-      {/* ── RIGHT COLUMN: info card + treasure ─────────── */}
+      {/* ── RIGHT COLUMN: treasure ─────────── */}
       <div className="flex flex-col gap-3 sm:flex-[4] sm:min-w-0">
-      <div className="rounded-2xl border-t border-[#f5c842]/30 bg-[#141414] px-4 py-3 shadow-[0_-2px_12px_rgba(245,200,66,0.08)]">
-        {/* Row 1: nickname (left) + pills (right) */}
-        <div className="flex items-center justify-between gap-3">
-          <div className="flex min-w-0 items-center gap-1.5">
-            {isEditingNickname ? (
-              <form onSubmit={handleNicknameSubmit} className="flex items-center gap-1.5">
-                <input
-                  type="text"
-                  value={editNickname}
-                  onChange={(e) => setEditNickname(e.target.value)}
-                  className="w-32 rounded-md border border-[#f5c842]/40 bg-[#0b0b0b] px-2 py-1 text-base font-bold text-white outline-none focus:border-[#f5c842]"
-                  autoFocus
-                  maxLength={12}
-                  minLength={2}
-                />
-                <button type="submit" disabled={nicknameSaving} className="rounded-md bg-[#f5c842]/20 p-1 text-[#f5c842]">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-                    <polyline points="20 6 9 17 4 12" />
-                  </svg>
-                </button>
-                <button type="button" onClick={() => setIsEditingNickname(false)} className="rounded-md bg-white/10 p-1 text-white/60">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-                    <line x1="18" y1="6" x2="6" y2="18" />
-                    <line x1="6" y1="6" x2="18" y2="18" />
-                  </svg>
-                </button>
-              </form>
-            ) : (
-              <>
-                <h1 className="truncate text-[18px] font-extrabold text-white">{user.nickname}</h1>
-                <button
-                  type="button"
-                  onClick={() => {
-                    setEditNickname(user.nickname);
-                    setIsEditingNickname(true);
-                  }}
-                  aria-label="edit nickname"
-                  className="shrink-0 p-0.5 text-white/60"
-                >
-                  <Image src="/images/icon/modify001.png" width={14} height={14} alt="" />
-                </button>
-              </>
-            )}
-          </div>
-          <div className="flex shrink-0 items-center gap-1.5">
-            <span className="rounded-full bg-white/15 px-2.5 py-0.5 text-[10px] font-bold text-white/80">
-              {t('mypage.premium')}
-            </span>
-            <span className="rounded-full bg-[#f5c842] px-2.5 py-0.5 text-[10px] font-bold text-black">
-              {t('mypage.levelPrefix')} {rankLabel}
-            </span>
-          </div>
-        </div>
-
-        {/* Row 2: stats */}
-        <div className="mt-2.5 flex items-center justify-around border-t border-white/5 pt-2.5">
-          <div className="flex flex-col items-center">
-            <span className="text-[18px] font-extrabold text-[#f5c842]">{progressPct}%</span>
-            <span className="text-[10px] text-white/50">{t('mypage.progressRate')}</span>
-          </div>
-          <div className="h-7 w-px bg-white/10" />
-          <div className="flex flex-col items-center">
-            <span className="text-[18px] font-extrabold text-[#f5c842]">{quizAccuracy}%</span>
-            <span className="text-[10px] text-white/50">{t('mypage.accuracyRate')}</span>
-          </div>
-          <div className="h-7 w-px bg-white/10" />
-          <div className="flex flex-col items-center">
-            <span className="text-[18px] font-extrabold text-[#f5c842]">
-              {(user.points ?? 0).toLocaleString()}
-            </span>
-            <span className="text-[10px] text-white/50">{t('mypage.points')}</span>
-          </div>
-        </div>
-      </div>
-
       {/* ── TREASURE ────────────────────────────────── */}
       <div className="flex-1 rounded-2xl border border-[#f5c842]/20 bg-[#141414] px-4 py-3">
         <div className="flex items-center justify-between">
